@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Please cite this versioned software release. The accompanying manuscript is in preparation; no paper identifier has been assigned."
+type: software
+title: "Reference Label Value: Estimation and Certification in Conjunctive Evaluations"
+authors:
+  - name: "Itsxuchen"
+    website: "https://github.com/Itsxuchen"
+version: 0.1.0
+date-released: 2026-09-15
+repository-code: "https://github.com/Itsxuchen/reference-label-value"
+url: "https://github.com/Itsxuchen/reference-label-value"
+license: MIT
+keywords:
+  - evaluation
+  - reproducibility
+  - reference labels
+  - conjunctive scoring
+  - finite population sampling
+

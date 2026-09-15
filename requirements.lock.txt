@@ -1,0 +1,47 @@
+contourpy==1.4.0
+    # via matplotlib
+cycler==0.12.1
+    # via matplotlib
+fonttools==4.65.0
+    # via matplotlib
+iniconfig==2.3.0
+    # via pytest
+kiwisolver==1.5.1
+    # via matplotlib
+matplotlib==3.11.1
+    # via -r requirements.txt
+numpy==2.5.2
+    # via
+    #   -r requirements.txt
+    #   contourpy
+    #   matplotlib
+    #   pandas
+    #   scipy
+packaging==26.3
+    # via
+    #   matplotlib
+    #   pytest
+pandas==2.2.3
+    # via -r requirements.txt
+pillow==12.3.0
+    # via matplotlib
+pluggy==1.6.0
+    # via pytest
+pygments==2.21.0
+    # via pytest
+pyparsing==3.3.2
+    # via matplotlib
+pytest==9.1.1
+    # via -r requirements.txt
+python-dateutil==2.9.0.post0
+    # via
+    #   matplotlib
+    #   pandas
+pytz==2026.3.post1
+    # via pandas
+scipy==1.18.1
+    # via -r requirements.txt
+six==1.17.0
+    # via python-dateutil
+tzdata==2026.4
+    # via pandas

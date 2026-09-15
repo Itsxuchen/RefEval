@@ -1,0 +1,28 @@
+name: Reproduction checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test-and-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install pinned dependencies
+        run: python -m pip install -r requirements.lock.txt
+      - name: Versioned input and result integrity
+        run: python -m src.check_package
+      - name: Unit and finite-population tests
+        run: python -m pytest -q
+      - name: Full offline reproduction
+        run: python -m src.reproduce --mode full --output artifacts/reproduced
+      - name: Compare reproduced scientific outputs
+        run: python -m src.verify_release --results artifacts/reproduced
+

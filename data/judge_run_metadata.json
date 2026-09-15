@@ -1,0 +1,9 @@
+{
+  "prepared_at": "2026-09-12T08:31:16.383521+00:00",
+  "model": "gpt-5.4-2026-03-05",
+  "reasoning_effort": "low",
+  "max_completion_tokens": 1024,
+  "tasks": 284,
+  "criteria": 1615,
+  "scope": "Saved author-generated DR judge predictions. This package replays labels; it does not regenerate API responses."
+}

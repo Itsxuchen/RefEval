@@ -1,0 +1,60 @@
+{
+  "scope": "Historical fixed scientific outputs retained unchanged. Embedded historical source hashes are provenance, not current public-code verification. Fresh execution and comparison is recorded separately.",
+  "files": [
+    {
+      "path": "artifacts/expected/conjunction_policy_study/budget_curves.csv.gz",
+      "source_sha256": "cdf86a96200e6cb368baa55fb393482c9fc8e4235ac6f09929b59f7a4dc376f2",
+      "sha256": "cdf86a96200e6cb368baa55fb393482c9fc8e4235ac6f09929b59f7a4dc376f2"
+    },
+    {
+      "path": "artifacts/expected/conjunction_policy_study/leave_one_base_task_out.csv.gz",
+      "source_sha256": "d812c7500912092d7ed5059c779ac000df6be61ce9287d40394e0b364740cbae",
+      "sha256": "d812c7500912092d7ed5059c779ac000df6be61ce9287d40394e0b364740cbae"
+    },
+    {
+      "path": "artifacts/expected/conjunction_policy_study/study.json",
+      "source_sha256": "dfa29387515c05247cf29eea20817faa0c94009a93008dd71ab2074ea2decfa8",
+      "sha256": "dfa29387515c05247cf29eea20817faa0c94009a93008dd71ab2074ea2decfa8"
+    },
+    {
+      "path": "artifacts/expected/conjunction_policy_study/analysis_summary.json",
+      "source_sha256": "bc180d54a287d74df7167775c75e0524c8bc2ec7c3072ca7bfc8ac2b577bff7d",
+      "sha256": "bc180d54a287d74df7167775c75e0524c8bc2ec7c3072ca7bfc8ac2b577bff7d"
+    },
+    {
+      "path": "artifacts/expected/conjunction_policy_study/error_flow.json",
+      "source_sha256": "afccbedca18ed6dc58c04b01a9e82881c20e6ac6d28399d924bef702c0e736bb",
+      "sha256": "afccbedca18ed6dc58c04b01a9e82881c20e6ac6d28399d924bef702c0e736bb"
+    },
+    {
+      "path": "artifacts/expected/conjunction_label_value/budget_estimation_rows.csv.gz",
+      "source_sha256": "0a95916efbabd8555d3dfbdff8e1077f9c708b0535a589f207016bafac7dd5a7",
+      "sha256": "0a95916efbabd8555d3dfbdff8e1077f9c708b0535a589f207016bafac7dd5a7"
+    },
+    {
+      "path": "artifacts/expected/conjunction_label_value/budget_estimation_summary.csv",
+      "source_sha256": "4d40e1b34ed2519a4a62f0fd4f31faf8591edd98add3f979b54ecfbb45530357",
+      "sha256": "4d40e1b34ed2519a4a62f0fd4f31faf8591edd98add3f979b54ecfbb45530357"
+    },
+    {
+      "path": "artifacts/expected/conjunction_label_value/whole_task_sampling.csv.gz",
+      "source_sha256": "03ea369d1ddd2d93726158e0f5fd6443876119528021d6c85e709218dd2d4f8f",
+      "sha256": "03ea369d1ddd2d93726158e0f5fd6443876119528021d6c85e709218dd2d4f8f"
+    },
+    {
+      "path": "artifacts/expected/conjunction_label_value/manifest.json",
+      "source_sha256": "5a23ae951f116db455d4f8aa1654c324b866df81db993a0dcfeab61068f6ffa3",
+      "sha256": "5a23ae951f116db455d4f8aa1654c324b866df81db993a0dcfeab61068f6ffa3"
+    },
+    {
+      "path": "artifacts/expected/information_disclosure_replay.json",
+      "source_sha256": "d99ac15aff714425977ea1187ddba276ae24d0a9b61257540808a462abd1d487",
+      "sha256": "d99ac15aff714425977ea1187ddba276ae24d0a9b61257540808a462abd1d487"
+    },
+    {
+      "path": "artifacts/expected/conjunction_policy_study/canonical_20pct.csv",
+      "source_sha256": "144ea5089fe435371f20ee45fca127940b8ba8828313b796ae573ed909b14058",
+      "sha256": "144ea5089fe435371f20ee45fca127940b8ba8828313b796ae573ed909b14058"
+    }
+  ]
+}

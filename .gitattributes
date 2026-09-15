@@ -1,0 +1,9 @@
+* text=auto eol=lf
+# Preserve byte-bound numeric inputs, historical results and copied notices.
+data/** -text
+artifacts/expected/** -text
+licenses/** -text
+*.png binary
+*.pdf binary
+*.gz binary
+

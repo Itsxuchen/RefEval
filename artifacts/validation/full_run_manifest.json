@@ -1,0 +1,38 @@
+{
+  "created_utc": "2026-09-15T21:00:09.893240+00:00",
+  "configuration": {
+    "mode": "full",
+    "policy_seeds": 32,
+    "label_seeds": 31,
+    "disclosure_orders": 10,
+    "leave_one_base_task_out": true,
+    "policy_summaries_and_figures": true
+  },
+  "output": "artifacts/reproduced",
+  "datasets": [
+    "DR Gemini 3.1 Pro",
+    "DR Qwen-plus",
+    "AC Qwen-plus",
+    "AC DeepSeek v4-pro",
+    "DR GPT-5.4 low",
+    "JB GPT-5.4",
+    "JB GPT-5.4-mini",
+    "JB GPT-5.4 | binary_only",
+    "JB GPT-5.4-mini | binary_only"
+  ],
+  "stage_seconds": {
+    "policy_grid": 106.399,
+    "error_flow": 0.707,
+    "policy_summary": 2.106,
+    "policy_figures": 2.492,
+    "label_value_and_task_sampling": 24.63,
+    "information_disclosure": 9.288,
+    "independent_policy_arithmetic": 2.729,
+    "independent_label_arithmetic": 4.152,
+    "frozen_scientific_comparison": 10.825
+  },
+  "elapsed_seconds": 168.854,
+  "passed": true,
+  "complete_reproduction": true,
+  "scope": "Fixed released numeric references; no model APIs or new human labels."
+}

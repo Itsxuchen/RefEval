@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "scope": "Offline numeric replay inputs. Source hashes bind original source bytes; published hashes bind projections. No source prompt/answer texts, comments or human timing are included. References are fixed released labels.",
+  "files": [
+    {
+      "path": "data/processed/gpt54_low_dr_predictions.csv",
+      "source_name": "gpt54_low_dr_predictions.csv",
+      "source_sha256": "67a22ed3fd402b62624ab166cecb9205bf48aa8d92ce4d1a9278f2d3bc976629",
+      "sha256": "67a22ed3fd402b62624ab166cecb9205bf48aa8d92ce4d1a9278f2d3bc976629",
+      "rows": 1615,
+      "columns": [
+        "run",
+        "domain",
+        "task_id",
+        "criterion_id",
+        "criterion_index",
+        "category",
+        "gold",
+        "provider",
+        "model",
+        "prediction"
+      ],
+      "removed_columns": [],
+      "transformation": "Identity: unchanged bytes",
+      "license": "CC-BY-NC-4.0 (RuVerBench reference-containing tables; see notices)",
+      "source_kind": "Study-generated saved predictions combined with RuVerBench released reference labels",
+      "reference_revision": "0af0256870d6322490c7ab15eb6370779b898a37",
+      "reference_repository": "https://github.com/THU-KEG/RuVerBench"
+    },
+    {
+      "path": "data/processed/public_judge_predictions.csv",
+      "source_name": "public_judge_predictions.csv",
+      "source_sha256": "e992336abc17077ff4a0f44a21fbd85561bede812b5eb0c6e2b4a4999db35b3c",
+      "sha256": "e992336abc17077ff4a0f44a21fbd85561bede812b5eb0c6e2b4a4999db35b3c",
+      "rows": 4916,
+      "columns": [
+        "run",
+        "domain",
+        "task_id",
+        "criterion_id",
+        "criterion_index",
+        "category",
+        "gold",
+        "provider",
+        "model",
+        "prediction"
+      ],
+      "removed_columns": [],
+      "transformation": "Identity: unchanged bytes",
+      "license": "CC-BY-NC-4.0 (RuVerBench reference-containing tables; see notices)",
+      "source_kind": "Study-generated saved predictions combined with RuVerBench released reference labels",
+      "reference_revision": "0af0256870d6322490c7ab15eb6370779b898a37",
+      "reference_repository": "https://github.com/THU-KEG/RuVerBench"
+    },
+    {
+      "path": "data/reference/judgmentbench/human_annotations_rubric.csv",
+      "source_name": "human_annotations_rubric.csv",
+      "source_sha256": "b87224e83df69e75ea3e00952a4ed2d740dfec68cd61f02d26bcb60a30225e3c",
+      "sha256": "6a50aa8bcb9d647ee227c1166507e90143d8580f058d1d62db0c9511ef4a89c6",
+      "rows": 1539,
+      "columns": [
+        "annotation_id",
+        "annotator_id",
+        "annotation_order",
+        "task_id",
+        "task_slot_order",
+        "method_step_order",
+        "output_id",
+        "output_quality_level",
+        "output_quality_level_order",
+        "rubric_total_points",
+        "rubric_max_points"
+      ],
+      "removed_columns": [
+        "time_spent_seconds",
+        "comment"
+      ],
+      "transformation": "Column projection only; original row order and field values retained",
+      "license": "MIT (JudgmentBench)",
+      "source_revision": "945ff52f4c63c17006dc30ec35fefbddf3ccf58d",
+      "source_path": "human/annotations_rubric.csv",
+      "source_url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/human/annotations_rubric.csv"
+    },
+    {
+      "path": "data/reference/judgmentbench/gpt_5_4_rubric_item_scores.csv",
+      "source_name": "gpt_5_4_rubric_item_scores.csv",
+      "source_sha256": "bfc193a59cf50292be9988dc75535c9fbbe2719b4598cb7326a73e234d82a36a",
+      "sha256": "bfc193a59cf50292be9988dc75535c9fbbe2719b4598cb7326a73e234d82a36a",
+      "rows": 23487,
+      "columns": [
+        "annotation_id",
+        "rubric_item_id",
+        "score_order",
+        "raw_value",
+        "awarded_points"
+      ],
+      "removed_columns": [],
+      "transformation": "Column projection only; original row order and field values retained",
+      "license": "MIT (JudgmentBench)",
+      "source_revision": "945ff52f4c63c17006dc30ec35fefbddf3ccf58d",
+      "source_path": "autograders/gpt_5_4/rubric_item_scores.csv",
+      "source_url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/autograders/gpt_5_4/rubric_item_scores.csv"
+    },
+    {
+      "path": "data/reference/judgmentbench/rubric_items.csv",
+      "source_name": "rubric_items.csv",
+      "source_sha256": "9afb9e3e82e536e30a9021aacd1ae0167ad2c6c5fd71693df11cf4da0a03ba18",
+      "sha256": "386a4c893fe86c77df6604dd6947f88a1b39a7ba477843e05a6f0ccb4a36d261",
+      "rows": 457,
+      "columns": [
+        "rubric_item_id",
+        "task_id",
+        "item_order",
+        "weight",
+        "scoring_mode",
+        "max_score"
+      ],
+      "removed_columns": [
+        "section",
+        "label"
+      ],
+      "transformation": "Column projection only; original row order and field values retained",
+      "license": "MIT (JudgmentBench)",
+      "source_revision": "945ff52f4c63c17006dc30ec35fefbddf3ccf58d",
+      "source_path": "base/rubric_items.csv",
+      "source_url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/base/rubric_items.csv"
+    },
+    {
+      "path": "data/reference/judgmentbench/gpt_5_4_mini_rubric_item_scores.csv",
+      "source_name": "gpt_5_4_mini_rubric_item_scores.csv",
+      "source_sha256": "e0ec56a1eb6530062fc523023c3144c8db25ca06f9d9493beda7d4f6ce5550d6",
+      "sha256": "e0ec56a1eb6530062fc523023c3144c8db25ca06f9d9493beda7d4f6ce5550d6",
+      "rows": 23487,
+      "columns": [
+        "annotation_id",
+        "rubric_item_id",
+        "score_order",
+        "raw_value",
+        "awarded_points"
+      ],
+      "removed_columns": [],
+      "transformation": "Column projection only; original row order and field values retained",
+      "license": "MIT (JudgmentBench)",
+      "source_revision": "945ff52f4c63c17006dc30ec35fefbddf3ccf58d",
+      "source_path": "autograders/gpt_5_4_mini/rubric_item_scores.csv",
+      "source_url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/autograders/gpt_5_4_mini/rubric_item_scores.csv"
+    },
+    {
+      "path": "data/reference/judgmentbench/gpt_5_4_mini_annotations_rubric.csv",
+      "source_name": "gpt_5_4_mini_annotations_rubric.csv",
+      "source_sha256": "7125c39104e6a24397d00be3bc0bff9dd1b2138ef9a8a457d6fb616e8a910954",
+      "sha256": "955e6738b18227497e2c70b7ad8957371c16a9afa35f8ed8acf6d2baf8de0eef",
+      "rows": 1539,
+      "columns": [
+        "annotation_id",
+        "corresponding_annotator_id",
+        "annotation_order",
+        "task_id",
+        "task_slot_order",
+        "method_step_order",
+        "output_id",
+        "output_quality_level",
+        "output_quality_level_order",
+        "rubric_total_points",
+        "rubric_max_points"
+      ],
+      "removed_columns": [
+        "comment"
+      ],
+      "transformation": "Column projection only; original row order and field values retained",
+      "license": "MIT (JudgmentBench)",
+      "source_revision": "945ff52f4c63c17006dc30ec35fefbddf3ccf58d",
+      "source_path": "autograders/gpt_5_4_mini/annotations_rubric.csv",
+      "source_url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/autograders/gpt_5_4_mini/annotations_rubric.csv"
+    },
+    {
+      "path": "data/reference/judgmentbench/gpt_5_4_annotations_rubric.csv",
+      "source_name": "gpt_5_4_annotations_rubric.csv",
+      "source_sha256": "cfa0408c141ce0dae579967e238da2f1deb1dc8c7879e82e35dbbca86c7487cf",
+      "sha256": "3846129086f0185e2141026e91990ebc560a3cd57da58bb5e7e2e666eb326909",
+      "rows": 1539,
+      "columns": [
+        "annotation_id",
+        "corresponding_annotator_id",
+        "annotation_order",
+        "task_id",
+        "task_slot_order",
+        "method_step_order",
+        "output_id",
+        "output_quality_level",
+        "output_quality_level_order",
+        "rubric_total_points",
+        "rubric_max_points"
+      ],
+      "removed_columns": [
+        "comment"
+      ],
+      "transformation": "Column projection only; original row order and field values retained",
+      "license": "MIT (JudgmentBench)",
+      "source_revision": "945ff52f4c63c17006dc30ec35fefbddf3ccf58d",
+      "source_path": "autograders/gpt_5_4/annotations_rubric.csv",
+      "source_url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/autograders/gpt_5_4/annotations_rubric.csv"
+    },
+    {
+      "path": "data/reference/judgmentbench/human_rubric_item_scores.csv",
+      "source_name": "human_rubric_item_scores.csv",
+      "source_sha256": "d6e68feecf13f10517d33adf08e176f3df5f083e8c0a507dfac007fa20cd1871",
+      "sha256": "d6e68feecf13f10517d33adf08e176f3df5f083e8c0a507dfac007fa20cd1871",
+      "rows": 23487,
+      "columns": [
+        "annotation_id",
+        "rubric_item_id",
+        "score_order",
+        "raw_value",
+        "awarded_points"
+      ],
+      "removed_columns": [],
+      "transformation": "Column projection only; original row order and field values retained",
+      "license": "MIT (JudgmentBench)",
+      "source_revision": "945ff52f4c63c17006dc30ec35fefbddf3ccf58d",
+      "source_path": "human/rubric_item_scores.csv",
+      "source_url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/human/rubric_item_scores.csv"
+    },
+    {
+      "path": "data/reference/judgmentbench/outputs_metadata.csv",
+      "source_name": "outputs/outputs.csv",
+      "source_sha256": "05c6b5219e12790c453b77d95fa86ed01c713323721bab2ff147febc943d49e5",
+      "sha256": "2faf0ba3a79ac9ec4fe491e82fa7546ba603c8f9a236f2b4ad506133c3c7cc62",
+      "rows": 2274,
+      "columns": [
+        "output_id",
+        "task_id",
+        "quality_level"
+      ],
+      "removed_columns": [
+        "quality_level_order",
+        "version_number",
+        "output_text"
+      ],
+      "transformation": "Column projection only; original row order and field values retained",
+      "license": "MIT (JudgmentBench)",
+      "source_revision": "945ff52f4c63c17006dc30ec35fefbddf3ccf58d",
+      "source_path": "outputs/outputs.csv",
+      "source_url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/outputs/outputs.csv"
+    }
+  ]
+}

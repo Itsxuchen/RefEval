@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "scope": "All nine packaged input cells agree with the original loader on labels, predictions, clustering, ordering and identity metadata; source hash fields necessarily differ after projection.",
+  "cells": [
+    {
+      "dataset": "DR Gemini 3.1 Pro",
+      "criteria": 1615,
+      "verdict_units": 284,
+      "base_tasks": 284,
+      "all_arrays_and_identities_identical": true
+    },
+    {
+      "dataset": "DR Qwen-plus",
+      "criteria": 1615,
+      "verdict_units": 284,
+      "base_tasks": 284,
+      "all_arrays_and_identities_identical": true
+    },
+    {
+      "dataset": "AC Qwen-plus",
+      "criteria": 843,
+      "verdict_units": 210,
+      "base_tasks": 210,
+      "all_arrays_and_identities_identical": true
+    },
+    {
+      "dataset": "AC DeepSeek v4-pro",
+      "criteria": 843,
+      "verdict_units": 210,
+      "base_tasks": 210,
+      "all_arrays_and_identities_identical": true
+    },
+    {
+      "dataset": "DR GPT-5.4 low",
+      "criteria": 1615,
+      "verdict_units": 284,
+      "base_tasks": 284,
+      "all_arrays_and_identities_identical": true
+    },
+    {
+      "dataset": "JB GPT-5.4",
+      "criteria": 23487,
+      "verdict_units": 1539,
+      "base_tasks": 30,
+      "all_arrays_and_identities_identical": true
+    },
+    {
+      "dataset": "JB GPT-5.4-mini",
+      "criteria": 23487,
+      "verdict_units": 1539,
+      "base_tasks": 30,
+      "all_arrays_and_identities_identical": true
+    },
+    {
+      "dataset": "JB GPT-5.4 | binary_only",
+      "criteria": 20229,
+      "verdict_units": 1539,
+      "base_tasks": 30,
+      "all_arrays_and_identities_identical": true
+    },
+    {
+      "dataset": "JB GPT-5.4-mini | binary_only",
+      "criteria": 20229,
+      "verdict_units": 1539,
+      "base_tasks": 30,
+      "all_arrays_and_identities_identical": true
+    }
+  ]
+}

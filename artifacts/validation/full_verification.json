@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "mode": "full",
+  "complete_reproduction": true,
+  "csv_checks": {
+    "conjunction_policy_study/budget_curves.csv.gz": {
+      "rows": 610848,
+      "fields": 17714592,
+      "scope": "all rows"
+    },
+    "conjunction_label_value/budget_estimation_rows.csv.gz": {
+      "rows": 11718,
+      "fields": 328104,
+      "scope": "all rows"
+    },
+    "conjunction_label_value/whole_task_sampling.csv.gz": {
+      "rows": 837,
+      "fields": 22599,
+      "scope": "all rows"
+    },
+    "conjunction_policy_study/leave_one_base_task_out.csv.gz": {
+      "rows": 1968288,
+      "fields": 59048640,
+      "scope": "all rows"
+    },
+    "conjunction_label_value/budget_estimation_summary.csv": {
+      "rows": 378,
+      "fields": 11718,
+      "scope": "all rows"
+    },
+    "conjunction_policy_study/canonical_20pct.csv": {
+      "rows": 189,
+      "fields": 5481,
+      "scope": "all rows"
+    }
+  },
+  "json_checks": {
+    "conjunction_policy_study/error_flow.json": {
+      "scientific_leaves_checked": 5266
+    },
+    "conjunction_policy_study/study.json": {
+      "scientific_leaves_checked": 150743
+    },
+    "conjunction_policy_study/analysis_summary.json": {
+      "scientific_leaves_checked": 23442
+    },
+    "conjunction_label_value/manifest.json": {
+      "scientific_leaves_checked": 26
+    },
+    "information_disclosure_replay.json": {
+      "scientific_leaves_checked": 22495
+    }
+  },
+  "disclosure_witnesses": {
+    "endpoint_witnesses": 7192,
+    "restored_links_checked": 257192,
+    "marginal_constraints_checked": 49270,
+    "scope": "Direct endpoint feasibility; global optimality additionally uses the original solver's closed objective bounds and exhaustive small-world tests."
+  },
+  "comparison_tolerance": {
+    "absolute": 1e-08,
+    "relative": 1e-09
+  },
+  "scope": "All frozen scientific tables and selected JSON payloads",
+  "frozen_expected_files_unchanged": 12,
+  "direct_arithmetic": {
+    "policy_canonical_rows": 126,
+    "policy_numeric_fields": 2898,
+    "label_hybrid_rows": 27,
+    "whole_task_rows": 837
+  }
+}

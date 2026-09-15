@@ -1,0 +1,33 @@
+# Data License and Third-Party Notices
+
+This repository contains code, RuVerBench-created artifacts, and materials
+derived from publicly released benchmark sources. The root `LICENSE` file
+applies to code only.
+
+## RuVerBench-created data and analysis artifacts
+
+RuVerBench-created annotations, taxonomy assignments, normalization metadata,
+aggregate results, and derived analysis artifacts are released under the
+Creative Commons Attribution-NonCommercial 4.0 International License
+(CC BY-NC 4.0).
+
+## Upstream materials
+
+Upstream materials remain subject to the terms of their source releases and are
+not relicensed by RuVerBench:
+
+| Records or files | Upstream source | Applicable terms |
+|---|---|---|
+| `DRB2_*` records in the DeepResearch benchmark and fixed subset files | DeepResearch-Bench-II | Source- and task-specific terms documented by the upstream maintainers |
+| `RB_*` records in the DeepResearch benchmark and fixed subset files | ResearcherBench | Publicly released by the authors; source attribution and provenance are retained |
+| `RR_*` records in the DeepResearch benchmark and fixed subset files | ResearchRubrics | The source distribution is marked MIT |
+| AgenticCoding benchmark and fixed subset files | OctoBench | The source distribution is marked MIT |
+
+The RuVerBench CC BY-NC 4.0 license does not apply to upstream source content.
+Files may contain both RuVerBench-created fields and upstream-derived fields;
+the CC BY-NC 4.0 license does not apply to an entire mixed-source file.
+Please cite RuVerBench and the relevant upstream datasets and papers when using
+this benchmark. Review the upstream terms before redistributing derived
+versions.
+
+See `THIRD_PARTY_NOTICES.md` for source links and the file-level provenance map.

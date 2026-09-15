@@ -1,0 +1,25 @@
+{
+  "python": "3.12.12",
+  "platform": {
+    "system": "Darwin",
+    "machine": "arm64"
+  },
+  "dependencies": {
+    "numpy": "2.5.2",
+    "scipy": "1.18.1",
+    "pandas": "2.2.3",
+    "matplotlib": "3.11.1",
+    "pytest": "9.1.1"
+  },
+  "tests": {
+    "passed": 130,
+    "command": "python -m pytest -q",
+    "source": "Fresh integrated package test invocation; includes projection, policy, inference, disclosure and output-protection tests."
+  },
+  "citation_schema": {
+    "version": "1.2.0",
+    "passed": true,
+    "validator": "cffconvert"
+  },
+  "scope": "Local release validation on 2026-09-15. Full scientific replay and schema validation are separate checks. Public figure was re-rendered after a layout-only footnote adjustment."
+}

@@ -1,0 +1,169 @@
+{
+  "created_utc": "2026-09-14T00:24:58.812599+00:00",
+  "seconds": 25.56116183300037,
+  "rows": 11718,
+  "task_sampling_rows": 837,
+  "seeds": 31,
+  "shares": [
+    0.006,
+    0.05,
+    0.2,
+    0.5,
+    0.6,
+    1.0
+  ],
+  "source_hashes": {
+    "src/conjunction_label_value.py": "477166e9fd1f30ad3491f626ceeeabe5f5f313047f6b0c54718f40240a5aa1ce",
+    "src/conjunction_task_sampling.py": "8d87881e4d0ce6cfd1babd93810afcc72ee9bf1e589dc57664a62a607969ee4a",
+    "src/conjunction_policy_data.py": "73dcf8dc243c011f44ca53b19753a37d5b8cf68f324bf23841e3833f2711618f",
+    "src/conjunction_policy_study.py": "615d49ba39377d17be02d8718d0bd01a6e441cd3b7854a2da35f99e1336d5891",
+    "src/information_disclosure_replay.py": "bb76b1ade9c0cb53d556fb3c24308a90889dd25824900965929b4dffb1ee670a",
+    "context/conjunction_label_value_protocol.md": "374e82e1bf7f66a1db340b17b03c0ad6dec29027d145238e4dcf9545b58b0226"
+  },
+  "data_hashes": {
+    "DR Gemini 3.1 Pro": {
+      "data/processed/public_judge_predictions.csv": "e992336abc17077ff4a0f44a21fbd85561bede812b5eb0c6e2b4a4999db35b3c",
+      "data/processed/gpt54_low_dr_predictions.csv": "67a22ed3fd402b62624ab166cecb9205bf48aa8d92ce4d1a9278f2d3bc976629"
+    },
+    "DR Qwen-plus": {
+      "data/processed/public_judge_predictions.csv": "e992336abc17077ff4a0f44a21fbd85561bede812b5eb0c6e2b4a4999db35b3c",
+      "data/processed/gpt54_low_dr_predictions.csv": "67a22ed3fd402b62624ab166cecb9205bf48aa8d92ce4d1a9278f2d3bc976629"
+    },
+    "AC Qwen-plus": {
+      "data/processed/public_judge_predictions.csv": "e992336abc17077ff4a0f44a21fbd85561bede812b5eb0c6e2b4a4999db35b3c",
+      "data/processed/gpt54_low_dr_predictions.csv": "67a22ed3fd402b62624ab166cecb9205bf48aa8d92ce4d1a9278f2d3bc976629"
+    },
+    "AC DeepSeek v4-pro": {
+      "data/processed/public_judge_predictions.csv": "e992336abc17077ff4a0f44a21fbd85561bede812b5eb0c6e2b4a4999db35b3c",
+      "data/processed/gpt54_low_dr_predictions.csv": "67a22ed3fd402b62624ab166cecb9205bf48aa8d92ce4d1a9278f2d3bc976629"
+    },
+    "DR GPT-5.4 low": {
+      "data/processed/public_judge_predictions.csv": "e992336abc17077ff4a0f44a21fbd85561bede812b5eb0c6e2b4a4999db35b3c",
+      "data/processed/gpt54_low_dr_predictions.csv": "67a22ed3fd402b62624ab166cecb9205bf48aa8d92ce4d1a9278f2d3bc976629"
+    },
+    "JB GPT-5.4": {
+      "data/raw/judgmentbench/rubric_items.csv": "9afb9e3e82e536e30a9021aacd1ae0167ad2c6c5fd71693df11cf4da0a03ba18",
+      "data/raw/judgmentbench/human_annotations_rubric.csv": "b87224e83df69e75ea3e00952a4ed2d740dfec68cd61f02d26bcb60a30225e3c",
+      "data/raw/judgmentbench/human_rubric_item_scores.csv": "d6e68feecf13f10517d33adf08e176f3df5f083e8c0a507dfac007fa20cd1871",
+      "data/raw/judgmentbench/gpt_5_4_annotations_rubric.csv": "cfa0408c141ce0dae579967e238da2f1deb1dc8c7879e82e35dbbca86c7487cf",
+      "data/raw/judgmentbench/gpt_5_4_rubric_item_scores.csv": "bfc193a59cf50292be9988dc75535c9fbbe2719b4598cb7326a73e234d82a36a",
+      "data/raw/judgmentbench/gpt_5_4_mini_annotations_rubric.csv": "7125c39104e6a24397d00be3bc0bff9dd1b2138ef9a8a457d6fb616e8a910954",
+      "data/raw/judgmentbench/gpt_5_4_mini_rubric_item_scores.csv": "e0ec56a1eb6530062fc523023c3144c8db25ca06f9d9493beda7d4f6ce5550d6",
+      "data/interim/differentiation_screen/sources/judgmentbench/outputs/outputs.csv": "05c6b5219e12790c453b77d95fa86ed01c713323721bab2ff147febc943d49e5"
+    },
+    "JB GPT-5.4-mini": {
+      "data/raw/judgmentbench/rubric_items.csv": "9afb9e3e82e536e30a9021aacd1ae0167ad2c6c5fd71693df11cf4da0a03ba18",
+      "data/raw/judgmentbench/human_annotations_rubric.csv": "b87224e83df69e75ea3e00952a4ed2d740dfec68cd61f02d26bcb60a30225e3c",
+      "data/raw/judgmentbench/human_rubric_item_scores.csv": "d6e68feecf13f10517d33adf08e176f3df5f083e8c0a507dfac007fa20cd1871",
+      "data/raw/judgmentbench/gpt_5_4_annotations_rubric.csv": "cfa0408c141ce0dae579967e238da2f1deb1dc8c7879e82e35dbbca86c7487cf",
+      "data/raw/judgmentbench/gpt_5_4_rubric_item_scores.csv": "bfc193a59cf50292be9988dc75535c9fbbe2719b4598cb7326a73e234d82a36a",
+      "data/raw/judgmentbench/gpt_5_4_mini_annotations_rubric.csv": "7125c39104e6a24397d00be3bc0bff9dd1b2138ef9a8a457d6fb616e8a910954",
+      "data/raw/judgmentbench/gpt_5_4_mini_rubric_item_scores.csv": "e0ec56a1eb6530062fc523023c3144c8db25ca06f9d9493beda7d4f6ce5550d6",
+      "data/interim/differentiation_screen/sources/judgmentbench/outputs/outputs.csv": "05c6b5219e12790c453b77d95fa86ed01c713323721bab2ff147febc943d49e5"
+    },
+    "JB GPT-5.4 | binary_only": {
+      "data/raw/judgmentbench/rubric_items.csv": "9afb9e3e82e536e30a9021aacd1ae0167ad2c6c5fd71693df11cf4da0a03ba18",
+      "data/raw/judgmentbench/human_annotations_rubric.csv": "b87224e83df69e75ea3e00952a4ed2d740dfec68cd61f02d26bcb60a30225e3c",
+      "data/raw/judgmentbench/human_rubric_item_scores.csv": "d6e68feecf13f10517d33adf08e176f3df5f083e8c0a507dfac007fa20cd1871",
+      "data/raw/judgmentbench/gpt_5_4_annotations_rubric.csv": "cfa0408c141ce0dae579967e238da2f1deb1dc8c7879e82e35dbbca86c7487cf",
+      "data/raw/judgmentbench/gpt_5_4_rubric_item_scores.csv": "bfc193a59cf50292be9988dc75535c9fbbe2719b4598cb7326a73e234d82a36a",
+      "data/raw/judgmentbench/gpt_5_4_mini_annotations_rubric.csv": "7125c39104e6a24397d00be3bc0bff9dd1b2138ef9a8a457d6fb616e8a910954",
+      "data/raw/judgmentbench/gpt_5_4_mini_rubric_item_scores.csv": "e0ec56a1eb6530062fc523023c3144c8db25ca06f9d9493beda7d4f6ce5550d6",
+      "data/interim/differentiation_screen/sources/judgmentbench/outputs/outputs.csv": "05c6b5219e12790c453b77d95fa86ed01c713323721bab2ff147febc943d49e5"
+    },
+    "JB GPT-5.4-mini | binary_only": {
+      "data/raw/judgmentbench/rubric_items.csv": "9afb9e3e82e536e30a9021aacd1ae0167ad2c6c5fd71693df11cf4da0a03ba18",
+      "data/raw/judgmentbench/human_annotations_rubric.csv": "b87224e83df69e75ea3e00952a4ed2d740dfec68cd61f02d26bcb60a30225e3c",
+      "data/raw/judgmentbench/human_rubric_item_scores.csv": "d6e68feecf13f10517d33adf08e176f3df5f083e8c0a507dfac007fa20cd1871",
+      "data/raw/judgmentbench/gpt_5_4_annotations_rubric.csv": "cfa0408c141ce0dae579967e238da2f1deb1dc8c7879e82e35dbbca86c7487cf",
+      "data/raw/judgmentbench/gpt_5_4_rubric_item_scores.csv": "bfc193a59cf50292be9988dc75535c9fbbe2719b4598cb7326a73e234d82a36a",
+      "data/raw/judgmentbench/gpt_5_4_mini_annotations_rubric.csv": "7125c39104e6a24397d00be3bc0bff9dd1b2138ef9a8a457d6fb616e8a910954",
+      "data/raw/judgmentbench/gpt_5_4_mini_rubric_item_scores.csv": "e0ec56a1eb6530062fc523023c3144c8db25ca06f9d9493beda7d4f6ce5550d6",
+      "data/interim/differentiation_screen/sources/judgmentbench/outputs/outputs.csv": "05c6b5219e12790c453b77d95fa86ed01c713323721bab2ff147febc943d49e5"
+    }
+  },
+  "f27_bridge": {
+    "scope": "Synthetic interface check: exact margins are extra information, not free labels.",
+    "examples": [
+      {
+        "queried_tasks": [],
+        "f27_with_exact_margins": {
+          "pass_count_bounds": [
+            0,
+            1
+          ],
+          "pass_rate_bounds": [
+            0.0,
+            0.5
+          ],
+          "n_tasks": 2,
+          "solver_certificates": [
+            {
+              "k": 2,
+              "endpoint": "lower",
+              "pass_count": 0,
+              "constraint_violation": 0.0,
+              "objective_gap": 0.0,
+              "reference_label_witness_bits": "0110",
+              "task_pass_witness_bits": "00"
+            },
+            {
+              "k": 2,
+              "endpoint": "upper",
+              "pass_count": 1,
+              "constraint_violation": 0.0,
+              "objective_gap": 0.0,
+              "reference_label_witness_bits": "1100",
+              "task_pass_witness_bits": "10"
+            }
+          ]
+        },
+        "linked_only_pass_range": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "queried_tasks": [
+          "t0"
+        ],
+        "f27_with_exact_margins": {
+          "pass_count_bounds": [
+            1,
+            1
+          ],
+          "pass_rate_bounds": [
+            0.5,
+            0.5
+          ],
+          "n_tasks": 2,
+          "solver_certificates": [
+            {
+              "k": 2,
+              "endpoint": "lower",
+              "pass_count": 1,
+              "constraint_violation": 0.0,
+              "objective_gap": 0.0,
+              "reference_label_witness_bits": "1100",
+              "task_pass_witness_bits": "10"
+            },
+            {
+              "k": 2,
+              "endpoint": "upper",
+              "pass_count": 1,
+              "constraint_violation": 0.0,
+              "objective_gap": 0.0,
+              "reference_label_witness_bits": "1100",
+              "task_pass_witness_bits": "10"
+            }
+          ]
+        },
+        "linked_only_pass_range": [
+          0.5,
+          1.0
+        ]
+      }
+    ]
+  },
+  "scope": "Fixed released references; nine cells/two families; no humans or API calls. Fixed-budget intervals are pointwise, not confidence sequences;31 seeds do not establish coverage."
+}

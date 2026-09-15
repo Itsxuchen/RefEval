@@ -1,0 +1,95 @@
+{
+  "status": "verified",
+  "files": [
+    {
+      "path": "data/processed/gpt54_low_dr_predictions.csv",
+      "status": "verified",
+      "action": "copied_saved_predictions_not_regenerated",
+      "rows": 1615,
+      "sha256": "67a22ed3fd402b62624ab166cecb9205bf48aa8d92ce4d1a9278f2d3bc976629"
+    },
+    {
+      "path": "data/processed/public_judge_predictions.csv",
+      "status": "verified",
+      "action": "copied_saved_predictions_not_regenerated",
+      "rows": 4916,
+      "sha256": "e992336abc17077ff4a0f44a21fbd85561bede812b5eb0c6e2b4a4999db35b3c"
+    },
+    {
+      "path": "data/reference/judgmentbench/human_annotations_rubric.csv",
+      "status": "verified",
+      "action": "downloaded_pinned_source_and_projected",
+      "rows": 1539,
+      "sha256": "6a50aa8bcb9d647ee227c1166507e90143d8580f058d1d62db0c9511ef4a89c6",
+      "source_url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/human/annotations_rubric.csv",
+      "source_sha256": "b87224e83df69e75ea3e00952a4ed2d740dfec68cd61f02d26bcb60a30225e3c"
+    },
+    {
+      "path": "data/reference/judgmentbench/gpt_5_4_rubric_item_scores.csv",
+      "status": "verified",
+      "action": "downloaded_pinned_source_and_projected",
+      "rows": 23487,
+      "sha256": "bfc193a59cf50292be9988dc75535c9fbbe2719b4598cb7326a73e234d82a36a",
+      "source_url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/autograders/gpt_5_4/rubric_item_scores.csv",
+      "source_sha256": "bfc193a59cf50292be9988dc75535c9fbbe2719b4598cb7326a73e234d82a36a"
+    },
+    {
+      "path": "data/reference/judgmentbench/rubric_items.csv",
+      "status": "verified",
+      "action": "downloaded_pinned_source_and_projected",
+      "rows": 457,
+      "sha256": "386a4c893fe86c77df6604dd6947f88a1b39a7ba477843e05a6f0ccb4a36d261",
+      "source_url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/base/rubric_items.csv",
+      "source_sha256": "9afb9e3e82e536e30a9021aacd1ae0167ad2c6c5fd71693df11cf4da0a03ba18"
+    },
+    {
+      "path": "data/reference/judgmentbench/gpt_5_4_mini_rubric_item_scores.csv",
+      "status": "verified",
+      "action": "downloaded_pinned_source_and_projected",
+      "rows": 23487,
+      "sha256": "e0ec56a1eb6530062fc523023c3144c8db25ca06f9d9493beda7d4f6ce5550d6",
+      "source_url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/autograders/gpt_5_4_mini/rubric_item_scores.csv",
+      "source_sha256": "e0ec56a1eb6530062fc523023c3144c8db25ca06f9d9493beda7d4f6ce5550d6"
+    },
+    {
+      "path": "data/reference/judgmentbench/gpt_5_4_mini_annotations_rubric.csv",
+      "status": "verified",
+      "action": "downloaded_pinned_source_and_projected",
+      "rows": 1539,
+      "sha256": "955e6738b18227497e2c70b7ad8957371c16a9afa35f8ed8acf6d2baf8de0eef",
+      "source_url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/autograders/gpt_5_4_mini/annotations_rubric.csv",
+      "source_sha256": "7125c39104e6a24397d00be3bc0bff9dd1b2138ef9a8a457d6fb616e8a910954"
+    },
+    {
+      "path": "data/reference/judgmentbench/gpt_5_4_annotations_rubric.csv",
+      "status": "verified",
+      "action": "downloaded_pinned_source_and_projected",
+      "rows": 1539,
+      "sha256": "3846129086f0185e2141026e91990ebc560a3cd57da58bb5e7e2e666eb326909",
+      "source_url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/autograders/gpt_5_4/annotations_rubric.csv",
+      "source_sha256": "cfa0408c141ce0dae579967e238da2f1deb1dc8c7879e82e35dbbca86c7487cf"
+    },
+    {
+      "path": "data/reference/judgmentbench/human_rubric_item_scores.csv",
+      "status": "verified",
+      "action": "downloaded_pinned_source_and_projected",
+      "rows": 23487,
+      "sha256": "d6e68feecf13f10517d33adf08e176f3df5f083e8c0a507dfac007fa20cd1871",
+      "source_url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/human/rubric_item_scores.csv",
+      "source_sha256": "d6e68feecf13f10517d33adf08e176f3df5f083e8c0a507dfac007fa20cd1871"
+    },
+    {
+      "path": "data/reference/judgmentbench/outputs_metadata.csv",
+      "status": "verified",
+      "action": "downloaded_pinned_source_and_projected",
+      "rows": 2274,
+      "sha256": "2faf0ba3a79ac9ec4fe491e82fa7546ba603c8f9a236f2b4ad506133c3c7cc62",
+      "source_url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/outputs/outputs.csv",
+      "source_sha256": "05c6b5219e12790c453b77d95fa86ed01c713323721bab2ff147febc943d49e5"
+    }
+  ],
+  "raw_sources_retained": false,
+  "ruver_predictions_regenerated": false,
+  "note": "RuVerBench saved predictions are copied, not regenerated from reference labels.",
+  "scope": "Fresh pinned-source restoration on 2026-09-15. Eight JudgmentBench original files fetched, hash-checked, projected and matched to published bytes; two saved RuVerBench prediction tables copied, not regenerated."
+}
