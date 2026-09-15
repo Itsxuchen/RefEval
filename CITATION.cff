@@ -3,7 +3,7 @@ message: "Please cite this versioned software release. The accompanying manuscri
 type: software
 title: "Reference Label Value: Estimation and Certification in Conjunctive Evaluations"
 authors:
-  - name: "Itsxuchen"
+  - name: "Xu Chen"
     website: "https://github.com/Itsxuchen"
 version: 0.1.0
 date-released: 2026-09-15
