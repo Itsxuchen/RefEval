@@ -12,8 +12,8 @@ license = "MIT"
 dependencies = ["numpy==2.5.2", "scipy==1.18.1", "pandas==2.2.3", "matplotlib==3.11.1"]
 
 [project.urls]
-Repository = "https://github.com/Itsxuchen/reference-label-value"
-Issues = "https://github.com/Itsxuchen/reference-label-value/issues"
+Repository = "https://github.com/Itsxuchen/RefEval"
+Issues = "https://github.com/Itsxuchen/RefEval/issues"
 
 [tool.setuptools]
 packages = ["src"]

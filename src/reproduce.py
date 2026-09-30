@@ -91,8 +91,11 @@ def reproduce(mode: str, output: Path) -> dict:
     if config["policy_summaries_and_figures"]:
         from src.summarize_conjunction_policy_study import summarize
         from src.plot_conjunction_policy_study import plot
+        from src.plot_verdict_update_budget import plot as plot_updates
         stage("policy_summary", lambda: summarize(policy))
         stage("policy_figures", lambda: plot(policy, output / "figures/conjunction_policy_study"))
+        stage("verdict_update_figures", lambda: plot_updates(
+            policy / "budget_curves.csv.gz", output / "figures/conjunction_policy_study"))
     stage("label_value_and_task_sampling", lambda: run_label(data, config["label_seeds"], label))
     stage("information_disclosure", lambda: run_disclosure(config["disclosure_orders"],
           output / "information_disclosure_replay.json", output / "figures/information_disclosure_replay.png"))

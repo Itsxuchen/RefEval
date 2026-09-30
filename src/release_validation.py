@@ -174,6 +174,11 @@ def verify_outputs(directory: Path, expected: Path, mode: str) -> dict:
                    ("conjunction_policy_study/canonical_20pct.csv", ())]
     for relative, keys in tables:
         csv_checks[relative] = compare_csv(directory / relative, expected / relative, subset=not full, key_fields=keys)
+    if full:
+        # This is a publication table derived from the unchanged frozen grid.
+        # Compare values, not PDF/image bytes containing rendering metadata.
+        relative = "figures/conjunction_policy_study/verdict_update_budget_data.csv"
+        csv_checks[relative] = compare_csv(directory / relative, ROOT / "artifacts" / relative)
     json_checks = {}
     flow = "conjunction_policy_study/error_flow.json"
     json_checks[flow] = {"scientific_leaves_checked": assert_equal(

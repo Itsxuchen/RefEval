@@ -7,8 +7,8 @@ authors:
     website: "https://github.com/Itsxuchen"
 version: 0.1.0
 date-released: 2026-09-15
-repository-code: "https://github.com/Itsxuchen/reference-label-value"
-url: "https://github.com/Itsxuchen/reference-label-value"
+repository-code: "https://github.com/Itsxuchen/RefEval"
+url: "https://github.com/Itsxuchen/RefEval"
 license: MIT
 keywords:
   - evaluation

@@ -37,6 +37,33 @@ The reproduction command writes new outputs beneath the supplied directory. The 
 
 These commands use local analysis inputs and require no model API credentials. Installing Python packages may require network access. The historical policy study took approximately 107 seconds, and the label-value extension approximately 26 seconds in the original environment. Complete reproduction includes additional processing, so these figures are historical component timings, not a runtime promise for another machine.
 
+## Rebuild the full-budget update figures
+
+Full mode also renders the matched-query update figures from its regenerated
+budget rows and compares every plotting-data row with the distributed CSV.
+Smoke mode does not render this 31-random-order figure. To rebuild only the
+figures from frozen rows, without rerunning query acquisition:
+
+```bash
+python -m src.plot_verdict_update_budget \
+  --source artifacts/expected/conjunction_policy_study/budget_curves.csv.gz \
+  --output artifacts/reproduced/figures/conjunction_policy_study
+```
+
+The renderer protects source files, inputs, frozen numerical targets and published
+figures from output overlap. It writes a main PNG/PDF, a nine-page PDF supplement,
+an all-seven-policy summary CSV and a source/artifact hash receipt. The main figure
+selects two JB targets and three policies; the supplement selects nine cells and
+three task orders for those policies. The CSV retains all 19,089 randomized groups.
+Means are paired within seed, exclude canonical seed 0, and use seeds 1–31.
+Order-percentile bands are not confidence intervals. Recreated PDF bytes can vary
+with metadata or renderer versions; scientific summary values are compared with
+declared numerical tolerances instead of requiring identical image bytes.
+
+The public receipt records repository-relative source locations when available,
+otherwise a basename, plus hashes and output filenames. Historical local-workspace
+paths and the old renderer hash are not treated as current public-package provenance.
+
 ## Release 0.1.0 verification
 
 The isolated CPython 3.12.12 environment on macOS arm64 completed the full
@@ -96,6 +123,18 @@ The label-value validation reconciled **5,580 baseline rows in six fields** agai
 The disclosure implementation checks integer endpoint attainment, truth containment, nesting, and full recovery, including independently enumerable small label assignments. Pairing bounds are checked against small permutations. A stored feasible witness establishes attainability; optimality is supplied by the declared optimization calculation and its solver certificate, rather than by the witness alone.
 
 These counts describe the historical scientific validation scope. Fresh package tests and reproduction checks have their own execution record. Source-file hashes from the original research run and hashes of the cleaned release serve different purposes: projection, relocation, or documentation changes can alter bytes while leaving declared numerical inputs and estimands unchanged. The package's provenance records distinguish those layers rather than assigning new dates to old test results.
+
+### Numerical boundary caveat
+
+The stated hypergeometric coverage property belongs to the specified finite-population
+sampling construction. Its implementation evaluates tails in floating point. A bounded
+exact-combinatorial audit found an endpoint-inclusion discrepancy for total size 16,
+sample size 2 and zero observed successes: the included upper endpoint was 12 rather
+than 13 at an exactly 0.025 tail. The checked small worlds retained at least 95% coverage,
+and a near-threshold sensitivity check changed none of the 5,580 nontrivial saved
+criterion-SRS intervals or 837 saved whole-unit intervals. This does not certify all
+possible floating-point boundary cases. That implementation issue is not repaired by
+this documentation/figure update; the frozen numerical outputs remain unchanged.
 
 ## Scope of reproducibility
 

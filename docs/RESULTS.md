@@ -39,6 +39,25 @@ The disagreement-only endpoint is a concrete nonmonotonicity example: **1,217 cr
 
 Scoring construction changes the regime. Full JB strong has 24 FP and 220 FF; binary-only has 181 FP and 67 FF. Of the 220 full-target FF, 156 involve only penalty rejection and 64 involve both item types. The full strong target has 178 susceptible annotations across 19 base tasks; strong DR has none. Those 178 annotations are potential or cumulative transition events, not 178 simultaneous or final errors. Source: [`error_flow.json`](../artifacts/expected/conjunction_policy_study/error_flow.json), `datasets[cell]`.
 
+### Full-budget matched-query effects
+
+For **JB GPT-5.4, release task order, disagreement-then-random, 20% cap**, distinguish the canonical example from randomized-order summaries:
+
+| Scoring target | Actual queries | Seed0 eager → gated errors | Seed0 prevented FP / delayed FF repairs | Mean gated − eager, seeds 1–31 |
+|---|---:|---:|---:|---:|
+| Full strict | 4,697 | 239 → 242 | 6 / 9 | −2.064516 |
+| Binary-only | 4,046 | 214 → 223 | 29 / 38 | +8.290323 |
+
+The cap is `int(round(0.2 * M))`, including `round(0.2 * 20,229)=4,046`. Means are computed by first subtracting outcomes within each seed and then averaging; seed 0 is excluded. For full strict, the mean decomposition is −7.225806 FP +5.161290 FF =−2.064516 errors: 22 orders improve, five tie and four worsen. Binary-only has −28.129032 FP +36.419355 FF =+8.290323 errors, with all 31 orders worse. These are counts of annotation-level errors, not percentages or independent task samples.
+
+![Full-budget matched-query update decomposition](../artifacts/figures/conjunction_policy_study/verdict_update_budget.png)
+
+For full-target disagreement-then-random, the mean net difference spans −4 to +97.645 across the 99 interior percentage caps. The 20% point is not representative of all budgets. Serial short-circuit policies differ by at most one verdict across the saved grid. Gated absolute errors are nonincreasing along a fixed growing transcript with correct references; the gated-minus-eager difference need not be.
+
+The main figure selects two targets, release order and three policies. The [nine-page supplement](../artifacts/figures/conjunction_policy_study/verdict_update_budget_all_cells.pdf) covers nine cells, three task orders and those same three policies; the [plotting CSV](../artifacts/figures/conjunction_policy_study/verdict_update_budget_data.csv) contains all seven policies and 19,089 groups. Lines show arithmetic means and bands show 5th–95th order percentiles, not confidence intervals; quantile bands need not contain the mean. The short-circuit axis is expanded and labeled. [Figure/source receipt](../artifacts/figures/conjunction_policy_study/verdict_update_budget.json).
+
+The changed scoring targets share the same 1,539 annotations. Removing penalties changes the query universe, priorities, certificate lengths and absolute query count at a percentage cap. This comparison does not isolate a penalty-type or rubric-length effect; the within-target update contrasts do hold acquired labels fixed. These displays summarize the existing frozen budget rows and do not constitute new model runs or new reference collection.
+
 ## RQ2: common-budget policies
 
 These are **marginal medians over seeds 1–31**, release task order, at a 20% criterion cap. Both policies in each cell consume the same actual queries. Criterion-error discovery is compared only while holding the primary judge fixed.

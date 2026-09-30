@@ -1,5 +1,22 @@
 # Changelog
 
+## Unreleased — documentation and figure update, 2026-09-30
+
+- Expand the technical/data bibliography to 46 sources and clarify the closest
+  screening, verification, active-testing and selective-correction precedents.
+- State comparison contracts, annotation/criterion weighting, actual spending
+  versus available caps, and the limits of cross-scoring-target attribution.
+- Distinguish canonical seed 0 from randomized-order means; explicitly report the
+  binary-only 20% cap of 4,046 and clarify gated absolute versus relative errors.
+- Add full-budget matched-query figures, all-seven-policy plotting data, portable
+  rendering and regression checks, including full-replay figure-data validation.
+- Clarify individual certification versus aggregate identification and preserve
+  the optional, non-ranking interpretation of the pairing diagnostic.
+- Update links to the renamed RefEval repository. Scientific inputs, query and
+  estimation algorithms, frozen numerical results, authorship and release 0.1.0
+  remain unchanged. The former 4,045 typo was in a local manuscript scaffold,
+  not in the public code or frozen result tables. No arXiv submission is implied.
+
 ## 0.1.0 — 2026-09-15
 
 Initial public research software release.

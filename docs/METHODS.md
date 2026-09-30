@@ -23,6 +23,8 @@ For unit $i$, let $k_i$ be its number of retained criteria. Write $Y_{ij}\in\{0,
 
 Criterion errors discovered among queried items are an additional policy diagnostic. They are neither an estimate of all errors without a sampling argument nor a count of corrected task verdicts. Category-balanced accuracy, when reported elsewhere for the judges, is different from the microaccuracy target $A$.
 
+In JudgmentBench, task success weights each output-by-rater annotation equally and microaccuracy weights each retained criterion record equally. Neither weights base tasks equally. Fix the success event separately from the analytical objective; finite-frame SRS guarantees do not assert independent new tasks or raters.
+
 ## Queries and certificates
 
 One query reveals one reference bit. Before choosing the next query, a policy may use predictions, disagreement flags, metadata, fixed priorities, and already revealed references. Unqueried references are used only by the retrospective outcome evaluator.
@@ -53,7 +55,7 @@ Disagreement methods use two additional complete saved judge runs in DeepResearc
 
 The full study crosses seven policies, three task orders, 101 criterion caps from 0% to 100%, and 32 seeds in nine cells. Task orders are release ID, ascending predicted-FAIL count, and random. Seed 0 preserves canonical ties for structured policies; seeds 1–31 randomize ties with shared priorities. Random policies are randomized at every seed. Some factor combinations produce identical trajectories and do not add observations.
 
-Caps are rounded to criterion counts. Policies can spend less than the cap after exhaustion or complete certification; `actual_queries` records what was used. Equal-actual-query comparisons require both policies to have consumed the same cap. A stopped trajectory's plateau does not represent continued payment.
+Caps use `int(round(budget_share * M))`; the full and binary-only 20% caps are 4,697 and 4,046 respectively. Policies can spend less than the cap after exhaustion or complete certification; `actual_queries` records what was used. Compare policies at matched `actual_queries`; equal available caps alone do not establish matched spending. A stopped trajectory's plateau does not represent continued payment.
 
 Leave-one-base-task-out analysis removes entire base-task blocks, including all related JudgmentBench annotations. It holds relative priorities fixed and recomputes the budget denominator. This is a finite-frame influence diagnostic, not unseen validation. The later fixed-allocation extension has no additional leave-one-base-task-out study.
 
@@ -64,6 +66,19 @@ Leave-one-base-task-out analysis removes entire base-task blocks, including all 
 Once any true FAIL is observed, the conjunction is settled. Perfect reference replacement cannot introduce a false FAIL on a truly passing unit. Cumulative transient events, maximum simultaneous false passes, and endpoint errors are different statistics.
 
 **Certificate-gated updating** keeps the initial task verdict until the same queried labels certify an outcome, then updates it. Under correct fixed references it cannot introduce a new task error, but it can delay repairs of initially false FAILs. It changes the reporting rule, not the query set. The study reports prevented false passes, delayed repairs, and total residual errors rather than calling the rule a free improvement.
+
+Along a fixed growing query transcript with correct references, gated absolute error cannot increase. Its difference from eager can nevertheless increase when eager repairs false fails earlier. Both rules agree on certified and untouched units. If $U$ is the number of partially queried, uncertified units, their total-error difference is bounded in absolute value by $U$; serial task-completing short circuit leaves at most one such unit. These are elementary properties of the rules, not new guarantees for noisy references.
+
+### Comparison contracts
+
+| Comparison | Held fixed | Varied and interpreted |
+|---|---|---|
+| Eager versus gated | Target, judge, policy, order, seed, acquired criterion set | Updating rule; endpoint FP/FF and residual-error consequences |
+| Query allocation | Target, judge and stated actual-query resource | Acquired sets; certification, residual error and appropriately weighted precision |
+| Whole-unit sampling | Fixed SRS unit count and sampled units | Full versus short-circuit label costs, which are random |
+| Reference-link disclosure | Labels and scoring target, with stated trusted margins | Visible associations and finite feasible ranges; no new label acquisition |
+
+The full-to-binary sensitivity also changes the success event, criterion universe, certificate lengths, priorities and absolute query count at a percentage cap. It does not isolate a penalty-type or rubric-length effect. Hidden references are available to the retrospective scorer, not to an online policy selecting queries. These comparisons do not establish a universally optimal deployment strategy or the prevalence of a mistaken industry practice.
 
 ## Estimation combined with certification
 
@@ -77,7 +92,7 @@ $$
 \widehat A=\frac{\sum_{u\in C}a_u+(R/n)\sum_{u\in S}a_u}{M}.
 $$
 
-Conditional on the first stage, this estimator is unbiased under the stated SRS design. Exact hypergeometric-tail inversion for the remaining correct-label total gives a conditional, pointwise interval with at least nominal 95% coverage at a fixed budget; discreteness can make it conservative. Census and empty-sample cases are handled explicitly. These are not simultaneous bands, confidence sequences, or intervals for the correctness of the reference itself. The design argument establishes the guarantee; 31 repetitions describe its observed performance.
+Conditional on the first stage, this estimator is unbiased under the stated SRS design. Exact hypergeometric-tail inversion for the remaining correct-label total gives a conditional, pointwise interval with at least nominal 95% coverage at a fixed budget; discreteness can make it conservative. Census and empty-sample cases are handled explicitly. These are not simultaneous bands, confidence sequences, or intervals for the correctness of the reference itself. The design argument establishes the guarantee; 31 repetitions describe its observed performance. This guarantee refers to the specified mathematical interval construction. The implementation uses floating-point tails and has a known endpoint-inclusion discrepancy in a small exact-boundary case; the bounded check changed no saved intervals and does not establish numerical exactness for every population size. See the [numerical boundary caveat](REPRODUCIBILITY.md#numerical-boundary-caveat).
 
 Pure prioritized checking does not make naive sample agreement a design-unbiased estimate of $A$. Its saved `accuracy_ci_*` fields contain **logical bounds or a census value**, identified by `inference_kind=logical_bounds_or_census`; they must not be plotted as 95% confidence intervals.
 
@@ -98,7 +113,7 @@ $$
 \operatorname{width}=1-(n_P+n_F)/N.
 $$
 
-This logical range is not a confidence interval. It can remain wide even when a valid sampling design provides a useful statistical estimate of the population mean.
+This logical range is not a confidence interval. It can remain wide even when a valid sampling design provides a useful statistical estimate of the population mean. In the query-only, equally weighted model, more certified units strictly reduce its width, and full certification identifies the mean. With extra trusted constraints, a known count of one PASS among two units fixes the mean at one half without identifying either unit. The two-bit-margin example below has different implications: its unqueried second unit becomes logically certified from the extra constraint. Unqueried does not always mean uncertified.
 
 ### Reference-link disclosure: F27
 
@@ -108,11 +123,59 @@ For each release, binary-completion optimization finds the smallest and largest 
 
 The two-task bridge makes the distinction explicit. With two bits per task and a trusted total of two PASS bits, the aggregate pass rate initially lies in $[0,1/2]$. After the first task's two bits are observed PASS, it is exactly $1/2$ although the second task was not queried. Without that trusted total, the respective ranges are $[0,1]$ and $[1/2,1]$. Extra information changes identification; it does not improve a query policy at unchanged information.
 
+The original public release already contains the links hidden in F27. This is a constructed disclosure experiment, not an identified reporting defect in that release.
+
 ### Optional pairing diagnostic: F28
 
 JudgmentBench's constructed excellent and good arms are averaged within each of 30 base tasks and then task-weighted uniformly. Both marginal score multisets are known. Hiding their matching therefore leaves the finite-sample mean gap unchanged but makes covariance unknown. Restoring pairs restricts the possible matching; rearrangement bounds give sharp covariance and paired-standard-error extrema.
 
 Mapping those standard errors to gap $\pm1.96\,SE$ and an illustrative 1 pp equivalence margin is an exploratory superpopulation diagnostic at $N=30$. It does not establish exact coverage, independently sampled raters, or a comparison between named solver systems. All six source-by-metric comparisons remain unresolved with complete pairing under that exploratory rule.
+
+## Related work and operational use
+
+The study concerns fixed-reference consequences of component queries and verdict updates. It does not introduce the general distinction between estimation and finding failures. [DeepSample](https://arxiv.org/html/2403.19271v1), its [LLM sentiment extension](https://repository.tudelft.nl/record/uuid:9cd84618-3d98-41a7-a120-6f772f2b0e1f), and a [code-model replication](https://arxiv.org/html/2606.27601v1) already compare objective-dependent sampling performance. The relevant additional question is what changes when a query reveals only part of a compound outcome and an existing verdict may be updated before that outcome is certified.
+
+| Prior work | Unit and target | Intervention or guarantee | Relation to this study |
+|---|---|---|---|
+| DeepSample and its extensions | Test labels; estimation and failure exposure | Sampling choices, budget and context | Objective tradeoffs are established; this study measures component-query certification and updating consequences. |
+| [Veneris and Hajj](https://www.eecg.toronto.edu/~veneris/tcad99.pdf), §V-C | Circuit errors and test vectors | Repair can expose a masked error | Error unmasking is established; here corrected reference bits can expose remaining errors in a conjunctive verdict. |
+| [Correction and Corruption](https://arxiv.org/html/2604.18245v3), §§2.2,3.4,4.1 | Paired before/after task outcomes and fixed candidate outputs | Selective versus always-apply updates and correction/corruption accounting | Fixed-set controls and gating ideas already exist; our acquired criterion set and exact AND verdict are different objects. |
+| [Boolean function evaluation](https://arxiv.org/abs/2111.08793v3) and [correlated certification](https://arxiv.org/html/2604.02611v1) | Queried bits and function values | Certificates and query-cost analysis under specified assumptions | Certificate logic is a foundation, not a new algorithm or optimality result here. |
+| [Mind2Web 2](https://arxiv.org/html/2506.21506v2), Appendix D.2 | Rubric nodes and task scoring | Short circuit is disabled for complete node-level meta-evaluation | The operational distinction already exists; judge-call costs differ from fixed reference-bit queries. |
+| [Prediction-powered evaluation](https://arxiv.org/html/2608.26638v2) and [limited-audit best-arm identification](https://arxiv.org/html/2601.21471v1) | Human scores or audited model outcomes | Population inference and system selection | These are legitimate different estimands; no efficiency victory follows from comparing their targets with certification coverage. |
+| [Rao and Callison-Burch](https://arxiv.org/html/2606.00093v2) | Judgment protocols and agreement | Aggregation, missingness and finite bounds | F27 changes disclosed links under fixed labels and scoring; general reporting effects are established. |
+| [Chen et al.](https://arxiv.org/html/2606.15031v2) | Repeated or named LLM reports | Calibrated partial identification of latent truth | Richer observations already have an identification role; F27 is a fixed empirical-reference application. |
+| [Modular trajectory-risk certification](https://arxiv.org/html/2608.05199v1) | Per-stage certificates and joint audits | Statistical trajectory-risk bounds | Closely related composition/information theme; its risk certificate differs from an individual Boolean outcome certificate. |
+
+Closer precedents constrain the general contribution claims:
+
+| Prior work and reading location | Established result or design | Difference and limit relevant here |
+|---|---|---|
+| [Schreiber and Amsterdamer, ICDE2026 expanded v2](https://arxiv.org/html/2603.08612v2), §§2–3.2,5–6 | AND/OR verification, risky tuples and budgeted query-guided verification | Their worst-case MES and label-error probabilities differ from exact reference replacement and realized FP/FF. Their construction includes independent verification-error assumptions; neither mechanism nor downstream validation is claimed as new here. |
+| [Krivosheev et al., CSCW2018](https://marcosbaez.com/assets/pdf/krivosheev2018combining.pdf), §§3–5; [2020 active screening](https://arxiv.org/html/2012.02297v1), §§2.1–2.2 | Item-predicate queries, finite-budget screening and stopping | Component querying already exists. This study uses fixed references and measures matched-query conjunctive updating consequences. |
+| [DeepEST2021](https://arxiv.org/html/2102.04287v1), §§II–III; [Zhang et al., FSE2026](https://arxiv.org/html/2604.23342v1), §§3.3,5.3–5.4 | Failure-seeking with performance estimation; selection metrics across multiple objectives and shifts | Goal-dependent selection and lack of a universal winner are established. The fixed 50/50 allocation is not a new optimal method. |
+| [ActiveClean2016](https://activeclean.github.io/files/activeclean-vldb16.pdf), §2.2 | Separate data selection and model updating; mixed clean/dirty data can harm downstream learning | The general separation and local-improvement warning are prior work; our exact AND replacement mechanism and observed consequences differ. |
+| [Active Testing, ICML2018](https://proceedings.mlr.press/v80/nguyen18d.html), §§3.1–3.2,4.1–4.3 | Selective vetting with learned-posterior performance estimates | Not a design-unbiasedness or coverage guarantee under arbitrary adaptive sampling. Component labels alone do not distinguish this study. |
+| [PRECISE, AAAI2026](https://ojs.aaai.org/index.php/AAAI/article/view/41427), [preprint v1 methods](https://arxiv.org/html/2601.18777v1) | Document-level judgments aggregated into query-level Precision@K with prediction-powered correction | Gold queries have complete top-K references under the stated query-sampling assumptions; this is population retrieval-quality inference, not arbitrary partial-bit AND certification. |
+| [Jin and Chen2026](https://link.springer.com/article/10.1007/s10515-026-00638-5), §7; [GGC2026](https://arxiv.org/html/2607.28082v1) | Evidence-guided or learned selective correction | Their gate evidence differs from exact logical certificates. Selective correction itself is not our invention. |
+
+These are bounded, source-specific comparisons, not a systematic review or an assertion that all neighbors have been found. The [bibliography](references.bib) also retains related active label cleaning and screening sources. The empirical contribution is the measured magnitude and conditional behavior of matched-query updates and common-resource allocation in the stated frames. A different combination of established ideas does not by itself prove novelty; no superiority over these methods is claimed without a common estimand and comparison.
+
+Prediction-assisted inference and active testing also supply established estimation methods, including [control variates for language evaluation](https://aclanthology.org/P18-1060/), [PPI](https://doi.org/10.1126/science.adi6000), [Active Testing](https://proceedings.mlr.press/v139/kossen21a.html), and [Active Statistical Inference](https://proceedings.mlr.press/v235/zrnic24a.html). The fixed 50/50 design is a transparent comparison, not a claimed improvement over these estimators. Additional reading on robust sampling, PPAT, OPAL, rubric dependencies, graph aggregation, selective auditing and correlated judges is indexed in [the bibliography](references.bib). A literature match or a different combination of known concepts does not by itself settle novelty.
+
+### What could change in an evaluation protocol?
+
+| Intended claim or requirement | Design supported by the stated model | Cost and when not to switch |
+|---|---|---|
+| Estimate criterion accuracy | Criterion SRS, or independent remainder SRS after a fixed certification allocation, with correct weighting | Certification spending may widen intervals. Uncertified tasks alone do not invalidate population estimation. No superiority over all corrected active designs is established. |
+| Estimate population task success | Fix a random sample of units and certify each sampled conjunction | Full versus short-circuit observation gives the same sampled task values with different label cost. Cost is random; this is not an equal-label-budget comparison. |
+| Certify a specific outcome | Query until an observed FAIL or a complete observed PASS certificate | True PASS can require all retained bits. Universal certification is unnecessary when only a population mean is required. |
+| Increase certification while retaining an accuracy estimate | A prespecified certification-plus-probability-sampling allocation | At the reported 20% cap, the mix improves both task metrics in JB, but DR has more certification and more residual errors. The intervals widen in both. The split is not optimized. |
+| Avoid introducing errors through verdict revisions | Update a task only when the acquired references certify its outcome | This can delay false-fail repairs and can retain initial false passes. It does not make every displayed PASS certified. |
+
+For the canonical JB `disagreement_then_random` set of 4,697 queries (release order, seed 0), eager updating leaves 28 false passes and 211 false fails; gating leaves 22 and 220. If nonnegative endpoint losses are $c_{FP}$ and $c_{FF}$, gating minus eager loss is $-6c_{FP}+9c_{FF}$. For positive $c_{FF}$, this **particular saved endpoint** favors gating above a loss ratio of 1.5 and eager below it; at equal weights gating leaves three more errors. The ratio is an algebraic illustration, not a fitted deployment threshold, measured monetary cost, or a trajectory-wide risk comparison. Costs must be specified by the user; unseen reference values cannot be used to select a deployed policy.
+
+A hard requirement that every published PASS carry a reference certificate would additionally require withholding or distinguishing uncertified initial predictions. The implemented gating rule retains them; a publish-only-certified or abstention workflow was not evaluated. The empirical contribution candidate is the measured effect of these component-query and update choices, including contrary cases, under the stated finite reference frame.
 
 ## Interpretation limits
 
