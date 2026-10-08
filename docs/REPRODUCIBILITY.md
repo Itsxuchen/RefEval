@@ -124,17 +124,27 @@ The disclosure implementation checks integer endpoint attainment, truth containm
 
 These counts describe the historical scientific validation scope. Fresh package tests and reproduction checks have their own execution record. Source-file hashes from the original research run and hashes of the cleaned release serve different purposes: projection, relocation, or documentation changes can alter bytes while leaving declared numerical inputs and estimands unchanged. The package's provenance records distinguish those layers rather than assigning new dates to old test results.
 
-### Numerical boundary caveat
+### Numerical endpoint repair (0.2.0)
 
-The stated hypergeometric coverage property belongs to the specified finite-population
-sampling construction. Its implementation evaluates tails in floating point. A bounded
-exact-combinatorial audit found an endpoint-inclusion discrepancy for total size 16,
-sample size 2 and zero observed successes: the included upper endpoint was 12 rather
-than 13 at an exactly 0.025 tail. The checked small worlds retained at least 95% coverage,
-and a near-threshold sensitivity check changed none of the 5,580 nontrivial saved
-criterion-SRS intervals or 837 saved whole-unit intervals. This does not certify all
-possible floating-point boundary cases. That implementation issue is not repaired by
-this documentation/figure update; the frozen numerical outputs remain unchanged.
+The shared hypergeometric implementation now includes exactly equal tail endpoints by recomputing threshold-near cases with integer/rational arithmetic. The diagnostic M=16, n=2, x=0 returns [0,13]. Exhaustive checks cover all M≤24 observation acceptance sets and finite-population coverage. A regression over 11,718 saved label-value and 837 saved task-pass rows changes none of their endpoints. The historical tables and release receipts remain intact; the corrected code is used for all new runs. [Regression receipt](../artifacts/expected/conjunction_robustness/estimation/interval_regression.json)
+
+## Mechanism and robustness extension (0.2.0)
+
+Run the original full command above **and** the following command for the complete published analysis:
+
+```bash
+python -m src.reproduce_extensions --output artifacts/reproduced-extensions
+python -m src.reproduce_extensions --output artifacts/reproduced-extensions --verify-only
+```
+
+The extension runs the 64-permutation mechanism analysis, all 31-seed allocation decompositions, four matched-reference cells with crossed acquisition/scoring references, 399 whole-base-task composition resamples, and nine-cell budget-accounted estimation controls. It regenerates the mechanism and robustness figures. It then compares every extension scientific CSV row and four scientific JSON payloads against the versioned expected tables. Sources, protocols and output checks receive separate manifests. A new/empty output directory preserves earlier run receipts. The original `src.verify_release` command covers the original study; it does not claim to verify the extension.
+
+The extension's interval tests and direct small-world arithmetic complement replay equality. Equality to saved tables alone cannot validate reference correctness, statistical transport or an untested procedure. Reference replacement keeps both judge draws fixed; its off-diagonal cells re-read queried labels as well as the endpoint truth. Task-composition sensitivity retains the observed raters. Normal approximate intervals are separate from guarantee-based comparisons; the old mix table has only its original conditional interval.
+
+
+**0.2.0 validation:** 215 tests passed. Original complete replay: 169.8 seconds; mechanism/robustness replay: 304.9 seconds. All 25 extension scientific CSV tables (752,947 rows), four scientific JSON payloads, and 606 plotting rows matched. Timings describe this recorded environment. [Original-study receipt](../artifacts/validation/robustness_base_run_manifest.json) · [Extension receipt](../artifacts/validation/extension_run_manifest.json) · [Row comparisons](../artifacts/validation/extension_verification.json)
+
+The current execution receipts are saved under `artifacts/validation/extension_*` and `robustness_*` after validation. Historical 0.1.0 counts and timings elsewhere on this page identify that release only.
 
 ## Scope of reproducibility
 

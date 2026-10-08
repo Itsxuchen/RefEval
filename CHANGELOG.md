@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0 — reference and design sensitivity, 2026-10-07
+
+- Add matched 206-output reference replacements while fixing both judge predictions; separate fixed-set re-reading from adaptive reacquisition.
+- Add 399 whole-base-task composition resamples with recalculated budgets and rerun policies; show three frames across the full budget.
+- Add budget-accounted proportional and pilot-Neyman controls with conservative conditional finite-population intervals.
+- Repair inclusive hypergeometric endpoints using exact threshold comparisons; preserve all 12,555 saved interval rows.
+- Publish the earlier mechanism decompositions, matched-margin scenarios, protocols, tests and complete offline extension replay.
+- Add sequential-testing, StratPPI and human-uncertainty references; qualify the focal 20% findings using the observed counterexamples.
+
 ## Unreleased — documentation and figure update, 2026-09-30
 
 - Expand the technical/data bibliography to 46 sources and clarify the closest

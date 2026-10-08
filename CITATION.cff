@@ -5,8 +5,8 @@ title: "Reference Label Value: Estimation and Certification in Conjunctive Evalu
 authors:
   - name: "Xu Chen"
     website: "https://github.com/Itsxuchen"
-version: 0.1.0
-date-released: 2026-09-15
+version: 0.2.0
+date-released: 2026-10-07
 repository-code: "https://github.com/Itsxuchen/RefEval"
 url: "https://github.com/Itsxuchen/RefEval"
 license: MIT

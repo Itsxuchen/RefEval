@@ -1,0 +1,22 @@
+{
+  "source_sha256": {
+    "cluster/summary.json": "347ee9e3bd86d81f876d417835c0eec1ab99d5304cbb24d4550e170898e891ff",
+    "reference/rq1_summary.csv": "de9a33522ce2a2195026bcf13311e280d33282dcedd649d6fb0c9fd2ec4c8bb0",
+    "reference/rq2_summary.csv": "1e360302b537f81dbf1598792ce88e434c5fb5faa7e6872d378fa18a3b59d07c",
+    "reference/frame_diagnostics.json": "c5071fbd496f90b56e7f50664496afc634129efbe791fdc7b0d262c68caf3c89",
+    "estimation/stratified_summary.csv": "a6f48f95e797e3d5b5acc503b8e4bccd9eec7f52c7b2399720d1e01e88d7a46c"
+  },
+  "renderer_sha256": "bae7898d506002f954d02bede0ad0607dd4067f2f44b44f05a0a06389f282821",
+  "output_sha256": {
+    "conjunction_robustness_budget.png": "37d5de7aff5b2f6a17abdd5afdc3108e5740524075ab765c1101c3518acdead7",
+    "conjunction_robustness_budget.pdf": "99ede3a667b86214936cf8d2ba6b6a7cf1ba706646a73862c70e760aea02b40a",
+    "conjunction_robustness_reference.png": "7509f1a0e789bb17220fe0b60a762e4ee1d329139bee30e049344a6165771060",
+    "conjunction_robustness_reference.pdf": "bb101722e209e95e0d133eba2fca760eccec716999b4d8cbae9254ac143011a9",
+    "conjunction_robustness_estimation.png": "b3dd9d3b67cc2b70b57cc2d98357e37b654d471244242904e831f44cdd31c29f",
+    "conjunction_robustness_estimation.pdf": "e1bbcde42c51abc61ae660efad8fd04e437f5417132245e09ea6a45cf57959e7",
+    "conjunction_robustness_budget_data.csv": "bd0eae2a654a7377ebd5b1833d502dbcb41b1341f53223fecb9033a0f2a30925"
+  },
+  "budget_figure": "Disagreement-then-random, all 101 caps. 399 empirical base-task resamples; RQ1 order expectation calculated exactly. Curated-task composition sensitivity, not automatic population confidence. Common vertical scales within each row.",
+  "reference_figure": "Same 206 output units and fixed primary/auxiliary predictions. Mean of 31 paired orders. Dashed RQ2 curves use fixed acquired positions and re-read queried labels under the scoring reference.",
+  "estimation_figure": "Means over 31 orders at matched query count. SRS and conservative conditional stratified hypergeometric bounds; pilot charged. Not direct StratPPI. Width alone is not a ranking of estimators."
+}

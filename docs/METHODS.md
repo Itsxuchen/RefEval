@@ -2,7 +2,7 @@
 
 ## Scope and analysis units
 
-This is a retrospective finite-reference study. Released labels are treated as correct for the defined target, and existing judge predictions remain fixed. Query policies are evaluated by replaying access to those labels. The study neither gathers new human judgments nor measures the time needed to produce a reference.
+This is a retrospective finite-reference study. Each analysis defines its target relative to a specified released reference, and existing judge predictions remain fixed. A matched repeated-output extension changes the reference while fixing both primary and auxiliary predictions. Query policies are evaluated by replaying access to those labels. The study neither gathers new human judgments nor measures the time needed to produce a reference.
 
 RuVerBench has 284 retained DeepResearch tasks and 210 AgenticCoding tasks. Five saved judge-by-domain runs cover these task sets. A task passes here if **all retained criteria** pass; this does not restore criteria removed by upstream filtering or establish complete original-task success.
 
@@ -57,7 +57,7 @@ The full study crosses seven policies, three task orders, 101 criterion caps fro
 
 Caps use `int(round(budget_share * M))`; the full and binary-only 20% caps are 4,697 and 4,046 respectively. Policies can spend less than the cap after exhaustion or complete certification; `actual_queries` records what was used. Compare policies at matched `actual_queries`; equal available caps alone do not establish matched spending. A stopped trajectory's plateau does not represent continued payment.
 
-Leave-one-base-task-out analysis removes entire base-task blocks, including all related JudgmentBench annotations. It holds relative priorities fixed and recomputes the budget denominator. This is a finite-frame influence diagnostic, not unseen validation. The later fixed-allocation extension has no additional leave-one-base-task-out study.
+Leave-one-base-task-out analysis removes entire base-task blocks, including all related JudgmentBench annotations. It holds relative priorities fixed and recomputes the budget denominator. This is a finite-frame influence diagnostic, not unseen validation. The later robustness extension additionally reruns the fixed allocation after whole-base-task resampling; this has a different target from deleting contributions from fixed query sets.
 
 ## Updating is distinct from selection
 
@@ -92,7 +92,7 @@ $$
 \widehat A=\frac{\sum_{u\in C}a_u+(R/n)\sum_{u\in S}a_u}{M}.
 $$
 
-Conditional on the first stage, this estimator is unbiased under the stated SRS design. Exact hypergeometric-tail inversion for the remaining correct-label total gives a conditional, pointwise interval with at least nominal 95% coverage at a fixed budget; discreteness can make it conservative. Census and empty-sample cases are handled explicitly. These are not simultaneous bands, confidence sequences, or intervals for the correctness of the reference itself. The design argument establishes the guarantee; 31 repetitions describe its observed performance. This guarantee refers to the specified mathematical interval construction. The implementation uses floating-point tails and has a known endpoint-inclusion discrepancy in a small exact-boundary case; the bounded check changed no saved intervals and does not establish numerical exactness for every population size. See the [numerical boundary caveat](REPRODUCIBILITY.md#numerical-boundary-caveat).
+Conditional on the first stage, this estimator is unbiased under the stated SRS design. Exact hypergeometric-tail inversion for the remaining correct-label total gives a conditional, pointwise interval with at least nominal 95% coverage at a fixed budget; discreteness can make it conservative. Census and empty-sample cases are handled explicitly. These are not simultaneous bands, confidence sequences, or intervals for the correctness of the reference itself. The design argument establishes the guarantee; 31 repetitions describe its observed performance. This guarantee refers to the specified mathematical interval construction. The implementation uses floating-point tails away from the threshold and exact integer/rational comparison near it. The inclusive-boundary defect is repaired, with no changes to 12,555 historical interval rows. See the [endpoint repair and validation](REPRODUCIBILITY.md#numerical-endpoint-repair-020).
 
 Pure prioritized checking does not make naive sample agreement a design-unbiased estimate of $A$. Its saved `accuracy_ci_*` fields contain **logical bounds or a census value**, identified by `inference_kind=logical_bounds_or_census`; they must not be plotted as 95% confidence intervals.
 
@@ -182,3 +182,14 @@ A hard requirement that every published PASS carry a reference certificate would
 References are fixed, targets are explicitly constructed, and the data were explored before the final controls were frozen. The protocols document retrospective choices rather than preregistration or held-out confirmation. Order repetitions are not independent benchmark samples. All results concern reference bits and the declared update rules; they do not measure labor, economic utility, occupational competence, reference validity, or universal policy dominance.
 
 See the [policy protocol](../context/conjunction_policy_protocol.md), [allocation protocol](../context/conjunction_label_value_protocol.md), and [result-specific counterexamples](RESULTS.md).
+
+
+## Reference and composition sensitivity
+
+The [robustness extension](ROBUSTNESS.md) uses 206 equally weighted repeated outputs, a fixed independent judge anchor and two hash-chosen whole rater vectors. Acquisition/evaluation references are crossed so that re-reading the same query set is distinguished from rerunning an adaptive selector. “Certification” concerns the reference supplying the queried labels. Whole-base-task resampling separately retains outputs/raters, recalculates budgets and reruns policies for 399 empirical compositions. The two sources of sensitivity are reported separately.
+
+For criterion microagreement, proportional prediction strata and a charged-pilot Neyman control supplement SRS. Conditional on pilot observations, uniformly sample each remaining stratum, estimate its total, and add the known pilot correct count. Exact-tail stratum bounds with Bonferroni allocation yield a conservative conditional interval. Pilot costs and low-cap fallback are explicit in every row. The [protocol](../context/conjunction_robustness_protocol.md) specifies integer allocation and coverage conventions.
+
+Three close antecedents clarify the study's contribution. [Ünlüyurt (2004)](https://doi.org/10.1016/j.dam.2002.08.001) reviews sequential component testing; its known-probability, independent-component setting gives the classical cost/failure-probability ordering for an AND outcome. Our judge-first heuristic and fixed global budgets measure several different outcomes. [Fisch et al. (2024)](https://proceedings.neurips.cc/paper_files/paper/2024/hash/c9fcd02e6445c7dfbad6986abee53d0d-Abstract-Conference.html) develop StratPPI for efficient estimation; our finite-population stratified controls use a different interval construction. [Elangovan et al. (2025)](https://proceedings.iclr.cc/paper_files/paper/2025/hash/8798321486948322be2b4d658744ba72-Abstract-Conference.html) study human uncertainty in automatic-evaluator assessment; our matched-reference analysis measures its consequences for query paths, certification and verdict updating. These comparisons support the empirical positioning, not claims to have invented those principles.
+
+The finite-budget mechanism model conditions on complete references to explain prevented false passes and delayed repairs. It is an explanatory calculation, not a free predictor available before checking. Its matched-margin rearrangement is a reporting-sufficiency example; it also changes task-pass rates. RuVerBench releases linked records, so the experiment concerns using only criterion summaries, rather than a defect in its release.

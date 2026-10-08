@@ -1,0 +1,104 @@
+{
+  "renderer": "src/render_conjunction_mechanism.py",
+  "renderer_sha256": "1a0da692a9619a9a33e9c2f4d1c8226a1653be29b9995941e9e69199da934ddb",
+  "source_sha256": {
+    "artifacts/reports/conjunction_mechanism/update_expected_grid.csv": "4c3ba6dbb3d581b432711d60dafc131e9631295d51d93cc9a6c5a9cf8ef74291",
+    "artifacts/reports/conjunction_mechanism/update_structures.json": "2dab50f5d6124c5366edd3566e6e60d02aab7bf28bedc30f8db7e20423cf4eaf",
+    "artifacts/reports/conjunction_mechanism/update_manifest.json": "9ebe97fb3899670fac8a87eb9cbaa661a11128b1325ee3e861bbb05fe892a38a",
+    "artifacts/reports/conjunction_mechanism/allocation_summary.csv": "f82e763b7ed8ecea34d832a4afbd50d9cf556def85649dcd4fbec4323015ae2b",
+    "artifacts/reports/conjunction_mechanism/allocation_rows.csv.gz": "a31c1d7fb04e8558c6b12a8732bb4613b16fc405e2fedba676b09e631c47e829",
+    "artifacts/reports/conjunction_mechanism/allocation_manifest.json": "a844cb80ee4021a8da27d060208d1099ad9b124f337456bbfa5076e6d61c2aaf"
+  },
+  "validation": {
+    "update_rows": 1818,
+    "allocation_summary_rows": 162,
+    "allocation_paired_rows": 5022,
+    "seed0_excluded": true,
+    "update_identity_max_abs_error": 3.197442310920451e-14,
+    "update_observed_identity_max_abs_error": 3.730349362740526e-14,
+    "allocation_mean_recomputation_max_abs_error": 5.684341886080802e-14,
+    "allocation_certification_row_identity_max_abs_error": 0.0,
+    "allocation_residual_row_identity_max_abs_error": 0.0
+  },
+  "update_scope": "Two JB GPT-5.4 cells, disagreement_then_random, release order, all 101 budget caps. Exact oracle full-reference expectation and descriptive 31-order means; no confidence intervals or deployment forecast.",
+  "allocation_scope": "DR Gemini and full JB GPT-5.4, 20% cap, release order, sc50_then_srs minus random_criterion at equal actual queries. Means of seed-paired differences; not marginal-median differences or population estimates.",
+  "matched_marginal_null_panels": "Not plotted; saved sensitivity scenarios remain in update_permutation_summary.csv.",
+  "update_focal_values": [
+    {
+      "dataset": "JB GPT-5.4",
+      "budget_share": 0.2,
+      "expected_delayed_ff": 5.175859152626585,
+      "expected_introduced_fp": 7.141311326936871,
+      "expected_delta": -1.9654521743102864,
+      "observed_mean_delta": -2.064516129032258
+    },
+    {
+      "dataset": "JB GPT-5.4",
+      "budget_share": 0.84,
+      "expected_delayed_ff": 108.2161251908036,
+      "expected_introduced_fp": 11.886225490171164,
+      "expected_delta": 96.32989970063244,
+      "observed_mean_delta": 97.64516129032258
+    },
+    {
+      "dataset": "JB GPT-5.4 | binary_only",
+      "budget_share": 0.2,
+      "expected_delayed_ff": 36.386710902072466,
+      "expected_introduced_fp": 28.169326865159952,
+      "expected_delta": 8.217384036912513,
+      "observed_mean_delta": 8.290322580645162
+    },
+    {
+      "dataset": "JB GPT-5.4 | binary_only",
+      "budget_share": 0.84,
+      "expected_delayed_ff": 39.40100874642491,
+      "expected_introduced_fp": 3.972627739097939,
+      "expected_delta": 35.42838100732697,
+      "observed_mean_delta": 35.32258064516129
+    }
+  ],
+  "allocation_focal_values": [
+    {
+      "dataset": "DR Gemini 3.1 Pro",
+      "budget_share": 0.2,
+      "actual_queries": 323,
+      "n_units": 284,
+      "unit": "tasks",
+      "certification_components_and_total": [
+        40.61290322580645,
+        -0.5806451612903226,
+        40.03225806451613
+      ],
+      "residual_components_and_total": [
+        0.5806451612903226,
+        0.2258064516129032,
+        0.0,
+        0.8064516129032258
+      ]
+    },
+    {
+      "dataset": "JB GPT-5.4",
+      "budget_share": 0.2,
+      "actual_queries": 4697,
+      "n_units": 1539,
+      "unit": "annotations",
+      "certification_components_and_total": [
+        137.2258064516129,
+        100.51612903225806,
+        237.74193548387095
+      ],
+      "residual_components_and_total": [
+        -100.51612903225806,
+        18.903225806451612,
+        -8.451612903225806,
+        -90.06451612903226
+      ]
+    }
+  ],
+  "output_sha256": {
+    "artifacts/figures/conjunction_update_mechanism.png": "fc84c6ff3bcb61d52222488a1ef0e1ce6a1b2e88d80e7feaf5dda94281c17e63",
+    "artifacts/figures/conjunction_update_mechanism.pdf": "279837d2f192a0331d6bdb6900552556784e42b8018652e6ac12e4fdec5315c5",
+    "artifacts/figures/conjunction_allocation_mechanism.png": "003830ec550d3d2282b774bacbfc6e1a433edfd6c21ac6351e2490310a2398c7",
+    "artifacts/figures/conjunction_allocation_mechanism.pdf": "61f9460a4b5d56fd2be6bc44df18b1b9d5432d1e2abb4796cdf3683b39382058"
+  }
+}

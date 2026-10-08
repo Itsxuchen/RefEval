@@ -1,0 +1,290 @@
+{
+  "JB GPT-5.4": {
+    "original_annotation_frame": {
+      "n_units": 1539,
+      "n_criteria": 23487,
+      "reference_pass": 227,
+      "judge_pass": 31,
+      "TP": 7,
+      "TN": 1288,
+      "FP": 24,
+      "FF": 220
+    },
+    "original_repeated_peer_diagnostics": {
+      "n_outputs": 206,
+      "n_annotations": 431,
+      "n_human_raters": 48,
+      "n_base_tasks": 30,
+      "reference_pass": 56,
+      "reference_pass_all_peer_pass": 22,
+      "initial_FF": 54,
+      "initial_FF_any_peer_fail": 32,
+      "initial_FF_all_peer_fail": 30,
+      "judge_reference_disagreement": 60,
+      "disagreement_any_peer_agrees_current_judge": 34,
+      "disagreement_all_peer_agree_current_judge": 32,
+      "judge_reference_task_agreement": 371,
+      "human_unordered_distinct_rater_pairs": 245,
+      "human_pair_task_equal": 208,
+      "human_pair_criterion_equal": 2881,
+      "human_pair_criterion_comparisons": 3610,
+      "saved_judge_binary_vector_different_pairs": 86,
+      "saved_judge_task_different_pairs": 5,
+      "definition": "Peers share output_id and have a different human rater_id; current judge prediction is always the original annotation-specific saved draw. Any/all summaries condition on the stated original annotation group; pairs and criterion comparisons have different denominators. Binary criterion agreement uses the declared full/binary-only target. No true-label error rate is identified."
+    },
+    "repeated_original_annotation_frame": {
+      "n_units": 431,
+      "n_criteria": 6438,
+      "reference_pass": 56,
+      "judge_pass": 8,
+      "TP": 2,
+      "TN": 369,
+      "FP": 6,
+      "FF": 54
+    },
+    "output_uniform_A": {
+      "n_units": 206,
+      "n_criteria": 3098,
+      "reference_pass": 31,
+      "judge_pass": 4,
+      "TP": 0,
+      "TN": 171,
+      "FP": 4,
+      "FF": 31
+    },
+    "output_uniform_B": {
+      "n_units": 206,
+      "n_criteria": 3098,
+      "reference_pass": 23,
+      "judge_pass": 4,
+      "TP": 2,
+      "TN": 181,
+      "FP": 2,
+      "FF": 21
+    },
+    "reference_agreement": {
+      "criterion_equal": 2462,
+      "n_criteria": 3098,
+      "task_equal": 174,
+      "n_outputs": 206,
+      "A_pass_B_fail": 20,
+      "A_fail_B_pass": 12
+    }
+  },
+  "JB GPT-5.4-mini": {
+    "original_annotation_frame": {
+      "n_units": 1539,
+      "n_criteria": 23487,
+      "reference_pass": 227,
+      "judge_pass": 40,
+      "TP": 4,
+      "TN": 1276,
+      "FP": 36,
+      "FF": 223
+    },
+    "original_repeated_peer_diagnostics": {
+      "n_outputs": 206,
+      "n_annotations": 431,
+      "n_human_raters": 48,
+      "n_base_tasks": 30,
+      "reference_pass": 56,
+      "reference_pass_all_peer_pass": 22,
+      "initial_FF": 55,
+      "initial_FF_any_peer_fail": 33,
+      "initial_FF_all_peer_fail": 31,
+      "judge_reference_disagreement": 67,
+      "disagreement_any_peer_agrees_current_judge": 36,
+      "disagreement_all_peer_agree_current_judge": 34,
+      "judge_reference_task_agreement": 364,
+      "human_unordered_distinct_rater_pairs": 245,
+      "human_pair_task_equal": 208,
+      "human_pair_criterion_equal": 2881,
+      "human_pair_criterion_comparisons": 3610,
+      "saved_judge_binary_vector_different_pairs": 115,
+      "saved_judge_task_different_pairs": 7,
+      "definition": "Peers share output_id and have a different human rater_id; current judge prediction is always the original annotation-specific saved draw. Any/all summaries condition on the stated original annotation group; pairs and criterion comparisons have different denominators. Binary criterion agreement uses the declared full/binary-only target. No true-label error rate is identified."
+    },
+    "repeated_original_annotation_frame": {
+      "n_units": 431,
+      "n_criteria": 6438,
+      "reference_pass": 56,
+      "judge_pass": 13,
+      "TP": 1,
+      "TN": 363,
+      "FP": 12,
+      "FF": 55
+    },
+    "output_uniform_A": {
+      "n_units": 206,
+      "n_criteria": 3098,
+      "reference_pass": 31,
+      "judge_pass": 5,
+      "TP": 0,
+      "TN": 170,
+      "FP": 5,
+      "FF": 31
+    },
+    "output_uniform_B": {
+      "n_units": 206,
+      "n_criteria": 3098,
+      "reference_pass": 23,
+      "judge_pass": 5,
+      "TP": 2,
+      "TN": 180,
+      "FP": 3,
+      "FF": 21
+    },
+    "reference_agreement": {
+      "criterion_equal": 2462,
+      "n_criteria": 3098,
+      "task_equal": 174,
+      "n_outputs": 206,
+      "A_pass_B_fail": 20,
+      "A_fail_B_pass": 12
+    }
+  },
+  "JB GPT-5.4 | binary_only": {
+    "original_annotation_frame": {
+      "n_units": 1539,
+      "n_criteria": 20229,
+      "reference_pass": 266,
+      "judge_pass": 380,
+      "TP": 199,
+      "TN": 1092,
+      "FP": 181,
+      "FF": 67
+    },
+    "original_repeated_peer_diagnostics": {
+      "n_outputs": 206,
+      "n_annotations": 431,
+      "n_human_raters": 48,
+      "n_base_tasks": 30,
+      "reference_pass": 71,
+      "reference_pass_all_peer_pass": 49,
+      "initial_FF": 15,
+      "initial_FF_any_peer_fail": 11,
+      "initial_FF_all_peer_fail": 11,
+      "judge_reference_disagreement": 63,
+      "disagreement_any_peer_agrees_current_judge": 24,
+      "disagreement_all_peer_agree_current_judge": 22,
+      "judge_reference_task_agreement": 368,
+      "human_unordered_distinct_rater_pairs": 245,
+      "human_pair_task_equal": 220,
+      "human_pair_criterion_equal": 2440,
+      "human_pair_criterion_comparisons": 3090,
+      "saved_judge_binary_vector_different_pairs": 51,
+      "saved_judge_task_different_pairs": 3,
+      "definition": "Peers share output_id and have a different human rater_id; current judge prediction is always the original annotation-specific saved draw. Any/all summaries condition on the stated original annotation group; pairs and criterion comparisons have different denominators. Binary criterion agreement uses the declared full/binary-only target. No true-label error rate is identified."
+    },
+    "repeated_original_annotation_frame": {
+      "n_units": 431,
+      "n_criteria": 5528,
+      "reference_pass": 71,
+      "judge_pass": 104,
+      "TP": 56,
+      "TN": 312,
+      "FP": 48,
+      "FF": 15
+    },
+    "output_uniform_A": {
+      "n_units": 206,
+      "n_criteria": 2664,
+      "reference_pass": 36,
+      "judge_pass": 50,
+      "TP": 26,
+      "TN": 146,
+      "FP": 24,
+      "FF": 10
+    },
+    "output_uniform_B": {
+      "n_units": 206,
+      "n_criteria": 2664,
+      "reference_pass": 33,
+      "judge_pass": 50,
+      "TP": 28,
+      "TN": 151,
+      "FP": 22,
+      "FF": 5
+    },
+    "reference_agreement": {
+      "criterion_equal": 2094,
+      "n_criteria": 2664,
+      "task_equal": 185,
+      "n_outputs": 206,
+      "A_pass_B_fail": 12,
+      "A_fail_B_pass": 9
+    }
+  },
+  "JB GPT-5.4-mini | binary_only": {
+    "original_annotation_frame": {
+      "n_units": 1539,
+      "n_criteria": 20229,
+      "reference_pass": 266,
+      "judge_pass": 687,
+      "TP": 230,
+      "TN": 816,
+      "FP": 457,
+      "FF": 36
+    },
+    "original_repeated_peer_diagnostics": {
+      "n_outputs": 206,
+      "n_annotations": 431,
+      "n_human_raters": 48,
+      "n_base_tasks": 30,
+      "reference_pass": 71,
+      "reference_pass_all_peer_pass": 49,
+      "initial_FF": 10,
+      "initial_FF_any_peer_fail": 6,
+      "initial_FF_all_peer_fail": 6,
+      "judge_reference_disagreement": 146,
+      "disagreement_any_peer_agrees_current_judge": 26,
+      "disagreement_all_peer_agree_current_judge": 22,
+      "judge_reference_task_agreement": 285,
+      "human_unordered_distinct_rater_pairs": 245,
+      "human_pair_task_equal": 220,
+      "human_pair_criterion_equal": 2440,
+      "human_pair_criterion_comparisons": 3090,
+      "saved_judge_binary_vector_different_pairs": 65,
+      "saved_judge_task_different_pairs": 21,
+      "definition": "Peers share output_id and have a different human rater_id; current judge prediction is always the original annotation-specific saved draw. Any/all summaries condition on the stated original annotation group; pairs and criterion comparisons have different denominators. Binary criterion agreement uses the declared full/binary-only target. No true-label error rate is identified."
+    },
+    "repeated_original_annotation_frame": {
+      "n_units": 431,
+      "n_criteria": 5528,
+      "reference_pass": 71,
+      "judge_pass": 197,
+      "TP": 61,
+      "TN": 224,
+      "FP": 136,
+      "FF": 10
+    },
+    "output_uniform_A": {
+      "n_units": 206,
+      "n_criteria": 2664,
+      "reference_pass": 36,
+      "judge_pass": 92,
+      "TP": 29,
+      "TN": 107,
+      "FP": 63,
+      "FF": 7
+    },
+    "output_uniform_B": {
+      "n_units": 206,
+      "n_criteria": 2664,
+      "reference_pass": 33,
+      "judge_pass": 92,
+      "TP": 28,
+      "TN": 109,
+      "FP": 64,
+      "FF": 5
+    },
+    "reference_agreement": {
+      "criterion_equal": 2094,
+      "n_criteria": 2664,
+      "task_equal": 185,
+      "n_outputs": 206,
+      "A_pass_B_fail": 12,
+      "A_fail_B_pass": 9
+    }
+  }
+}

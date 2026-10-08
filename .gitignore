@@ -15,3 +15,6 @@ artifacts/test-run/
 artifacts/validation/*.log
 
 artifacts/restored-inputs/
+
+artifacts/reproduced-extensions/
+artifacts/reproduced-robustness-base/

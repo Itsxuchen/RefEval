@@ -1,0 +1,204 @@
+{
+  "created_utc": "2026-10-08T03:12:59.950903+00:00",
+  "elapsed_seconds": 67.69021279198932,
+  "paired_rows": 5022,
+  "summary_rows": 162,
+  "focal_seed_rows": 279,
+  "focal_base_rows": 43152,
+  "focal_error_path_rows": 4250,
+  "saved_unique_rows_matched": 6696,
+  "saved_fields_per_row": 28,
+  "datasets": {
+    "DR Gemini 3.1 Pro": {
+      "n_units": 284,
+      "n_base_tasks": 284,
+      "n_criteria": 1615,
+      "unit_frame_sha256": "f49cc798ccb19014d1e2d1c66b07d37be19576a5e0d2e58f8a30644af14dd6de",
+      "data_hashes": {
+        "data/processed/public_judge_predictions.csv": "e992336abc17077ff4a0f44a21fbd85561bede812b5eb0c6e2b4a4999db35b3c",
+        "data/processed/gpt54_low_dr_predictions.csv": "67a22ed3fd402b62624ab166cecb9205bf48aa8d92ce4d1a9278f2d3bc976629"
+      }
+    },
+    "DR Qwen-plus": {
+      "n_units": 284,
+      "n_base_tasks": 284,
+      "n_criteria": 1615,
+      "unit_frame_sha256": "f49cc798ccb19014d1e2d1c66b07d37be19576a5e0d2e58f8a30644af14dd6de",
+      "data_hashes": {
+        "data/processed/public_judge_predictions.csv": "e992336abc17077ff4a0f44a21fbd85561bede812b5eb0c6e2b4a4999db35b3c",
+        "data/processed/gpt54_low_dr_predictions.csv": "67a22ed3fd402b62624ab166cecb9205bf48aa8d92ce4d1a9278f2d3bc976629"
+      }
+    },
+    "AC Qwen-plus": {
+      "n_units": 210,
+      "n_base_tasks": 210,
+      "n_criteria": 843,
+      "unit_frame_sha256": "ebadf567393c45a7a5589737b57190a5a000f675adb4f232da9518882e9d2b97",
+      "data_hashes": {
+        "data/processed/public_judge_predictions.csv": "e992336abc17077ff4a0f44a21fbd85561bede812b5eb0c6e2b4a4999db35b3c",
+        "data/processed/gpt54_low_dr_predictions.csv": "67a22ed3fd402b62624ab166cecb9205bf48aa8d92ce4d1a9278f2d3bc976629"
+      }
+    },
+    "AC DeepSeek v4-pro": {
+      "n_units": 210,
+      "n_base_tasks": 210,
+      "n_criteria": 843,
+      "unit_frame_sha256": "ebadf567393c45a7a5589737b57190a5a000f675adb4f232da9518882e9d2b97",
+      "data_hashes": {
+        "data/processed/public_judge_predictions.csv": "e992336abc17077ff4a0f44a21fbd85561bede812b5eb0c6e2b4a4999db35b3c",
+        "data/processed/gpt54_low_dr_predictions.csv": "67a22ed3fd402b62624ab166cecb9205bf48aa8d92ce4d1a9278f2d3bc976629"
+      }
+    },
+    "DR GPT-5.4 low": {
+      "n_units": 284,
+      "n_base_tasks": 284,
+      "n_criteria": 1615,
+      "unit_frame_sha256": "f49cc798ccb19014d1e2d1c66b07d37be19576a5e0d2e58f8a30644af14dd6de",
+      "data_hashes": {
+        "data/processed/public_judge_predictions.csv": "e992336abc17077ff4a0f44a21fbd85561bede812b5eb0c6e2b4a4999db35b3c",
+        "data/processed/gpt54_low_dr_predictions.csv": "67a22ed3fd402b62624ab166cecb9205bf48aa8d92ce4d1a9278f2d3bc976629"
+      }
+    },
+    "JB GPT-5.4": {
+      "n_units": 1539,
+      "n_base_tasks": 30,
+      "n_criteria": 23487,
+      "unit_frame_sha256": "2d3cf2e65ff0a44c52866a23775a5d725436bcf8caf625c625ee6c0effe666b4",
+      "data_hashes": {
+        "data/raw/judgmentbench/rubric_items.csv": "9afb9e3e82e536e30a9021aacd1ae0167ad2c6c5fd71693df11cf4da0a03ba18",
+        "data/raw/judgmentbench/human_annotations_rubric.csv": "b87224e83df69e75ea3e00952a4ed2d740dfec68cd61f02d26bcb60a30225e3c",
+        "data/raw/judgmentbench/human_rubric_item_scores.csv": "d6e68feecf13f10517d33adf08e176f3df5f083e8c0a507dfac007fa20cd1871",
+        "data/raw/judgmentbench/gpt_5_4_annotations_rubric.csv": "cfa0408c141ce0dae579967e238da2f1deb1dc8c7879e82e35dbbca86c7487cf",
+        "data/raw/judgmentbench/gpt_5_4_rubric_item_scores.csv": "bfc193a59cf50292be9988dc75535c9fbbe2719b4598cb7326a73e234d82a36a",
+        "data/raw/judgmentbench/gpt_5_4_mini_annotations_rubric.csv": "7125c39104e6a24397d00be3bc0bff9dd1b2138ef9a8a457d6fb616e8a910954",
+        "data/raw/judgmentbench/gpt_5_4_mini_rubric_item_scores.csv": "e0ec56a1eb6530062fc523023c3144c8db25ca06f9d9493beda7d4f6ce5550d6",
+        "data/interim/differentiation_screen/sources/judgmentbench/outputs/outputs.csv": "05c6b5219e12790c453b77d95fa86ed01c713323721bab2ff147febc943d49e5"
+      }
+    },
+    "JB GPT-5.4-mini": {
+      "n_units": 1539,
+      "n_base_tasks": 30,
+      "n_criteria": 23487,
+      "unit_frame_sha256": "2d3cf2e65ff0a44c52866a23775a5d725436bcf8caf625c625ee6c0effe666b4",
+      "data_hashes": {
+        "data/raw/judgmentbench/rubric_items.csv": "9afb9e3e82e536e30a9021aacd1ae0167ad2c6c5fd71693df11cf4da0a03ba18",
+        "data/raw/judgmentbench/human_annotations_rubric.csv": "b87224e83df69e75ea3e00952a4ed2d740dfec68cd61f02d26bcb60a30225e3c",
+        "data/raw/judgmentbench/human_rubric_item_scores.csv": "d6e68feecf13f10517d33adf08e176f3df5f083e8c0a507dfac007fa20cd1871",
+        "data/raw/judgmentbench/gpt_5_4_annotations_rubric.csv": "cfa0408c141ce0dae579967e238da2f1deb1dc8c7879e82e35dbbca86c7487cf",
+        "data/raw/judgmentbench/gpt_5_4_rubric_item_scores.csv": "bfc193a59cf50292be9988dc75535c9fbbe2719b4598cb7326a73e234d82a36a",
+        "data/raw/judgmentbench/gpt_5_4_mini_annotations_rubric.csv": "7125c39104e6a24397d00be3bc0bff9dd1b2138ef9a8a457d6fb616e8a910954",
+        "data/raw/judgmentbench/gpt_5_4_mini_rubric_item_scores.csv": "e0ec56a1eb6530062fc523023c3144c8db25ca06f9d9493beda7d4f6ce5550d6",
+        "data/interim/differentiation_screen/sources/judgmentbench/outputs/outputs.csv": "05c6b5219e12790c453b77d95fa86ed01c713323721bab2ff147febc943d49e5"
+      }
+    },
+    "JB GPT-5.4 | binary_only": {
+      "n_units": 1539,
+      "n_base_tasks": 30,
+      "n_criteria": 20229,
+      "unit_frame_sha256": "2d3cf2e65ff0a44c52866a23775a5d725436bcf8caf625c625ee6c0effe666b4",
+      "data_hashes": {
+        "data/raw/judgmentbench/rubric_items.csv": "9afb9e3e82e536e30a9021aacd1ae0167ad2c6c5fd71693df11cf4da0a03ba18",
+        "data/raw/judgmentbench/human_annotations_rubric.csv": "b87224e83df69e75ea3e00952a4ed2d740dfec68cd61f02d26bcb60a30225e3c",
+        "data/raw/judgmentbench/human_rubric_item_scores.csv": "d6e68feecf13f10517d33adf08e176f3df5f083e8c0a507dfac007fa20cd1871",
+        "data/raw/judgmentbench/gpt_5_4_annotations_rubric.csv": "cfa0408c141ce0dae579967e238da2f1deb1dc8c7879e82e35dbbca86c7487cf",
+        "data/raw/judgmentbench/gpt_5_4_rubric_item_scores.csv": "bfc193a59cf50292be9988dc75535c9fbbe2719b4598cb7326a73e234d82a36a",
+        "data/raw/judgmentbench/gpt_5_4_mini_annotations_rubric.csv": "7125c39104e6a24397d00be3bc0bff9dd1b2138ef9a8a457d6fb616e8a910954",
+        "data/raw/judgmentbench/gpt_5_4_mini_rubric_item_scores.csv": "e0ec56a1eb6530062fc523023c3144c8db25ca06f9d9493beda7d4f6ce5550d6",
+        "data/interim/differentiation_screen/sources/judgmentbench/outputs/outputs.csv": "05c6b5219e12790c453b77d95fa86ed01c713323721bab2ff147febc943d49e5"
+      }
+    },
+    "JB GPT-5.4-mini | binary_only": {
+      "n_units": 1539,
+      "n_base_tasks": 30,
+      "n_criteria": 20229,
+      "unit_frame_sha256": "2d3cf2e65ff0a44c52866a23775a5d725436bcf8caf625c625ee6c0effe666b4",
+      "data_hashes": {
+        "data/raw/judgmentbench/rubric_items.csv": "9afb9e3e82e536e30a9021aacd1ae0167ad2c6c5fd71693df11cf4da0a03ba18",
+        "data/raw/judgmentbench/human_annotations_rubric.csv": "b87224e83df69e75ea3e00952a4ed2d740dfec68cd61f02d26bcb60a30225e3c",
+        "data/raw/judgmentbench/human_rubric_item_scores.csv": "d6e68feecf13f10517d33adf08e176f3df5f083e8c0a507dfac007fa20cd1871",
+        "data/raw/judgmentbench/gpt_5_4_annotations_rubric.csv": "cfa0408c141ce0dae579967e238da2f1deb1dc8c7879e82e35dbbca86c7487cf",
+        "data/raw/judgmentbench/gpt_5_4_rubric_item_scores.csv": "bfc193a59cf50292be9988dc75535c9fbbe2719b4598cb7326a73e234d82a36a",
+        "data/raw/judgmentbench/gpt_5_4_mini_annotations_rubric.csv": "7125c39104e6a24397d00be3bc0bff9dd1b2138ef9a8a457d6fb616e8a910954",
+        "data/raw/judgmentbench/gpt_5_4_mini_rubric_item_scores.csv": "e0ec56a1eb6530062fc523023c3144c8db25ca06f9d9493beda7d4f6ce5550d6",
+        "data/interim/differentiation_screen/sources/judgmentbench/outputs/outputs.csv": "05c6b5219e12790c453b77d95fa86ed01c713323721bab2ff147febc943d49e5"
+      }
+    }
+  },
+  "source_hashes": {
+    "src/conjunction_allocation_mechanism.py": "54d7caae8d91d2a6cb15b49d0c419747d8688b2bedcacffa46b736a0f922a9e8",
+    "src/conjunction_policy_data.py": "73dcf8dc243c011f44ca53b19753a37d5b8cf68f324bf23841e3833f2711618f",
+    "src/conjunction_policy_study.py": "615d49ba39377d17be02d8718d0bd01a6e441cd3b7854a2da35f99e1336d5891",
+    "src/conjunction_label_value.py": "477166e9fd1f30ad3491f626ceeeabe5f5f313047f6b0c54718f40240a5aa1ce",
+    "artifacts/reports/conjunction_label_value/budget_estimation_rows.csv.gz": "0a95916efbabd8555d3dfbdff8e1077f9c708b0535a589f207016bafac7dd5a7",
+    "context/conjunction_mechanism_protocol.md": "320e1a996b3cd429dc07d33280ce05fedb2e5a283fb5fa346eba10888d133e75"
+  },
+  "config": {
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "task_orders": [
+      "release",
+      "predicted_fail_count",
+      "random"
+    ],
+    "shares": [
+      0.006,
+      0.05,
+      0.2,
+      0.5,
+      0.6,
+      1.0
+    ],
+    "policies": [
+      "random_criterion",
+      "sc50_then_srs"
+    ],
+    "difference_direction": "mix minus SRS"
+  },
+  "identities": [
+    "certified_delta = net initially-correct certification + net initially-wrong certification",
+    "residual_error_delta = -fixed_initial_FP_delta - fixed_initial_FF_delta + introduced_FP_delta",
+    "gated_residual_error_delta = -certified_initial_wrong_delta",
+    "residual_error_delta = -certified_initial_wrong_delta - noncertified_FF_repair_delta + introduced_FP_delta",
+    "introduced_FP implies uncertified, at least one repaired predicted-fail/reference-pass bit, and an unobserved predicted-pass/reference-fail bit; introduced_FF=0"
+  ],
+  "scope": [
+    "Fixed-reference retrospective task accounting; hidden truth/type is not a deployable feature.",
+    "Query selectors and random generators reused exactly; task arithmetic independently implemented; inference helper reused only to reconcile saved scalar endpoints.",
+    "31 paired seed differences describe randomized order variation, not independent datasets or population inference.",
+    "Means of additive paired components add; medians of paired differences need not equal differences of marginal medians.",
+    "Gross mix-only composition excludes shared certificates; signed net contributions subtract SRS-only certificates. Net shares only reported when total net gain>0 and may lie outside[0,1].",
+    "Base-task deletion removes contributions from the fixed acquired sets; it does not rerun or rebudget the allocation.",
+    "Current six fixed caps and nine cells only; no policy tuning, new labels, API calls, or human labor claims."
+  ]
+}

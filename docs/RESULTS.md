@@ -127,13 +127,19 @@ Query costs are 31-seed medians. Fixed sample counts and variable label costs ma
 
 The query-only logical interval has width equal to the uncertified fraction. Statistical estimation can remain informative without certifying the full frame.
 
-The separate reference-link disclosure replay supplies additional trusted reference-containing counts. In DR Gemini, D0 has 38 count cells and no new labels; the compatible reference pass rate is **[4.225352%, 16.901408%]**, width **12.676056 pp**, containing the fixed 9.859155% reference score. Restoring all links recovers the exact score. Across all four original RuVerBench runs, task-uniform Mean Criteria is already identified at D0. Source: [`information_disclosure_replay.json`](../artifacts/expected/information_disclosure_replay.json), `ruverbench[run].baseline` and `task_link_curve`.
+The separate reference-link disclosure replay supplies additional trusted reference-containing counts. In DR Gemini, D0 has 38 count cells and no new labels; the compatible reference pass rate is **[4.23%, 16.90%]**, width **12.68 pp**, containing the fixed 9.86% reference score. Restoring all links recovers the exact score. Across all four original RuVerBench runs, task-uniform Mean Criteria is already identified at D0. Source: [`information_disclosure_replay.json`](../artifacts/expected/information_disclosure_replay.json), `ruverbench[run].baseline` and `task_link_curve`.
 
 ![Reference-link and optional pairing disclosure](../artifacts/figures/information_disclosure_replay.png)
 
 Left: feasible conjunction widths under increasingly informative disclosures. Right: the separate, optional pairing diagnostic for human strict JudgmentBench scores. Shading and envelopes summarize reveal orders, not confidence coverage.
 
 For that pairing diagnostic, the mean excellent-minus-good gap is always **−0.716 pp**. No pair links permit paired standard errors from **0.704 to 6.811 pp**; full pairing recovers **1.457 pp**. All six source-by-metric comparisons remain unresolved under the exploratory Wald-plus-1pp rule even with full pairing. The arms are constructed quality tiers and the mean gap was already identified, so this is not a system-ranking result.
+
+## Reference and design robustness
+
+The [new complete results](ROBUSTNESS.md) place the original outcomes beside matched-reference replacements, base-task resampling and stronger estimation controls. On 206 fixed repeated outputs, full-JB's 84% gated-minus-eager difference changes from 6.03 to 3.88 disagreements per 100 when the reference changes; some binary-only comparisons change direction. The original 20% low-budget updating advantage has a task-composition range crossing zero, while its larger high-budget burden remains positive. At 20% budget, JB's allocation benefit persists in all 399 composition resamples; DR's small error increase does not.
+
+The mechanism extension adds 1,818 exact-expectation points, 5,760 matched-margin scenarios and 5,022 paired allocation decompositions. Its formulas account for prevented false passes, delayed repairs and certificates on initially correct/wrong units. [Mechanism update table](../artifacts/expected/conjunction_mechanism/update_expected_grid.csv) · [Allocation components](../artifacts/expected/conjunction_mechanism/allocation_summary.csv)
 
 ## Boundaries that belong with the findings
 

@@ -8,7 +8,7 @@ permissions:
 jobs:
   test-and-replay:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -25,4 +25,7 @@ jobs:
         run: python -m src.reproduce --mode full --output artifacts/reproduced
       - name: Compare reproduced scientific outputs
         run: python -m src.verify_release --results artifacts/reproduced
-
+      - name: Full mechanism and robustness reproduction
+        run: python -m src.reproduce_extensions --output artifacts/reproduced-extensions
+      - name: Compare all extension scientific outputs
+        run: python -m src.reproduce_extensions --output artifacts/reproduced-extensions --verify-only

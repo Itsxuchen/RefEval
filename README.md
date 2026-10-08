@@ -33,7 +33,7 @@ At a **20% criterion-query cap**, the table compares random criterion sampling w
 | JudgmentBench GPT-5.4 / random criterion SRS | 4,697 | 798 | 223 | 2.21 |
 | JudgmentBench GPT-5.4 / fixed 50/50 allocation | 4,697 | 1,035 | 133 | 2.95 |
 
-Entries after query count are **marginal medians over seeds 1–31**, with release task order; they need not describe a single realized run. Accuracy is criterion-level microagreement with the fixed reference. Its intervals follow a hypergeometric-tail construction with conditional, pointwise 95% coverage under the stated sampling design; the [known floating-point boundary limitation](docs/REPRODUCIBILITY.md#numerical-boundary-caveat) is documented separately. [Exact result keys and additional comparisons](docs/RESULTS.md)
+Entries after query count are **marginal medians over seeds 1–31**, with release task order; they need not describe a single realized run. Accuracy is criterion-level microagreement with the fixed reference. Its intervals follow a hypergeometric-tail construction with conditional, pointwise 95% coverage under the stated sampling design; the [inclusive endpoint repair](docs/REPRODUCIBILITY.md#numerical-endpoint-repair-020) leaves all saved intervals unchanged. [Exact result keys and additional comparisons](docs/RESULTS.md)
 
 - **Allocation can improve task outcomes while reducing estimation precision.** In the JudgmentBench comparison above, the mixed allocation improves certification and residual errors in all 31 paired orders, but produces wider accuracy intervals. In DR it increases certification while leaving more residual errors in 18 of 31 orders. The fixed split is a comparison condition, not an optimal policy.
 - **More criterion repairs need not produce fewer task errors.** In one JudgmentBench disagreement-only endpoint, 4,316 queries repair 1,217 criterion errors, but task errors change from 244 to 245: two false passes and two false fails are repaired, while five false passes are introduced. On a separate matched set of 4,697 queries (canonical seed 0, release task order), certificate-gated updating prevents six new false passes but delays nine repairs, changing residual errors from 239 to 242.
@@ -43,13 +43,15 @@ Entries after query count are **marginal medians over seeds 1–31**, with relea
 
 The figure shows four selected policies from the seven-policy study. Lines are medians and bands are 5–95% ranges across randomized orders, **not confidence intervals**. The horizontal axis is available budget; actual queries stop when a policy exhausts its candidates or finishes certification. The fixed 50/50 allocation is a separate extension summarized in the table above.
 
-## Full-budget verdict-update effects
+## What changes with budget, reference and task composition?
 
-![Matched-query eager versus certificate-gated update effects](artifacts/figures/conjunction_policy_study/verdict_update_budget.png)
+![Full-budget update effects in three frames](artifacts/figures/conjunction_robustness_budget.png)
 
-On the **same queried set**, gating prevents newly introduced false passes but can delay false-fail repairs. For disagreement-then-random at 20% cap, release task order, the mean gated-minus-eager error difference over seeds 1–31 is **−2.065** for full strict (4,697 queries) and **+8.290** for binary-only (4,046 queries). The canonical full-target example above has the opposite sign from its randomized mean. Effects change with budget; neither endpoint establishes universal superiority.
+On the same queried labels, gating can prevent new false passes while postponing repairs. The full-budget curves show how their balance changes. In full JudgmentBench, the original expected difference grows from roughly −2 disagreements at a 20% budget to +96 at 84%. Task-composition resampling puts the small 20% contrast on both sides of zero; the larger 84% burden remains positive. Shading describes 399 empirical base-task compositions; it is not evidence that the curated tasks represent every new setting. [Complete analysis](docs/ROBUSTNESS.md)
 
-Lines are arithmetic means of within-seed differences; bands are 5th–95th order percentiles, **not confidence intervals**. The short-circuit column uses an explicitly expanded vertical scale. Changing scoring target also changes the criterion universe, certificate lengths and absolute budget, so it does not isolate a penalty-type effect. [Numerical details](docs/RESULTS.md#full-budget-matched-query-effects) · [Main PDF](artifacts/figures/conjunction_policy_study/verdict_update_budget.pdf) · [Nine-cell/order supplement](artifacts/figures/conjunction_policy_study/verdict_update_budget_all_cells.pdf) · [All-seven-policy plotting data](artifacts/figures/conjunction_policy_study/verdict_update_budget_data.csv).
+Reference choice also matters. On **206 fixed repeated outputs with fixed judge predictions**, replacing the human reference changes the 84% full-target effect from **6.03 to 3.88 disagreements per 100 outputs**. Some binary-only comparisons reverse direction. At the focal 20% budget, the mixed allocation improves certification and residual disagreement under both matched references, while its magnitude changes. DR's small original error increase varies in direction across resampled tasks.
+
+The extension also adds proportional and charged-pilot stratified estimation. Their conservative finite-population intervals do not dominate SRS; approximate widths and empirical RMSE are reported separately. [Reference comparison](artifacts/figures/conjunction_robustness_reference.png) · [Estimation controls](docs/ROBUSTNESS.md#budget-accounted-stratified-controls) · [Earlier 31-order curves](artifacts/figures/conjunction_policy_study/verdict_update_budget_all_cells.pdf)
 
 ## Get started
 
@@ -67,7 +69,12 @@ For the complete reproduction and comparison against the included results:
 ```bash
 python -m src.reproduce --mode full --output artifacts/reproduced
 python -m src.verify_release --results artifacts/reproduced
+python -m src.reproduce_extensions --output artifacts/reproduced-extensions
+python -m src.reproduce_extensions --output artifacts/reproduced-extensions --verify-only
 ```
+
+
+**0.2.0 validation:** 215 tests passed. Original complete replay: 169.8 seconds; mechanism/robustness replay: 304.9 seconds. All 25 extension scientific CSV tables (752,947 rows), four scientific JSON payloads, and 606 plotting rows matched. Timings describe this recorded environment. [Original-study receipt](artifacts/validation/robustness_base_run_manifest.json) · [Extension receipt](artifacts/validation/extension_run_manifest.json) · [Row comparisons](artifacts/validation/extension_verification.json)
 
 Historical **v0.1.0** validation: **130 tests passed; complete offline replay in 169 seconds** in the recorded environment. The CI badge reports checks for current main; the dated release receipt is not a test count for later commits. [Execution receipts](docs/REPRODUCIBILITY.md#release-010-verification)
 
@@ -78,7 +85,8 @@ The scientific replay uses local inputs and requires no model API key. Smoke mod
 | Document | Contents |
 |---|---|
 | [Methods](docs/METHODS.md) | Targets, policies, estimators, information conditions, nearest-neighbor comparison and operational implications |
-| [Reading bibliography](docs/references.bib) | 46 technical and data sources; inclusion does not imply every source is used by the implementation or an exhaustive search |
+| [Reading bibliography](docs/references.bib) | Technical and data sources; inclusion does not imply every source is used by the implementation or an exhaustive search |
+| [Reference and design robustness](docs/ROBUSTNESS.md) | Matched raters, three-frame full-budget curves, task composition, stratified controls and numerical repair |
 | [Results](docs/RESULTS.md) | Numerical anchors, full-grid coverage, counterexamples, and source keys |
 | [Reproducibility](docs/REPRODUCIBILITY.md) | Execution modes, expected results, and the limits of each check |
 | [Data sources](docs/DATA_SOURCES.md) | Upstream provenance, included fields, transformations, and source terms |
@@ -94,3 +102,6 @@ The included analysis inputs contain labels, scores, scoring metadata, and ident
 Code licensing is specified in [LICENSE](LICENSE). Dataset-derived files retain the terms identified in [DATA_SOURCES](docs/DATA_SOURCES.md) and [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md); the software license does not relicense upstream material.
 
 Use [CITATION.cff](CITATION.cff) to cite this software and results package, and cite the upstream datasets when using their derived records. Until a manuscript identifier is assigned, describe the package as research software rather than citing a nonexistent preprint or publication.
+
+
+AI tools, including Codex and Claude, assisted code development, checks and research writing. Human authors retain responsibility for the scientific claims and the final manuscript. The [execution records](docs/REPRODUCIBILITY.md) state what was computationally checked.

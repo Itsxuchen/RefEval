@@ -1,0 +1,150 @@
+{
+  "passed": true,
+  "configuration": {
+    "mechanism_permutations": 64,
+    "order_seeds": 31,
+    "cluster_replicates": 399,
+    "cluster_seed": 20261008,
+    "reference_cells": 4,
+    "stratified_cells": 9
+  },
+  "csv_checks": {
+    "conjunction_mechanism/allocation_focal_base_tasks.csv.gz": {
+      "rows": 43152,
+      "fields": 1855536,
+      "scope": "all rows"
+    },
+    "conjunction_mechanism/allocation_focal_error_paths.csv.gz": {
+      "rows": 4250,
+      "fields": 225250,
+      "scope": "all rows"
+    },
+    "conjunction_mechanism/allocation_focal_seeds.csv": {
+      "rows": 279,
+      "fields": 15903,
+      "scope": "all rows"
+    },
+    "conjunction_mechanism/allocation_rows.csv.gz": {
+      "rows": 5022,
+      "fields": 286254,
+      "scope": "all rows"
+    },
+    "conjunction_mechanism/allocation_summary.csv": {
+      "rows": 162,
+      "fields": 15714,
+      "scope": "all rows"
+    },
+    "conjunction_mechanism/update_expected_grid.csv": {
+      "rows": 1818,
+      "fields": 38178,
+      "scope": "all rows"
+    },
+    "conjunction_mechanism/update_permutation_rows.csv": {
+      "rows": 5760,
+      "fields": 69120,
+      "scope": "all rows"
+    },
+    "conjunction_mechanism/update_permutation_summary.csv": {
+      "rows": 90,
+      "fields": 4500,
+      "scope": "all rows"
+    },
+    "conjunction_robustness/reference/pairing.csv": {
+      "rows": 206,
+      "fields": 2060,
+      "scope": "all rows"
+    },
+    "conjunction_robustness/reference/rq1_reference_change_summary.csv": {
+      "rows": 3636,
+      "fields": 327240,
+      "scope": "all rows"
+    },
+    "conjunction_robustness/reference/rq1_reference_changes.csv.gz": {
+      "rows": 112716,
+      "fields": 3494196,
+      "scope": "all rows"
+    },
+    "conjunction_robustness/reference/rq1_rows.csv.gz": {
+      "rows": 150288,
+      "fields": 4208064,
+      "scope": "all rows"
+    },
+    "conjunction_robustness/reference/rq1_summary.csv": {
+      "rows": 4848,
+      "fields": 586608,
+      "scope": "all rows"
+    },
+    "conjunction_robustness/reference/rq2_reference_change_summary.csv": {
+      "rows": 72,
+      "fields": 5544,
+      "scope": "all rows"
+    },
+    "conjunction_robustness/reference/rq2_reference_changes.csv.gz": {
+      "rows": 2232,
+      "fields": 60264,
+      "scope": "all rows"
+    },
+    "conjunction_robustness/reference/rq2_rows.csv.gz": {
+      "rows": 2976,
+      "fields": 187488,
+      "scope": "all rows"
+    },
+    "conjunction_robustness/reference/rq2_summary.csv": {
+      "rows": 96,
+      "fields": 10944,
+      "scope": "all rows"
+    },
+    "conjunction_robustness/cluster/multiplicities.csv.gz": {
+      "rows": 125286,
+      "fields": 501144,
+      "scope": "all rows"
+    },
+    "conjunction_robustness/cluster/rq1_curves.csv.gz": {
+      "rows": 242400,
+      "fields": 3393600,
+      "scope": "all rows"
+    },
+    "conjunction_robustness/cluster/rq1_peaks.csv.gz": {
+      "rows": 2400,
+      "fields": 36000,
+      "scope": "all rows"
+    },
+    "conjunction_robustness/cluster/rq2_frame_means.csv.gz": {
+      "rows": 1200,
+      "fields": 20400,
+      "scope": "all rows"
+    },
+    "conjunction_robustness/cluster/rq2_seed_pairs.csv.gz": {
+      "rows": 37200,
+      "fields": 632400,
+      "scope": "all rows"
+    },
+    "conjunction_robustness/estimation/saved_mix_comparator.csv.gz": {
+      "rows": 1674,
+      "fields": 46872,
+      "scope": "all rows"
+    },
+    "conjunction_robustness/estimation/stratified_rows.csv.gz": {
+      "rows": 5022,
+      "fields": 200880,
+      "scope": "all rows"
+    },
+    "conjunction_robustness/estimation/stratified_summary.csv": {
+      "rows": 162,
+      "fields": 2916,
+      "scope": "all rows"
+    }
+  },
+  "json_scientific_leaves": {
+    "conjunction_mechanism/update_structures.json": 117,
+    "conjunction_robustness/reference/frame_diagnostics.json": 232,
+    "conjunction_robustness/cluster/summary.json": 7714,
+    "conjunction_robustness/estimation/interval_regression.json": 4
+  },
+  "scientific_rows": 752947,
+  "comparison_tolerance": {
+    "absolute": 1e-08,
+    "relative": 1e-09
+  },
+  "scope": "All extension scientific CSV rows and four scientific JSON payloads; source paths, timestamps and compressed byte headers may differ."
+}

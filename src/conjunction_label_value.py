@@ -13,49 +13,16 @@ import json
 import time
 from collections import defaultdict
 from datetime import datetime, timezone
-from functools import lru_cache
 from pathlib import Path
 
 import numpy as np
-from scipy.stats import hypergeom
+from src.finite_population_intervals import hypergeom_ci
 
 from src.conjunction_policy_data import load_datasets
 from src.conjunction_policy_study import replay, rng_for, TASK_ORDERS
 
 ROOT = Path(__file__).resolve().parents[1]
 SHARES = (0.006, 0.05, 0.20, 0.50, 0.60, 1.0)
-
-
-@lru_cache(maxsize=100000)
-def hypergeom_ci(M: int, n: int, x: int, alpha: float = .05) -> tuple[int, int]:
-    """Invert two equal-tail hypergeometric tests for the unknown success total.
-
-    Includes tail probabilities exactly equal to alpha/2; discrete coverage is
-    at least 1-alpha at each fixed sampling size, not simultaneous over budgets.
-    """
-    if not (isinstance(M, (int, np.integer)) and isinstance(n, (int, np.integer))
-            and isinstance(x, (int, np.integer)) and 0 <= x <= n <= M and 0 < alpha < 1):
-        raise ValueError("invalid hypergeometric observation")
-    if n == 0:
-        return 0, M
-    if n == M:
-        return x, x
-    lo, hi = x, M - n + x
-    while lo < hi:
-        mid = (lo + hi) // 2
-        if hypergeom.sf(x - 1, M, mid, n) >= alpha / 2:
-            hi = mid
-        else:
-            lo = mid + 1
-    lower = lo
-    lo, hi = x, M - n + x
-    while lo < hi:
-        mid = (lo + hi + 1) // 2
-        if hypergeom.cdf(x, M, mid, n) >= alpha / 2:
-            lo = mid
-        else:
-            hi = mid - 1
-    return lower, lo
 
 
 def accuracy_inference(M: int, qA: int, correctA: int, qR: int, correctR: int) -> dict:

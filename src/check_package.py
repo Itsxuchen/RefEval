@@ -37,7 +37,7 @@ def package_files(root: Path) -> list[Path]:
 
 def write_manifest(root: Path) -> dict:
     manifest = {
-        "schema_version": 1, "software_version": "0.1.0",
+        "schema_version": 1, "software_version": "0.2.0",
         "scope": "Current release files; historical scientific output provenance is separate.",
         "files": {str(p.relative_to(root)): {"sha256": sha256(p), "bytes": p.stat().st_size}
                   for p in package_files(root)},
@@ -77,12 +77,18 @@ def verify(root: Path) -> dict:
             raise ValueError(f"Input row count mismatch: {item['path']}")
         row_count += rows
     expected = json.loads((root / "artifacts/expected/PROVENANCE.json").read_text())
-    for item in expected["files"]:
+    expected_files = list(expected["files"])
+    extension = root / "artifacts/expected/EXTENSION_PROVENANCE.json"
+    if extension.exists():
+        expected_files.extend(json.loads(extension.read_text())["files"])
+    if len({item["path"] for item in expected_files}) != len(expected_files):
+        raise ValueError("Duplicate expected-result provenance path")
+    for item in expected_files:
         if sha256(checked_path(root, item["path"])) != item["sha256"]:
             raise ValueError(f"Expected scientific output changed: {item['path']}")
     return {"passed": True, "release_files": len(actual),
             "input_files": len(inputs["files"]), "input_rows": row_count,
-            "expected_files": len(expected["files"]),
+            "expected_files": len(expected_files),
             "scope": "File integrity and published-input schemas; not a scientific rerun or source-label adjudication."}
 
 

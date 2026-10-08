@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "tests": 215,
+  "command": "python -m pytest -q",
+  "scope": "All package unit tests, inclusive finite-population boundaries and small-world checks; complete replays have separate receipts.",
+  "test_log_sha256": "1b93d9a802ba8d8e96eda1f1f1ea7b36d88497ad700e869b6fc2ce707ed44e46",
+  "figure_data_check": {
+    "rows": 606,
+    "fields": 4848,
+    "passed": true
+  },
+  "visual_check": "Inspected all three new PNG figures; corrected lower-panel legend placement. PDF generated from the same Matplotlib figures.",
+  "inputs": "Existing numeric data unchanged; no new API calls or human labels."
+}
