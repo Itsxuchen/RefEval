@@ -2,11 +2,13 @@
 
 The extension tests three limits of the original results. It holds judge predictions fixed while changing the human reference, reruns policies after resampling entire base tasks, and compares estimation against two budget-accounted stratified controls. The original large JudgmentBench update effect persists in direction on the matched reference subset but changes in size. Some other update comparisons reverse. At the focal 20% budget, the allocation benefit in JudgmentBench survives the examined reference and task-composition changes; the small RuVerBench error increase does not survive task-composition changes consistently.
 
+In the original full-target frame, GPT-5.4 predicts PASS for 31 of 1,539 annotations (2.0%), compared with 227 reference PASS annotations (14.7%); seven are recognized by the judge. Its predictions are strongly FAIL-dominated, which shapes the repair and certification results. The target itself is not constant.
+
 These are retrospective checks on the existing releases. The [protocol](../context/conjunction_robustness_protocol.md) fixes their finite grids and estimands. “Error” below means disagreement with the named released reference. Full strict and binary-only define different success events; both are constructed conjunction targets. The references have not been adjudicated by this study.
 
 ## Reference choice on the same outputs
 
-JudgmentBench contains 206 outputs with repeated human annotations. The original 431 annotations of those outputs are weighted by annotation. Our matched analysis instead gives each output one unit, chooses two distinct raters by an ID-hash rule, and fixes both primary and auxiliary predictions from an independently hash-chosen saved judge assignment. There are 206 units under either reference, with 3,098 full-target or 2,664 binary-only criterion records. Changing reference therefore does not silently change the judge run, rubric, output sample or unit weights. The [pair map](../artifacts/expected/conjunction_robustness/reference/pairing.csv) records the selections.
+JudgmentBench contains 206 outputs with repeated human annotations. The original 431 annotations of those outputs are weighted by annotation. Our matched analysis instead gives each output one unit, chooses two distinct raters by an ID-hash rule, and fixes both primary and auxiliary predictions from an independently hash-chosen saved judge assignment. A and B are symmetric panel labels, with no temporal or quality ordering; the selected raters can differ across outputs. There are 206 units under either reference, with 3,098 full-target or 2,664 binary-only criterion records. Changing reference therefore does not silently change the judge run, rubric, output sample or unit weights. The [pair map](../artifacts/expected/conjunction_robustness/reference/pairing.csv) records the selections.
 
 The [frame diagnostics](../artifacts/expected/conjunction_robustness/reference/frame_diagnostics.json) bridge three frames: all 1,539 original annotations, their 431 repeated-output annotations, and the new 206 equally weighted outputs. In the original repeated-annotation subset, 32 of 54 initial false fails have at least one peer rater who also says FAIL; only 22 of 56 reference-PASS annotations have all peers agree PASS. These are disagreement diagnostics, not known reference-error rates or percentages of the whole-frame update effect.
 
@@ -38,7 +40,7 @@ At 20% full-target budget, both policies spend 620 queries. Entries are paired *
 | B | A | +13.58 | −7.26 |
 | B | B | +32.13 | −8.71 |
 
-The two diagonal analyses retain a benefit, while holding A’s acquired set fixed exposes a larger reference-dependent change. These subset counts cannot be subtracted directly from the original −90.06 result. [RQ2 table](../artifacts/expected/conjunction_robustness/reference/rq2_summary.csv)
+All four mean contrasts increase certification and reduce disagreement. The cross-reference comparisons still contain individual contrary query orders: A/B increases disagreement in 2 of 31 orders, and B/A in 1 of 31. The two diagonal analyses retain a benefit, while holding A’s acquired set fixed exposes a larger reference-dependent change. These subset counts cannot be subtracted directly from the original −90.06 result. [RQ2 table](../artifacts/expected/conjunction_robustness/reference/rq2_summary.csv)
 
 ![Fixed-judge reference sensitivity](../artifacts/figures/conjunction_robustness_reference.png)
 
@@ -50,9 +52,9 @@ We resample complete base-task blocks 399 times, preserving all their outputs, r
 
 ![Three frames over the complete budget](../artifacts/figures/conjunction_robustness_budget.png)
 
-Disagreement-then-random, 101 budget caps. Both rows use common vertical scales across frames. Shading is the 2.5th–97.5th percentile across compositions. Dashed lines are an approximate simultaneous band from the maximum absolute deviation over each curve's fixed grid; they are not joint bands across all curves or raters. Peaks are recomputed in every replicate. [All curves and summaries](../artifacts/expected/conjunction_robustness/cluster/summary.json)
+Disagreement-then-random, 101 budget caps. Both rows use common vertical scales across frames. Shading is the pointwise 2.5th–97.5th percentile across compositions. Every curve is exactly zero at 0% and 100% budget. The original constant-width simultaneous bands remain in the source tables and plotting CSV but are omitted here: their constant radius obscures the known endpoints. Peaks are recomputed in every replicate. [All curves and summaries](../artifacts/expected/conjunction_robustness/cluster/summary.json)
 
-For full JudgmentBench, the original order-expected gated-minus-eager difference at 20% is −0.13 per 100 annotations; its composition range is [−0.54, +0.39]. At 84%, it is +6.26, with range [+3.51, +9.44]. The high-budget burden and the small low-budget advantage thus have different stability. Original full and binary-only count curves retain their different scales, rather than being represented by a single favorable endpoint.
+For full JudgmentBench, the original order-expected gated-minus-eager difference at 20% is −0.13 per 100 annotations; its composition range is [−0.54, +0.39]. At 84%, it is +6.26, with range [+3.51, +9.44]. The high-budget burden and the small low-budget advantage thus have different stability for this query policy. This composition study retains the original reference and annotation weights; the separate 206-output A/B study does not provide a joint reference-by-composition interval. Original full and binary-only count curves retain their different scales, rather than being represented by a single favorable endpoint.
 
 For the 20% mixed allocation:
 
@@ -70,17 +72,15 @@ The estimand is criterion-level microagreement with the fixed reference. SRS rem
 
 Conditional on the pilot, the estimator adds its known correct total to the estimated remaining totals. Each noncensused remaining stratum gets a hypergeometric count interval, with Bonferroni error allocation; their endpoints sum to a conservative conditional 95% interval. These are finite-population stratified controls, not a reimplementation of StratPPI. The latter is an essential related approach with different inferential machinery. [Fisch et al.](https://proceedings.neurips.cc/paper_files/paper/2024/hash/c9fcd02e6445c7dfbad6986abee53d0d-Abstract-Conference.html)
 
-At 20% budget, mean guarantee-based interval widths in percentage points:
+The figure shows all nine analysis cells at the 20% label cap. Interval width and point-estimator error answer different questions: the width reflects the chosen coverage guarantee and its conservatism; RMSE measures squared estimation error across the 31 saved query orders.
 
-| Frame | SRS | Proportional strata | Charged-pilot Neyman |
-|---|---:|---:|---:|
-| DR Gemini | 5.45 | 8.18 | 9.06 |
-| JB GPT-5.4 full | 2.21 | 3.47 | 3.74 |
-| JB GPT-5.4 binary-only | 2.17 | 3.44 | 3.76 |
+![Equal-budget interval widths and estimation errors in all nine cells](../artifacts/figures/conjunction_robustness_estimation.png)
 
-Neither stratified guarantee-based interval is narrower in the 45 noncensus cell×cap comparisons. This result includes the conservatism of summing per-stratum intervals. It does not establish that stratification generally hurts estimation: DR's 31-order empirical RMSE falls from 1.37 to 1.19 pp under proportional stratification. Approximate normal intervals are separately recorded for all methods using the same finite-population variance construction. In full JB, proportional stratification narrows their mean width from 2.19 to 2.13 pp, but only 28/31 intervals cover the fixed truth in these repetitions. Neither 31-run coverage nor width alone proves a statistical guarantee. [Complete estimation results](../artifacts/expected/conjunction_robustness/estimation/stratified_summary.csv)
+Left: mean conservative conditional 95% interval width. Right: empirical RMSE, computed as the square root of mean squared error against fixed-frame criterion microagreement. All values are percentage points; pilot labels count toward the budget. The RMSE repetitions describe these frames rather than establish population performance or interval coverage.
 
-![Equal-budget estimation controls](../artifacts/figures/conjunction_robustness_estimation.png)
+For proportional stratification versus SRS, empirical RMSE falls from **2.35 to 1.40 pp for AC DeepSeek v4-pro**, and from **1.37 to 1.19 pp for DR Gemini**. The corresponding interval widths increase from 7.54 to 11.82 pp and from 5.45 to 8.18 pp. Improvement is not shared by every judge: AC Qwen's RMSE is 2.24 under either design after rounding, while full-JB GPT-5.4 changes from 0.50 to 0.57 pp. The complete display retains the charged-pilot results and both JB scoring targets.
+
+Neither stratified guarantee-based interval is narrower in the 45 noncensus cell×cap comparisons. This includes the conservatism of combining per-stratum bounds. Approximate normal intervals are separately recorded for all methods using the same finite-population variance construction. In full JB, proportional stratification narrows their mean width from 2.19 to 2.13 pp, but only 28/31 intervals cover the fixed truth in these repetitions. Width alone therefore cannot rank estimators, and these repetitions cannot establish a coverage guarantee. [Complete estimation results](../artifacts/expected/conjunction_robustness/estimation/stratified_summary.csv)
 
 ## Numerical repair and validation
 

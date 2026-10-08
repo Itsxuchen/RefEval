@@ -1,0 +1,213 @@
+{
+  "checked_at_utc": "2026-10-08T06:09:55.672870+00:00",
+  "baseline_commit": "7081eef1be5bd78e034c41a1abe7472da49f8ed0",
+  "scope": "Presentation-only checks; no new scientific grid, joint reference-composition analysis or reference adjudication. v0.2.0 scientific run receipts are historical.",
+  "preserved_data_expected_context_files": 64,
+  "estimation_summary_groups_recomputed_from_rows": 162,
+  "matched_budget_groups": 1674,
+  "unchanged_budget_plot_rows": 606,
+  "zero_endpoints_verified": true,
+  "renderer_sha256": "c9a9cb6bc649f0e77ff9d9f585fbedc988ab022383fb165ebfc7ac94880c5e36",
+  "render_manifest_sha256": "e2eec99f52d0a75d606ae0d47bf1a6a58de34611c53322c17be3cc30985c6719",
+  "estimation_20pct_values": [
+    {
+      "dataset": "DR Gemini 3.1 Pro",
+      "policy": "random_criterion",
+      "rmse_pp": 1.3710977570542686,
+      "mean_interval_width_pp": 5.45490861879556,
+      "query_orders": 31
+    },
+    {
+      "dataset": "DR Gemini 3.1 Pro",
+      "policy": "proportional_stratified",
+      "rmse_pp": 1.1891682813851419,
+      "mean_interval_width_pp": 8.177369419754314,
+      "query_orders": 31
+    },
+    {
+      "dataset": "DR Gemini 3.1 Pro",
+      "policy": "charged_pilot_neyman",
+      "rmse_pp": 1.27051996574932,
+      "mean_interval_width_pp": 9.060221711774687,
+      "query_orders": 31
+    },
+    {
+      "dataset": "DR Qwen-plus",
+      "policy": "random_criterion",
+      "rmse_pp": 2.084273912942094,
+      "mean_interval_width_pp": 7.624088684709871,
+      "query_orders": 31
+    },
+    {
+      "dataset": "DR Qwen-plus",
+      "policy": "proportional_stratified",
+      "rmse_pp": 1.6544062217203517,
+      "mean_interval_width_pp": 11.267352441825624,
+      "query_orders": 31
+    },
+    {
+      "dataset": "DR Qwen-plus",
+      "policy": "charged_pilot_neyman",
+      "rmse_pp": 1.6100776189098271,
+      "mean_interval_width_pp": 12.393887945670624,
+      "query_orders": 31
+    },
+    {
+      "dataset": "AC Qwen-plus",
+      "policy": "random_criterion",
+      "rmse_pp": 2.237343936135532,
+      "mean_interval_width_pp": 9.065166647533768,
+      "query_orders": 31
+    },
+    {
+      "dataset": "AC Qwen-plus",
+      "policy": "proportional_stratified",
+      "rmse_pp": 2.242001626247408,
+      "mean_interval_width_pp": 13.653235372900161,
+      "query_orders": 31
+    },
+    {
+      "dataset": "AC Qwen-plus",
+      "policy": "charged_pilot_neyman",
+      "rmse_pp": 2.498416010528756,
+      "mean_interval_width_pp": 14.376458883404117,
+      "query_orders": 31
+    },
+    {
+      "dataset": "AC DeepSeek v4-pro",
+      "policy": "random_criterion",
+      "rmse_pp": 2.3486597014172674,
+      "mean_interval_width_pp": 7.5421880381127275,
+      "query_orders": 31
+    },
+    {
+      "dataset": "AC DeepSeek v4-pro",
+      "policy": "proportional_stratified",
+      "rmse_pp": 1.404230773351977,
+      "mean_interval_width_pp": 11.820303830405996,
+      "query_orders": 31
+    },
+    {
+      "dataset": "AC DeepSeek v4-pro",
+      "policy": "charged_pilot_neyman",
+      "rmse_pp": 1.7316715971486918,
+      "mean_interval_width_pp": 11.900661998239768,
+      "query_orders": 31
+    },
+    {
+      "dataset": "DR GPT-5.4 low",
+      "policy": "random_criterion",
+      "rmse_pp": 1.4729018263931402,
+      "mean_interval_width_pp": 5.355038450014975,
+      "query_orders": 31
+    },
+    {
+      "dataset": "DR GPT-5.4 low",
+      "policy": "proportional_stratified",
+      "rmse_pp": 1.5060000410423826,
+      "mean_interval_width_pp": 8.383101967442322,
+      "query_orders": 31
+    },
+    {
+      "dataset": "DR GPT-5.4 low",
+      "policy": "charged_pilot_neyman",
+      "rmse_pp": 1.0923069692046001,
+      "mean_interval_width_pp": 9.138120443423544,
+      "query_orders": 31
+    },
+    {
+      "dataset": "JB GPT-5.4",
+      "policy": "random_criterion",
+      "rmse_pp": 0.49947800231730477,
+      "mean_interval_width_pp": 2.209870388148827,
+      "query_orders": 31
+    },
+    {
+      "dataset": "JB GPT-5.4",
+      "policy": "proportional_stratified",
+      "rmse_pp": 0.5677065747039834,
+      "mean_interval_width_pp": 3.4658843533210506,
+      "query_orders": 31
+    },
+    {
+      "dataset": "JB GPT-5.4",
+      "policy": "charged_pilot_neyman",
+      "rmse_pp": 0.5003868608385331,
+      "mean_interval_width_pp": 3.740160995032249,
+      "query_orders": 31
+    },
+    {
+      "dataset": "JB GPT-5.4-mini",
+      "policy": "random_criterion",
+      "rmse_pp": 0.7182977757265595,
+      "mean_interval_width_pp": 2.4065474792507002,
+      "query_orders": 31
+    },
+    {
+      "dataset": "JB GPT-5.4-mini",
+      "policy": "proportional_stratified",
+      "rmse_pp": 0.6232705431104103,
+      "mean_interval_width_pp": 3.6883821798469105,
+      "query_orders": 31
+    },
+    {
+      "dataset": "JB GPT-5.4-mini",
+      "policy": "charged_pilot_neyman",
+      "rmse_pp": 0.6318922213493203,
+      "mean_interval_width_pp": 4.006196976501751,
+      "query_orders": 31
+    },
+    {
+      "dataset": "JB GPT-5.4 | binary_only",
+      "policy": "random_criterion",
+      "rmse_pp": 0.5256675282692852,
+      "mean_interval_width_pp": 2.1711085490488715,
+      "query_orders": 31
+    },
+    {
+      "dataset": "JB GPT-5.4 | binary_only",
+      "policy": "proportional_stratified",
+      "rmse_pp": 0.5978019495890708,
+      "mean_interval_width_pp": 3.438850962926105,
+      "query_orders": 31
+    },
+    {
+      "dataset": "JB GPT-5.4 | binary_only",
+      "policy": "charged_pilot_neyman",
+      "rmse_pp": 0.7246879523561456,
+      "mean_interval_width_pp": 3.75666362089558,
+      "query_orders": 31
+    },
+    {
+      "dataset": "JB GPT-5.4-mini | binary_only",
+      "policy": "random_criterion",
+      "rmse_pp": 0.6129538395611412,
+      "mean_interval_width_pp": 2.45718778055777,
+      "query_orders": 31
+    },
+    {
+      "dataset": "JB GPT-5.4-mini | binary_only",
+      "policy": "proportional_stratified",
+      "rmse_pp": 0.5272310968642419,
+      "mean_interval_width_pp": 3.6292515216895533,
+      "query_orders": 31
+    },
+    {
+      "dataset": "JB GPT-5.4-mini | binary_only",
+      "policy": "charged_pilot_neyman",
+      "rmse_pp": 0.5581281929326568,
+      "mean_interval_width_pp": 4.0016010231239365,
+      "query_orders": 31
+    }
+  ],
+  "tests": {
+    "command": "python -m pytest -q",
+    "passed": 215
+  },
+  "visual_check": "Budget and all-nine-cell estimation PNGs inspected for labels, scales, endpoint display and clipping.",
+  "prior_release_ci": {
+    "run_id": 37731851023,
+    "head_sha": "7081eef1be5bd78e034c41a1abe7472da49f8ed0",
+    "conclusion": "success"
+  }
+}

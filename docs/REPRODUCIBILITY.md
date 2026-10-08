@@ -144,7 +144,13 @@ The extension's interval tests and direct small-world arithmetic complement repl
 
 **0.2.0 validation:** 215 tests passed. Original complete replay: 169.8 seconds; mechanism/robustness replay: 304.9 seconds. All 25 extension scientific CSV tables (752,947 rows), four scientific JSON payloads, and 606 plotting rows matched. Timings describe this recorded environment. [Original-study receipt](../artifacts/validation/robustness_base_run_manifest.json) · [Extension receipt](../artifacts/validation/extension_run_manifest.json) · [Row comparisons](../artifacts/validation/extension_verification.json)
 
-The current execution receipts are saved under `artifacts/validation/extension_*` and `robustness_*` after validation. Historical 0.1.0 counts and timings elsewhere on this page identify that release only.
+The 0.2.0 execution receipts are saved under `artifacts/validation/extension_*` and `robustness_*`. They describe that release's code and figures. Its complete [GitHub CI run](https://github.com/Itsxuchen/RefEval/actions/runs/37731851023) completed successfully at commit `7081eef`. Historical 0.1.0 counts and timings elsewhere on this page identify that release only.
+
+### Presentation clarification after 0.2.0
+
+The main budget figure now shows pointwise composition ranges, while the saved simultaneous-band values remain unchanged. The estimation figure displays both conservative interval widths and empirical RMSE in all nine cells. A/B descriptions use symmetric reference panels. These changes leave the tagged release and scientific outputs intact.
+
+[Presentation verification](../artifacts/validation/presentation_verification.json) recomputes all 162 estimation summaries from the saved query-order rows, checks 1,674 matched-budget groups, and confirms that all 606 budget plotting rows and 64 data/result/protocol files match the 0.2.0 commit. All 215 tests passed again. The [current renderer manifest](../artifacts/figures/conjunction_robustness_render_manifest.json) identifies the revised figure inputs and outputs; the earlier full-run receipts retain their original hashes. This focused check does not claim a new full scientific replay.
 
 ## Scope of reproducibility
 

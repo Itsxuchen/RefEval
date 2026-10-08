@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — presentation clarification, 2026-10-07
+
+- Show pointwise task-composition ranges in the main budget figure; retain the original constant-width simultaneous bands in the unchanged numerical tables.
+- Display empirical RMSE beside conservative interval width for all nine estimation cells.
+- Describe A/B references symmetrically and distinguish reference replacement from task-composition sensitivity.
+- Clarify the FAIL-dominated JB judge predictions and contrary individual query orders. Scientific results and the v0.2.0 release tag remain unchanged.
+
 ## 0.2.0 — reference and design sensitivity, 2026-10-07
 
 - Add matched 206-output reference replacements while fixing both judge predictions; separate fixed-set re-reading from adaptive reacquisition.
@@ -9,7 +16,7 @@
 - Publish the earlier mechanism decompositions, matched-margin scenarios, protocols, tests and complete offline extension replay.
 - Add sequential-testing, StratPPI and human-uncertainty references; qualify the focal 20% findings using the observed counterexamples.
 
-## Unreleased — documentation and figure update, 2026-09-30
+## Earlier documentation and figure update — included in 0.2.0, 2026-09-30
 
 - Expand the technical/data bibliography to 46 sources and clarify the closest
   screening, verification, active-testing and selective-correction precedents.
