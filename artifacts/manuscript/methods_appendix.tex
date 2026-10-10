@@ -1,0 +1,661 @@
+\section{Finite reference frames and verdict accounting}
+\label{app:accounting}
+
+Let $\mathcal J_i$ be the nonempty set of criterion slots for evaluation unit
+$i$, with $k_i=|\mathcal J_i|$, $N$ units, and
+$M=\sum_i k_i$ slots. Slots belong to exactly one unit. The released reference
+and primary prediction for slot $u$ are $Y_u,P_u\in\{0,1\}$, where one denotes
+PASS. Throughout this appendix they are fixed finite-population values. Define
+\begin{equation}
+ Z_i=\prod_{u\in\mathcal J_i}Y_u,
+ \qquad \widehat Z_i^0=\prod_{u\in\mathcal J_i}P_u,
+ \qquad \theta=\frac{1}{N}\sum_i Z_i.
+ \label{app:eq:targets}
+\end{equation}
+Criterion microagreement is the distinct target
+$a=M^{-1}\sum_u\mathbf 1\{Y_u=P_u\}$.
+An error in the following equations means disagreement with this particular
+reference. No equation identifies which of two disagreeing human raters is
+substantively correct.
+
+For JudgmentBench full strict, a positive binary item passes when its original
+value is one, and a negative-weight occurrence-count item passes when its
+original count is zero. The loader checks that their conjunction equals
+attaining the rubric's maximum score. Binary-only retains positive binary
+items and removes occurrence-count items. This changes both the success event
+and the criterion population. The original unit is an output-by-rater
+annotation; the alternative-reference analysis instead weights distinct
+outputs equally. RuVerBench units use the criteria retained in its release.
+
+\subsection{Certificates and update rules}
+\label{app:certificates}
+
+Let $Q\subseteq\bigcup_i\mathcal J_i$ be the queried slots and
+$Q_i=Q\cap\mathcal J_i$. In the query-only information model, a FAIL
+certificate is an observed reference failure, and a PASS certificate requires
+observing every slot as PASS. Write
+\begin{align}
+ C_i^-&=\mathbf1\{\exists u\in Q_i:Y_u=0\},\\
+ C_i^+&=\mathbf1\{Q_i=\mathcal J_i,\ Z_i=1\},
+ \qquad C_i=C_i^-+C_i^+.
+ \label{app:eq:certificates}
+\end{align}
+Eager updating substitutes every queried reference value immediately:
+\begin{equation}
+ \widehat Z_i^{E}(Q)
+ =\prod_{u\in\mathcal J_i}
+       \bigl(\mathbf1\{u\in Q\}Y_u+\mathbf1\{u\notin Q\}P_u\bigr).
+ \label{app:eq:eager}
+\end{equation}
+Certificate-gated updating uses $Z_i$ once certified and otherwise retains
+$\widehat Z_i^0$:
+\begin{equation}
+ \widehat Z_i^{G}(Q)=C_iZ_i+(1-C_i)\widehat Z_i^0.
+ \label{app:eq:gated}
+\end{equation}
+Writing $Z_i$ here is shorthand for the value logically determined by a
+certificate, not access to an unqueried reference. The implementation obtains
+that value from the queried bits. Gating can retain an uncertified initial
+PASS; it is not a protocol that publishes only certified outcomes.
+
+\subsection{Acquisition implementations}
+\label{app:acquisition}
+
+The seven acquisition rules use a common slot map. Uniform criterion
+sampling follows a global random priority. Three serial short-circuit rules
+visit tasks in the stated order and visit their criteria in natural slot
+order, random order, or predicted-FAIL-first order, respectively. They stop
+the current task at its first observed reference failure or after completing
+its rubric. Disagreement-only visits flagged criteria within each task and
+stops after the flagged pool is exhausted; it can leave budget unused.
+Disagreement-then-random uses that same flagged prefix, followed by a global
+random ordering of all unflagged criteria. Disagreement-prioritized short
+circuit visits, within a task, flagged slots first, then unflagged predicted
+FAIL slots, then the remaining predicted PASS slots; its stopping rule is
+the same serial certification rule.
+
+For each DR primary, the auxiliaries are the other two saved DR judges
+among Gemini 3.1 Pro, Qwen-plus and GPT-5.4 low. Each AC primary has the
+other saved AC judge as its auxiliary: Qwen-plus or DeepSeek v4-pro.
+JudgmentBench pairs GPT-5.4 with GPT-5.4-mini within the same scoring target.
+The flag is the union of disagreements with available auxiliaries. Their
+predictions are treated as available signals; their acquisition cost is not
+included in the reference-bit budget.
+
+The three task orders are release-relative order, ascending primary
+predicted-failure count, and a random task order. Seeds 1--31 randomize ties
+within the declared priorities. A separate canonical seed-zero realization
+uses natural slot order for priority ties while retaining random priorities
+for explicitly random policies and the random task order. Purpose-specific
+streams derive from root seed 20260913, the replicate seed and a SHA256 hash
+of the stream's name. Release-relative order refers to the loader's retained
+unit ordering, not a randomized sample of deployment tasks. The analytical
+mechanism calculations below hold this order fixed.
+
+\subsection{Exact event decomposition}
+\label{app:events}
+
+Define predicted-failure slots $F_i=\{u\in\mathcal J_i:P_u=0\}$ and
+reference-failure slots $T_i=\{u\in\mathcal J_i:Y_u=0\}$. An initially
+correct FAIL is susceptible to a new false PASS only if $F_i$ and $T_i$ are
+nonempty and disjoint. Its new-error event is
+\begin{equation}
+ A_i(Q)=\mathbf1\{F_i\ne\varnothing,\ T_i\ne\varnothing,
+ F_i\cap T_i=\varnothing,\ F_i\subseteq Q,
+ T_i\cap Q=\varnothing\}.
+ \label{app:eq:introduced}
+\end{equation}
+An initially false FAIL has $T_i=\varnothing$ and
+$F_i\ne\varnothing$. Eager updating repairs it once all its predicted
+failures have been checked. Gating delays that repair until every criterion
+has been checked. The delayed-repair event is therefore
+\begin{equation}
+ D_i(Q)=\mathbf1\{T_i=\varnothing,\ F_i\ne\varnothing,
+ F_i\subseteq Q,\ \mathcal J_i\not\subseteq Q\}.
+ \label{app:eq:delayed}
+\end{equation}
+Let $A(Q)=\sum_i A_i(Q)$, $D(Q)=\sum_i D_i(Q)$, and
+$E_r(Q)=\sum_i\mathbf1\{\widehat Z_i^r(Q)\ne Z_i\}$ for
+$r\in\{E,G\}$. Then
+\begin{equation}
+ E_G(Q)-E_E(Q)=D(Q)-A(Q).
+ \label{app:eq:update-identity}
+\end{equation}
+
+\paragraph{Derivation.}
+Initially correct PASS units have every prediction and reference equal to
+one, so either update remains correct. An initially false PASS is repaired
+exactly when a reference failure is queried, which also certifies FAIL; both
+updates therefore agree. For an initially correct FAIL, an unqueried
+predicted failure or a queried reference failure prevents eager PASS. Eager
+can introduce a false PASS precisely in \eqref{app:eq:introduced}, while
+gating retains the correct FAIL. For an initially false FAIL, the two rules
+disagree precisely in \eqref{app:eq:delayed}. Summing these four exhaustive
+initial classes proves \eqref{app:eq:update-identity}. In particular, correct
+reference substitutions cannot introduce a false FAIL under conjunction.
+
+If false PASS and false FAIL have fixed nonnegative costs $c_{\rm FP}$ and
+$c_{\rm FF}$, their endpoint loss difference is
+$c_{\rm FF}D-c_{\rm FP}A$. Thus equal-weight error comparisons are one
+particular loss choice. Along a growing query transcript, gated error cannot
+increase: every changed verdict is certified relative to the fixed
+reference. Its difference from eager error can increase because eager may
+repair false FAILs earlier. At zero queries and at a census the difference
+is zero.
+
+Both rules agree on untouched and certified units. If $U(Q)$ units have been
+partially queried but remain uncertified, then
+$|E_G(Q)-E_E(Q)|\leq U(Q)$. A serial short-circuit policy that completes or
+certifies a task before starting the next has $U(Q)\leq1$ at every prefix.
+This explains why changing the update rule has little room to change the
+endpoint under that acquisition structure, even when dispersed querying has
+a large effect.
+
+\section{Finite-budget expectations over query order}
+\label{app:expectations}
+
+For uniform sampling of $h$ slots without replacement from a group of size
+$G$, the probability of including $r$ specified slots and excluding $f$
+other specified slots is
+\begin{equation}
+ H(G,h;r,f)=\frac{\binom{G-r-f}{h-r}}{\binom{G}{h}}.
+ \label{app:eq:hypergeom-event}
+\end{equation}
+The specified inclusion and exclusion sets are disjoint. We set the
+probability to zero when $r+f>G$, $r>h$, or $f>G-h$; in the empty case
+$H(0,0;0,0)=1$. Equation~\eqref{app:eq:hypergeom-event} follows by choosing
+the other $h-r$ observed slots from the $G-r-f$ unrestricted slots. It is a
+sampling calculation and assumes no independence of reference errors.
+
+For a uniform $m$-of-$M$ criterion query set, the two expectations are
+\begin{align}
+ \mathbb E[A(Q)]
+ &=\sum_{i:\,F_i,T_i\ne\varnothing,\,F_i\cap T_i=\varnothing}
+     H(M,m;|F_i|,|T_i|),\\
+ \mathbb E[D(Q)]
+ &=\sum_{i:\,T_i=\varnothing,\,F_i\ne\varnothing}
+     \{H(M,m;|F_i|,0)-H(M,m;k_i,0)\}.
+ \label{app:eq:uniform-expectations}
+\end{align}
+The complete-rubric event is contained in the event of observing every
+predicted failure, which justifies the subtraction in the second line.
+Linearity of expectation gives the expected update difference even though
+events for different tasks are dependent under a fixed global budget.
+
+\subsection{Prioritized groups}
+\label{app:priority-groups}
+
+The same calculation applies to a predetermined sequence of disjoint query
+groups $\mathcal G_1,\ldots,\mathcal G_L$. Every slot in an earlier group is
+queried before any slot in a later group, and order within each group is
+uniformly random. At an interior cap $m$, let $\ell$ be the group satisfying
+\[
+ \sum_{g<\ell}|\mathcal G_g|\leq m
+ <\sum_{g\leq\ell}|\mathcal G_g|,
+ \qquad h=m-\sum_{g<\ell}|\mathcal G_g|.
+\]
+For a required set $R$ and forbidden set $S$, the event
+$R\subseteq Q$, $S\cap Q=\varnothing$ has probability zero if a required
+slot lies after $\ell$, a forbidden slot lies before $\ell$, or the two sets
+overlap. Otherwise its probability is
+\begin{equation}
+ H\bigl(|\mathcal G_\ell|,h;
+         |R\cap\mathcal G_\ell|,|S\cap\mathcal G_\ell|\bigr).
+ \label{app:eq:group-event}
+\end{equation}
+At a complete group boundary, the next group has $h=0$. At a census the
+event is determined directly by the complete query set. Substituting this
+event probability for each term in
+\eqref{app:eq:uniform-expectations} gives the grouped-order expectations.
+
+For disagreement-then-random, a criterion is flagged when any available
+auxiliary judge disagrees with the primary prediction. Each task's flagged
+criteria form one group, tasks follow release order, and the final group
+contains all unflagged criteria. The flagged tier is therefore not a single
+global random sample. These groups depend on saved predictions and task
+order, not hidden references. The analytical grid covers uniform criterion
+and disagreement-then-random querying at 101 shares from zero to one. It
+does not apply the predetermined-group formula to adaptive short-circuit
+paths. Budget caps use the implementation's nearest-integer rule
+$m=\operatorname{round}(bM)$, with ties to an even integer.
+
+All expectations condition on the full reference, predictions and priority
+groups. They explain the observed frames rather than provide a free
+prospective policy selector. The 31 random-order means provide a Monte Carlo
+check against these expectations; their standard error is the sample
+standard deviation divided by $\sqrt{31}$, not uncertainty from sampling new
+tasks.
+
+\subsection{Matched-margin alternatives}
+\label{app:permutations}
+
+We construct 64 alternative assignments in each of nine analysis cells by
+permuting reference labels within strata defined by task length, primary
+prediction and criterion category or scoring mode. This preserves every
+stratum's prediction/reference confusion counts, the task slots and lengths,
+and all primary and auxiliary predictions. Root seed 20261007 and a
+dataset-specific hash define the random streams. Both analytical policies
+are evaluated at shares $0.05,0.20,0.50,0.84,0.95$, including originally
+observed focal and peak regions. An alternative assignment with a different
+update effect demonstrates that the retained summaries do not determine
+that effect. These are retrospective counterexamples, not a null test for
+random reference noise. The permutations can also change reference task
+pass counts, initial task errors and their joint configuration, so they do
+not isolate a causal effect of error correlation.
+
+\section{Certification and repair under different allocations}
+\label{app:allocation}
+
+Let $E_0=\sum_i\mathbf1\{\widehat Z_i^0\ne Z_i\}$. For a query set $Q$,
+write $C_W(Q)$ and $C_R(Q)$ for the numbers of certified units that were
+initially wrong and initially right. Then
+\begin{align}
+ C(Q)&=C_W(Q)+C_R(Q),\\
+ E_G(Q)&=E_0-C_W(Q),\\
+ E_E(Q)&=E_0-C_W(Q)-D(Q)+A(Q).
+ \label{app:eq:allocation-identity}
+\end{align}
+Every certified initially wrong unit is repaired under either rule. The
+only further eager repairs are the uncertified false-FAIL repairs counted
+by $D$, and its only new errors are those counted by $A$. This proves the
+last two identities directly from the initial classes.
+
+For two allocations applied to the same frame, define every signed
+difference as mixed allocation minus uniform criterion sampling. Pairing
+within a query-order replicate yields
+\begin{equation}
+ \Delta C=\Delta C_W+\Delta C_R,
+ \qquad
+ \Delta E_E=-\Delta C_W-\Delta D+\Delta A,
+ \qquad
+ \Delta E_G=-\Delta C_W.
+ \label{app:eq:paired-allocation}
+\end{equation}
+We calculate these differences before averaging. Their means retain the
+additive identities, whereas differences of marginal medians generally do
+not. To describe where additional certificates go, we also report the
+composition of the \emph{mixed-only} certified set, separately from the
+uniform-only set. This gross composition remains meaningful when net
+certification gain is zero or negative. More certificates on initially
+correct units can provide useful confirmation without repairing an error;
+it is not by itself evidence that an allocation is harmful.
+
+The fixed mixed design spends up to $\lfloor m/2\rfloor$ labels on
+judge-first serial short circuit, then draws a fresh uniform sample without
+replacement from the remaining criterion slots. If short circuit completes
+before its phase cap, the unused budget transfers to the random phase. All
+revealed labels count toward the common actual total $m$. This contrasts
+acquisition while the matched-query comparison in
+Appendix~\ref{app:events} contrasts updating. Neither design uses hidden
+initial-error classes to choose queries.
+
+\section{Finite-population estimation and intervals}
+\label{app:inference}
+
+\subsection{An adaptive first phase followed by fresh sampling}
+
+Set $a_u=\mathbf1\{P_u=Y_u\}$. Let the first-phase transcript reveal a set
+$C$ of $c$ criterion labels with known correct count $t_C=\sum_{u\in C}a_u$.
+Condition on that complete transcript. The remaining $R=M-c$ slots form a
+fixed population. Draw an independent simple random sample $S$ of size $n$
+without replacement from it, and observe $x=\sum_{u\in S}a_u$. For $n>0$,
+\begin{equation}
+ \widehat a=\frac{t_C+R x/n}{M},
+ \qquad \mathbb E[\widehat a\mid C,\hbox{first-phase observations}]=a.
+ \label{app:eq:conditional-estimator}
+\end{equation}
+The expectation follows from inclusion probability $n/R$ for every remaining
+slot. Conditioning on the observed history accommodates the adaptive first
+phase: the second-phase estimate expands only the unobserved remainder.
+When $R=0$, the reference agreement is known exactly. When $R>0$ but $n=0$,
+we report logical bounds $[t_C/M,(t_C+R)/M]$ and no design-unbiased point
+estimate from this formula.
+
+Let $S_R^2$ be the finite-population variance of the remainder's agreement
+bits, with denominator $R-1$. For $R>1$ and $n>0$,
+\begin{equation}
+ \operatorname{Var}(\widehat a\mid\hbox{first phase})
+ =\frac{R^2}{M^2}\left(1-\frac{n}{R}\right)\frac{S_R^2}{n}.
+ \label{app:eq:fpc}
+\end{equation}
+The factor $1-n/R$ is the finite-population correction. Census remainders
+have zero variance. Where a normal approximation is reported, $n\geq2$
+permits the sample variance
+$s^2=x(n-x)/[n(n-1)]$ to replace $S_R^2$. That approximation is evaluated
+separately from the guaranteed intervals below.
+
+\subsection{Inclusive hypergeometric inversion}
+\label{app:hypergeom-ci}
+
+For unknown remainder success count $K$, the sample count has probability
+\begin{equation}
+ \Pr_K(X=j)=\frac{\binom{K}{j}\binom{R-K}{n-j}}{\binom{R}{n}}.
+ \label{app:eq:hg-pmf}
+\end{equation}
+Retain integer counts consistent with the sample and both inclusive tails:
+\begin{equation}
+ \mathcal K_\alpha(x)=
+ \left\{K\in\{x,\ldots,R-n+x\}:
+ \Pr_K(X\geq x)\geq\frac{\alpha}{2},\quad
+ \Pr_K(X\leq x)\geq\frac{\alpha}{2}\right\}.
+ \label{app:eq:hg-set}
+\end{equation}
+Let $K_L$ and $K_U$ be its minimum and maximum. The microagreement interval
+is $[(t_C+K_L)/M,(t_C+K_U)/M]$. For every fixed true $K$, rejection by either
+tail occurs with probability at most $\alpha/2$; a union bound gives coverage
+at least $1-\alpha$. Discreteness can make it conservative. This is a
+conditional, fixed-budget randomization guarantee with the reference held
+fixed, not simultaneous coverage of every budget or validity under optional
+stopping. At $n=0$ the count range is $[0,R]$, and at $n=R$ it is $[x,x]$.
+
+The implementation compares ordinary tails numerically, but recomputes
+near-threshold decisions using integer binomial coefficients and rational
+$\alpha/2$. A tolerance triggers exact calculation rather than accepting an
+endpoint. For example, with $R=16,n=2,x=0,\alpha=0.05$,
+$K=13$ satisfies $\Pr(X=0)=\binom{3}{2}/\binom{16}{2}=0.025$ exactly and
+must remain in the interval $[0,13]$. This resolves the floating-point
+boundary case without altering the mathematical acceptance rule.
+
+\subsection{Prediction strata and a charged pilot}
+\label{app:strata}
+
+Prediction strata are the nonempty sets with $P_u=0$ or $P_u=1$, known before
+reference acquisition. Proportional allocation reserves one draw per
+nonempty stratum when affordable, distributes remaining draws proportional
+to stratum size, respects capacities, and resolves integer remainders by
+descending fractional part with prediction-zero first on ties. Otherwise it
+falls back to uniform sampling.
+
+For the charged-pilot design, the initial allocation is
+$\min(2,N_h)$ labels in stratum $h$. The design reserves at least one later
+draw in each stratum not exhausted by that initial allocation. If the cap
+cannot fund both stages, it falls back to uniform sampling. Otherwise the
+pilot target is the larger of this minimum and $\lfloor0.2m\rfloor$, capped
+to preserve the later draws. Additional pilot slots are allocated by stratum
+size, leaving an unobserved slot in each initially noncensused stratum.
+After pilot counts $p_h$ and observed agreement totals $t_h$, define
+\[
+ \widetilde a_h=\frac{t_h+1/2}{p_h+1},\qquad
+ R_h=N_h-p_h,\qquad
+ w_h=R_h\sqrt{\widetilde a_h(1-\widetilde a_h)}.
+\]
+The remaining budget is allocated by weights $w_h$, with a minimum of one
+draw from each nonempty remainder and its capacity as an upper bound. The
+same capacity-constrained proportional allocation and largest-remainder
+rule determine integer counts. Pilot and remainder samples use separate
+random-priority streams. All pilot labels are charged to the budget.
+
+Conditional on the pilot, let the remainder sample in stratum $h$ have size
+$n_h$ and agreement total $x_h$. Then
+\begin{equation}
+ \widehat a_{\rm strat}
+ =\frac{\sum_h t_h+\sum_{h:R_h>0}R_hx_h/n_h}{M}
+ \label{app:eq:strat-estimator}
+\end{equation}
+is conditionally unbiased. If $H$ strata are not censused, we obtain a count
+interval in each at error level $\alpha/H$, sum their lower and upper bounds
+and add the known pilot total. The union bound proves conditional coverage
+at least $1-\alpha$ for the overall mean; independence between stratum
+interval events is not required. Censused strata contribute their exact
+counts. The accompanying normal approximation sums the variances in
+\eqref{app:eq:fpc}, stratum by stratum, and clips endpoints to $[0,1]$.
+It is unavailable when a noncensused stratum has fewer than two sampled
+slots. These design-based controls are not an implementation of StratPPI.
+
+At each of six shares $0.006,0.05,0.20,0.50,0.60,1$, we report bias, empirical
+RMSE, coverage and interval width over 31 query-order replicates in each of
+nine analysis cells. RMSE is
+$[31^{-1}\sum_{s=1}^{31}(\widehat a_s-a)^2]^{1/2}$.
+The replications describe the finite frames; coverage guarantees derive
+from the sampling design and inversion, not the number of observed covered
+replicates. Conservative simultaneous stratum bounds can be wider despite
+a smaller empirical RMSE.
+
+\subsection{Whole-task sampling}
+\label{app:whole-task}
+
+For estimating $\theta$, the separate whole-task panel fixes the number of
+sampled evaluation units in advance and draws them uniformly without
+replacement. Fully revealing an included unit and short-circuiting after
+its first reference failure yield the same certified $Z_i$. Their sample
+means and finite-population task-count intervals are consequently identical,
+although their criterion-query costs differ. Here sample size is fixed and
+label cost is random. This experiment is distinct from stopping task
+sampling at a fixed label cap, which would generally alter inclusion
+probabilities and require its own inference.
+
+\section{Alternative references and task composition}
+\label{app:sensitivity}
+
+\subsection{Matched reference panels}
+\label{app:reference}
+
+The matched frame contains 206 outputs with at least two distinct raters.
+The corresponding 431 annotations are distinguished from the original
+1,539 annotation units. Outputs are sorted by base-task and output identity.
+For each output, distinct-rater annotations are sorted by the SHA256 digest
+of the literal string
+\texttt{reference-panel-v1|output|rater|annotation}; the first two complete
+rubric vectors form panels A and B. A separate ordering with salt
+\texttt{judge-anchor-v1} chooses the annotation supplying the saved primary
+and auxiliary predictions. The selection rule does not inspect label values
+or agreement. Rubric-slot identities are checked before alignment, and the
+same selections are used for both targets and both judges. A and B thus
+refer to symmetric selections across outputs, not globally ranked raters or
+a chronological improvement in reference quality.
+
+Crossed comparisons distinguish the reference used for acquisition from
+the reference used for reading and evaluating the resulting query set.
+For acquisition panel $a\in\{A,B\}$, an adaptive policy obtains $Q^{(a)}$
+using that panel's answers. For evaluation panel $e\in\{A,B\}$, queried
+slots are re-read using $Y^{(e)}$, both updates are computed from those
+answers, and residual disagreement is measured against the complete
+$Y^{(e)}$. Off-diagonal comparisons therefore describe counterfactual
+re-reading of fixed queried items. They do not retain panel A answers while
+silently treating panel B as truth. Nonadaptive policies have identical
+query sets for either acquisition panel. Adaptive short circuit can change
+its stopping decisions and actual query count.
+
+The update grid includes uniform criterion, disagreement-then-random and
+judge-first short circuit at all 101 budget shares and seeds 1--31. The
+allocation grid compares the mixed and uniform designs at the six shares
+listed above, with equal actual query counts within each contrast. The four
+crossed means share outputs and references and are not four independent
+replications. Moving from the original frame to the matched frame also
+changes composition, weighting and judge anchoring; only within-frame,
+fixed-prediction contrasts isolate the reference-panel change.
+
+\subsection{Base-task composition replay}
+\label{app:composition}
+
+For the two JudgmentBench GPT-5.4 targets and DR Gemini, we generate 399
+bootstrap compositions with root seed 20261008. Each replicate draws the
+original number of base tasks with replacement and retains every output,
+rater and criterion belonging to a selected task. The two JudgmentBench
+targets share base-task multiplicities; DR has a separate random stream.
+Original release-relative unit order is preserved by visiting original
+units and cloning each according to its base-task multiplicity. Shared
+base-task/copy identifiers retain dependence within a replicated task.
+Each composition gets its own $N$, $M$ and recomputed rounded budget caps.
+
+For updating, every composition uses the exact order expectations in
+Appendix~\ref{app:expectations} for both analytical policies over the full
+101-point grid. For allocation, each composition reruns the 20\% mixed versus
+uniform contrast using the same fixed 31-seed panel, taking paired
+differences before their mean. Thus the latter ranges include sensitivity
+of a fixed finite Monte Carlo panel, rather than separately estimating its
+Monte Carlo error. Quantiles use linear interpolation. We show pointwise
+2.5th and 97.5th percentiles in counts and per 100 evaluation units, and
+retain each replicate's recomputed peak and its location. The archived
+approximate simultaneous construction uses the 95th percentile of maximum
+absolute grid deviations; it is omitted from the main figure because its
+constant width obscures the known zero effects at the two endpoints.
+
+This replay evaluates sensitivity to empirical task composition. In
+JudgmentBench, 30 curated base tasks do not establish an exchangeable sample
+from a new task population. Raters remain fixed, and reference-panel and
+composition experiments are conducted separately. Their ranges therefore
+do not estimate joint uncertainty over tasks and raters or correct selection
+bias. A pointwise range at the original curve's selected peak is also not a
+simultaneous guarantee for that curve.
+
+\section{Information disclosure and sharp logical endpoints}
+\label{app:disclosure}
+
+\subsection{Query-only identification}
+
+With only queried labels and no restrictions linking unobserved values,
+let $n_P=\sum_i C_i^+$ and $n_F=\sum_i C_i^-$. Every uncertified unit has
+at least one unobserved slot and no observed failure. Setting all its
+unobserved slots to one makes it PASS; setting any one of them to zero makes
+it FAIL. Because the unrestricted completions can be chosen independently
+by unit, the sharp endpoint range is
+\begin{equation}
+ \theta\in\left[\frac{n_P}{N},1-\frac{n_F}{N}\right],
+ \qquad \text{width}=1-\frac{n_P+n_F}{N}.
+ \label{app:eq:query-only}
+\end{equation}
+Attainable finite-population values have increments $1/N$; the displayed
+interval is their endpoint hull. Its width is a logical consequence of
+missing information, not a sampling confidence interval. A random sample
+can estimate the mean precisely without certifying every population unit.
+
+\subsection{Fixed references with withheld associations}
+\label{app:milp}
+
+The disclosure experiment keeps the complete observed labels fixed when
+constructing a release and changes what the reconstruction procedure may
+see. Visible information includes task slots and lengths, criterion
+categories, and the primary predictions. D0 supplies the exact number of
+reference PASS bits within each task-length-by-prediction group. D1 refines
+those groups by criterion category. D2 additionally restores the actual
+reference values attached to all slots of selected whole tasks. These are
+reference-containing count summaries and restored links, not additional
+label acquisition.
+
+Let $\mathcal B_g$ partition the slots into disclosed groups, with reference
+success count $t_g$. Unknown binary assignments $x_u$ and task conjunctions
+$z_i$ must satisfy
+\begin{align}
+ x_u,z_i&\in\{0,1\},\\
+ z_i&\leq x_u &&(u\in\mathcal J_i),\\
+ \sum_{u\in\mathcal J_i}x_u-z_i&\leq k_i-1 &&(i=1,\ldots,N),\\
+ \sum_{u\in\mathcal B_g}x_u&=t_g &&\text{for every disclosed group},\\
+ x_u&=Y_u &&\text{for restored slots}.
+ \label{app:eq:milp}
+\end{align}
+The two conjunction inequalities enforce
+$z_i=\prod_{u\in\mathcal J_i}x_u$: any zero slot forces $z_i=0$, and all
+one slots force $z_i=1$. Minimizing and maximizing $N^{-1}\sum_i z_i$ gives
+the sharp finite feasible endpoints. This is a binary mixed-integer
+program, not a continuous linear-program relaxation. Every feasible binary
+assignment is an allowed completion and vice versa, proving sharpness of
+the optima in this information model. Extra disclosures can only remove
+completions, and restoring all labels recovers the observed score.
+
+The program separates exactly by task length because every disclosed group
+lies within one length stratum. Each endpoint has an attained integer
+witness, independently checked equality and conjunction constraints, and a
+closed solver objective bound. The solver receives only the constructed
+release; hidden labels are used by the publisher to form summaries and
+later to check containment and full recovery. The experiment restores
+nested whole-task prefixes at fractions $0,0.1,0.25,0.5,0.75,1$, with
+$\lfloor fN\rfloor$ tasks, under ten saved random orders per population and
+root seed 20260907. The four RuVerBench runs are analyzed separately.
+Disclosure-order variation is not sampling uncertainty.
+
+D0 already determines the task-uniform mean-criteria reference score:
+\begin{equation}
+ \mu=\frac{1}{N}\sum_i\frac{1}{k_i}
+                      \sum_{u\in\mathcal J_i}Y_u
+     =\frac{1}{N}\sum_g\frac{t_g}{k_g},
+ \label{app:eq:linear-control}
+\end{equation}
+where $k_g$ is the common task length in group $g$. It need not determine
+the nonlinear conjunction. Because the predicted task score is visible,
+subtracting it from each reference endpoint gives the feasible correction
+range. Its sign concerns correction of one judge's score on fixed outputs,
+not ranking two solver models. A disclosed reference task-pass total would
+also identify the aggregate mean without revealing every criterion link;
+the studied disclosure ladder is one sufficient-information comparison,
+not a universally minimal release scheme.
+
+\subsection{A complete two-task example}
+\label{app:example}
+
+Take two tasks with two binary slots each. With no queries or extra
+information, their conjunction mean lies between zero and one. A trusted
+total of exactly two PASS bits reduces the feasible means to zero or
+$1/2$: assignments $(1,0),(1,0)$ and $(1,1),(0,0)$ attain the two endpoints.
+If both first-task slots are then observed as PASS, the trusted total forces
+both second-task slots to FAIL, identifying the mean as $1/2$. Without that
+total, the same two observations leave a range $[1/2,1]$. Thus a task can
+be unqueried yet logically determined by additional information. Conversely,
+knowing only that exactly one of the two tasks passes identifies the mean
+as $1/2$ without identifying which task passes. These examples distinguish
+label acquisition, individual identification and aggregate identification.
+The real RuVerBench release contains the task links; the experiment
+investigates what its coarsened summaries support, rather than alleging a
+missing-link defect in that release.
+
+
+\clearpage
+\section{Additional displays and reproduction}
+\label{app:reproduce}
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\linewidth,height=0.79\textheight,keepaspectratio]{conjunction_robustness_estimation.pdf}
+\caption{Estimation controls at a 20\% criterion budget across all nine cells. Guaranteed interval widths and empirical RMSE are shown separately. The stratified intervals combine finite-population count bounds conservatively; their width alone does not rank point-estimation performance. Pilot labels count toward the same budget. Each empirical quantity summarizes 31 saved orders, while the coverage guarantee follows from the design.}
+\label{fig:estimation}
+\end{figure}
+\FloatBarrier
+
+The released package separates data integrity, scientific replay, and manuscript
+validation. Inputs are compact numerical projections with task, output, rater,
+criterion and scoring metadata. Original input provenance and content hashes
+are in \texttt{data/PROVENANCE.json}; result provenance is stored with the
+archived numerical outputs. The following commands run from the repository
+root after installing the pinned Python dependencies:
+\begin{verbatim}
+python -m src.check_package
+python -m pytest -q
+python -m src.reproduce --mode full --output artifacts/reproduced
+python -m src.verify_release --results artifacts/reproduced
+python -m src.reproduce_extensions --output artifacts/reproduced-extensions
+python -m src.reproduce_extensions --output artifacts/reproduced-extensions --verify-only
+python -m src.verify_manuscript_claims --output artifacts/paper-checks/claims.json
+python -m src.build_paper
+\end{verbatim}
+The final command additionally requires Tectonic (tested with version 0.17.0)
+and writes a rebuilt PDF separately from the published copy. Initial dependency
+installation can require network access; the scientific replay does not call
+judge APIs. Rebuilding the PDF can change PDF metadata without changing the
+scientific results. The published manuscript includes a claim audit and a
+citation audit; the broader technical reading library remains separate from
+the selected manuscript bibliography.
+
+Table~\ref{tab:sources} maps the paper's numerical claims to the result groups.
+For compactness, paths below are relative to
+\texttt{artifacts/expected/}. The executable claim audit records exact row
+keys, units, recomputed values and source hashes. It checks selected paper
+anchors and accounting identities; the complete scientific reproduction
+commands compare the larger archived grids.
+\begin{table}[h]
+\centering\small
+\caption{Numerical source routing for the paper.}
+\label{tab:sources}
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+Paper component & Archived source group\\
+\midrule
+Frames and initial errors & \texttt{conjunction\_policy\_study/study.json} and input tables\\
+Query-order curves & \texttt{conjunction\_policy\_study/budget\_curves.csv.gz}\\
+Exact expectations and permutations & \texttt{conjunction\_mechanism/}\\
+Paired allocation decomposition & \texttt{conjunction\_mechanism/}\\
+SRS/mix and whole-task estimates & \texttt{conjunction\_label\_value/}\\
+Reference and composition sensitivity & \texttt{conjunction\_robustness/}\\
+Stratified estimation controls & \texttt{conjunction\_robustness/}\\
+Disclosure endpoints and witnesses & \texttt{information\_disclosure\_replay.json}\\
+\bottomrule
+\end{tabularx}
+\end{table}

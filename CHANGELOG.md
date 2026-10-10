@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — complete manuscript, 2026-10-10
+
+- Added the complete paper, mathematical and reproducibility appendices, selected bibliography, and compiled PDF.
+- Added a portable Tectonic build command and independent numerical claim checks against saved public inputs/results.
+- Included manuscript-specific numerical and primary-source citation audit records; linked the paper from the README.
+- Extended the package inventory to cover manuscript artifacts. Existing scientific inputs, results, figures and analysis protocols are unchanged.
+
 ## Unreleased — nearest-neighbor and RQ alignment, 2026-10-10
 
 - Align the three research questions with matched-query mechanisms, certificate-to-repair outcomes and task-association sufficiency; retain reference sensitivity as a cross-cutting analysis.

@@ -1,12 +1,12 @@
 # What Should Reference Labels Buy?
 
-### Estimation and Certification in Conjunctive Evaluations
+### Estimation, Certification, and Repair in Conjunctive Evaluations
 
 [![Reproduction checks](https://github.com/Itsxuchen/RefEval/actions/workflows/reproduce.yml/badge.svg)](https://github.com/Itsxuchen/RefEval/actions/workflows/reproduce.yml)
 
 Research code, compact analysis data, and saved results for a retrospective study of reference checking in rubric-based evaluation. A reference check can help estimate judge accuracy, certify an individual outcome, or repair an existing verdict. When every retained criterion must pass, these goals can favor different checking and updating protocols.
 
-**Manuscript in preparation; no arXiv identifier has been assigned.**
+**Complete manuscript draft:** [PDF](artifacts/manuscript/paper.pdf) · [LaTeX source](artifacts/manuscript/paper.tex) · [methods and proofs](artifacts/manuscript/methods_appendix.tex) · [build and verification instructions](docs/REPRODUCIBILITY.md#manuscript-build-and-claim-checks). No arXiv identifier has been assigned.
 
 The study uses fixed released references and saved predictions from **RuVerBench** and **JudgmentBench**. JudgmentBench's strict all-pass outcome is a researcher-defined stress test. The nine analysis cells come from two data families; they are not nine independent replications. One query reveals one existing reference bit. Query counts do not measure human time.
 

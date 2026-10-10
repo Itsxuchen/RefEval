@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-10",
+  "status": "PASS",
+  "compiler": "Tectonic 0.17.0",
+  "pdf_pages": 22,
+  "main_text_ends_on_page": 10,
+  "appendix_starts_on_page": 13,
+  "selected_citations": 27,
+  "unique_tex_labels": 57,
+  "unresolved_references": 0,
+  "latex_warnings": 0,
+  "visually_inspected_pages": 22,
+  "local_public_rendered_pages_identical": 22,
+  "canonical_rqs_aligned": 3,
+  "unit_tests": {
+    "passed": 215,
+    "seconds": 8.54
+  },
+  "existing_data_protocol_test_result_figure_files_unchanged": 105,
+  "scientific_base_commit": "918b371e589f1f8166d828c0e5e98ed0635bcbdc",
+  "source_sha256": {
+    "artifacts/manuscript/paper.tex": "89155eeb61a23abba2299b1cb2d51a679ea934a00209d86104d71511ac3a3461",
+    "artifacts/manuscript/methods_appendix.tex": "cf1aa540b784d29e62860181ecffcd217aee4f0dafb8ebcc228ba2a769549a67",
+    "artifacts/manuscript/paper_references.bib": "90882aca720afc36cfae91649d2e851e7dd251ede39608d281a2ed9f8da9dc31",
+    "artifacts/manuscript/citation_audit.md": "b21a36660c05e6a435911c3c49fb965ea20dd711e85b869c04490c8eccbecda6",
+    "artifacts/manuscript/numerical_claim_audit.json": "00a945cecd78724ba5c82ca5d2a9be2eeb4f2b5d5f124c4e0e6213bb3ef33e98",
+    "artifacts/manuscript/paper.pdf": "b183bcac5114513960116dec1f32cb976527918f31049499771ab6f1e9446eca",
+    "src/build_paper.py": "84d1f1d8a8a5d9139790aa2651d8760bfc70beadeaedfb42e865c648ef72c168",
+    "src/verify_manuscript_claims.py": "851d0e47e23c62c239a1731181ceff8323a108e61717f73ed2cc94d267ef855f"
+  },
+  "scope": "Complete manuscript compilation and visual/source integrity checks. Numerical and citation claims have separate receipts; no new full scientific experiment replay or reference-label adjudication.",
+  "numerical_claim_checks": 503,
+  "local_links_checked": 229
+}

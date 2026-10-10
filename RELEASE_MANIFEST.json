@@ -8,20 +8,20 @@
       "bytes": 195
     },
     ".github/workflows/reproduce.yml": {
-      "sha256": "537973c462ff04871e3800d436143aab04f5ddd56ebd193848d91c4b439da70c",
-      "bytes": 1154
+      "sha256": "213885c031d40095f7ce9c2d1096f02149478fe2255df7267e4e8e4cafdffd67",
+      "bytes": 1254
     },
     ".gitignore": {
-      "sha256": "b1f1651ee4f9c8a0e8eec4af41e119dd7c17b4a715e37f6e176d46541baf6b7f",
-      "bytes": 291
+      "sha256": "8d1be59ce133bac37be2bb73cf569b65930e6ba24c755b5e875c7180e4fb7e46",
+      "bytes": 339
     },
     "CHANGELOG.md": {
-      "sha256": "6d881eaaaa9520782a49e7f249310f20f16d1390790b9185ad13a2ee71e03882",
-      "bytes": 4213
+      "sha256": "f1c1b5da3ee0b68794d5fec02ead6f95119ce247c52d308b5431e066e4f05435",
+      "bytes": 4762
     },
     "CITATION.cff": {
-      "sha256": "1da6171d590a7891f5c5c43c6fa6558086a6f3aca7f91197211511a1b61b43b5",
-      "bytes": 613
+      "sha256": "e947b90bd07f281c93956f94a4641f9ced625e89d9be90a6e6d2d3da11aeb5d4",
+      "bytes": 630
     },
     "CONTRIBUTING.md": {
       "sha256": "6b2366f0df624c6f2df9ad75c3fa32676ed71cdcc873d27fde250029b11c166d",
@@ -32,8 +32,8 @@
       "bytes": 1064
     },
     "README.md": {
-      "sha256": "c50ade3495667be5b09e96c7ce31785200413017af8d7f6657a9f9083e5cc0fc",
-      "bytes": 13134
+      "sha256": "2884963b6dd90772d99bc1cd1e178b62339ba08e26288f1d1326aa039411ecc4",
+      "bytes": 13399
     },
     "THIRD_PARTY_NOTICES.md": {
       "sha256": "2f8e4fd35096f148bb4d67f672b60232e32ebe87778bb38291f3b182d43e108d",
@@ -331,6 +331,34 @@
       "sha256": "40c7253ee14dc3e1813ed8268595ca8d8eab1f87f2e8f7a3a570c3ec7ab96719",
       "bytes": 344698
     },
+    "artifacts/manuscript/build_validation.json": {
+      "sha256": "51edcc847286da7688af2620c9e1061365c2e98bdb88513c16225d9cc7189a67",
+      "bytes": 1767
+    },
+    "artifacts/manuscript/citation_audit.md": {
+      "sha256": "b21a36660c05e6a435911c3c49fb965ea20dd711e85b869c04490c8eccbecda6",
+      "bytes": 25563
+    },
+    "artifacts/manuscript/methods_appendix.tex": {
+      "sha256": "cf1aa540b784d29e62860181ecffcd217aee4f0dafb8ebcc228ba2a769549a67",
+      "bytes": 34223
+    },
+    "artifacts/manuscript/numerical_claim_audit.json": {
+      "sha256": "00a945cecd78724ba5c82ca5d2a9be2eeb4f2b5d5f124c4e0e6213bb3ef33e98",
+      "bytes": 167920
+    },
+    "artifacts/manuscript/paper.pdf": {
+      "sha256": "b183bcac5114513960116dec1f32cb976527918f31049499771ab6f1e9446eca",
+      "bytes": 265842
+    },
+    "artifacts/manuscript/paper.tex": {
+      "sha256": "89155eeb61a23abba2299b1cb2d51a679ea934a00209d86104d71511ac3a3461",
+      "bytes": 38869
+    },
+    "artifacts/manuscript/paper_references.bib": {
+      "sha256": "90882aca720afc36cfae91649d2e851e7dd251ede39608d281a2ed9f8da9dc31",
+      "bytes": 11572
+    },
     "artifacts/validation/environment_and_checks.json": {
       "sha256": "8f2f7b5689af2df4f12667017483daed1b3e05684562cc8318bd03619bc9b037",
       "bytes": 743
@@ -452,8 +480,8 @@
       "bytes": 34011
     },
     "docs/REPRODUCIBILITY.md": {
-      "sha256": "4d9442eb7499b12bde594f9ffc39fc176801806aa5a62d1a2e8334edf63b9cd3",
-      "bytes": 15786
+      "sha256": "5e182db1dc7493ba3652b8a50b0fe42a02c34c9013609d9ee2a6f55890a32e3c",
+      "bytes": 17863
     },
     "docs/RESULTS.md": {
       "sha256": "2a9bcff34bb9222cb3e71866025dc75af040f7a9a267f62ab6fd37ea304b98ac",
@@ -491,9 +519,13 @@
       "sha256": "74fd3aefdf24b5b2ed703d1fa87c6ceee8e8a3e0ad70095f04b47f70919bd5a1",
       "bytes": 58
     },
+    "src/build_paper.py": {
+      "sha256": "84d1f1d8a8a5d9139790aa2651d8760bfc70beadeaedfb42e865c648ef72c168",
+      "bytes": 2114
+    },
     "src/check_package.py": {
-      "sha256": "31a172c2c3dddea63f1bd3e86d87729a3ae3e79be4ee98af8dfee4c40151a8d9",
-      "bytes": 4529
+      "sha256": "01c133ec5740cc44275ca6903436acf8da2456157d16fb6bd24e0fef93b89cd8",
+      "bytes": 4562
     },
     "src/conjunction_allocation_mechanism.py": {
       "sha256": "9b438c30d5651107d8587b1e1b1bfa832457fba501564b7fb0447b42b21ffa3f",
@@ -590,6 +622,10 @@
     "src/verify_conjunction_policy_study.py": {
       "sha256": "f0c35d2dd665dbcf5f9101313885393beaaa5b9e678a32dda10d9aed0b063d7b",
       "bytes": 7500
+    },
+    "src/verify_manuscript_claims.py": {
+      "sha256": "851d0e47e23c62c239a1731181ceff8323a108e61717f73ed2cc94d267ef855f",
+      "bytes": 37348
     },
     "src/verify_release.py": {
       "sha256": "a157d9d4f1b638707d6d593aac78a7135a4294acd225965e797600856be76394",

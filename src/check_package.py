@@ -15,7 +15,8 @@ ROOT_FILES = {
     "requirements.lock.txt", ".gitignore", ".gitattributes",
 }
 TREES = ("src", "tests", "context", "docs", "licenses", "data",
-         "artifacts/expected", "artifacts/figures", "artifacts/validation", ".github")
+         "artifacts/expected", "artifacts/figures", "artifacts/validation",
+         "artifacts/manuscript", ".github")
 
 
 def sha256(path: Path) -> str:

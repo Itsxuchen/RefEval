@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Please cite this versioned software release. The accompanying manuscript is in preparation; no paper identifier has been assigned."
+message: "Please cite this versioned software release. A complete manuscript draft and its LaTeX sources are included; no paper identifier has been assigned."
 type: software
 title: "Reference Label Value: Estimation and Certification in Conjunctive Evaluations"
 authors:

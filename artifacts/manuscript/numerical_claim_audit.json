@@ -1,0 +1,5015 @@
+{
+  "schema_version": 1,
+  "kind": "manuscript numerical claim audit",
+  "status": "PASS",
+  "method": "Independent aggregation and combinatorial calculation from released fixed inputs and saved rows. No scientific experiments or optimizer reruns.",
+  "scope_limits": [
+    "Does not adjudicate reference truth or assert generalization beyond the stated designs.",
+    "Does not by itself certify prose completeness, citation accuracy, or correspondence of every manuscript number.",
+    "Shared input loader validates target conversion; numerical aggregation and analytical event calculation are separate from producer functions.",
+    "Disclosure feasibility is independently checked by existing literal witness validator; endpoint optimality uses saved closed solver bounds."
+  ],
+  "sources": {
+    "data/processed/public_judge_predictions.csv": "e992336abc17077ff4a0f44a21fbd85561bede812b5eb0c6e2b4a4999db35b3c",
+    "data/processed/gpt54_low_dr_predictions.csv": "67a22ed3fd402b62624ab166cecb9205bf48aa8d92ce4d1a9278f2d3bc976629",
+    "data/reference/judgmentbench/rubric_items.csv": "386a4c893fe86c77df6604dd6947f88a1b39a7ba477843e05a6f0ccb4a36d261",
+    "data/reference/judgmentbench/human_annotations_rubric.csv": "6a50aa8bcb9d647ee227c1166507e90143d8580f058d1d62db0c9511ef4a89c6",
+    "data/reference/judgmentbench/human_rubric_item_scores.csv": "d6e68feecf13f10517d33adf08e176f3df5f083e8c0a507dfac007fa20cd1871",
+    "data/reference/judgmentbench/gpt_5_4_annotations_rubric.csv": "3846129086f0185e2141026e91990ebc560a3cd57da58bb5e7e2e666eb326909",
+    "data/reference/judgmentbench/gpt_5_4_rubric_item_scores.csv": "bfc193a59cf50292be9988dc75535c9fbbe2719b4598cb7326a73e234d82a36a",
+    "data/reference/judgmentbench/gpt_5_4_mini_annotations_rubric.csv": "955e6738b18227497e2c70b7ad8957371c16a9afa35f8ed8acf6d2baf8de0eef",
+    "data/reference/judgmentbench/gpt_5_4_mini_rubric_item_scores.csv": "e0ec56a1eb6530062fc523023c3144c8db25ca06f9d9493beda7d4f6ce5550d6",
+    "data/reference/judgmentbench/outputs_metadata.csv": "2faf0ba3a79ac9ec4fe491e82fa7546ba603c8f9a236f2b4ad506133c3c7cc62",
+    "artifacts/expected/conjunction_mechanism/update_structures.json": "2dab50f5d6124c5366edd3566e6e60d02aab7bf28bedc30f8db7e20423cf4eaf",
+    "artifacts/expected/conjunction_mechanism/update_expected_grid.csv": "4c3ba6dbb3d581b432711d60dafc131e9631295d51d93cc9a6c5a9cf8ef74291",
+    "artifacts/expected/conjunction_policy_study/budget_curves.csv.gz": "cdf86a96200e6cb368baa55fb393482c9fc8e4235ac6f09929b59f7a4dc376f2",
+    "artifacts/expected/conjunction_mechanism/update_permutation_rows.csv": "f915bea3c80d19fc6d075d9566fb724660e216f11663552aa5fbf4c60985c8f9",
+    "artifacts/expected/conjunction_mechanism/update_permutation_summary.csv": "34717e827996ba9331fffef9e674ac9fbde46b3aa837e084c050e15ded3c166c",
+    "artifacts/expected/conjunction_mechanism/allocation_rows.csv.gz": "a31c1d7fb04e8558c6b12a8732bb4613b16fc405e2fedba676b09e631c47e829",
+    "artifacts/expected/conjunction_label_value/budget_estimation_rows.csv.gz": "0a95916efbabd8555d3dfbdff8e1077f9c708b0535a589f207016bafac7dd5a7",
+    "artifacts/expected/conjunction_robustness/reference/frame_diagnostics.json": "c5071fbd496f90b56e7f50664496afc634129efbe791fdc7b0d262c68caf3c89",
+    "artifacts/expected/conjunction_robustness/reference/pairing.csv": "e4de5130f7360234bbec8fa4f863fa144ff6f950cca35cf1c0d104f59b1b0484",
+    "artifacts/expected/conjunction_robustness/reference/rq1_rows.csv.gz": "9d1d58e47f58d942f17fa0ebea94622bd22dee6b2dc49bb8383a5907ca9b65dc",
+    "artifacts/expected/conjunction_robustness/reference/rq2_rows.csv.gz": "1d971f6fa6bca53de0ffb17300d1d0ca85913f70cd6b12aa67cae88e7be755f2",
+    "artifacts/expected/conjunction_robustness/cluster/rq1_curves.csv.gz": "d6d4630a2edac2a9cc81dff722f13676102f724919dd6e36af589ff19d18d8e3",
+    "artifacts/expected/conjunction_robustness/cluster/rq2_seed_pairs.csv.gz": "c5abd8390b36e19f8173d7aaea416fb54a2f1734a081ed554951fbdeb38bf4f1",
+    "artifacts/expected/conjunction_robustness/cluster/rq2_frame_means.csv.gz": "ba303157deea87ec365c7b31798aa843c8ed0aca819e0947e4fc75bc793ce7aa",
+    "artifacts/expected/conjunction_robustness/cluster/summary.json": "347ee9e3bd86d81f876d417835c0eec1ab99d5304cbb24d4550e170898e891ff",
+    "artifacts/expected/conjunction_robustness/estimation/stratified_rows.csv.gz": "7eaf6380264dc8fc4f4ea13be12c2b61328dcfa297a2800732610f0e7c35667d",
+    "artifacts/expected/conjunction_robustness/estimation/stratified_summary.csv": "a6f48f95e797e3d5b5acc503b8e4bccd9eec7f52c7b2399720d1e01e88d7a46c",
+    "artifacts/expected/conjunction_label_value/whole_task_sampling.csv.gz": "03ea369d1ddd2d93726158e0f5fd6443876119528021d6c85e709218dd2d4f8f",
+    "artifacts/expected/information_disclosure_replay.json": "d99ac15aff714425977ea1187ddba276ae24d0a9b61257540808a462abd1d487"
+  },
+  "checks": [
+    {
+      "check": "input hash: data/processed/public_judge_predictions.csv",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "input hash: data/processed/gpt54_low_dr_predictions.csv",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "input hash: data/reference/judgmentbench/rubric_items.csv",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "input hash: data/reference/judgmentbench/human_annotations_rubric.csv",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "input hash: data/reference/judgmentbench/human_rubric_item_scores.csv",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "input hash: data/reference/judgmentbench/gpt_5_4_annotations_rubric.csv",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "input hash: data/reference/judgmentbench/gpt_5_4_rubric_item_scores.csv",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "input hash: data/reference/judgmentbench/gpt_5_4_mini_annotations_rubric.csv",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "input hash: data/reference/judgmentbench/gpt_5_4_mini_rubric_item_scores.csv",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "input hash: data/reference/judgmentbench/outputs_metadata.csv",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "data counts: DR Gemini 3.1 Pro",
+      "scalar_values": 8,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "data counts: DR Qwen-plus",
+      "scalar_values": 8,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "data counts: AC Qwen-plus",
+      "scalar_values": 8,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "data counts: AC DeepSeek v4-pro",
+      "scalar_values": 8,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "data counts: DR GPT-5.4 low",
+      "scalar_values": 8,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "data counts: JB GPT-5.4",
+      "scalar_values": 8,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "data counts: JB GPT-5.4-mini",
+      "scalar_values": 8,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "data counts: JB GPT-5.4 | binary_only",
+      "scalar_values": 8,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "data counts: JB GPT-5.4-mini | binary_only",
+      "scalar_values": 8,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "manuscript full-target false-fail rejection types",
+      "scalar_values": 3,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: DR Gemini 3.1 Pro/random_criterion",
+      "scalar_values": 303,
+      "max_absolute_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: DR Gemini 3.1 Pro/random_criterion",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: DR Gemini 3.1 Pro/disagreement_then_random",
+      "scalar_values": 303,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: DR Gemini 3.1 Pro/disagreement_then_random",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: DR Qwen-plus/random_criterion",
+      "scalar_values": 303,
+      "max_absolute_difference": 4.996003610813204e-16,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: DR Qwen-plus/random_criterion",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: DR Qwen-plus/disagreement_then_random",
+      "scalar_values": 303,
+      "max_absolute_difference": 4.85722573273506e-16,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: DR Qwen-plus/disagreement_then_random",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: AC Qwen-plus/random_criterion",
+      "scalar_values": 303,
+      "max_absolute_difference": 2.6645352591003757e-15,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: AC Qwen-plus/random_criterion",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: AC Qwen-plus/disagreement_then_random",
+      "scalar_values": 303,
+      "max_absolute_difference": 2.6645352591003757e-15,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: AC Qwen-plus/disagreement_then_random",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: AC DeepSeek v4-pro/random_criterion",
+      "scalar_values": 303,
+      "max_absolute_difference": 7.105427357601002e-15,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: AC DeepSeek v4-pro/random_criterion",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: AC DeepSeek v4-pro/disagreement_then_random",
+      "scalar_values": 303,
+      "max_absolute_difference": 5.329070518200751e-15,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: AC DeepSeek v4-pro/disagreement_then_random",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: DR GPT-5.4 low/random_criterion",
+      "scalar_values": 303,
+      "max_absolute_difference": 2.7755575615628914e-16,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: DR GPT-5.4 low/random_criterion",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: DR GPT-5.4 low/disagreement_then_random",
+      "scalar_values": 303,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: DR GPT-5.4 low/disagreement_then_random",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: JB GPT-5.4/random_criterion",
+      "scalar_values": 303,
+      "max_absolute_difference": 6.323830348264892e-13,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: JB GPT-5.4/random_criterion",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: JB GPT-5.4/disagreement_then_random",
+      "scalar_values": 303,
+      "max_absolute_difference": 8.526512829121202e-13,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: JB GPT-5.4/disagreement_then_random",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: JB GPT-5.4-mini/random_criterion",
+      "scalar_values": 303,
+      "max_absolute_difference": 7.176481631177012e-13,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: JB GPT-5.4-mini/random_criterion",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: JB GPT-5.4-mini/disagreement_then_random",
+      "scalar_values": 303,
+      "max_absolute_difference": 8.526512829121202e-13,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: JB GPT-5.4-mini/disagreement_then_random",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: JB GPT-5.4 | binary_only/random_criterion",
+      "scalar_values": 303,
+      "max_absolute_difference": 4.618527782440651e-14,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: JB GPT-5.4 | binary_only/random_criterion",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: JB GPT-5.4 | binary_only/disagreement_then_random",
+      "scalar_values": 303,
+      "max_absolute_difference": 4.973799150320701e-14,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: JB GPT-5.4 | binary_only/disagreement_then_random",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: JB GPT-5.4-mini | binary_only/random_criterion",
+      "scalar_values": 303,
+      "max_absolute_difference": 2.3092638912203256e-14,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: JB GPT-5.4-mini | binary_only/random_criterion",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "independent analytical curve: JB GPT-5.4-mini | binary_only/disagreement_then_random",
+      "scalar_values": 303,
+      "max_absolute_difference": 3.019806626980426e-14,
+      "passed": true
+    },
+    {
+      "check": "analytical endpoint zero: JB GPT-5.4-mini | binary_only/disagreement_then_random",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "all saved trajectories: residual count identity",
+      "scalar_values": 610848,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "all saved trajectories: gated count identity",
+      "scalar_values": 610848,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "all saved trajectories: D minus A",
+      "scalar_values": 610848,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "all 1818 Monte Carlo means from 31 raw order rows",
+      "scalar_values": 5454,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "check": "exactly 31 noncanonical order rows per RQ1 cell",
+      "instances": 1818,
+      "passed": true
+    },
+    {
+      "check": "manuscript discovery/certification reversal orders: DR Gemini 3.1 Pro",
+      "scalar_values": 1,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "manuscript discovery/certification reversal orders: JB GPT-5.4-mini",
+      "scalar_values": 1,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "manuscript discovery/certification reversal orders: JB GPT-5.4",
+      "scalar_values": 1,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "manuscript deterministic loss example",
+      "scalar_values": 4,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC DeepSeek v4-pro', 'disagreement_then_random', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC DeepSeek v4-pro', 'disagreement_then_random', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC DeepSeek v4-pro', 'disagreement_then_random', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC DeepSeek v4-pro', 'disagreement_then_random', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC DeepSeek v4-pro', 'disagreement_then_random', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC DeepSeek v4-pro', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC DeepSeek v4-pro', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC DeepSeek v4-pro', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC DeepSeek v4-pro', 'random_criterion', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC DeepSeek v4-pro', 'random_criterion', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC Qwen-plus', 'disagreement_then_random', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC Qwen-plus', 'disagreement_then_random', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC Qwen-plus', 'disagreement_then_random', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC Qwen-plus', 'disagreement_then_random', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC Qwen-plus', 'disagreement_then_random', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC Qwen-plus', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC Qwen-plus', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC Qwen-plus', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC Qwen-plus', 'random_criterion', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('AC Qwen-plus', 'random_criterion', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR GPT-5.4 low', 'disagreement_then_random', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR GPT-5.4 low', 'disagreement_then_random', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR GPT-5.4 low', 'disagreement_then_random', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR GPT-5.4 low', 'disagreement_then_random', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR GPT-5.4 low', 'disagreement_then_random', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR GPT-5.4 low', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR GPT-5.4 low', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR GPT-5.4 low', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR GPT-5.4 low', 'random_criterion', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR GPT-5.4 low', 'random_criterion', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Gemini 3.1 Pro', 'disagreement_then_random', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Gemini 3.1 Pro', 'disagreement_then_random', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Gemini 3.1 Pro', 'disagreement_then_random', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Gemini 3.1 Pro', 'disagreement_then_random', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Gemini 3.1 Pro', 'disagreement_then_random', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Gemini 3.1 Pro', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Gemini 3.1 Pro', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Gemini 3.1 Pro', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Gemini 3.1 Pro', 'random_criterion', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Gemini 3.1 Pro', 'random_criterion', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Qwen-plus', 'disagreement_then_random', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Qwen-plus', 'disagreement_then_random', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Qwen-plus', 'disagreement_then_random', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Qwen-plus', 'disagreement_then_random', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Qwen-plus', 'disagreement_then_random', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Qwen-plus', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Qwen-plus', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Qwen-plus', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Qwen-plus', 'random_criterion', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('DR Qwen-plus', 'random_criterion', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4', 'disagreement_then_random', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4', 'disagreement_then_random', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4', 'disagreement_then_random', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4', 'disagreement_then_random', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4', 'disagreement_then_random', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4', 'random_criterion', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4', 'random_criterion', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4 | binary_only', 'disagreement_then_random', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4 | binary_only', 'disagreement_then_random', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4 | binary_only', 'disagreement_then_random', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4 | binary_only', 'disagreement_then_random', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4 | binary_only', 'disagreement_then_random', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4 | binary_only', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4 | binary_only', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4 | binary_only', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4 | binary_only', 'random_criterion', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4 | binary_only', 'random_criterion', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini', 'disagreement_then_random', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini', 'disagreement_then_random', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini', 'disagreement_then_random', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini', 'disagreement_then_random', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini', 'disagreement_then_random', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini', 'random_criterion', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini', 'random_criterion', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini | binary_only', 'disagreement_then_random', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini | binary_only', 'disagreement_then_random', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini | binary_only', 'disagreement_then_random', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini | binary_only', 'disagreement_then_random', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini | binary_only', 'disagreement_then_random', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini | binary_only', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini | binary_only', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini | binary_only', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini | binary_only', 'random_criterion', np.float64(0.84))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched margins summary: ('JB GPT-5.4-mini | binary_only', 'random_criterion', np.float64(0.95))",
+      "scalar_values": 5,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "manuscript counterexample cell count",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "allocation certificate decomposition",
+      "scalar_values": 5022,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "allocation gated error decomposition",
+      "scalar_values": 5022,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "allocation eager error decomposition",
+      "scalar_values": 5022,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "allocation no introduced FF",
+      "scalar_values": 5022,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "paired allocation vs saved replay: certified_tasks",
+      "scalar_values": 5022,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "paired allocation vs saved replay: residual_errors",
+      "scalar_values": 5022,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "paired allocation identical realized label counts",
+      "scalar_values": 5022,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "repeated-reference peer diagnostics: JB GPT-5.4",
+      "scalar_values": 19,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched frozen judge/reference counts: JB GPT-5.4/A",
+      "scalar_values": 8,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched frozen judge/reference counts: JB GPT-5.4/B",
+      "scalar_values": 8,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched A/B agreement: JB GPT-5.4",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "repeated-reference peer diagnostics: JB GPT-5.4-mini",
+      "scalar_values": 19,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched frozen judge/reference counts: JB GPT-5.4-mini/A",
+      "scalar_values": 8,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched frozen judge/reference counts: JB GPT-5.4-mini/B",
+      "scalar_values": 8,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched A/B agreement: JB GPT-5.4-mini",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "repeated-reference peer diagnostics: JB GPT-5.4 | binary_only",
+      "scalar_values": 19,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched frozen judge/reference counts: JB GPT-5.4 | binary_only/A",
+      "scalar_values": 8,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched frozen judge/reference counts: JB GPT-5.4 | binary_only/B",
+      "scalar_values": 8,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched A/B agreement: JB GPT-5.4 | binary_only",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "repeated-reference peer diagnostics: JB GPT-5.4-mini | binary_only",
+      "scalar_values": 19,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched frozen judge/reference counts: JB GPT-5.4-mini | binary_only/A",
+      "scalar_values": 8,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched frozen judge/reference counts: JB GPT-5.4-mini | binary_only/B",
+      "scalar_values": 8,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched A/B agreement: JB GPT-5.4-mini | binary_only",
+      "scalar_values": 6,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched reference RQ1 count differences",
+      "scalar_values": 150288,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched diagonal RQ1 D minus A",
+      "scalar_values": 75144,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched reference RQ2 paired difference: certified_tasks",
+      "scalar_values": 2976,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "matched reference RQ2 paired difference: eager_errors",
+      "scalar_values": 2976,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "manuscript matched binary reference sign reversal",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "cluster seed aggregation: stageA_queries",
+      "scalar_values": 1200,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "cluster seed aggregation: stageR_queries",
+      "scalar_values": 1200,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "cluster seed aggregation: srs_certified_tasks",
+      "scalar_values": 1200,
+      "max_absolute_difference": 1.1368683772161603e-13,
+      "passed": true
+    },
+    {
+      "check": "cluster seed aggregation: mix_certified_tasks",
+      "scalar_values": 1200,
+      "max_absolute_difference": 2.2737367544323206e-13,
+      "passed": true
+    },
+    {
+      "check": "cluster seed aggregation: certified_tasks_delta",
+      "scalar_values": 1200,
+      "max_absolute_difference": 5.684341886080802e-14,
+      "passed": true
+    },
+    {
+      "check": "cluster seed aggregation: certified_tasks_delta_per100",
+      "scalar_values": 1200,
+      "max_absolute_difference": 1.0658141036401503e-14,
+      "passed": true
+    },
+    {
+      "check": "cluster seed aggregation: srs_residual_errors",
+      "scalar_values": 1200,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "cluster seed aggregation: mix_residual_errors",
+      "scalar_values": 1200,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "cluster seed aggregation: residual_errors_delta",
+      "scalar_values": 1200,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "cluster seed aggregation: residual_errors_delta_per100",
+      "scalar_values": 1200,
+      "max_absolute_difference": 2.6645352591003757e-15,
+      "passed": true
+    },
+    {
+      "check": "cluster original JB GPT-5.4/random_criterion/count",
+      "scalar_values": 101,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4/random_criterion/count/pointwise_q025",
+      "scalar_values": 101,
+      "max_absolute_difference": 7.105427357601002e-15,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4/random_criterion/count/pointwise_median",
+      "scalar_values": 101,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4/random_criterion/count/pointwise_q975",
+      "scalar_values": 101,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "check": "cluster original JB GPT-5.4/random_criterion/per100",
+      "scalar_values": 101,
+      "max_absolute_difference": 8.881784197001252e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4/random_criterion/per100/pointwise_q025",
+      "scalar_values": 101,
+      "max_absolute_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4/random_criterion/per100/pointwise_median",
+      "scalar_values": 101,
+      "max_absolute_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4/random_criterion/per100/pointwise_q975",
+      "scalar_values": 101,
+      "max_absolute_difference": 1.7763568394002505e-15,
+      "passed": true
+    },
+    {
+      "check": "cluster original JB GPT-5.4/disagreement_then_random/count",
+      "scalar_values": 101,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4/disagreement_then_random/count/pointwise_q025",
+      "scalar_values": 101,
+      "max_absolute_difference": 7.105427357601002e-15,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4/disagreement_then_random/count/pointwise_median",
+      "scalar_values": 101,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4/disagreement_then_random/count/pointwise_q975",
+      "scalar_values": 101,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "cluster original JB GPT-5.4/disagreement_then_random/per100",
+      "scalar_values": 101,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4/disagreement_then_random/per100/pointwise_q025",
+      "scalar_values": 101,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4/disagreement_then_random/per100/pointwise_median",
+      "scalar_values": 101,
+      "max_absolute_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4/disagreement_then_random/per100/pointwise_q975",
+      "scalar_values": 101,
+      "max_absolute_difference": 1.7763568394002505e-15,
+      "passed": true
+    },
+    {
+      "check": "cluster original JB GPT-5.4 | binary_only/random_criterion/count",
+      "scalar_values": 101,
+      "max_absolute_difference": 3.552713678800501e-15,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4 | binary_only/random_criterion/count/pointwise_q025",
+      "scalar_values": 101,
+      "max_absolute_difference": 1.7763568394002505e-15,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4 | binary_only/random_criterion/count/pointwise_median",
+      "scalar_values": 101,
+      "max_absolute_difference": 1.7763568394002505e-15,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4 | binary_only/random_criterion/count/pointwise_q975",
+      "scalar_values": 101,
+      "max_absolute_difference": 3.552713678800501e-15,
+      "passed": true
+    },
+    {
+      "check": "cluster original JB GPT-5.4 | binary_only/random_criterion/per100",
+      "scalar_values": 101,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4 | binary_only/random_criterion/per100/pointwise_q025",
+      "scalar_values": 101,
+      "max_absolute_difference": 9.540979117872439e-17,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4 | binary_only/random_criterion/per100/pointwise_median",
+      "scalar_values": 101,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4 | binary_only/random_criterion/per100/pointwise_q975",
+      "scalar_values": 101,
+      "max_absolute_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster original JB GPT-5.4 | binary_only/disagreement_then_random/count",
+      "scalar_values": 101,
+      "max_absolute_difference": 7.105427357601002e-15,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4 | binary_only/disagreement_then_random/count/pointwise_q025",
+      "scalar_values": 101,
+      "max_absolute_difference": 3.552713678800501e-15,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4 | binary_only/disagreement_then_random/count/pointwise_median",
+      "scalar_values": 101,
+      "max_absolute_difference": 3.552713678800501e-15,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4 | binary_only/disagreement_then_random/count/pointwise_q975",
+      "scalar_values": 101,
+      "max_absolute_difference": 7.105427357601002e-15,
+      "passed": true
+    },
+    {
+      "check": "cluster original JB GPT-5.4 | binary_only/disagreement_then_random/per100",
+      "scalar_values": 101,
+      "max_absolute_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4 | binary_only/disagreement_then_random/per100/pointwise_q025",
+      "scalar_values": 101,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4 | binary_only/disagreement_then_random/per100/pointwise_median",
+      "scalar_values": 101,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile JB GPT-5.4 | binary_only/disagreement_then_random/per100/pointwise_q975",
+      "scalar_values": 101,
+      "max_absolute_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster original DR Gemini 3.1 Pro/random_criterion/count",
+      "scalar_values": 101,
+      "max_absolute_difference": 8.326672684688674e-17,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile DR Gemini 3.1 Pro/random_criterion/count/pointwise_q025",
+      "scalar_values": 101,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile DR Gemini 3.1 Pro/random_criterion/count/pointwise_median",
+      "scalar_values": 101,
+      "max_absolute_difference": 8.326672684688674e-17,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile DR Gemini 3.1 Pro/random_criterion/count/pointwise_q975",
+      "scalar_values": 101,
+      "max_absolute_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster original DR Gemini 3.1 Pro/random_criterion/per100",
+      "scalar_values": 101,
+      "max_absolute_difference": 9.71445146547012e-17,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile DR Gemini 3.1 Pro/random_criterion/per100/pointwise_q025",
+      "scalar_values": 101,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile DR Gemini 3.1 Pro/random_criterion/per100/pointwise_median",
+      "scalar_values": 101,
+      "max_absolute_difference": 9.71445146547012e-17,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile DR Gemini 3.1 Pro/random_criterion/per100/pointwise_q975",
+      "scalar_values": 101,
+      "max_absolute_difference": 9.020562075079397e-17,
+      "passed": true
+    },
+    {
+      "check": "cluster original DR Gemini 3.1 Pro/disagreement_then_random/count",
+      "scalar_values": 101,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile DR Gemini 3.1 Pro/disagreement_then_random/count/pointwise_q025",
+      "scalar_values": 101,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile DR Gemini 3.1 Pro/disagreement_then_random/count/pointwise_median",
+      "scalar_values": 101,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile DR Gemini 3.1 Pro/disagreement_then_random/count/pointwise_q975",
+      "scalar_values": 101,
+      "max_absolute_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster original DR Gemini 3.1 Pro/disagreement_then_random/per100",
+      "scalar_values": 101,
+      "max_absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile DR Gemini 3.1 Pro/disagreement_then_random/per100/pointwise_q025",
+      "scalar_values": 101,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile DR Gemini 3.1 Pro/disagreement_then_random/per100/pointwise_median",
+      "scalar_values": 101,
+      "max_absolute_difference": 8.326672684688674e-17,
+      "passed": true
+    },
+    {
+      "check": "cluster quantile DR Gemini 3.1 Pro/disagreement_then_random/per100/pointwise_q975",
+      "scalar_values": 101,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "check": "cluster RQ2 sign counts: JB GPT-5.4",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "cluster RQ2 sign counts: JB GPT-5.4 | binary_only",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "cluster RQ2 sign counts: DR Gemini 3.1 Pro",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "appendix inclusive floating-point boundary example",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "appendix endpoint exact integer tail",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'charged_pilot_neyman', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 8.326672684688674e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'charged_pilot_neyman', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'charged_pilot_neyman', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 6.375108774214766e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'charged_pilot_neyman', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 4.163336342344337e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'charged_pilot_neyman', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.204170427930421e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'charged_pilot_neyman', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'proportional_stratified', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 7.632783294297951e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'proportional_stratified', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'proportional_stratified', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 9.362085759412331e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'proportional_stratified', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 7.155734338404329e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'proportional_stratified', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'proportional_stratified', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'random_criterion', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 8.326672684688674e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 4.5102810375396984e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'random_criterion', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC DeepSeek v4-pro', 'random_criterion', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'charged_pilot_neyman', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'charged_pilot_neyman', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'charged_pilot_neyman', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 8.977193988179977e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'charged_pilot_neyman', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 4.163336342344337e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'charged_pilot_neyman', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 7.068998164605489e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'charged_pilot_neyman', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "normal approximation explicitly unavailable: ('AC Qwen-plus', 'proportional_stratified', np.float64(0.006))",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'proportional_stratified', np.float64(0.006))",
+      "scalar_values": 8,
+      "max_absolute_difference": 6.852157730108388e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'proportional_stratified', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'proportional_stratified', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 6.461844948013606e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'proportional_stratified', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 4.85722573273506e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'proportional_stratified', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'proportional_stratified', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'random_criterion', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 6.852157730108388e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.4643789493269423e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'random_criterion', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('AC Qwen-plus', 'random_criterion', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'charged_pilot_neyman', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 8.326672684688674e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'charged_pilot_neyman', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'charged_pilot_neyman', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'charged_pilot_neyman', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'charged_pilot_neyman', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'charged_pilot_neyman', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'proportional_stratified', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'proportional_stratified', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 6.114900252818245e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'proportional_stratified', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.833007687972014e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'proportional_stratified', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.767955557622884e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'proportional_stratified', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'proportional_stratified', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'random_criterion', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'random_criterion', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR GPT-5.4 low', 'random_criterion', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'charged_pilot_neyman', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.1622647289044608e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'charged_pilot_neyman', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 6.938893903907228e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'charged_pilot_neyman', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'charged_pilot_neyman', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 6.396792817664476e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'charged_pilot_neyman', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'charged_pilot_neyman', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'proportional_stratified', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 6.765421556309548e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'proportional_stratified', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 6.700369425960417e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'proportional_stratified', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 6.938893903907228e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'proportional_stratified', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'proportional_stratified', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 4.163336342344337e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'proportional_stratified', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'random_criterion', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 6.461844948013606e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'random_criterion', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 7.090682208055199e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Gemini 3.1 Pro', 'random_criterion', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'charged_pilot_neyman', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.43982048506075e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'charged_pilot_neyman', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'charged_pilot_neyman', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'charged_pilot_neyman', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'charged_pilot_neyman', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'charged_pilot_neyman', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'proportional_stratified', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'proportional_stratified', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.0007186052041206e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'proportional_stratified', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 4.2500725161431774e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'proportional_stratified', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 6.114900252818245e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'proportional_stratified', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'proportional_stratified', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'random_criterion', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.854691731421724e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'random_criterion', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 9.324138683375338e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('DR Qwen-plus', 'random_criterion', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'charged_pilot_neyman', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 3.903127820947816e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'charged_pilot_neyman', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'charged_pilot_neyman', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'charged_pilot_neyman', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 4.185020385794047e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'charged_pilot_neyman', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 4.547473508864641e-13,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'charged_pilot_neyman', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'proportional_stratified', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 6.158268339717665e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'proportional_stratified', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 6.071532165918825e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'proportional_stratified', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 3.469446951953614e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'proportional_stratified', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 4.526544070126981e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'proportional_stratified', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.42861286636753e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'proportional_stratified', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'random_criterion', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.0321604682062002e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.0816681711721685e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.117434254131581e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 4.547473508864641e-13,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'random_criterion', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 4.163336342344337e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4', 'random_criterion', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'charged_pilot_neyman', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.204170427930421e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'charged_pilot_neyman', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'charged_pilot_neyman', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 7.979727989493313e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'charged_pilot_neyman', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'charged_pilot_neyman', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.0649575839238867e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'charged_pilot_neyman', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'proportional_stratified', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'proportional_stratified', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 7.405100838075995e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'proportional_stratified', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 4.85722573273506e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'proportional_stratified', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 3.8163916471489756e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'proportional_stratified', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 3.9898639947466563e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'proportional_stratified', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'random_criterion', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 8.326672684688674e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.2737367544323206e-13,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'random_criterion', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 7.101524229780054e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4 | binary_only', 'random_criterion', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'charged_pilot_neyman', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 7.025630077706069e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'charged_pilot_neyman', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.811323644522304e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'charged_pilot_neyman', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.2737367544323206e-13,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'charged_pilot_neyman', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 4.547473508864641e-13,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'charged_pilot_neyman', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 4.5102810375396984e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'charged_pilot_neyman', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'proportional_stratified', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 8.326672684688674e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'proportional_stratified', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 4.336808689942018e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'proportional_stratified', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.204170427930421e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'proportional_stratified', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'proportional_stratified', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.0816681711721685e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'proportional_stratified', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'random_criterion', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'random_criterion', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini', 'random_criterion', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'charged_pilot_neyman', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'charged_pilot_neyman', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'charged_pilot_neyman', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 8.857931749206571e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'charged_pilot_neyman', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'charged_pilot_neyman', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'charged_pilot_neyman', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'proportional_stratified', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 3.5236570605778894e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'proportional_stratified', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.684341886080802e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'proportional_stratified', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 7.676151381197371e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'proportional_stratified', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'proportional_stratified', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 3.2959746043559335e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'proportional_stratified', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'random_criterion', np.float64(0.006))",
+      "scalar_values": 9,
+      "max_absolute_difference": 5.811323644522304e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'random_criterion', np.float64(0.05))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'random_criterion', np.float64(0.2))",
+      "scalar_values": 9,
+      "max_absolute_difference": 3.469446951953614e-17,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'random_criterion', np.float64(0.5))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'random_criterion', np.float64(0.6))",
+      "scalar_values": 9,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "check": "estimation summary: ('JB GPT-5.4-mini | binary_only', 'random_criterion', np.float64(1.0))",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "whole-task cost, pass estimate and exact design RMSE",
+      "scalar_values": 4185,
+      "max_absolute_difference": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "check": "whole-task subset sizes",
+      "instances": 837,
+      "passed": true
+    },
+    {
+      "check": "short-circuit observed pass agrees with full reference",
+      "instances": 837,
+      "passed": true
+    },
+    {
+      "check": "literal disclosure endpoint witness constraints",
+      "passed": true,
+      "endpoint_witnesses": 7192,
+      "restored_links_checked": 257192,
+      "marginal_constraints_checked": 49270,
+      "scope": "Direct endpoint feasibility; global optimality additionally uses the original solver's closed objective bounds and exhaustive small-world tests."
+    },
+    {
+      "check": "nested disclosure: AC DeepSeek v4-pro/0",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC DeepSeek v4-pro/0",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC DeepSeek v4-pro/1",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC DeepSeek v4-pro/1",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC DeepSeek v4-pro/2",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC DeepSeek v4-pro/2",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC DeepSeek v4-pro/3",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC DeepSeek v4-pro/3",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC DeepSeek v4-pro/4",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC DeepSeek v4-pro/4",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC DeepSeek v4-pro/5",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC DeepSeek v4-pro/5",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC DeepSeek v4-pro/6",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC DeepSeek v4-pro/6",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC DeepSeek v4-pro/7",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC DeepSeek v4-pro/7",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC DeepSeek v4-pro/8",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC DeepSeek v4-pro/8",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC DeepSeek v4-pro/9",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC DeepSeek v4-pro/9",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "disclosure obtains no new labels: AC DeepSeek v4-pro",
+      "instances": 62,
+      "passed": true
+    },
+    {
+      "check": "linear control preserved: AC DeepSeek v4-pro",
+      "scalar_values": 62,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC Qwen-plus/0",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC Qwen-plus/0",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC Qwen-plus/1",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC Qwen-plus/1",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC Qwen-plus/2",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC Qwen-plus/2",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC Qwen-plus/3",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC Qwen-plus/3",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC Qwen-plus/4",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC Qwen-plus/4",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC Qwen-plus/5",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC Qwen-plus/5",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC Qwen-plus/6",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC Qwen-plus/6",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC Qwen-plus/7",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC Qwen-plus/7",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC Qwen-plus/8",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC Qwen-plus/8",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: AC Qwen-plus/9",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: AC Qwen-plus/9",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "disclosure obtains no new labels: AC Qwen-plus",
+      "instances": 62,
+      "passed": true
+    },
+    {
+      "check": "linear control preserved: AC Qwen-plus",
+      "scalar_values": 62,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Gemini 3.1 Pro/0",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Gemini 3.1 Pro/0",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Gemini 3.1 Pro/1",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Gemini 3.1 Pro/1",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Gemini 3.1 Pro/2",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Gemini 3.1 Pro/2",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Gemini 3.1 Pro/3",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Gemini 3.1 Pro/3",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Gemini 3.1 Pro/4",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Gemini 3.1 Pro/4",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Gemini 3.1 Pro/5",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Gemini 3.1 Pro/5",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Gemini 3.1 Pro/6",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Gemini 3.1 Pro/6",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Gemini 3.1 Pro/7",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Gemini 3.1 Pro/7",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Gemini 3.1 Pro/8",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Gemini 3.1 Pro/8",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Gemini 3.1 Pro/9",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Gemini 3.1 Pro/9",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "disclosure obtains no new labels: DR Gemini 3.1 Pro",
+      "instances": 62,
+      "passed": true
+    },
+    {
+      "check": "linear control preserved: DR Gemini 3.1 Pro",
+      "scalar_values": 62,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "manuscript disclosed count cells",
+      "scalar_values": 1,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Qwen-plus/0",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Qwen-plus/0",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Qwen-plus/1",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Qwen-plus/1",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Qwen-plus/2",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Qwen-plus/2",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Qwen-plus/3",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Qwen-plus/3",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Qwen-plus/4",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Qwen-plus/4",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Qwen-plus/5",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Qwen-plus/5",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Qwen-plus/6",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Qwen-plus/6",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Qwen-plus/7",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Qwen-plus/7",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Qwen-plus/8",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Qwen-plus/8",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nested disclosure: DR Qwen-plus/9",
+      "instances": 6,
+      "passed": true
+    },
+    {
+      "check": "complete reference-link recovery: DR Qwen-plus/9",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "disclosure obtains no new labels: DR Qwen-plus",
+      "instances": 62,
+      "passed": true
+    },
+    {
+      "check": "linear control preserved: DR Qwen-plus",
+      "scalar_values": 62,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    }
+  ],
+  "claims": {
+    "data_counts": {
+      "source": "data (strict validated loader); conjunction_mechanism/update_structures.json",
+      "unit": "criterion instances and evaluation units, as named",
+      "values": [
+        {
+          "n_units": 284,
+          "n_criteria": 1615,
+          "reference_pass": 28,
+          "judge_pass": 34,
+          "TP": 26,
+          "TN": 248,
+          "FP": 8,
+          "FF": 2,
+          "dataset": "DR Gemini 3.1 Pro",
+          "n_base_tasks": 284,
+          "n_outputs": 284,
+          "n_raters": 1,
+          "criterion_errors": 120,
+          "susceptible": 0
+        },
+        {
+          "n_units": 284,
+          "n_criteria": 1615,
+          "reference_pass": 28,
+          "judge_pass": 53,
+          "TP": 25,
+          "TN": 228,
+          "FP": 28,
+          "FF": 3,
+          "dataset": "DR Qwen-plus",
+          "n_base_tasks": 284,
+          "n_outputs": 284,
+          "n_raters": 1,
+          "criterion_errors": 285,
+          "susceptible": 5
+        },
+        {
+          "n_units": 210,
+          "n_criteria": 843,
+          "reference_pass": 117,
+          "judge_pass": 138,
+          "TP": 107,
+          "TN": 62,
+          "FP": 31,
+          "FF": 10,
+          "dataset": "AC Qwen-plus",
+          "n_base_tasks": 210,
+          "n_outputs": 210,
+          "n_raters": 1,
+          "criterion_errors": 102,
+          "susceptible": 2
+        },
+        {
+          "n_units": 210,
+          "n_criteria": 843,
+          "reference_pass": 117,
+          "judge_pass": 115,
+          "TP": 101,
+          "TN": 79,
+          "FP": 14,
+          "FF": 16,
+          "dataset": "AC DeepSeek v4-pro",
+          "n_base_tasks": 210,
+          "n_outputs": 210,
+          "n_raters": 1,
+          "criterion_errors": 65,
+          "susceptible": 1
+        },
+        {
+          "n_units": 284,
+          "n_criteria": 1615,
+          "reference_pass": 28,
+          "judge_pass": 34,
+          "TP": 26,
+          "TN": 248,
+          "FP": 8,
+          "FF": 2,
+          "dataset": "DR GPT-5.4 low",
+          "n_base_tasks": 284,
+          "n_outputs": 284,
+          "n_raters": 1,
+          "criterion_errors": 124,
+          "susceptible": 0
+        },
+        {
+          "n_units": 1539,
+          "n_criteria": 23487,
+          "reference_pass": 227,
+          "judge_pass": 31,
+          "TP": 7,
+          "TN": 1288,
+          "FP": 24,
+          "FF": 220,
+          "dataset": "JB GPT-5.4",
+          "n_base_tasks": 30,
+          "n_outputs": 1314,
+          "n_raters": 49,
+          "criterion_errors": 5655,
+          "susceptible": 178
+        },
+        {
+          "n_units": 1539,
+          "n_criteria": 23487,
+          "reference_pass": 227,
+          "judge_pass": 40,
+          "TP": 4,
+          "TN": 1276,
+          "FP": 36,
+          "FF": 223,
+          "dataset": "JB GPT-5.4-mini",
+          "n_base_tasks": 30,
+          "n_outputs": 1314,
+          "n_raters": 49,
+          "criterion_errors": 7537,
+          "susceptible": 375
+        },
+        {
+          "n_units": 1539,
+          "n_criteria": 20229,
+          "reference_pass": 266,
+          "judge_pass": 380,
+          "TP": 199,
+          "TN": 1092,
+          "FP": 181,
+          "FF": 67,
+          "dataset": "JB GPT-5.4 | binary_only",
+          "n_base_tasks": 30,
+          "n_outputs": 1314,
+          "n_raters": 49,
+          "criterion_errors": 3807,
+          "susceptible": 47
+        },
+        {
+          "n_units": 1539,
+          "n_criteria": 20229,
+          "reference_pass": 266,
+          "judge_pass": 687,
+          "TP": 230,
+          "TN": 816,
+          "FP": 457,
+          "FF": 36,
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "n_base_tasks": 30,
+          "n_outputs": 1314,
+          "n_raters": 49,
+          "criterion_errors": 5423,
+          "susceptible": 40
+        }
+      ],
+      "full_jb_false_fail_rejection_types": {
+        "penalty_only": 156,
+        "binary_and_penalty": 64,
+        "binary_only": 0
+      }
+    },
+    "rq1": {
+      "source": "conjunction_mechanism/update_expected_grid.csv; conjunction_policy_study/budget_curves.csv.gz",
+      "selector": "release order, disagreement_then_random; observed means use seeds 1 through 31",
+      "unit": "gated minus eager evaluation-unit errors",
+      "values": [
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "budget_share": 0.2,
+          "budget_cap": 323,
+          "expected_introduced_fp": 0.0,
+          "expected_delayed_ff": 1.9992266047950504,
+          "expected_delta": 1.9992266047950504,
+          "observed_mean_delta": 2.0,
+          "canonical_seed0_delta": 2
+        },
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "budget_share": 0.4,
+          "budget_cap": 646,
+          "expected_introduced_fp": 0.0,
+          "expected_delayed_ff": 1.7484547287194423,
+          "expected_delta": 1.7484547287194423,
+          "observed_mean_delta": 1.7741935483870968,
+          "canonical_seed0_delta": 2
+        },
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "budget_share": 0.6,
+          "budget_cap": 969,
+          "expected_introduced_fp": 0.0,
+          "expected_delayed_ff": 1.4684844259929957,
+          "expected_delta": 1.4684844259929957,
+          "observed_mean_delta": 1.5161290322580645,
+          "canonical_seed0_delta": 2
+        },
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "budget_share": 0.8,
+          "budget_cap": 1292,
+          "expected_introduced_fp": 0.0,
+          "expected_delayed_ff": 1.012808716900332,
+          "expected_delta": 1.012808716900332,
+          "observed_mean_delta": 0.967741935483871,
+          "canonical_seed0_delta": 2
+        },
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "budget_share": 0.84,
+          "budget_cap": 1357,
+          "expected_introduced_fp": 0.0,
+          "expected_delayed_ff": 0.87153911943938,
+          "expected_delta": 0.87153911943938,
+          "observed_mean_delta": 0.8387096774193549,
+          "canonical_seed0_delta": 1
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "budget_share": 0.2,
+          "budget_cap": 323,
+          "expected_introduced_fp": 0.0,
+          "expected_delayed_ff": 2.9984532095901004,
+          "expected_delta": 2.9984532095901004,
+          "observed_mean_delta": 3.0,
+          "canonical_seed0_delta": 3
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "budget_share": 0.4,
+          "budget_cap": 646,
+          "expected_introduced_fp": 0.0,
+          "expected_delayed_ff": 2.4361948955916475,
+          "expected_delta": 2.4361948955916475,
+          "observed_mean_delta": 2.4193548387096775,
+          "canonical_seed0_delta": 2
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "budget_share": 0.6,
+          "budget_cap": 969,
+          "expected_introduced_fp": 0.0,
+          "expected_delayed_ff": 1.7490332559938129,
+          "expected_delta": 1.7490332559938129,
+          "observed_mean_delta": 1.8064516129032255,
+          "canonical_seed0_delta": 2
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "budget_share": 0.8,
+          "budget_cap": 1292,
+          "expected_introduced_fp": 0.0,
+          "expected_delayed_ff": 0.9369682907965968,
+          "expected_delta": 0.9369682907965968,
+          "observed_mean_delta": 1.032258064516129,
+          "canonical_seed0_delta": 2
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "budget_share": 0.84,
+          "budget_cap": 1357,
+          "expected_introduced_fp": 0.0,
+          "expected_delayed_ff": 0.7584528743723644,
+          "expected_delta": 0.7584528743723644,
+          "observed_mean_delta": 0.8709677419354839,
+          "canonical_seed0_delta": 1
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "budget_share": 0.2,
+          "budget_cap": 169,
+          "expected_introduced_fp": 0.81180694256527,
+          "expected_delayed_ff": 6.185199186126577,
+          "expected_delta": 5.373392243561307,
+          "observed_mean_delta": 5.516129032258065,
+          "canonical_seed0_delta": 5
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "budget_share": 0.4,
+          "budget_cap": 337,
+          "expected_introduced_fp": 0.4573194739743287,
+          "expected_delayed_ff": 6.413502487328888,
+          "expected_delta": 5.9561830133545595,
+          "observed_mean_delta": 6.225806451612903,
+          "canonical_seed0_delta": 6
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "budget_share": 0.6,
+          "budget_cap": 506,
+          "expected_introduced_fp": 0.2026501728840495,
+          "expected_delayed_ff": 6.021146696314515,
+          "expected_delta": 5.818496523430466,
+          "observed_mean_delta": 6.161290322580645,
+          "canonical_seed0_delta": 8
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "budget_share": 0.8,
+          "budget_cap": 674,
+          "expected_introduced_fp": 0.0508128771771578,
+          "expected_delayed_ff": 4.2894609934215495,
+          "expected_delta": 4.238648116244391,
+          "observed_mean_delta": 4.645161290322581,
+          "canonical_seed0_delta": 8
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "budget_share": 0.84,
+          "budget_cap": 708,
+          "expected_introduced_fp": 0.0323754912698924,
+          "expected_delayed_ff": 3.680244979909221,
+          "expected_delta": 3.647869488639328,
+          "observed_mean_delta": 3.935483870967742,
+          "canonical_seed0_delta": 6
+        },
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "budget_share": 0.2,
+          "budget_cap": 169,
+          "expected_introduced_fp": 0.9010695187165776,
+          "expected_delayed_ff": 12.053629900392687,
+          "expected_delta": 11.15256038167611,
+          "observed_mean_delta": 11.225806451612904,
+          "canonical_seed0_delta": 11
+        },
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "budget_share": 0.4,
+          "budget_cap": 337,
+          "expected_introduced_fp": 0.6764705882352942,
+          "expected_delayed_ff": 11.656736381081062,
+          "expected_delta": 10.980265792845769,
+          "observed_mean_delta": 11.419354838709678,
+          "canonical_seed0_delta": 10
+        },
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "budget_share": 0.6,
+          "budget_cap": 506,
+          "expected_introduced_fp": 0.4505347593582888,
+          "expected_delayed_ff": 10.045650064536616,
+          "expected_delta": 9.595115305178329,
+          "observed_mean_delta": 9.806451612903226,
+          "canonical_seed0_delta": 11
+        },
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "budget_share": 0.8,
+          "budget_cap": 674,
+          "expected_introduced_fp": 0.2259358288770053,
+          "expected_delayed_ff": 6.500527435379414,
+          "expected_delta": 6.274591606502409,
+          "observed_mean_delta": 6.161290322580645,
+          "canonical_seed0_delta": 7
+        },
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "budget_share": 0.84,
+          "budget_cap": 708,
+          "expected_introduced_fp": 0.1804812834224599,
+          "expected_delayed_ff": 5.465669033917447,
+          "expected_delta": 5.285187750494987,
+          "observed_mean_delta": 5.32258064516129,
+          "canonical_seed0_delta": 6
+        },
+        {
+          "dataset": "DR GPT-5.4 low",
+          "budget_share": 0.2,
+          "budget_cap": 323,
+          "expected_introduced_fp": 0.0,
+          "expected_delayed_ff": 2.0,
+          "expected_delta": 2.0,
+          "observed_mean_delta": 2.0,
+          "canonical_seed0_delta": 2
+        },
+        {
+          "dataset": "DR GPT-5.4 low",
+          "budget_share": 0.4,
+          "budget_cap": 646,
+          "expected_introduced_fp": 0.0,
+          "expected_delayed_ff": 1.9334669419420287,
+          "expected_delta": 1.9334669419420287,
+          "observed_mean_delta": 1.903225806451613,
+          "canonical_seed0_delta": 2
+        },
+        {
+          "dataset": "DR GPT-5.4 low",
+          "budget_share": 0.6,
+          "budget_cap": 969,
+          "expected_introduced_fp": 0.0,
+          "expected_delayed_ff": 1.6874036625744415,
+          "expected_delta": 1.6874036625744415,
+          "observed_mean_delta": 1.7096774193548387,
+          "canonical_seed0_delta": 2
+        },
+        {
+          "dataset": "DR GPT-5.4 low",
+          "budget_share": 0.8,
+          "budget_cap": 1292,
+          "expected_introduced_fp": 0.0,
+          "expected_delayed_ff": 1.1211124031913318,
+          "expected_delta": 1.1211124031913318,
+          "observed_mean_delta": 1.2903225806451613,
+          "canonical_seed0_delta": 1
+        },
+        {
+          "dataset": "DR GPT-5.4 low",
+          "budget_share": 0.84,
+          "budget_cap": 1357,
+          "expected_introduced_fp": 0.0,
+          "expected_delayed_ff": 0.9493053606540648,
+          "expected_delta": 0.9493053606540648,
+          "observed_mean_delta": 1.032258064516129,
+          "canonical_seed0_delta": 1
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "budget_share": 0.2,
+          "budget_cap": 4697,
+          "expected_introduced_fp": 7.141311326936871,
+          "expected_delayed_ff": 5.175859152626585,
+          "expected_delta": -1.9654521743102864,
+          "observed_mean_delta": -2.064516129032258,
+          "canonical_seed0_delta": 3
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "budget_share": 0.4,
+          "budget_cap": 9395,
+          "expected_introduced_fp": 20.874637746684577,
+          "expected_delayed_ff": 46.31442290016565,
+          "expected_delta": 25.439785153481075,
+          "observed_mean_delta": 25.516129032258064,
+          "canonical_seed0_delta": 28
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "budget_share": 0.6,
+          "budget_cap": 14092,
+          "expected_introduced_fp": 21.736867800285363,
+          "expected_delayed_ff": 86.87208091976797,
+          "expected_delta": 65.1352131194826,
+          "observed_mean_delta": 64.64516129032258,
+          "canonical_seed0_delta": 73
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "budget_share": 0.8,
+          "budget_cap": 18790,
+          "expected_introduced_fp": 14.23831201343538,
+          "expected_delayed_ff": 110.18466395724477,
+          "expected_delta": 95.9463519438094,
+          "observed_mean_delta": 95.96774193548389,
+          "canonical_seed0_delta": 108
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "budget_share": 0.84,
+          "budget_cap": 19729,
+          "expected_introduced_fp": 11.886225490171164,
+          "expected_delayed_ff": 108.2161251908036,
+          "expected_delta": 96.32989970063244,
+          "observed_mean_delta": 97.64516129032258,
+          "canonical_seed0_delta": 112
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "budget_share": 0.2,
+          "budget_cap": 4697,
+          "expected_introduced_fp": 19.68702608223811,
+          "expected_delayed_ff": 8.175858999024735,
+          "expected_delta": -11.511167083213374,
+          "observed_mean_delta": -11.67741935483871,
+          "canonical_seed0_delta": -7
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "budget_share": 0.4,
+          "budget_cap": 9395,
+          "expected_introduced_fp": 28.379266996670257,
+          "expected_delayed_ff": 49.3095002885127,
+          "expected_delta": 20.930233291842445,
+          "observed_mean_delta": 20.93548387096774,
+          "canonical_seed0_delta": 20
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "budget_share": 0.6,
+          "budget_cap": 14092,
+          "expected_introduced_fp": 25.453023251065034,
+          "expected_delayed_ff": 89.80341257583198,
+          "expected_delta": 64.35038932476695,
+          "observed_mean_delta": 63.29032258064516,
+          "canonical_seed0_delta": 68
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "budget_share": 0.8,
+          "budget_cap": 18790,
+          "expected_introduced_fp": 15.49669136280365,
+          "expected_delayed_ff": 112.75492191223005,
+          "expected_delta": 97.2582305494264,
+          "observed_mean_delta": 97.16129032258064,
+          "canonical_seed0_delta": 108
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "budget_share": 0.84,
+          "budget_cap": 19729,
+          "expected_introduced_fp": 12.803936651820113,
+          "expected_delayed_ff": 110.58511206626162,
+          "expected_delta": 97.7811754144415,
+          "observed_mean_delta": 98.93548387096774,
+          "canonical_seed0_delta": 112
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "budget_share": 0.2,
+          "budget_cap": 4046,
+          "expected_introduced_fp": 28.169326865159952,
+          "expected_delayed_ff": 36.386710902072466,
+          "expected_delta": 8.217384036912513,
+          "observed_mean_delta": 8.290322580645162,
+          "canonical_seed0_delta": 9
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "budget_share": 0.4,
+          "budget_cap": 8092,
+          "expected_introduced_fp": 17.107876396329246,
+          "expected_delayed_ff": 40.40359821373771,
+          "expected_delta": 23.29572181740847,
+          "observed_mean_delta": 23.35483870967742,
+          "canonical_seed0_delta": 27
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "budget_share": 0.6,
+          "budget_cap": 12137,
+          "expected_introduced_fp": 10.42127053835346,
+          "expected_delayed_ff": 43.98580849738688,
+          "expected_delta": 33.56453795903342,
+          "observed_mean_delta": 34.12903225806452,
+          "canonical_seed0_delta": 28
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "budget_share": 0.8,
+          "budget_cap": 16183,
+          "expected_introduced_fp": 4.994932856110254,
+          "expected_delayed_ff": 41.84477578647424,
+          "expected_delta": 36.84984293036399,
+          "observed_mean_delta": 36.806451612903224,
+          "canonical_seed0_delta": 33
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "budget_share": 0.84,
+          "budget_cap": 16992,
+          "expected_introduced_fp": 3.972627739097939,
+          "expected_delayed_ff": 39.40100874642491,
+          "expected_delta": 35.42838100732697,
+          "observed_mean_delta": 35.32258064516129,
+          "canonical_seed0_delta": 29
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "budget_share": 0.2,
+          "budget_cap": 4046,
+          "expected_introduced_fp": 5.771751159396129,
+          "expected_delayed_ff": 5.386796461103133,
+          "expected_delta": -0.3849546982929963,
+          "observed_mean_delta": -0.3225806451612903,
+          "canonical_seed0_delta": 1
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "budget_share": 0.4,
+          "budget_cap": 8092,
+          "expected_introduced_fp": 4.509843088715789,
+          "expected_delayed_ff": 9.55137464630273,
+          "expected_delta": 5.04153155758694,
+          "observed_mean_delta": 5.129032258064516,
+          "canonical_seed0_delta": 4
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "budget_share": 0.6,
+          "budget_cap": 12137,
+          "expected_introduced_fp": 3.471941502792468,
+          "expected_delayed_ff": 14.46311706396978,
+          "expected_delta": 10.991175561177313,
+          "observed_mean_delta": 11.483870967741936,
+          "canonical_seed0_delta": 7
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "budget_share": 0.8,
+          "budget_cap": 16183,
+          "expected_introduced_fp": 1.9839113026591335,
+          "expected_delayed_ff": 17.659844351146848,
+          "expected_delta": 15.675933048487714,
+          "observed_mean_delta": 15.838709677419354,
+          "canonical_seed0_delta": 17
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "budget_share": 0.84,
+          "budget_cap": 16992,
+          "expected_introduced_fp": 1.6234818740182546,
+          "expected_delayed_ff": 17.372513980208858,
+          "expected_delta": 15.749032106190604,
+          "observed_mean_delta": 16.29032258064516,
+          "canonical_seed0_delta": 12
+        }
+      ],
+      "extrema": [
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "statistic": "analytic",
+          "extremum": "min",
+          "budget_share": 0.0,
+          "delta": 0.0
+        },
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "statistic": "analytic",
+          "extremum": "max",
+          "budget_share": 0.2,
+          "delta": 1.9992266047950504
+        },
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "statistic": "31_order_mean",
+          "extremum": "min",
+          "budget_share": 0.0,
+          "delta": 0.0
+        },
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "statistic": "31_order_mean",
+          "extremum": "max",
+          "budget_share": 0.2,
+          "delta": 2.0
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "statistic": "analytic",
+          "extremum": "min",
+          "budget_share": 0.0,
+          "delta": 0.0
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "statistic": "analytic",
+          "extremum": "max",
+          "budget_share": 0.19,
+          "delta": 3.0
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "statistic": "31_order_mean",
+          "extremum": "min",
+          "budget_share": 0.0,
+          "delta": 0.0
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "statistic": "31_order_mean",
+          "extremum": "max",
+          "budget_share": 0.19,
+          "delta": 3.0
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "statistic": "analytic",
+          "extremum": "min",
+          "budget_share": 0.0,
+          "delta": 0.0
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "statistic": "analytic",
+          "extremum": "max",
+          "budget_share": 0.48,
+          "delta": 6.020219301141911
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "statistic": "31_order_mean",
+          "extremum": "min",
+          "budget_share": 0.0,
+          "delta": 0.0
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "statistic": "31_order_mean",
+          "extremum": "max",
+          "budget_share": 0.49,
+          "delta": 6.451612903225806
+        },
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "statistic": "analytic",
+          "extremum": "min",
+          "budget_share": 0.0,
+          "delta": 0.0
+        },
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "statistic": "analytic",
+          "extremum": "max",
+          "budget_share": 0.26,
+          "delta": 11.190275327823068
+        },
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "statistic": "31_order_mean",
+          "extremum": "min",
+          "budget_share": 0.0,
+          "delta": 0.0
+        },
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "statistic": "31_order_mean",
+          "extremum": "max",
+          "budget_share": 0.37,
+          "delta": 11.612903225806452
+        },
+        {
+          "dataset": "DR GPT-5.4 low",
+          "statistic": "analytic",
+          "extremum": "min",
+          "budget_share": 0.0,
+          "delta": 0.0
+        },
+        {
+          "dataset": "DR GPT-5.4 low",
+          "statistic": "analytic",
+          "extremum": "max",
+          "budget_share": 0.17,
+          "delta": 2.0
+        },
+        {
+          "dataset": "DR GPT-5.4 low",
+          "statistic": "31_order_mean",
+          "extremum": "min",
+          "budget_share": 0.0,
+          "delta": 0.0
+        },
+        {
+          "dataset": "DR GPT-5.4 low",
+          "statistic": "31_order_mean",
+          "extremum": "max",
+          "budget_share": 0.17,
+          "delta": 2.0
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "statistic": "analytic",
+          "extremum": "min",
+          "budget_share": 0.15,
+          "delta": -4.0
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "statistic": "analytic",
+          "extremum": "max",
+          "budget_share": 0.82,
+          "delta": 96.60869852150708
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "statistic": "31_order_mean",
+          "extremum": "min",
+          "budget_share": 0.15,
+          "delta": -4.0
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "statistic": "31_order_mean",
+          "extremum": "max",
+          "budget_share": 0.84,
+          "delta": 97.64516129032258
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "statistic": "analytic",
+          "extremum": "min",
+          "budget_share": 0.17,
+          "delta": -13.0
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "statistic": "analytic",
+          "extremum": "max",
+          "budget_share": 0.83,
+          "delta": 98.03049883183805
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "statistic": "31_order_mean",
+          "extremum": "min",
+          "budget_share": 0.17,
+          "delta": -13.0
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "statistic": "31_order_mean",
+          "extremum": "max",
+          "budget_share": 0.84,
+          "delta": 98.93548387096774
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "statistic": "analytic",
+          "extremum": "min",
+          "budget_share": 0.09,
+          "delta": -1.0
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "statistic": "analytic",
+          "extremum": "max",
+          "budget_share": 0.76,
+          "delta": 37.2717265597457
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "statistic": "31_order_mean",
+          "extremum": "min",
+          "budget_share": 0.09,
+          "delta": -1.0
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "statistic": "31_order_mean",
+          "extremum": "max",
+          "budget_share": 0.78,
+          "delta": 37.096774193548384
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "statistic": "analytic",
+          "extremum": "min",
+          "budget_share": 0.13,
+          "delta": -3.0
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "statistic": "analytic",
+          "extremum": "max",
+          "budget_share": 0.83,
+          "delta": 15.787582952102412
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "statistic": "31_order_mean",
+          "extremum": "min",
+          "budget_share": 0.13,
+          "delta": -3.0
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "statistic": "31_order_mean",
+          "extremum": "max",
+          "budget_share": 0.83,
+          "delta": 16.516129032258064
+        }
+      ],
+      "canonical_full_jb_20pct_loss": {
+        "eager_FP": 28,
+        "eager_FF": 211,
+        "gated_FP": 22,
+        "gated_FF": 220,
+        "gating_minus_eager_loss_FP_coefficient": -6,
+        "gating_minus_eager_loss_FF_coefficient": 9,
+        "cost_ratio_crossover": 1.5
+      }
+    },
+    "discovery_vs_certification": {
+      "source": "conjunction_policy_study/budget_curves.csv.gz",
+      "selector": "release order; 20% cap; seeds 1 through 31; short circuit judge-first versus disagreement continuation",
+      "unit": "counts and marginal medians",
+      "values": [
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "orders": 31,
+          "opposing_discovery_and_certification_orders": 31,
+          "short_circuit_marginal_medians": {
+            "actual_queries": 323.0,
+            "criterion_errors_found": 14.0,
+            "certified_tasks": 275.0,
+            "residual_errors": 1.0
+          },
+          "disagreement_continuation_marginal_medians": {
+            "actual_queries": 323.0,
+            "criterion_errors_found": 83.0,
+            "certified_tasks": 160.0,
+            "residual_errors": 1.0
+          }
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "orders": 31,
+          "opposing_discovery_and_certification_orders": 31,
+          "short_circuit_marginal_medians": {
+            "actual_queries": 4697.0,
+            "criterion_errors_found": 1661.0,
+            "certified_tasks": 1328.0,
+            "residual_errors": 39.0
+          },
+          "disagreement_continuation_marginal_medians": {
+            "actual_queries": 4697.0,
+            "criterion_errors_found": 3188.0,
+            "certified_tasks": 779.0,
+            "residual_errors": 243.0
+          }
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "orders": 31,
+          "opposing_discovery_and_certification_orders": 0,
+          "short_circuit_marginal_medians": {
+            "actual_queries": 4697.0,
+            "criterion_errors_found": 1431.0,
+            "certified_tasks": 1512.0,
+            "residual_errors": 15.0
+          },
+          "disagreement_continuation_marginal_medians": {
+            "actual_queries": 4697.0,
+            "criterion_errors_found": 1306.0,
+            "certified_tasks": 779.0,
+            "residual_errors": 243.0
+          }
+        }
+      ]
+    },
+    "matched_marginal_configurations": {
+      "source": "conjunction_mechanism/{update_permutation_rows.csv,update_permutation_summary.csv,update_expected_grid.csv}",
+      "unit": "errors over fixed simulated label configurations; not a reversal probability",
+      "cells": 90,
+      "cells_admitting_opposite_sign": 44,
+      "focal": {
+        "dataset": "JB GPT-5.4",
+        "policy": "random_criterion",
+        "budget_share": 0.2,
+        "configurations": 64,
+        "original_expected_delta": 12.25125623062358,
+        "configured_delta_min": -9.75821783665032,
+        "configured_delta_max": -1.481264369783606,
+        "opposite_sign_configurations": 64
+      }
+    },
+    "rq2": {
+      "source": "conjunction_mechanism/allocation_rows.csv.gz; conjunction_label_value/budget_estimation_rows.csv.gz",
+      "selector": "release order, budget_share=0.2, seeds 1 through 31",
+      "unit": "paired mix minus SRS counts; width in percentage points",
+      "paired_means": [
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "actual_queries": 323.0,
+          "certified_tasks_delta": 40.03225806451613,
+          "certified_initial_correct_delta": 40.61290322580645,
+          "certified_initial_wrong_delta": -0.5806451612903226,
+          "noncertified_ff_repair_delta": -0.22580645161290322,
+          "introduced_fp_delta": 0.0,
+          "residual_errors_delta": 0.8064516129032258
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "actual_queries": 323.0,
+          "certified_tasks_delta": 36.61290322580645,
+          "certified_initial_correct_delta": 35.87096774193548,
+          "certified_initial_wrong_delta": 0.7419354838709677,
+          "noncertified_ff_repair_delta": -0.2903225806451613,
+          "introduced_fp_delta": -0.0967741935483871,
+          "residual_errors_delta": -0.5483870967741935
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "actual_queries": 169.0,
+          "certified_tasks_delta": 16.64516129032258,
+          "certified_initial_correct_delta": 13.838709677419354,
+          "certified_initial_wrong_delta": 2.806451612903226,
+          "noncertified_ff_repair_delta": -0.7096774193548387,
+          "introduced_fp_delta": -0.16129032258064516,
+          "residual_errors_delta": -2.2580645161290325
+        },
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "actual_queries": 169.0,
+          "certified_tasks_delta": 20.612903225806452,
+          "certified_initial_correct_delta": 19.612903225806452,
+          "certified_initial_wrong_delta": 1.0,
+          "noncertified_ff_repair_delta": -1.096774193548387,
+          "introduced_fp_delta": -0.1935483870967742,
+          "residual_errors_delta": -0.0967741935483871
+        },
+        {
+          "dataset": "DR GPT-5.4 low",
+          "actual_queries": 323.0,
+          "certified_tasks_delta": 39.61290322580645,
+          "certified_initial_correct_delta": 39.16129032258065,
+          "certified_initial_wrong_delta": 0.45161290322580644,
+          "noncertified_ff_repair_delta": -0.3548387096774194,
+          "introduced_fp_delta": 0.0,
+          "residual_errors_delta": -0.0967741935483871
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "actual_queries": 4697.0,
+          "certified_tasks_delta": 237.74193548387098,
+          "certified_initial_correct_delta": 137.2258064516129,
+          "certified_initial_wrong_delta": 100.51612903225806,
+          "noncertified_ff_repair_delta": -18.903225806451612,
+          "introduced_fp_delta": -8.451612903225806,
+          "residual_errors_delta": -90.06451612903226
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "actual_queries": 4697.0,
+          "certified_tasks_delta": 173.83870967741936,
+          "certified_initial_correct_delta": 81.64516129032258,
+          "certified_initial_wrong_delta": 92.19354838709677,
+          "noncertified_ff_repair_delta": -14.161290322580646,
+          "introduced_fp_delta": -13.451612903225806,
+          "residual_errors_delta": -91.48387096774194
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "actual_queries": 4046.0,
+          "certified_tasks_delta": 239.25806451612902,
+          "certified_initial_correct_delta": 179.3548387096774,
+          "certified_initial_wrong_delta": 59.903225806451616,
+          "noncertified_ff_repair_delta": -3.4838709677419355,
+          "introduced_fp_delta": -2.2580645161290325,
+          "residual_errors_delta": -58.67741935483871
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "actual_queries": 4046.0,
+          "certified_tasks_delta": 184.5483870967742,
+          "certified_initial_correct_delta": 117.48387096774194,
+          "certified_initial_wrong_delta": 67.06451612903226,
+          "noncertified_ff_repair_delta": -2.935483870967742,
+          "introduced_fp_delta": -1.2903225806451613,
+          "residual_errors_delta": -65.41935483870968
+        }
+      ],
+      "marginal_medians": [
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "policy": "random_criterion",
+          "actual_queries": 323.0,
+          "certified_tasks": 131.0,
+          "residual_errors": 8.0,
+          "accuracy_ci_width_pp": 5.51083591331268
+        },
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "policy": "sc50_then_srs",
+          "actual_queries": 323.0,
+          "certified_tasks": 169.0,
+          "residual_errors": 9.0,
+          "accuracy_ci_width_pp": 7.616099071207421
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "policy": "random_criterion",
+          "actual_queries": 323.0,
+          "certified_tasks": 131.0,
+          "residual_errors": 23.0,
+          "accuracy_ci_width_pp": 7.55417956656346
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "policy": "sc50_then_srs",
+          "actual_queries": 323.0,
+          "certified_tasks": 167.0,
+          "residual_errors": 22.0,
+          "accuracy_ci_width_pp": 10.8359133126935
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "policy": "random_criterion",
+          "actual_queries": 169.0,
+          "certified_tasks": 31.0,
+          "residual_errors": 32.0,
+          "accuracy_ci_width_pp": 9.01542111506524
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "policy": "sc50_then_srs",
+          "actual_queries": 169.0,
+          "certified_tasks": 47.0,
+          "residual_errors": 30.0,
+          "accuracy_ci_width_pp": 12.930011862396201
+        },
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "policy": "random_criterion",
+          "actual_queries": 169.0,
+          "certified_tasks": 31.0,
+          "residual_errors": 24.0,
+          "accuracy_ci_width_pp": 7.94780545670226
+        },
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "policy": "sc50_then_srs",
+          "actual_queries": 169.0,
+          "certified_tasks": 51.0,
+          "residual_errors": 24.0,
+          "accuracy_ci_width_pp": 10.79478054567022
+        },
+        {
+          "dataset": "DR GPT-5.4 low",
+          "policy": "random_criterion",
+          "actual_queries": 323.0,
+          "certified_tasks": 131.0,
+          "residual_errors": 7.0,
+          "accuracy_ci_width_pp": 5.4489164086687305
+        },
+        {
+          "dataset": "DR GPT-5.4 low",
+          "policy": "sc50_then_srs",
+          "actual_queries": 323.0,
+          "certified_tasks": 168.0,
+          "residual_errors": 8.0,
+          "accuracy_ci_width_pp": 7.86377708978327
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "policy": "random_criterion",
+          "actual_queries": 4697.0,
+          "certified_tasks": 798.0,
+          "residual_errors": 223.0,
+          "accuracy_ci_width_pp": 2.2097330438114597
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "policy": "sc50_then_srs",
+          "actual_queries": 4697.0,
+          "certified_tasks": 1035.0,
+          "residual_errors": 133.0,
+          "accuracy_ci_width_pp": 2.94631072508195
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "policy": "random_criterion",
+          "actual_queries": 4697.0,
+          "certified_tasks": 798.0,
+          "residual_errors": 237.0,
+          "accuracy_ci_width_pp": 2.40558606888917
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "policy": "sc50_then_srs",
+          "actual_queries": 4697.0,
+          "certified_tasks": 971.0,
+          "residual_errors": 145.0,
+          "accuracy_ci_width_pp": 3.2273172393238903
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "policy": "random_criterion",
+          "actual_queries": 4046.0,
+          "certified_tasks": 774.0,
+          "residual_errors": 171.0,
+          "accuracy_ci_width_pp": 2.16520836422957
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "policy": "sc50_then_srs",
+          "actual_queries": 4046.0,
+          "certified_tasks": 1010.0,
+          "residual_errors": 113.0,
+          "accuracy_ci_width_pp": 2.96109545701714
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "policy": "random_criterion",
+          "actual_queries": 4046.0,
+          "certified_tasks": 774.0,
+          "residual_errors": 261.0,
+          "accuracy_ci_width_pp": 2.45686885164861
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "policy": "sc50_then_srs",
+          "actual_queries": 4046.0,
+          "certified_tasks": 953.0,
+          "residual_errors": 196.0,
+          "accuracy_ci_width_pp": 3.36151070245687
+        }
+      ],
+      "warning": "Separate marginal medians need not describe any one run; their ratios are not paired relative effects."
+    },
+    "reference_sensitivity": {
+      "source": "conjunction_robustness/reference/{pairing.csv,frame_diagnostics.json,rq1_rows.csv.gz,rq2_rows.csv.gz}",
+      "unit": "output-level frozen judge comparison, counts or errors per 100 outputs as named",
+      "counts": [
+        {
+          "dataset": "JB GPT-5.4",
+          "reference": "A",
+          "n_units": 206,
+          "n_criteria": 3098,
+          "reference_pass": 31,
+          "judge_pass": 4,
+          "TP": 0,
+          "TN": 171,
+          "FP": 4,
+          "FF": 31
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "reference": "B",
+          "n_units": 206,
+          "n_criteria": 3098,
+          "reference_pass": 23,
+          "judge_pass": 4,
+          "TP": 2,
+          "TN": 181,
+          "FP": 2,
+          "FF": 21
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "reference": "A",
+          "n_units": 206,
+          "n_criteria": 3098,
+          "reference_pass": 31,
+          "judge_pass": 5,
+          "TP": 0,
+          "TN": 170,
+          "FP": 5,
+          "FF": 31
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "reference": "B",
+          "n_units": 206,
+          "n_criteria": 3098,
+          "reference_pass": 23,
+          "judge_pass": 5,
+          "TP": 2,
+          "TN": 180,
+          "FP": 3,
+          "FF": 21
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "reference": "A",
+          "n_units": 206,
+          "n_criteria": 2664,
+          "reference_pass": 36,
+          "judge_pass": 50,
+          "TP": 26,
+          "TN": 146,
+          "FP": 24,
+          "FF": 10
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "reference": "B",
+          "n_units": 206,
+          "n_criteria": 2664,
+          "reference_pass": 33,
+          "judge_pass": 50,
+          "TP": 28,
+          "TN": 151,
+          "FP": 22,
+          "FF": 5
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "reference": "A",
+          "n_units": 206,
+          "n_criteria": 2664,
+          "reference_pass": 36,
+          "judge_pass": 92,
+          "TP": 29,
+          "TN": 107,
+          "FP": 63,
+          "FF": 7
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "reference": "B",
+          "n_units": 206,
+          "n_criteria": 2664,
+          "reference_pass": 33,
+          "judge_pass": 92,
+          "TP": 28,
+          "TN": 109,
+          "FP": 64,
+          "FF": 5
+        }
+      ],
+      "original_repeated_peer_diagnostics": {
+        "n_outputs": 206,
+        "n_annotations": 431,
+        "n_human_raters": 48,
+        "n_base_tasks": 30,
+        "reference_pass": 56,
+        "reference_pass_all_peer_pass": 22,
+        "initial_FF": 54,
+        "initial_FF_any_peer_fail": 32,
+        "initial_FF_all_peer_fail": 30,
+        "judge_reference_disagreement": 60,
+        "disagreement_any_peer_agrees_current_judge": 34,
+        "disagreement_all_peer_agree_current_judge": 32,
+        "judge_reference_task_agreement": 371,
+        "human_unordered_distinct_rater_pairs": 245,
+        "human_pair_task_equal": 208,
+        "human_pair_criterion_equal": 2881,
+        "human_pair_criterion_comparisons": 3610,
+        "saved_judge_binary_vector_different_pairs": 86,
+        "saved_judge_task_different_pairs": 5,
+        "definition": "Peers share output_id and have a different human rater_id; current judge prediction is always the original annotation-specific saved draw. Any/all summaries condition on the stated original annotation group; pairs and criterion comparisons have different denominators. Binary criterion agreement uses the declared full/binary-only target. No true-label error rate is identified."
+      },
+      "subset_ratios": {
+        "other_rater_fails_initial_FF": 0.5925925925925926,
+        "all_other_raters_agree_reference_PASS": 0.39285714285714285
+      },
+      "rq1_31_order_means": [
+        {
+          "acquisition_ref": "A",
+          "evaluation_ref": "A",
+          "budget_share": 0.2,
+          "actual_queries": 620.0,
+          "gated_minus_eager": 0.25806451612903225,
+          "delta_per100": 0.1252740369558409
+        },
+        {
+          "acquisition_ref": "A",
+          "evaluation_ref": "A",
+          "budget_share": 0.84,
+          "actual_queries": 2602.0,
+          "gated_minus_eager": 12.419354838709678,
+          "delta_per100": 6.028813028499844
+        },
+        {
+          "acquisition_ref": "A",
+          "evaluation_ref": "B",
+          "budget_share": 0.2,
+          "actual_queries": 620.0,
+          "gated_minus_eager": 0.22580645161290322,
+          "delta_per100": 0.1096147823363608
+        },
+        {
+          "acquisition_ref": "A",
+          "evaluation_ref": "B",
+          "budget_share": 0.84,
+          "actual_queries": 2602.0,
+          "gated_minus_eager": 8.0,
+          "delta_per100": 3.883495145631068
+        },
+        {
+          "acquisition_ref": "B",
+          "evaluation_ref": "A",
+          "budget_share": 0.2,
+          "actual_queries": 620.0,
+          "gated_minus_eager": 0.25806451612903225,
+          "delta_per100": 0.1252740369558409
+        },
+        {
+          "acquisition_ref": "B",
+          "evaluation_ref": "A",
+          "budget_share": 0.84,
+          "actual_queries": 2602.0,
+          "gated_minus_eager": 12.419354838709678,
+          "delta_per100": 6.028813028499844
+        },
+        {
+          "acquisition_ref": "B",
+          "evaluation_ref": "B",
+          "budget_share": 0.2,
+          "actual_queries": 620.0,
+          "gated_minus_eager": 0.22580645161290322,
+          "delta_per100": 0.1096147823363608
+        },
+        {
+          "acquisition_ref": "B",
+          "evaluation_ref": "B",
+          "budget_share": 0.84,
+          "actual_queries": 2602.0,
+          "gated_minus_eager": 8.0,
+          "delta_per100": 3.883495145631068
+        }
+      ],
+      "rq2_31_order_means": [
+        {
+          "acquisition_ref": "A",
+          "evaluation_ref": "A",
+          "budget_cap": 620,
+          "certified_tasks_delta_mean": 27.64516129032258,
+          "eager_errors_delta_mean": -11.67741935483871,
+          "error_reduction_orders": 31,
+          "error_increase_orders": 0,
+          "orders": 31
+        },
+        {
+          "acquisition_ref": "A",
+          "evaluation_ref": "B",
+          "budget_cap": 620,
+          "certified_tasks_delta_mean": 14.903225806451612,
+          "eager_errors_delta_mean": -4.516129032258065,
+          "error_reduction_orders": 29,
+          "error_increase_orders": 2,
+          "orders": 31
+        },
+        {
+          "acquisition_ref": "B",
+          "evaluation_ref": "A",
+          "budget_cap": 620,
+          "certified_tasks_delta_mean": 13.580645161290322,
+          "eager_errors_delta_mean": -7.258064516129032,
+          "error_reduction_orders": 30,
+          "error_increase_orders": 1,
+          "orders": 31
+        },
+        {
+          "acquisition_ref": "B",
+          "evaluation_ref": "B",
+          "budget_cap": 620,
+          "certified_tasks_delta_mean": 32.12903225806452,
+          "eager_errors_delta_mean": -8.709677419354838,
+          "error_reduction_orders": 31,
+          "error_increase_orders": 0,
+          "orders": 31
+        }
+      ],
+      "warning": "A and B are symmetric hash-selected references. Off-diagonal cells freeze acquisition reference and reevaluate; diagonal cells rerun acquisition.",
+      "binary_srs_20pct_diagonal_order_mean": {
+        "A": 1.0,
+        "B": -1.0
+      }
+    },
+    "cluster_sensitivity": {
+      "source": "conjunction_robustness/cluster/{rq1_curves.csv.gz,rq2_seed_pairs.csv.gz,rq2_frame_means.csv.gz,summary.json}",
+      "unit": "errors per 100 evaluation units; empirical 2.5%, 50%, 97.5% task-composition quantiles",
+      "rq1": [
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "budget_share": 0.2,
+          "original_expected_delta_per100": 0.703953029857412,
+          "composition_quantiles_per100": [
+            0.0,
+            0.352112676056338,
+            1.7533645198608834
+          ],
+          "replicates": 399
+        },
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "budget_share": 0.84,
+          "original_expected_delta_per100": 0.3068799716335845,
+          "composition_quantiles_per100": [
+            0.0,
+            0.2373896438275493,
+            0.929404035439375
+          ],
+          "replicates": 399
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "budget_share": 0.2,
+          "original_expected_delta_per100": -0.1277096929376404,
+          "composition_quantiles_per100": [
+            -0.5368252877699803,
+            -0.1291989664082687,
+            0.3927703149703267
+          ],
+          "replicates": 399
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "budget_share": 0.84,
+          "original_expected_delta_per100": 6.2592527420813795,
+          "composition_quantiles_per100": [
+            3.5133767824939275,
+            6.239653183817912,
+            9.43645364170131
+          ],
+          "replicates": 399
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "budget_share": 0.2,
+          "original_expected_delta_per100": 0.5339430823205011,
+          "composition_quantiles_per100": [
+            -0.43975043291243865,
+            0.5567153792623522,
+            1.5012173598739993
+          ],
+          "replicates": 399
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "budget_share": 0.84,
+          "original_expected_delta_per100": 2.30203905180812,
+          "composition_quantiles_per100": [
+            1.3579444442765527,
+            2.31827350319098,
+            3.5538745250250035
+          ],
+          "replicates": 399
+        }
+      ],
+      "rq2": [
+        {
+          "dataset": "JB GPT-5.4",
+          "replicates": 399,
+          "cert_gain_replicates": 399,
+          "error_reduction_replicates": 399,
+          "error_increase_replicates": 0,
+          "error_tie_replicates": 0,
+          "original_error_delta_per100": -5.852145297532961,
+          "error_composition_quantiles_per100": [
+            -7.985129834801348,
+            -5.681040383299111,
+            -4.092308920394989
+          ]
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "replicates": 399,
+          "cert_gain_replicates": 399,
+          "error_reduction_replicates": 399,
+          "error_increase_replicates": 0,
+          "error_tie_replicates": 0,
+          "original_error_delta_per100": -3.812697813829675,
+          "error_composition_quantiles_per100": [
+            -4.945604482013635,
+            -3.5450268817204305,
+            -2.050289329655937
+          ]
+        },
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "replicates": 399,
+          "cert_gain_replicates": 399,
+          "error_reduction_replicates": 196,
+          "error_increase_replicates": 198,
+          "error_tie_replicates": 5,
+          "original_error_delta_per100": 0.2839618355293048,
+          "error_composition_quantiles_per100": [
+            -0.9092457973648342,
+            0.0,
+            0.5116992276238075
+          ]
+        }
+      ],
+      "warning": "399 base-task composition resamples; labels and rater population stay fixed. These are sensitivity ranges, not an unqualified new-population confidence claim."
+    },
+    "estimation": {
+      "source": "conjunction_robustness/estimation/{stratified_rows.csv.gz,stratified_summary.csv}",
+      "selector": "budget_share=0.2, 31 order seeds",
+      "unit": "criterion microagreement percentage points",
+      "values": [
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "policy": "charged_pilot_neyman",
+          "budget_share": 0.2,
+          "queries": 169,
+          "rmse_pp": 1.7316715971486918,
+          "guaranteed_interval_mean_width_pp": 11.900661998239768,
+          "approximate_normal_mean_width_pp": 6.934753952450971,
+          "pilot_queries_mean": 33.0
+        },
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "policy": "proportional_stratified",
+          "budget_share": 0.2,
+          "queries": 169,
+          "rmse_pp": 1.404230773351977,
+          "guaranteed_interval_mean_width_pp": 11.820303830405996,
+          "approximate_normal_mean_width_pp": 6.93502122954144,
+          "pilot_queries_mean": 0.0
+        },
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "policy": "random_criterion",
+          "budget_share": 0.2,
+          "queries": 169,
+          "rmse_pp": 2.3486597014172674,
+          "guaranteed_interval_mean_width_pp": 7.5421880381127275,
+          "approximate_normal_mean_width_pp": 7.046245877303899,
+          "pilot_queries_mean": 0.0
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "policy": "charged_pilot_neyman",
+          "budget_share": 0.2,
+          "queries": 169,
+          "rmse_pp": 2.498416010528756,
+          "guaranteed_interval_mean_width_pp": 14.376458883404117,
+          "approximate_normal_mean_width_pp": 9.300165371901633,
+          "pilot_queries_mean": 33.0
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "policy": "proportional_stratified",
+          "budget_share": 0.2,
+          "queries": 169,
+          "rmse_pp": 2.242001626247408,
+          "guaranteed_interval_mean_width_pp": 13.653235372900161,
+          "approximate_normal_mean_width_pp": 8.578014246644775,
+          "pilot_queries_mean": 0.0
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "policy": "random_criterion",
+          "budget_share": 0.2,
+          "queries": 169,
+          "rmse_pp": 2.237343936135532,
+          "guaranteed_interval_mean_width_pp": 9.065166647533768,
+          "approximate_normal_mean_width_pp": 8.62584938529078,
+          "pilot_queries_mean": 0.0
+        },
+        {
+          "dataset": "DR GPT-5.4 low",
+          "policy": "charged_pilot_neyman",
+          "budget_share": 0.2,
+          "queries": 323,
+          "rmse_pp": 1.0923069692046001,
+          "guaranteed_interval_mean_width_pp": 9.138120443423544,
+          "approximate_normal_mean_width_pp": 5.282227757286518,
+          "pilot_queries_mean": 64.0
+        },
+        {
+          "dataset": "DR GPT-5.4 low",
+          "policy": "proportional_stratified",
+          "budget_share": 0.2,
+          "queries": 323,
+          "rmse_pp": 1.5060000410423826,
+          "guaranteed_interval_mean_width_pp": 8.383101967442322,
+          "approximate_normal_mean_width_pp": 5.105174957376559,
+          "pilot_queries_mean": 0.0
+        },
+        {
+          "dataset": "DR GPT-5.4 low",
+          "policy": "random_criterion",
+          "budget_share": 0.2,
+          "queries": 323,
+          "rmse_pp": 1.4729018263931402,
+          "guaranteed_interval_mean_width_pp": 5.355038450014975,
+          "approximate_normal_mean_width_pp": 5.117450122889762,
+          "pilot_queries_mean": 0.0
+        },
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "policy": "charged_pilot_neyman",
+          "budget_share": 0.2,
+          "queries": 323,
+          "rmse_pp": 1.27051996574932,
+          "guaranteed_interval_mean_width_pp": 9.060221711774687,
+          "approximate_normal_mean_width_pp": 5.24788385030038,
+          "pilot_queries_mean": 64.0
+        },
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "policy": "proportional_stratified",
+          "budget_share": 0.2,
+          "queries": 323,
+          "rmse_pp": 1.1891682813851419,
+          "guaranteed_interval_mean_width_pp": 8.177369419754314,
+          "approximate_normal_mean_width_pp": 4.970236253854463,
+          "pilot_queries_mean": 0.0
+        },
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "policy": "random_criterion",
+          "budget_share": 0.2,
+          "queries": 323,
+          "rmse_pp": 1.3710977570542686,
+          "guaranteed_interval_mean_width_pp": 5.45490861879556,
+          "approximate_normal_mean_width_pp": 5.2211176752508255,
+          "pilot_queries_mean": 0.0
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "policy": "charged_pilot_neyman",
+          "budget_share": 0.2,
+          "queries": 323,
+          "rmse_pp": 1.6100776189098271,
+          "guaranteed_interval_mean_width_pp": 12.393887945670624,
+          "approximate_normal_mean_width_pp": 7.408155297623654,
+          "pilot_queries_mean": 64.0
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "policy": "proportional_stratified",
+          "budget_share": 0.2,
+          "queries": 323,
+          "rmse_pp": 1.6544062217203517,
+          "guaranteed_interval_mean_width_pp": 11.267352441825624,
+          "approximate_normal_mean_width_pp": 7.11203330600456,
+          "pilot_queries_mean": 0.0
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "policy": "random_criterion",
+          "budget_share": 0.2,
+          "queries": 323,
+          "rmse_pp": 2.084273912942094,
+          "guaranteed_interval_mean_width_pp": 7.624088684709871,
+          "approximate_normal_mean_width_pp": 7.41133627792819,
+          "pilot_queries_mean": 0.0
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "policy": "charged_pilot_neyman",
+          "budget_share": 0.2,
+          "queries": 4697,
+          "rmse_pp": 0.5003868608385331,
+          "guaranteed_interval_mean_width_pp": 3.740160995032249,
+          "approximate_normal_mean_width_pp": 2.308972837084633,
+          "pilot_queries_mean": 939.0
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "policy": "proportional_stratified",
+          "budget_share": 0.2,
+          "queries": 4697,
+          "rmse_pp": 0.5677065747039834,
+          "guaranteed_interval_mean_width_pp": 3.4658843533210506,
+          "approximate_normal_mean_width_pp": 2.1274933469960136,
+          "pilot_queries_mean": 0.0
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "policy": "random_criterion",
+          "budget_share": 0.2,
+          "queries": 4697,
+          "rmse_pp": 0.49947800231730477,
+          "guaranteed_interval_mean_width_pp": 2.209870388148827,
+          "approximate_normal_mean_width_pp": 2.193348650789445,
+          "pilot_queries_mean": 0.0
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "policy": "charged_pilot_neyman",
+          "budget_share": 0.2,
+          "queries": 4046,
+          "rmse_pp": 0.7246879523561456,
+          "guaranteed_interval_mean_width_pp": 3.75666362089558,
+          "approximate_normal_mean_width_pp": 2.353822260973245,
+          "pilot_queries_mean": 809.0
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "policy": "proportional_stratified",
+          "budget_share": 0.2,
+          "queries": 4046,
+          "rmse_pp": 0.5978019495890708,
+          "guaranteed_interval_mean_width_pp": 3.438850962926105,
+          "approximate_normal_mean_width_pp": 2.1545248026530337,
+          "pilot_queries_mean": 0.0
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "policy": "random_criterion",
+          "budget_share": 0.2,
+          "queries": 4046,
+          "rmse_pp": 0.5256675282692852,
+          "guaranteed_interval_mean_width_pp": 2.1711085490488715,
+          "approximate_normal_mean_width_pp": 2.151367813943119,
+          "pilot_queries_mean": 0.0
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "policy": "charged_pilot_neyman",
+          "budget_share": 0.2,
+          "queries": 4697,
+          "rmse_pp": 0.6318922213493203,
+          "guaranteed_interval_mean_width_pp": 4.006196976501751,
+          "approximate_normal_mean_width_pp": 2.5478908172747534,
+          "pilot_queries_mean": 939.0
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "policy": "proportional_stratified",
+          "budget_share": 0.2,
+          "queries": 4697,
+          "rmse_pp": 0.6232705431104103,
+          "guaranteed_interval_mean_width_pp": 3.6883821798469105,
+          "approximate_normal_mean_width_pp": 2.329090434607315,
+          "pilot_queries_mean": 0.0
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "policy": "random_criterion",
+          "budget_share": 0.2,
+          "queries": 4697,
+          "rmse_pp": 0.7182977757265595,
+          "guaranteed_interval_mean_width_pp": 2.4065474792507002,
+          "approximate_normal_mean_width_pp": 2.3909769585905156,
+          "pilot_queries_mean": 0.0
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "policy": "charged_pilot_neyman",
+          "budget_share": 0.2,
+          "queries": 4046,
+          "rmse_pp": 0.5581281929326568,
+          "guaranteed_interval_mean_width_pp": 4.0016010231239365,
+          "approximate_normal_mean_width_pp": 2.6684687294183838,
+          "pilot_queries_mean": 809.0
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "policy": "proportional_stratified",
+          "budget_share": 0.2,
+          "queries": 4046,
+          "rmse_pp": 0.5272310968642419,
+          "guaranteed_interval_mean_width_pp": 3.6292515216895533,
+          "approximate_normal_mean_width_pp": 2.4398901327821205,
+          "pilot_queries_mean": 0.0
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "policy": "random_criterion",
+          "budget_share": 0.2,
+          "queries": 4046,
+          "rmse_pp": 0.6129538395611412,
+          "guaranteed_interval_mean_width_pp": 2.45718778055777,
+          "approximate_normal_mean_width_pp": 2.4380379906189766,
+          "pilot_queries_mean": 0.0
+        }
+      ],
+      "warning": "Guaranteed simultaneous-stratum construction and approximate normal intervals have different coverage guarantees. RMSE is across fixed-frame random query orders.",
+      "inclusive_boundary_example": {
+        "population": 16,
+        "sample": 2,
+        "observed_successes": 0,
+        "alpha": 0.05,
+        "count_interval": [
+          0,
+          13
+        ],
+        "upper_endpoint_lower_tail": "3/120 = 1/40"
+      }
+    },
+    "whole_task_sampling": {
+      "source": "conjunction_label_value/whole_task_sampling.csv.gz",
+      "selector": "requested_task_share=0.2; costs are separate marginal medians over seeds 1 through 31",
+      "unit": "label queries and task-pass percentage points",
+      "values": [
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "sample_n": 57.0,
+          "population_n": 284.0,
+          "full_rubric_queries": 319.0,
+          "short_circuit_queries": 67.0,
+          "task_pass_exact_design_rmse_pp": 3.5364126978438404
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "sample_n": 57.0,
+          "population_n": 284.0,
+          "full_rubric_queries": 319.0,
+          "short_circuit_queries": 72.0,
+          "task_pass_exact_design_rmse_pp": 3.5364126978438404
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "sample_n": 42.0,
+          "population_n": 210.0,
+          "full_rubric_queries": 177.0,
+          "short_circuit_queries": 106.0,
+          "task_pass_exact_design_rmse_pp": 6.87182297366204
+        },
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "sample_n": 42.0,
+          "population_n": 210.0,
+          "full_rubric_queries": 177.0,
+          "short_circuit_queries": 102.0,
+          "task_pass_exact_design_rmse_pp": 6.87182297366204
+        },
+        {
+          "dataset": "DR GPT-5.4 low",
+          "sample_n": 57.0,
+          "population_n": 284.0,
+          "full_rubric_queries": 319.0,
+          "short_circuit_queries": 67.0,
+          "task_pass_exact_design_rmse_pp": 3.5364126978438404
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "sample_n": 308.0,
+          "population_n": 1539.0,
+          "full_rubric_queries": 4690.0,
+          "short_circuit_queries": 1002.0,
+          "task_pass_exact_design_rmse_pp": 1.8076599114719
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "sample_n": 308.0,
+          "population_n": 1539.0,
+          "full_rubric_queries": 4690.0,
+          "short_circuit_queries": 1157.0,
+          "task_pass_exact_design_rmse_pp": 1.8076599114719
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "sample_n": 308.0,
+          "population_n": 1539.0,
+          "full_rubric_queries": 4032.0,
+          "short_circuit_queries": 839.0,
+          "task_pass_exact_design_rmse_pp": 1.92748896689833
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "sample_n": 308.0,
+          "population_n": 1539.0,
+          "full_rubric_queries": 4032.0,
+          "short_circuit_queries": 936.0,
+          "task_pass_exact_design_rmse_pp": 1.92748896689833
+        }
+      ],
+      "warning": "Same sampled task set and pass estimator; different realized label costs. This is not an equal-label-budget comparison."
+    },
+    "disclosure": {
+      "source": "information_disclosure_replay.json; data/processed/public_judge_predictions.csv",
+      "unit": "finite feasible task-pass percentage points",
+      "values": [
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "n_tasks": 210,
+          "n_criteria": 843,
+          "reference_pass_pp": 55.714285714285715,
+          "judge_pass_pp": 54.761904761904766,
+          "D0_bounds_pp": [
+            43.333333333333336,
+            70.0
+          ],
+          "D0_width_pp": 26.66666666666666,
+          "D1_bounds_pp": [
+            43.80952380952381,
+            68.57142857142857
+          ],
+          "D1_width_pp": 24.761904761904763,
+          "D0_correction_sign": "unresolved",
+          "full_disclosure_width_pp": 0,
+          "D0_count_cells": 19
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "n_tasks": 210,
+          "n_criteria": 843,
+          "reference_pass_pp": 55.714285714285715,
+          "judge_pass_pp": 65.71428571428571,
+          "D0_bounds_pp": [
+            39.04761904761905,
+            77.14285714285715
+          ],
+          "D0_width_pp": 38.0952380952381,
+          "D1_bounds_pp": [
+            40.0,
+            75.23809523809524
+          ],
+          "D1_width_pp": 35.238095238095234,
+          "D0_correction_sign": "unresolved",
+          "full_disclosure_width_pp": 0,
+          "D0_count_cells": 18
+        },
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "n_tasks": 284,
+          "n_criteria": 1615,
+          "reference_pass_pp": 9.859154929577464,
+          "judge_pass_pp": 11.971830985915492,
+          "D0_bounds_pp": [
+            4.225352112676056,
+            16.901408450704224
+          ],
+          "D0_width_pp": 12.676056338028168,
+          "D1_bounds_pp": [
+            4.929577464788732,
+            15.845070422535212
+          ],
+          "D1_width_pp": 10.915492957746482,
+          "D0_correction_sign": "unresolved",
+          "full_disclosure_width_pp": 0,
+          "D0_count_cells": 38
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "n_tasks": 284,
+          "n_criteria": 1615,
+          "reference_pass_pp": 9.859154929577464,
+          "judge_pass_pp": 18.661971830985916,
+          "D0_bounds_pp": [
+            3.5211267605633805,
+            26.056338028169012
+          ],
+          "D0_width_pp": 22.535211267605632,
+          "D1_bounds_pp": [
+            4.225352112676056,
+            24.295774647887324
+          ],
+          "D1_width_pp": 20.070422535211268,
+          "D0_correction_sign": "unresolved",
+          "full_disclosure_width_pp": 0,
+          "D0_count_cells": 38
+        }
+      ],
+      "warning": "Direct endpoint feasibility; global optimality additionally uses the original solver's closed objective bounds and exhaustive small-world tests."
+    }
+  }
+}

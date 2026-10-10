@@ -21,6 +21,8 @@ jobs:
         run: python -m src.check_package
       - name: Unit and finite-population tests
         run: python -m pytest -q
+      - name: Manuscript numerical claim checks
+        run: python -m src.verify_manuscript_claims
       - name: Full offline reproduction
         run: python -m src.reproduce --mode full --output artifacts/reproduced
       - name: Compare reproduced scientific outputs

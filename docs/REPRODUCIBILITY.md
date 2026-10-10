@@ -169,3 +169,30 @@ A public GitHub release is separate from submitting an article to arXiv.
 an article version and can include supporting code and data. This repository is
 not itself an arXiv submission. Venue-specific anonymous review packages, if
 needed later, must follow that venue's instructions.
+
+
+## Manuscript build and claim checks
+
+The [complete paper](../artifacts/manuscript/paper.pdf) is an author draft with main text, tables, figures, references, mathematical derivations, and reproduction details. It has not been submitted to arXiv or assigned a paper identifier. The editable source is [paper.tex](../artifacts/manuscript/paper.tex), with [methods_appendix.tex](../artifacts/manuscript/methods_appendix.tex) and a [selected bibliography](../artifacts/manuscript/paper_references.bib). The broader [reading bibliography](references.bib) remains available.
+
+Install [Tectonic](https://tectonic-typesetting.github.io/) (validated with version 0.17.0), then run from the repository root:
+
+```bash
+python -m src.build_paper
+```
+
+To select an executable or a separate output location:
+
+```bash
+python -m src.build_paper --tectonic /path/to/tectonic --output artifacts/paper-build
+```
+
+The compiler writes `paper.pdf` and diagnostic files in `artifacts/paper-build/`, leaving the versioned PDF and scientific files intact. Initial TeX package downloads require network access; cached subsequent builds use the installed bundle. The source uses standard LaTeX, `plainnat` and BibTeX and can also be built in a full TeX installation. PDF metadata may differ across builds; compare scientific values and rendered content, not PDF hashes alone.
+
+Run the manuscript numerical audit with the pinned Python environment:
+
+```bash
+python -m src.verify_manuscript_claims --output artifacts/paper-checks/numerical_claim_audit.json
+```
+
+The [saved claim audit](../artifacts/manuscript/numerical_claim_audit.json) records source hashes, row selectors, units, and independently recomputed arithmetic and combinatorial expectations. It distinguishes analytical expectations, paired order means, marginal medians, composition ranges, and matched-reference subsets. The [citation audit](../artifacts/manuscript/citation_audit.md) records the primary sources and the claims they support. These checks complement the full scientific replay; they do not adjudicate reference correctness.
