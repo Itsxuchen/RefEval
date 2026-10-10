@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — manuscript clarity and external validation design, 2026-10-10
+
+- Lead with the verified 4,316-check example, add pure-certification endpoints and all-cell allocation context, and replace a single-order cost example with exact expected-loss thresholds.
+- State three accounting propositions, use distinct backlog/repair notation, simplify main-figure annotations and add the author-provided contact email.
+- Extend numerical checks from 503 to 536; refresh the compiled manuscript and display receipts while preserving scientific tables and inputs.
+- Add an explicitly unexecuted external-validation design, with metadata-screened candidates, pilot/confirmation separation, falsification criteria and missingness rules.
+
 ## Unreleased — complete manuscript, 2026-10-10
 
 - Added the complete paper, mathematical and reproducibility appendices, selected bibliography, and compiled PDF.

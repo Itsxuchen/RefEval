@@ -1,13 +1,13 @@
 {
   "renderer": "src/render_conjunction_mechanism.py",
-  "renderer_sha256": "1a0da692a9619a9a33e9c2f4d1c8226a1653be29b9995941e9e69199da934ddb",
+  "renderer_sha256": "e31eea44da20cfd3710c25454fbff21b6a8a62d82bdd8b4d0836fd38d4547f67",
   "source_sha256": {
-    "artifacts/reports/conjunction_mechanism/update_expected_grid.csv": "4c3ba6dbb3d581b432711d60dafc131e9631295d51d93cc9a6c5a9cf8ef74291",
-    "artifacts/reports/conjunction_mechanism/update_structures.json": "2dab50f5d6124c5366edd3566e6e60d02aab7bf28bedc30f8db7e20423cf4eaf",
-    "artifacts/reports/conjunction_mechanism/update_manifest.json": "9ebe97fb3899670fac8a87eb9cbaa661a11128b1325ee3e861bbb05fe892a38a",
-    "artifacts/reports/conjunction_mechanism/allocation_summary.csv": "f82e763b7ed8ecea34d832a4afbd50d9cf556def85649dcd4fbec4323015ae2b",
-    "artifacts/reports/conjunction_mechanism/allocation_rows.csv.gz": "a31c1d7fb04e8558c6b12a8732bb4613b16fc405e2fedba676b09e631c47e829",
-    "artifacts/reports/conjunction_mechanism/allocation_manifest.json": "a844cb80ee4021a8da27d060208d1099ad9b124f337456bbfa5076e6d61c2aaf"
+    "artifacts/expected/conjunction_mechanism/update_expected_grid.csv": "4c3ba6dbb3d581b432711d60dafc131e9631295d51d93cc9a6c5a9cf8ef74291",
+    "artifacts/expected/conjunction_mechanism/update_structures.json": "2dab50f5d6124c5366edd3566e6e60d02aab7bf28bedc30f8db7e20423cf4eaf",
+    "artifacts/expected/conjunction_mechanism/update_manifest.json": "9ebe97fb3899670fac8a87eb9cbaa661a11128b1325ee3e861bbb05fe892a38a",
+    "artifacts/expected/conjunction_mechanism/allocation_summary.csv": "f82e763b7ed8ecea34d832a4afbd50d9cf556def85649dcd4fbec4323015ae2b",
+    "artifacts/expected/conjunction_mechanism/allocation_rows.csv.gz": "a31c1d7fb04e8558c6b12a8732bb4613b16fc405e2fedba676b09e631c47e829",
+    "artifacts/expected/conjunction_mechanism/allocation_manifest.json": "a844cb80ee4021a8da27d060208d1099ad9b124f337456bbfa5076e6d61c2aaf"
   },
   "validation": {
     "update_rows": 1818,
@@ -96,9 +96,9 @@
     }
   ],
   "output_sha256": {
-    "artifacts/figures/conjunction_update_mechanism.png": "fc84c6ff3bcb61d52222488a1ef0e1ce6a1b2e88d80e7feaf5dda94281c17e63",
-    "artifacts/figures/conjunction_update_mechanism.pdf": "279837d2f192a0331d6bdb6900552556784e42b8018652e6ac12e4fdec5315c5",
-    "artifacts/figures/conjunction_allocation_mechanism.png": "003830ec550d3d2282b774bacbfc6e1a433edfd6c21ac6351e2490310a2398c7",
-    "artifacts/figures/conjunction_allocation_mechanism.pdf": "61f9460a4b5d56fd2be6bc44df18b1b9d5432d1e2abb4796cdf3683b39382058"
+    "artifacts/figures/conjunction_update_mechanism.png": "e224895d0d3e69c27aaf08e7cea6e8805ef92e06788e6741ebea4a2762da85bc",
+    "artifacts/figures/conjunction_update_mechanism.pdf": "61a6a164e5f8a074c13c2c7545c6870599dc5ae8e07bc3f391632d1f58f6845d",
+    "artifacts/figures/conjunction_allocation_mechanism.png": "adffd561cec16bf77939a540fde34c141854de547c654328a9a47890e520599d",
+    "artifacts/figures/conjunction_allocation_mechanism.pdf": "6eb7cf3830033ce995dceaa7faab3cd258b7913c6e54d51b6c3d86d235d63ebb"
   }
 }

@@ -131,7 +131,7 @@ predicted failure or a queried reference failure prevents eager PASS. Eager
 can introduce a false PASS precisely in \eqref{app:eq:introduced}, while
 gating retains the correct FAIL. For an initially false FAIL, the two rules
 disagree precisely in \eqref{app:eq:delayed}. Summing these four exhaustive
-initial classes proves \eqref{app:eq:update-identity}. In particular, correct
+initial classes proves \eqref{app:eq:update-identity} and Proposition~\ref{prop:update}. In particular, correct
 reference substitutions cannot introduce a false FAIL under conjunction.
 
 If false PASS and false FAIL have fixed nonnegative costs $c_{\rm FP}$ and
@@ -271,9 +271,8 @@ within a query-order replicate yields
  \Delta E_G=-\Delta C_W.
  \label{app:eq:paired-allocation}
 \end{equation}
-We calculate these differences before averaging. Their means retain the
-additive identities, whereas differences of marginal medians generally do
-not. To describe where additional certificates go, we also report the
+We calculate these differences before averaging, preserving the additive
+identities in Proposition~\ref{prop:allocation}. To describe where additional certificates go, we also report the
 composition of the \emph{mixed-only} certified set, separately from the
 uniform-only set. This gross composition remains meaningful when net
 certification gain is zero or negative. More certificates on initially

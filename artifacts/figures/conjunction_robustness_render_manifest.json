@@ -6,14 +6,14 @@
     "reference/frame_diagnostics.json": "c5071fbd496f90b56e7f50664496afc634129efbe791fdc7b0d262c68caf3c89",
     "estimation/stratified_summary.csv": "a6f48f95e797e3d5b5acc503b8e4bccd9eec7f52c7b2399720d1e01e88d7a46c"
   },
-  "renderer_sha256": "c9a9cb6bc649f0e77ff9d9f585fbedc988ab022383fb165ebfc7ac94880c5e36",
+  "renderer_sha256": "126508849c86db87c6ec5913f3d60934a7a3de29d287f47ca302712c71263843",
   "output_sha256": {
-    "conjunction_robustness_budget.png": "18817fdb18a9aa72f010528885522401500a2164a970b223d1e616a018dcbb60",
-    "conjunction_robustness_budget.pdf": "0da1d7ac36fa4483fd8be3e8703f66f380888927ca2bc5eb24a0f40537b3efd3",
-    "conjunction_robustness_reference.png": "7509f1a0e789bb17220fe0b60a762e4ee1d329139bee30e049344a6165771060",
-    "conjunction_robustness_reference.pdf": "569765565cdda2f68b7cf470e744c7eb8f90b81e90c646365e6b14285d732705",
-    "conjunction_robustness_estimation.png": "38efc0d9d40bff7441fa36db5993eae9480dada1524a2c3decf51fe48ece1c9c",
-    "conjunction_robustness_estimation.pdf": "6c70f44ba5e99176823c88a71f8dd23018aaa6aa99f9294b6a922fe6df857133",
+    "conjunction_robustness_budget.png": "30a8c424d2f147a6d992f9ac1758ccb734d7c9009d849f3a23b6b5744dd04ae4",
+    "conjunction_robustness_budget.pdf": "dd5874c9f9079a1161f148b511f51ff031509ca3f9e667cff3ecac29e7326425",
+    "conjunction_robustness_reference.png": "b6a5236e6d9b12028bf891c36912fbb7c4e3daf4861024ec481250d6fa2d1991",
+    "conjunction_robustness_reference.pdf": "8d285d0e0d73fc8ae495f203d10232027474d7a6dd9745f28a00cc1f75a0939e",
+    "conjunction_robustness_estimation.png": "95d0e512d8f2365471e2aed55df7da3586ac5451f9059f19dd8a5731ffb1b294",
+    "conjunction_robustness_estimation.pdf": "4f6ccc0db0265efbb901634cdc16e1a77f6eb66b86644b8a3471291326e9f335",
     "conjunction_robustness_budget_data.csv": "bd0eae2a654a7377ebd5b1833d502dbcb41b1341f53223fecb9033a0f2a30925"
   },
   "budget_figure": "Disagreement-then-random, all 101 caps. 399 empirical base-task resamples; RQ1 order expectation calculated exactly. Curated-task composition sensitivity, not automatic population confidence. Common vertical scales within each row. Only pointwise composition ranges are displayed; the historical constant-width simultaneous band remains in the source tables and plotting CSV.",

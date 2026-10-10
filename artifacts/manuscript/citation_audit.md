@@ -87,3 +87,8 @@ A concise, manuscript-specific bibliography may omit the reading-library `note` 
 ## Validation scope
 
 The 27 selected keys were checked for exact presence and uniqueness in `references.bib`; all resolve once and the complete local library has 55 unique keys. Relevant primary-source sections, not citation titles alone, support the comparisons above. No external algorithms were executed, no experiment was rerun and no venue acceptance probability was estimated. The final authoring pass must still verify that every actual manuscript citation supports its surrounding sentence and that any additional keys outside this set receive their own claim-specific review.
+
+
+## Manuscript clarity revision — 2026-10-10
+
+The revised introduction retains the same supported APEX motivation; the new JudgmentBench example and pure-certification rows are recomputed study results, checked in the numerical audit. The three accounting propositions use the existing definitions and appendix derivations. The cited keys and bibliography remain unchanged at27. The external-validation protocol is a separate unexecuted plan; candidate sources there are not new evidence in the paper.

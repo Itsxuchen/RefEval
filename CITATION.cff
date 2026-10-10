@@ -1,9 +1,10 @@
 cff-version: 1.2.0
 message: "Please cite this versioned software release. A complete manuscript draft and its LaTeX sources are included; no paper identifier has been assigned."
 type: software
-title: "Reference Label Value: Estimation and Certification in Conjunctive Evaluations"
+title: "Reference Label Value: Estimation, Certification, and Repair in Conjunctive Evaluations"
 authors:
   - name: "Xu Chen"
+    email: "xchen992@gatech.edu"
     website: "https://github.com/Itsxuchen"
 version: 0.2.0
 date-released: 2026-10-07

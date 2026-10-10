@@ -4,31 +4,39 @@
   "compiler": "Tectonic 0.17.0",
   "pdf_pages": 22,
   "main_text_ends_on_page": 10,
+  "references_start_on_page": 11,
   "appendix_starts_on_page": 13,
   "selected_citations": 27,
-  "unique_tex_labels": 57,
+  "unique_tex_labels": 60,
   "unresolved_references": 0,
   "latex_warnings": 0,
   "visually_inspected_pages": 22,
-  "local_public_rendered_pages_identical": 22,
-  "canonical_rqs_aligned": 3,
+  "local_public_pdf_identical": true,
   "unit_tests": {
     "passed": 215,
-    "seconds": 8.54
+    "seconds": 7.95
   },
-  "existing_data_protocol_test_result_figure_files_unchanged": 105,
-  "scientific_base_commit": "918b371e589f1f8166d828c0e5e98ed0635bcbdc",
+  "numerical_claim_checks": 536,
+  "numerical_claim_source_files": 29,
+  "existing_data_expected_test_files_unchanged": 75,
+  "scientific_base_commit": "0590c74f0d85d46fc27f3dc2f3fc2ecbf2c02d28",
+  "new_external_validation_outcomes_computed": false,
+  "full_scientific_replay_run_this_revision": false,
+  "prior_scientific_base_ci": {
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Itsxuchen/RefEval/actions/runs/38036765966"
+  },
   "source_sha256": {
-    "artifacts/manuscript/paper.tex": "89155eeb61a23abba2299b1cb2d51a679ea934a00209d86104d71511ac3a3461",
-    "artifacts/manuscript/methods_appendix.tex": "cf1aa540b784d29e62860181ecffcd217aee4f0dafb8ebcc228ba2a769549a67",
+    "artifacts/manuscript/paper.tex": "c14f7dc048ae37d9f8684f03d3d198df01643417896974e366ef74aa724e5b29",
+    "artifacts/manuscript/methods_appendix.tex": "c1ea1f38e53ef11d55c7983e6b66e8261a55610bf2806e59bc6f94d452616a53",
     "artifacts/manuscript/paper_references.bib": "90882aca720afc36cfae91649d2e851e7dd251ede39608d281a2ed9f8da9dc31",
-    "artifacts/manuscript/citation_audit.md": "b21a36660c05e6a435911c3c49fb965ea20dd711e85b869c04490c8eccbecda6",
-    "artifacts/manuscript/numerical_claim_audit.json": "00a945cecd78724ba5c82ca5d2a9be2eeb4f2b5d5f124c4e0e6213bb3ef33e98",
-    "artifacts/manuscript/paper.pdf": "b183bcac5114513960116dec1f32cb976527918f31049499771ab6f1e9446eca",
+    "artifacts/manuscript/citation_audit.md": "e865d181468ee3d04ba5beff6a86daae1c1d1b46b37a4eec3877695fceead2ac",
+    "artifacts/manuscript/numerical_claim_audit.json": "7088a093dca0d2025ee37190d6f996fa7e9e27c0708eb3334e5508deb3f51899",
+    "artifacts/manuscript/paper.pdf": "1a55fe7a7d805d054f9a5c638bb1fb29db68bc263aa7629487550b179d418f0a",
     "src/build_paper.py": "84d1f1d8a8a5d9139790aa2651d8760bfc70beadeaedfb42e865c648ef72c168",
-    "src/verify_manuscript_claims.py": "851d0e47e23c62c239a1731181ceff8323a108e61717f73ed2cc94d267ef855f"
+    "src/verify_manuscript_claims.py": "dbe91cf1bd1bf913f87e88db7a682f6df62b3574cdf66b7f912ca6dd41d0bfd8",
+    "context/conjunction_external_validation_protocol.md": "c0092e481ddfcaba5094065cf6a7f65ba79b79a724b9ec01264911e4f64b78c4"
   },
-  "scope": "Complete manuscript compilation and visual/source integrity checks. Numerical and citation claims have separate receipts; no new full scientific experiment replay or reference-label adjudication.",
-  "numerical_claim_checks": 503,
-  "local_links_checked": 229
+  "scope": "Revised manuscript compilation, visual inspection, numerical aggregation, tests and source integrity. The external-validation protocol is an unexecuted design; numerical and citation claims have separate receipts. No fresh full scientific replay or reference adjudication."
 }

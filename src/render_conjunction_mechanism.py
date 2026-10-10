@@ -129,7 +129,7 @@ def update_figure(update, structures):
              fontsize=10.5, color=DARK)
     focal = []
     for ax, dataset, title in zip(axes, ["JB GPT-5.4", "JB GPT-5.4 | binary_only"],
-                                 ["(a) JudgmentBench · GPT-5.4 · full", "(b) JudgmentBench · GPT-5.4 · binary only"]):
+                                 ["(a) JudgmentBench: GPT-5.4, full", "(b) JudgmentBench · GPT-5.4 · binary only"]):
         d = update.loc[(update.dataset == dataset) & (update.policy == "disagreement_then_random")].sort_values("budget_share")
         s = structures[dataset]
         x = 100 * d.budget_share.to_numpy()
@@ -180,7 +180,7 @@ def component_bars(ax, values, labels, colors):
     ax.set_ylim(low - .18 * span, high + .23 * span)
     ax.set_xlim(-.6, len(values) - .4)
     for bar, value in zip(bars, values):
-        ax.annotate(f"{value:+.2f}" if value else "0.00",
+        ax.annotate(f"{value:+.1f}" if value else "0.0",
                     (bar.get_x() + bar.get_width() / 2, value), xytext=(0, 5 if value >= 0 else -5),
                     textcoords="offset points", ha="center", va="bottom" if value >= 0 else "top",
                     fontsize=10, color=DARK, fontweight="bold")
@@ -188,26 +188,20 @@ def component_bars(ax, values, labels, colors):
 
 
 def allocation_figure(summary):
-    fig, axes = plt.subplots(2, 2, figsize=(12.8, 8.8))
-    fig.subplots_adjust(left=.078, right=.982, top=.80, bottom=.14, wspace=.24, hspace=.62)
-    fig.suptitle("More certified verdicts need not mean fewer verdict errors", x=.078,
-                 ha="left", y=.975, fontsize=16, fontweight="bold", color=DARK)
-    fig.text(.078, .923, "20% budget · release order · Fixed 50/50 allocation minus random criterion sampling",
-             fontsize=10.5, color=DARK)
-    fig.text(.078, .892, "Each bar is the mean of 31 paired seed differences at equal actual query counts. Additive counts; column scales differ.",
-             fontsize=10, color=DARK)
+    fig, axes = plt.subplots(2, 2, figsize=(12.8, 7.4))
+    fig.subplots_adjust(left=.078, right=.982, top=.91, bottom=.12, wspace=.24, hspace=.65)
     focal = []
     for column, dataset in enumerate(["DR Gemini 3.1 Pro", "JB GPT-5.4"]):
         row = summary.loc[(summary.dataset == dataset) & (summary.task_order == "release") & np.isclose(summary.budget_share, .2)].iloc[0]
         unit = "tasks" if column == 0 else "annotations"
-        title = "RuVerBench DR · Gemini 3.1 Pro" if column == 0 else "JudgmentBench · GPT-5.4 · full"
+        title = "RuVerBench DR: Gemini 3.1 Pro" if column == 0 else "JudgmentBench: GPT-5.4, full"
         upper = [float(row.certified_initial_correct_delta_mean), float(row.certified_initial_wrong_delta_mean), float(row.certified_tasks_delta_mean)]
         lower = [-float(row.certified_initial_wrong_delta_mean), -float(row.noncertified_ff_repair_delta_mean), float(row.introduced_fp_delta_mean), float(row.residual_errors_delta_mean)]
         component_bars(axes[0, column], upper,
                        ["Initially correct\ncertifications", "Initially wrong\ncertifications", "Net certification\ngain"],
                        [BLUE, ORANGE, DARK])
-        axes[0, column].set_title(f"({'a' if column == 0 else 'b'}) {title}\nN = {int(row.n_tasks):,} {unit}; {int(row.actual_queries):,} queried criteria",
-                                  loc="left", fontsize=10.8, pad=20, color=DARK, linespacing=1.6)
+        axes[0, column].set_title(f"({'a' if column == 0 else 'b'}) {title}",
+                                  loc="left", fontsize=10.8, pad=14, color=DARK, linespacing=1.6)
         axes[0, column].set_ylabel(f"Certification change ({unit})")
         component_bars(axes[1, column], lower,
                        ["−Δ certified\ninitially wrong", "−Δ uncertified\nfalse-fail repairs", "+Δ introduced\nfalse passes", "Net residual\nerror change"],
@@ -217,10 +211,6 @@ def allocation_figure(summary):
         focal.append({"dataset": dataset, "budget_share": .2, "actual_queries": int(row.actual_queries),
                       "n_units": int(row.n_tasks), "unit": unit,
                       "certification_components_and_total": upper, "residual_components_and_total": lower})
-    fig.text(.078, .047, "Negative residual change = fewer errors. Initial correctness, false passes and false fails are defined against the fixed released reference.",
-             fontsize=9, color=DARK)
-    fig.text(.078, .019, "Components add before rounding. These are paired arithmetic means (seeds 1–31), not marginal medians or population effect estimates.",
-             fontsize=9, color=DARK)
     return save_figure(fig, "conjunction_allocation_mechanism"), focal
 
 

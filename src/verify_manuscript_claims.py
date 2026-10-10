@@ -169,6 +169,30 @@ def audit(root: Path):
     equal("manuscript full-target false-fail rejection types", list(penalty_counts.values()), [156,64,0])
     claims["data_counts"]["full_jb_false_fail_rejection_types"] = penalty_counts
 
+    # Reconstruct the complete disagreement-only endpoint from criterion bits,
+    # independently of replay/update helpers and of the displayed README.
+    jb_flags = np.any(jb["secondary_predictions"] != jb["prediction"][None, :], axis=0)
+    jb_updated_bits = np.where(jb_flags, jb["gold"], jb["prediction"])
+    jb_updated = np.array([np.all(jb_updated_bits[idx]) for idx in jb_slots])
+    disagreement_endpoint = dict(
+        actual_queries=int(jb_flags.sum()),
+        criterion_errors_found=int((jb_flags & (jb["gold"] != jb["prediction"])).sum()),
+        initial_errors=int((jb_p != jb_g).sum()),
+        residual_errors=int((jb_updated != jb_g).sum()),
+        fixed_initial_fp=int((jb_p & ~jb_g & ~jb_updated).sum()),
+        fixed_initial_ff=int((~jb_p & jb_g & jb_updated).sum()),
+        introduced_fp=int((~jb_p & ~jb_g & jb_updated).sum()),
+        introduced_ff=int((jb_p & jb_g & ~jb_updated).sum()))
+    disagreement_endpoint["repaired_verdicts"] = (
+        disagreement_endpoint["fixed_initial_fp"] + disagreement_endpoint["fixed_initial_ff"])
+    equal("complete disagreement set independently reconstructed",
+          list(disagreement_endpoint.values()), [4316,1217,244,245,2,2,5,0,4])
+    claims["complete_disagreement_endpoint"] = dict(
+        source="data/reference/judgmentbench (fixed full-target reference and both saved judge vectors)",
+        selector="JB GPT-5.4 full; all slots where GPT-5.4 and GPT-5.4-mini disagree",
+        unit="criterion instances and output-by-rater verdicts", values=disagreement_endpoint,
+        warning="Illustrative complete-set endpoint, not an average over new tasks or an adjudication of reference truth.")
+
     expected = table("conjunction_mechanism/update_expected_grid.csv")
     for (name, policy), group in expected.groupby(["dataset", "policy"], sort=False):
         group = group.sort_values("budget_share")
@@ -182,6 +206,16 @@ def audit(root: Path):
           curves.gated_residual_fp+curves.gated_residual_ff)
     equal("all saved trajectories: D minus A", curves.gated_residual_errors-curves.residual_errors,
           curves.delayed_ff_corrections-curves.introduced_fp)
+    complete_disagreement_rows = curves[(curves.dataset == "JB GPT-5.4")
+        & (curves.policy == "disagreement_only") & (curves.budget_share == 1.)]
+    endpoint_fields = ["actual_queries", "criterion_errors_found", "residual_errors",
+                       "fixed_initial_fp", "fixed_initial_ff", "introduced_fp"]
+    require("complete disagreement endpoint present across all orders and seeds",
+            len(complete_disagreement_rows) == 3*32)
+    equal("complete disagreement endpoint agrees with every saved full-cap replay",
+          complete_disagreement_rows[endpoint_fields],
+          np.tile([disagreement_endpoint[k] for k in endpoint_fields],
+                  (len(complete_disagreement_rows), 1)))
     observed = curves[(curves.task_order == "release") & (curves.seed > 0)
                       & curves.policy.isin(expected.policy.unique())].copy()
     observed["delta"] = observed.gated_residual_errors-observed.residual_errors
@@ -203,6 +237,18 @@ def audit(root: Path):
     claims["rq1"] = dict(source="conjunction_mechanism/update_expected_grid.csv; conjunction_policy_study/budget_curves.csv.gz",
                          selector="release order, disagreement_then_random; observed means use seeds 1 through 31",
                          unit="gated minus eager evaluation-unit errors", values=anchors[fields].to_dict("records"), extrema=extrema)
+    cost_shares = [.2, .84]
+    cost_values = analytical_curve(jb, "disagreement_then_random", cost_shares)
+    cost_ratios = cost_values[:, 1] / cost_values[:, 0]
+    equal("expected-loss break-even ratios use unrounded expectations", cost_ratios,
+          [0.7247771334551854, 9.104330494153786], tolerance=1e-9)
+    claims["rq1"]["expected_loss_break_even"] = dict(
+        unit="false-PASS cost divided by false-FAIL cost",
+        condition="For c_FF > 0 and expected A > 0, gating has lower expected endpoint loss iff c_FP/c_FF > E[D]/E[A].",
+        values=[dict(budget_share=share, expected_introduced_fp=float(row[0]),
+                     expected_delayed_ff=float(row[1]), cost_ratio_crossover=float(ratio))
+                for share, row, ratio in zip(cost_shares, cost_values, cost_ratios)],
+        warning="Conditional on the fixed full JudgmentBench frame and disagreement-then-random priorities; ratios are computed before rounding.")
     focal_policies = curves[(curves.task_order == "release") & (curves.seed > 0) & (curves.budget_share == .2)]
     discovery_claims = []
     for name in ["DR Gemini 3.1 Pro", "JB GPT-5.4-mini", "JB GPT-5.4"]:
@@ -222,6 +268,27 @@ def audit(root: Path):
     claims["discovery_vs_certification"] = dict(source="conjunction_policy_study/budget_curves.csv.gz",
         selector="release order; 20% cap; seeds 1 through 31; short circuit judge-first versus disagreement continuation",
         unit="counts and marginal medians", values=discovery_claims)
+    pure_certification = []
+    for name, group in focal_policies[focal_policies.policy == "sc_judge"].groupby("dataset", sort=False):
+        require("pure short-circuit 20pct has all noncanonical seeds: " + name,
+                sorted(group.seed.tolist()) == list(range(1, 32)))
+        require("pure short-circuit 20pct spends the common cap: " + name,
+                (group.actual_queries == group.budget_cap).all(), len(group))
+        pure_certification.append(dict(dataset=name, seeds=len(group),
+            actual_queries=int(group.actual_queries.iloc[0]),
+            certified_tasks_median=float(group.certified_tasks.median()),
+            residual_errors_median=float(group.residual_errors.median()),
+            criterion_errors_found_median=float(group.criterion_errors_found.median()),
+            criterion_accuracy_point_estimate=None, criterion_accuracy_statistical_interval=None))
+    for name, target in [("DR Gemini 3.1 Pro", [323,275,1]), ("JB GPT-5.4", [4697,1512,15])]:
+        row = next(r for r in pure_certification if r["dataset"] == name)
+        equal("manuscript pure-certification endpoint: " + name,
+              [row["actual_queries"], row["certified_tasks_median"], row["residual_errors_median"]], target)
+    claims["pure_certification_endpoints"] = dict(
+        source="conjunction_policy_study/budget_curves.csv.gz; conjunction_label_value/budget_estimation_rows.csv.gz",
+        selector="sc_judge, release order, 20% cap, seeds 1 through 31",
+        unit="actual queries and separate marginal median task counts", values=pure_certification,
+        warning="These selective queries have no subsequent probability sample. The stored logical agreement bounds are not a 95% sampling interval or a design-unbiased point estimate.")
 
     permutation = table("conjunction_mechanism/update_permutation_rows.csv")
     permutation_summary = table("conjunction_mechanism/update_permutation_summary.csv").set_index(["dataset","policy","budget_share"])
@@ -234,12 +301,22 @@ def audit(root: Path):
               [saved.permutations,saved.original_expected_delta,saved.permutation_expected_delta_min,saved.permutation_expected_delta_max,saved.opposite_nonzero_sign_count])
         permutation_claims.append(dict(dataset=key[0],policy=key[1],budget_share=key[2],configurations=len(group),
             original_expected_delta=original, configured_delta_min=float(group.expected_delta.min()),
-            configured_delta_max=float(group.expected_delta.max()),opposite_sign_configurations=opposite))
+            configured_delta_max=float(group.expected_delta.max()),opposite_sign_configurations=opposite,
+            reference_pass_min=int(group.reference_pass.min()), reference_pass_max=int(group.reference_pass.max())))
     opposite_cells = sum(x["opposite_sign_configurations"] > 0 for x in permutation_claims)
     equal("manuscript counterexample cell count", [len(permutation_claims),opposite_cells], [90,44])
     claims["matched_marginal_configurations"] = dict(source="conjunction_mechanism/{update_permutation_rows.csv,update_permutation_summary.csv,update_expected_grid.csv}",
         unit="errors over fixed simulated label configurations; not a reversal probability", cells=len(permutation_claims),
         cells_admitting_opposite_sign=opposite_cells, focal=next(x for x in permutation_claims if x["dataset"] == "JB GPT-5.4" and x["policy"] == "random_criterion" and x["budget_share"] == .2))
+    jb_permutations = permutation[permutation.dataset == "JB GPT-5.4"]
+    require("full JB reference-pass totals agree across policy and budget for each permutation",
+            (jb_permutations.groupby("permutation").reference_pass.nunique() == 1).all(), 64)
+    equal("full JB actual 64-permutation reference-pass range",
+          [jb_permutations.permutation.nunique(), int(jb_g.sum()), jb_permutations.reference_pass.min(),
+           jb_permutations.reference_pass.max()], [64,227,108,132])
+    claims["matched_marginal_configurations"]["full_jb_reference_pass_range"] = dict(
+        original=227, configured_min=108, configured_max=132, distinct_configurations=64,
+        warning="Range of the saved 64 reference rearrangements, not extrema over every feasible configuration.")
 
     allocation = table("conjunction_mechanism/allocation_rows.csv.gz")
     equal("allocation certificate decomposition", allocation.certified_tasks_delta,
@@ -249,6 +326,13 @@ def audit(root: Path):
           -allocation.certified_initial_wrong_delta-allocation.noncertified_ff_repair_delta+allocation.introduced_fp_delta)
     equal("allocation no introduced FF", allocation.introduced_ff_delta, np.zeros(len(allocation)))
     budget = table("conjunction_label_value/budget_estimation_rows.csv.gz")
+    pure_budget_rows = budget[(budget.task_order == "release") & (budget.budget_share == .2)
+                             & (budget.policy == "sc_judge")]
+    require("pure short-circuit rows do not supply probability-sampling estimates or intervals",
+            len(pure_budget_rows) == 9*31
+            and pure_budget_rows.accuracy_estimate.isna().all()
+            and (pure_budget_rows.stageR_queries == 0).all()
+            and (pure_budget_rows.inference_kind == "logical_bounds_or_census").all(), len(pure_budget_rows))
     pairkeys = ["dataset", "task_order", "seed", "budget_share"]
     # SRS is order-invariant; its release-order run is the shared control.
     srs = budget[budget.policy == "random_criterion"].drop(columns="task_order")
@@ -270,6 +354,41 @@ def audit(root: Path):
                          selector="release order, budget_share=0.2, seeds 1 through 31", unit="paired mix minus SRS counts; width in percentage points",
                          paired_means=focal_means.to_dict("records"), marginal_medians=med.to_dict("records"),
                          warning="Separate marginal medians need not describe any one run; their ratios are not paired relative effects.")
+    expected_error_means = {
+        "DR Gemini 3.1 Pro": 25/31, "DR Qwen-plus": -17/31,
+        "AC Qwen-plus": -70/31, "AC DeepSeek v4-pro": -3/31, "DR GPT-5.4 low": -3/31,
+        "JB GPT-5.4": -2792/31, "JB GPT-5.4-mini": -2836/31,
+        "JB GPT-5.4 | binary_only": -1819/31, "JB GPT-5.4-mini | binary_only": -2028/31}
+    by_name = focal_means.set_index("dataset")
+    require("20pct mixed-allocation grid contains exactly nine cells", set(by_name.index) == set(expected_error_means))
+    equal("all nine manuscript paired error means",
+          [by_name.loc[name, "residual_errors_delta"] for name in expected_error_means],
+          list(expected_error_means.values()))
+    require("20pct mixed allocation increases certification in every cell and order",
+            len(focal) == 9*31 and (focal.certified_tasks_delta > 0).all(), len(focal))
+    require("only DR Gemini has a positive 20pct paired mean error contrast",
+            list(by_name.index[by_name.residual_errors_delta > 0]) == ["DR Gemini 3.1 Pro"])
+    family_ranges = {}
+    for label, mask in [("RuVerBench", ~focal_means.dataset.str.startswith("JB ")),
+                        ("JudgmentBench", focal_means.dataset.str.startswith("JB "))]:
+        group = focal_means[mask]
+        family_ranges[label] = dict(analysis_cells=len(group),
+            paired_error_mean_min=float(group.residual_errors_delta.min()),
+            paired_error_mean_max=float(group.residual_errors_delta.max()))
+    equal("RuVerBench five-cell paired error mean range",
+          [family_ranges["RuVerBench"]["paired_error_mean_min"], family_ranges["RuVerBench"]["paired_error_mean_max"]],
+          [-70/31, 25/31])
+    equal("JudgmentBench four-cell paired error mean range",
+          [family_ranges["JudgmentBench"]["paired_error_mean_min"], family_ranges["JudgmentBench"]["paired_error_mean_max"]],
+          [-2836/31, -1819/31])
+    jb_focal = focal[focal.dataset == "JB GPT-5.4"]
+    order_mcse = {field: float(jb_focal[field].std(ddof=1)/math.sqrt(len(jb_focal)))
+                  for field in ["certified_tasks_delta", "residual_errors_delta"]}
+    claims["rq2"]["nine_cell_summary"] = dict(family_ranges=family_ranges,
+        certification_gain_cells=9, certification_gain_orders=9*31,
+        positive_mean_error_cells=["DR Gemini 3.1 Pro"],
+        full_jb_paired_mean_order_mcse=order_mcse,
+        warning="Cell means describe the fixed frames; cells share tasks and are not independent replications. Order MCSE is not task-population uncertainty.")
 
     diag = document("conjunction_robustness/reference/frame_diagnostics.json")
     pairing = table("conjunction_robustness/reference/pairing.csv")

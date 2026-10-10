@@ -152,6 +152,12 @@
       "passed": true
     },
     {
+      "check": "complete disagreement set independently reconstructed",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
       "check": "independent analytical curve: DR Gemini 3.1 Pro/random_criterion",
       "scalar_values": 303,
       "max_absolute_difference": 4.440892098500626e-16,
@@ -386,6 +392,17 @@
       "passed": true
     },
     {
+      "check": "complete disagreement endpoint present across all orders and seeds",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "complete disagreement endpoint agrees with every saved full-cap replay",
+      "scalar_values": 576,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
       "check": "all 1818 Monte Carlo means from 31 raw order rows",
       "scalar_values": 5454,
       "max_absolute_difference": 1.4210854715202004e-14,
@@ -394,6 +411,12 @@
     {
       "check": "exactly 31 noncanonical order rows per RQ1 cell",
       "instances": 1818,
+      "passed": true
+    },
+    {
+      "check": "expected-loss break-even ratios use unrounded expectations",
+      "scalar_values": 2,
+      "max_absolute_difference": 2.1051604903732368e-11,
       "passed": true
     },
     {
@@ -417,6 +440,108 @@
     {
       "check": "manuscript deterministic loss example",
       "scalar_values": 4,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct has all noncanonical seeds: DR Gemini 3.1 Pro",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct spends the common cap: DR Gemini 3.1 Pro",
+      "instances": 31,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct has all noncanonical seeds: DR Qwen-plus",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct spends the common cap: DR Qwen-plus",
+      "instances": 31,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct has all noncanonical seeds: AC Qwen-plus",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct spends the common cap: AC Qwen-plus",
+      "instances": 31,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct has all noncanonical seeds: AC DeepSeek v4-pro",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct spends the common cap: AC DeepSeek v4-pro",
+      "instances": 31,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct has all noncanonical seeds: DR GPT-5.4 low",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct spends the common cap: DR GPT-5.4 low",
+      "instances": 31,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct has all noncanonical seeds: JB GPT-5.4",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct spends the common cap: JB GPT-5.4",
+      "instances": 31,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct has all noncanonical seeds: JB GPT-5.4-mini",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct spends the common cap: JB GPT-5.4-mini",
+      "instances": 31,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct has all noncanonical seeds: JB GPT-5.4 | binary_only",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct spends the common cap: JB GPT-5.4 | binary_only",
+      "instances": 31,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct has all noncanonical seeds: JB GPT-5.4-mini | binary_only",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "pure short-circuit 20pct spends the common cap: JB GPT-5.4-mini | binary_only",
+      "instances": 31,
+      "passed": true
+    },
+    {
+      "check": "manuscript pure-certification endpoint: DR Gemini 3.1 Pro",
+      "scalar_values": 3,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "manuscript pure-certification endpoint: JB GPT-5.4",
+      "scalar_values": 3,
       "max_absolute_difference": 0.0,
       "passed": true
     },
@@ -967,6 +1092,17 @@
       "passed": true
     },
     {
+      "check": "full JB reference-pass totals agree across policy and budget for each permutation",
+      "instances": 64,
+      "passed": true
+    },
+    {
+      "check": "full JB actual 64-permutation reference-pass range",
+      "scalar_values": 4,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
       "check": "allocation certificate decomposition",
       "scalar_values": 5022,
       "max_absolute_difference": 0.0,
@@ -991,6 +1127,11 @@
       "passed": true
     },
     {
+      "check": "pure short-circuit rows do not supply probability-sampling estimates or intervals",
+      "instances": 279,
+      "passed": true
+    },
+    {
       "check": "paired allocation vs saved replay: certified_tasks",
       "scalar_values": 5022,
       "max_absolute_difference": 0.0,
@@ -1005,6 +1146,39 @@
     {
       "check": "paired allocation identical realized label counts",
       "scalar_values": 5022,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "20pct mixed-allocation grid contains exactly nine cells",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "all nine manuscript paired error means",
+      "scalar_values": 9,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "20pct mixed allocation increases certification in every cell and order",
+      "instances": 279,
+      "passed": true
+    },
+    {
+      "check": "only DR Gemini has a positive 20pct paired mean error contrast",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "RuVerBench five-cell paired error mean range",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "JudgmentBench four-cell paired error mean range",
+      "scalar_values": 2,
       "max_absolute_difference": 0.0,
       "passed": true
     },
@@ -3159,6 +3333,23 @@
         "binary_only": 0
       }
     },
+    "complete_disagreement_endpoint": {
+      "source": "data/reference/judgmentbench (fixed full-target reference and both saved judge vectors)",
+      "selector": "JB GPT-5.4 full; all slots where GPT-5.4 and GPT-5.4-mini disagree",
+      "unit": "criterion instances and output-by-rater verdicts",
+      "values": {
+        "actual_queries": 4316,
+        "criterion_errors_found": 1217,
+        "initial_errors": 244,
+        "residual_errors": 245,
+        "fixed_initial_fp": 2,
+        "fixed_initial_ff": 2,
+        "introduced_fp": 5,
+        "introduced_ff": 0,
+        "repaired_verdicts": 4
+      },
+      "warning": "Illustrative complete-set endpoint, not an average over new tasks or an adjudication of reference truth."
+    },
     "rq1": {
       "source": "conjunction_mechanism/update_expected_grid.csv; conjunction_policy_study/budget_curves.csv.gz",
       "selector": "release order, disagreement_then_random; observed means use seeds 1 through 31",
@@ -3869,6 +4060,25 @@
           "delta": 16.516129032258064
         }
       ],
+      "expected_loss_break_even": {
+        "unit": "false-PASS cost divided by false-FAIL cost",
+        "condition": "For c_FF > 0 and expected A > 0, gating has lower expected endpoint loss iff c_FP/c_FF > E[D]/E[A].",
+        "values": [
+          {
+            "budget_share": 0.2,
+            "expected_introduced_fp": 7.141311326936873,
+            "expected_delayed_ff": 5.175859152626577,
+            "cost_ratio_crossover": 0.7247771334521361
+          },
+          {
+            "budget_share": 0.84,
+            "expected_introduced_fp": 11.886225490171148,
+            "expected_delayed_ff": 108.21612519080344,
+            "cost_ratio_crossover": 9.104330494174837
+          }
+        ],
+        "warning": "Conditional on the fixed full JudgmentBench frame and disagreement-then-random priorities; ratios are computed before rounding."
+      },
       "canonical_full_jb_20pct_loss": {
         "eager_FP": 28,
         "eager_FF": 211,
@@ -3937,6 +4147,104 @@
         }
       ]
     },
+    "pure_certification_endpoints": {
+      "source": "conjunction_policy_study/budget_curves.csv.gz; conjunction_label_value/budget_estimation_rows.csv.gz",
+      "selector": "sc_judge, release order, 20% cap, seeds 1 through 31",
+      "unit": "actual queries and separate marginal median task counts",
+      "values": [
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "seeds": 31,
+          "actual_queries": 323,
+          "certified_tasks_median": 275.0,
+          "residual_errors_median": 1.0,
+          "criterion_errors_found_median": 14.0,
+          "criterion_accuracy_point_estimate": null,
+          "criterion_accuracy_statistical_interval": null
+        },
+        {
+          "dataset": "DR Qwen-plus",
+          "seeds": 31,
+          "actual_queries": 323,
+          "certified_tasks_median": 261.0,
+          "residual_errors_median": 6.0,
+          "criterion_errors_found_median": 42.0,
+          "criterion_accuracy_point_estimate": null,
+          "criterion_accuracy_statistical_interval": null
+        },
+        {
+          "dataset": "AC Qwen-plus",
+          "seeds": 31,
+          "actual_queries": 169,
+          "certified_tasks_median": 71.0,
+          "residual_errors_median": 28.0,
+          "criterion_errors_found_median": 17.0,
+          "criterion_accuracy_point_estimate": null,
+          "criterion_accuracy_statistical_interval": null
+        },
+        {
+          "dataset": "AC DeepSeek v4-pro",
+          "seeds": 31,
+          "actual_queries": 169,
+          "certified_tasks_median": 75.0,
+          "residual_errors_median": 23.0,
+          "criterion_errors_found_median": 10.0,
+          "criterion_accuracy_point_estimate": null,
+          "criterion_accuracy_statistical_interval": null
+        },
+        {
+          "dataset": "DR GPT-5.4 low",
+          "seeds": 31,
+          "actual_queries": 323,
+          "certified_tasks_median": 276.0,
+          "residual_errors_median": 0.0,
+          "criterion_errors_found_median": 17.0,
+          "criterion_accuracy_point_estimate": null,
+          "criterion_accuracy_statistical_interval": null
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "seeds": 31,
+          "actual_queries": 4697,
+          "certified_tasks_median": 1512.0,
+          "residual_errors_median": 15.0,
+          "criterion_errors_found_median": 1431.0,
+          "criterion_accuracy_point_estimate": null,
+          "criterion_accuracy_statistical_interval": null
+        },
+        {
+          "dataset": "JB GPT-5.4-mini",
+          "seeds": 31,
+          "actual_queries": 4697,
+          "certified_tasks_median": 1328.0,
+          "residual_errors_median": 39.0,
+          "criterion_errors_found_median": 1661.0,
+          "criterion_accuracy_point_estimate": null,
+          "criterion_accuracy_statistical_interval": null
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "seeds": 31,
+          "actual_queries": 4046,
+          "certified_tasks_median": 1519.0,
+          "residual_errors_median": 7.0,
+          "criterion_errors_found_median": 687.0,
+          "criterion_accuracy_point_estimate": null,
+          "criterion_accuracy_statistical_interval": null
+        },
+        {
+          "dataset": "JB GPT-5.4-mini | binary_only",
+          "seeds": 31,
+          "actual_queries": 4046,
+          "certified_tasks_median": 1420.0,
+          "residual_errors_median": 44.0,
+          "criterion_errors_found_median": 716.0,
+          "criterion_accuracy_point_estimate": null,
+          "criterion_accuracy_statistical_interval": null
+        }
+      ],
+      "warning": "These selective queries have no subsequent probability sample. The stored logical agreement bounds are not a 95% sampling interval or a design-unbiased point estimate."
+    },
     "matched_marginal_configurations": {
       "source": "conjunction_mechanism/{update_permutation_rows.csv,update_permutation_summary.csv,update_expected_grid.csv}",
       "unit": "errors over fixed simulated label configurations; not a reversal probability",
@@ -3950,7 +4258,16 @@
         "original_expected_delta": 12.25125623062358,
         "configured_delta_min": -9.75821783665032,
         "configured_delta_max": -1.481264369783606,
-        "opposite_sign_configurations": 64
+        "opposite_sign_configurations": 64,
+        "reference_pass_min": 108,
+        "reference_pass_max": 132
+      },
+      "full_jb_reference_pass_range": {
+        "original": 227,
+        "configured_min": 108,
+        "configured_max": 132,
+        "distinct_configurations": 64,
+        "warning": "Range of the saved 64 reference rearrangements, not extrema over every feasible configuration."
       }
     },
     "rq2": {
@@ -4195,7 +4512,31 @@
           "accuracy_ci_width_pp": 3.36151070245687
         }
       ],
-      "warning": "Separate marginal medians need not describe any one run; their ratios are not paired relative effects."
+      "warning": "Separate marginal medians need not describe any one run; their ratios are not paired relative effects.",
+      "nine_cell_summary": {
+        "family_ranges": {
+          "RuVerBench": {
+            "analysis_cells": 5,
+            "paired_error_mean_min": -2.2580645161290325,
+            "paired_error_mean_max": 0.8064516129032258
+          },
+          "JudgmentBench": {
+            "analysis_cells": 4,
+            "paired_error_mean_min": -91.48387096774194,
+            "paired_error_mean_max": -58.67741935483871
+          }
+        },
+        "certification_gain_cells": 9,
+        "certification_gain_orders": 279,
+        "positive_mean_error_cells": [
+          "DR Gemini 3.1 Pro"
+        ],
+        "full_jb_paired_mean_order_mcse": {
+          "certified_tasks_delta": 2.633109181395937,
+          "residual_errors_delta": 1.4983399300422686
+        },
+        "warning": "Cell means describe the fixed frames; cells share tasks and are not independent replications. Order MCSE is not task-population uncertainty."
+      }
     },
     "reference_sensitivity": {
       "source": "conjunction_robustness/reference/{pairing.csv,frame_diagnostics.json,rq1_rows.csv.gz,rq2_rows.csv.gz}",

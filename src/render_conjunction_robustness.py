@@ -45,25 +45,23 @@ def render(source,output):
    a.axhline(0,color=GRAY,lw=.8);a.fill_between(x,s['pointwise_q025'],s['pointwise_q975'],color=BLUE,alpha=.17,label='95% pointwise composition range')
    a.plot(x,s['original'],color=BLUE,lw=2,label='Original exact order expectation')
    a.grid(axis='y',alpha=.16);a.set_xlim(0,100)
-   if row==0:a.set_title(f'{title}\nOriginal N = {q["n_units"]:,} evaluation units')
+   if row==0:a.set_title(f'({chr(97+col)}) {title}')
    if row==1:a.set_xlabel('Available criterion budget (%)')
    for j,b in enumerate(x):plot_rows.append(dict(dataset=cell,unit=unit,budget_percent=b,original=s['original'][j],pointwise_lower=s['pointwise_q025'][j],pointwise_upper=s['pointwise_q975'][j],simultaneous_lower=s['simultaneous_grid_lower'][j],simultaneous_upper=s['simultaneous_grid_upper'][j]))
  axes[0,0].set_ylabel('Gated − eager\nresidual disagreements (count)');axes[1,0].set_ylabel('Gated − eager\nper 100 evaluation units')
  h,l=axes[0,0].get_legend_handles_labels();fig.legend(h,l,loc='outside lower center',ncol=2,fontsize=9)
- fig.suptitle('Update effects across task compositions · disagreement then random',fontsize=16)
  save(fig,'conjunction_robustness_budget')
  fig,axes=plt.subplots(2,2,figsize=(10.4,7.1),sharex='row',layout='constrained')
  for col,cell in enumerate(CELLS[:2]):
   a=axes[0,col];q=r1[(r1.dataset==cell)&(r1.policy=='disagreement_then_random')]
   for ref,color in [('A',BLUE),('B',ORANGE)]:
    z=q[(q.acquisition_ref==ref)&(q.evaluation_ref==ref)].sort_values('budget_share');a.plot(z.budget_share*100,z.gated_minus_eager_per100_mean,color=color,lw=2,label=f'Reference {ref}')
-  a.axhline(0,color=GRAY,lw=.8);a.set_title(TITLES[col]+' · fixed 206 outputs');a.set_ylabel('Gated − eager per 100 outputs');a.grid(axis='y',alpha=.16);a.legend(frameon=False)
+  a.axhline(0,color=GRAY,lw=.8);a.set_title(f'({chr(97+col)}) '+TITLES[col]);a.set_ylabel('Gated − eager per 100 outputs');a.grid(axis='y',alpha=.16);a.legend(frameon=False)
   a=axes[1,col];q=r2[r2.dataset==cell]
   for acq,ev,color,ls in [('A','A',BLUE,'-'),('B','B',ORANGE,'-'),('A','B',ORANGE,'--'),('B','A',BLUE,'--')]:
    z=q[(q.acquisition_ref==acq)&(q.evaluation_ref==ev)].sort_values('budget_share');a.plot(z.budget_share*100,z.eager_errors_delta_per100_mean,color=color,ls=ls,marker='o',ms=3,label=f'Acquire {acq}, re-read {ev}')
   a.axhline(0,color=GRAY,lw=.8);a.set_ylabel('Mix − SRS residual disagreements\nper 100 outputs');a.set_xlabel('Available criterion budget (%)');a.grid(axis='y',alpha=.16)
  h,l=axes[1,0].get_legend_handles_labels();fig.legend(h,l,loc='outside lower center',ncol=4,fontsize=9)
- fig.suptitle('Changing the reference while holding judge predictions fixed',fontsize=15)
  save(fig,'conjunction_robustness_reference')
  # Show interval construction and point-estimator error separately for all nine cells.
  fig,axes=plt.subplots(1,2,figsize=(13.4,9),sharey=True,layout='constrained')
@@ -85,7 +83,6 @@ def render(source,output):
   for cut in (2.5,4.5,6.5):a.axhline(cut,color=GRAY,lw=.6,alpha=.4)
  axes[0].set_yticks(y,display);axes[0].invert_yaxis()
  h,l=axes[0].get_legend_handles_labels();fig.legend(h,l,loc='outside lower center',ncol=3,fontsize=10)
- fig.suptitle('Accuracy estimation at the same 20% label budget',fontsize=16)
  save(fig,'conjunction_robustness_estimation')
  p=output/'conjunction_robustness_budget_data.csv';pd.DataFrame(plot_rows).to_csv(p,index=False);products.append(p)
  assert before=={name:sha(source/name) for name in names}

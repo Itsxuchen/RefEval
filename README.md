@@ -6,7 +6,7 @@
 
 Research code, compact analysis data, and saved results for a retrospective study of reference checking in rubric-based evaluation. A reference check can help estimate judge accuracy, certify an individual outcome, or repair an existing verdict. When every retained criterion must pass, these goals can favor different checking and updating protocols.
 
-**Complete manuscript draft:** [PDF](artifacts/manuscript/paper.pdf) · [LaTeX source](artifacts/manuscript/paper.tex) · [methods and proofs](artifacts/manuscript/methods_appendix.tex) · [build and verification instructions](docs/REPRODUCIBILITY.md#manuscript-build-and-claim-checks). No arXiv identifier has been assigned.
+**Complete manuscript draft:** [PDF](artifacts/manuscript/paper.pdf) · [LaTeX source](artifacts/manuscript/paper.tex) · [methods and proofs](artifacts/manuscript/methods_appendix.tex) · [build and verification instructions](docs/REPRODUCIBILITY.md#manuscript-build-and-claim-checks). No arXiv identifier has been assigned. The [external validation design](context/conjunction_external_validation_protocol.md) is a planned study, with no external results yet.
 
 The study uses fixed released references and saved predictions from **RuVerBench** and **JudgmentBench**. JudgmentBench's strict all-pass outcome is a researcher-defined stress test. The nine analysis cells come from two data families; they are not nine independent replications. One query reveals one existing reference bit. Query counts do not measure human time.
 
@@ -24,14 +24,18 @@ Prior work already studies component-level screening, sampling tradeoffs, Boolea
 
 ## Main results
 
-At a **20% criterion-query cap**, the table compares random criterion sampling with a fixed allocation that spends up to half the cap on judge-first short circuit, then samples independently from the remaining criteria. All shown policies use the same actual number of queries within each cell.
+At a **20% criterion-query cap**, the table compares random criterion sampling, a fixed allocation that spends up to half the cap on judge-first short circuit and then samples independently, and pure judge-first certification. All shown policies use the same actual number of queries within each cell.
 
 | Reference frame / allocation | Actual queries | Certified units | Residual verdict errors | Accuracy interval width (pp) |
 |---|---:|---:|---:|---:|
 | RuVerBench DR Gemini / random criterion SRS | 323 | 131 | 8 | 5.51 |
 | RuVerBench DR Gemini / fixed 50/50 allocation | 323 | 169 | 9 | 7.62 |
+| RuVerBench DR Gemini / pure certification | 323 | 275 | 1 | — |
 | JudgmentBench GPT-5.4 / random criterion SRS | 4,697 | 798 | 223 | 2.21 |
 | JudgmentBench GPT-5.4 / fixed 50/50 allocation | 4,697 | 1,035 | 133 | 2.95 |
+| JudgmentBench GPT-5.4 / pure certification | 4,697 | 1,512 | 15 | — |
+
+Pure certification reports no probability-sampling accuracy interval. Across all nine cells, the fixed mix increases certification in every paired query order. Mean residual-disagreement changes range from −2.26 to +0.81 in the five RuVerBench cells and from −91.48 to −58.68 in the four JudgmentBench cells. The focal DR Gemini comparison is the only positive mean change; its task-composition sensitivity should not be generalized to every RuVerBench cell.
 
 Entries after query count are **marginal medians over seeds 1–31**, with release task order; they need not describe a single realized run. Accuracy is criterion-level microagreement with the fixed reference. Its intervals follow a hypergeometric-tail construction with conditional, pointwise 95% coverage under the stated sampling design; the [inclusive endpoint repair](docs/REPRODUCIBILITY.md#numerical-endpoint-repair-020) leaves all saved intervals unchanged. [Exact result keys and additional comparisons](docs/RESULTS.md)
 
