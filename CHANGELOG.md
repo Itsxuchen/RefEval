@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — nearest-neighbor and RQ alignment, 2026-10-10
+
+- Align the three research questions with matched-query mechanisms, certificate-to-repair outcomes and task-association sufficiency; retain reference sensitivity as a cross-cutting analysis.
+- Compare six related-work families by target, acquired observation, update and guarantee, separating the three multi-predicate screening papers.
+- Add the formal ICLR2025 Trust or Escalate reference, Kim's two-stage evaluation design, and physician-disagreement analysis; distinguish their statistical guarantees and variance denominators.
+- Refine the contribution description around measured budget effects and their tested stability. Data, code, scientific results, figures and release tags remain unchanged.
+
 ## Unreleased — presentation clarification, 2026-10-07
 
 - Show pointwise task-composition ranges in the main budget figure; retain the original constant-width simultaneous bands in the unchanged numerical tables.

@@ -14,13 +14,13 @@ The study uses fixed released references and saved predictions from **RuVerBench
 
 Under explicit evaluation targets and information conditions, how do reference-query allocation and verdict updating affect estimation precision, certification coverage, and residual error in conjunctive evaluations?
 
-1. **Error propagation and updating:** When do criterion-level errors and partial corrections change conjunctive task verdicts, and how does the verdict-update rule affect these changes?
-2. **Allocation of limited references:** How do sampling units and query allocations trade off estimation precision, certification coverage, and residual verdict error under stated reference-query resources?
-3. **Evidence sufficiency:** Which reference information suffices to certify individual verdicts or identify aggregate success, and how does identification differ from statistical estimation?
+1. **Error propagation and updating:** For the same queried reference labels, how do immediate and certificate-gated updates change task verdicts, and which error structures and query orders determine their budget-dependent effects?
+2. **Allocation of limited references:** How do sampling units and query allocations trade estimation precision against certification coverage and verdict repair, and when do certification gains translate into fewer residual disagreements?
+3. **Evidence sufficiency:** Which task-level conclusions are determined by criterion summaries and queried reference labels, what additional task associations are needed, and how does identification differ from statistical estimation?
 
-RQ2 is the main empirical analysis. RQ1 examines the consequences of partial replacement and delayed updates; RQ3 supplies the information conditions needed to interpret the other results. Short-circuit evaluation, Boolean certificates, and probability sampling are established tools. The contribution is their controlled empirical comparison and its conditional findings.
+RQ2 is the main empirical analysis. RQ1 separates prevented false passes from delayed repairs and quantifies their budget-dependent balance on matched queried sets. RQ2 follows how additional certificates translate into repaired verdicts while measuring estimation precision. RQ3 identifies which task associations are needed to support the reported conclusions. Reference replacement and task-composition resampling separately test the stability of these effects.
 
-Prior work already studies component-level screening, sampling tradeoffs, Boolean certification, error unmasking and selective updating. This study focuses on their measured consequences when reference queries resolve components of conjunctive outcomes and verdict updating is specified separately. See the [related-work comparison and operational implications](docs/METHODS.md#related-work-and-operational-use) for the scope of the empirical contribution.
+Prior work already studies component-level screening, sampling tradeoffs, Boolean certification, error unmasking and selective updating. This study focuses on their measured consequences when reference queries resolve components of conjunctive outcomes and verdict updating is specified separately. See the [comparison of targets, observations, updates and guarantees](docs/METHODS.md#closest-comparisons-target-observation-update-and-guarantee) for the scope of the empirical contribution.
 
 ## Main results
 
