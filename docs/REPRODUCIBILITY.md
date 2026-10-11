@@ -1,5 +1,11 @@
 # Reproducibility
 
+## Current review candidate
+
+`v0.3.0-rc.1` binds the current manuscript, corrected design-RMSE tables, generation-method disclosure and renderer-isolation fix to one review snapshot. The author may revise it before submission; no arXiv identifier has been assigned. Use the matching [tag](https://github.com/Itsxuchen/RefEval/releases/tag/v0.3.0-rc.1) when citing or reproducing this draft. Historical receipts below retain their original scope and dates.
+
+The five author-run RuVerBench configurations, prompts, context truncation and recovery rules are documented in [DATA_SOURCES](DATA_SOURCES.md#generation-protocol-for-the-five-study-runs). The offline prompt module reconstructs inputs and parses responses; it does not call providers. Publication renderers now reset their own style within a scoped context. The regression check renders both call orders under different ambient colors and compares all five PNGs pixel for pixel, while also checking restoration after errors.
+
 ## What the package reproduces
 
 The package contains compact, source-derived labels and identity/scoring metadata, offline analysis code, tests, figures, and archived numerical results. It supports replay of query allocation and verdict updating conditional on those references. It does not rerun the original judge models or independently re-evaluate the source task texts.

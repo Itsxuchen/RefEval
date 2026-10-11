@@ -24,6 +24,10 @@ These are mixed-provenance tables. CC BY-NC 4.0 covers the contributions just id
 
 Cite RuVerBench and the relevant upstream sources when using these records. These links preserve the upstream provenance map; they do not assert that source repositories' future contents are covered by the same terms. Restored source material remains subject to its own notices. The original RuVerBench code license is separate; this package's saved numeric tables are not presented as MIT-licensed RuVerBench code.
 
+## RuVerBench prompt and serialization code
+
+`src/ruverbench_prompt_protocol.py` includes single-criterion template and context-serialization adaptations from RuVerBench revision `0af0256870d6322490c7ab15eb6370779b898a37`, copyright 2026 Yangda Peng, under the MIT license reproduced in [licenses/RuVerBench-CODE_LICENSE](licenses/RuVerBench-CODE_LICENSE). This study added strict response parsing and offline request wrappers. The module contains generic templates, not task-specific source content; the data terms above continue to govern source-derived tables.
+
 ## JudgmentBench data projections
 
 Affected package files: all CSV files under `data/reference/judgmentbench/`.

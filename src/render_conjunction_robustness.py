@@ -19,6 +19,7 @@ BLUE,ORANGE,GRAY,PURPLE='#0072B2','#D55E00','#738390','#7A5195'
 
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 
+@plt.rc_context(rc=plt.rcParamsDefault)
 def render(source,output):
  source,output=Path(source).resolve(),Path(output).resolve()
  if source==output or source in output.parents or output in source.parents:raise ValueError('separate figure and source directories required')

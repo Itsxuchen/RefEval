@@ -5,6 +5,8 @@ import argparse
 import csv
 import hashlib
 import json
+import re
+import tomllib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -38,13 +40,22 @@ def package_files(root: Path) -> list[Path]:
 
 def write_manifest(root: Path) -> dict:
     manifest = {
-        "schema_version": 1, "software_version": "0.2.0",
+        "schema_version": 1, "software_version": package_version(root),
         "scope": "Current release files; historical scientific output provenance is separate.",
         "files": {str(p.relative_to(root)): {"sha256": sha256(p), "bytes": p.stat().st_size}
                   for p in package_files(root)},
     }
     (root / MANIFEST).write_text(json.dumps(manifest, indent=2) + "\n")
     return manifest
+
+
+def package_version(root: Path) -> str:
+    """Use package metadata as the version source and check citation alignment."""
+    version = tomllib.loads((root / "pyproject.toml").read_text())["project"]["version"]
+    citation = re.search(r"(?m)^version:\s*([^\n]+)$", (root / "CITATION.cff").read_text())
+    if citation is None or citation.group(1).strip().strip("\"'") != version:
+        raise ValueError("Citation version differs from package version")
+    return version
 
 
 def checked_path(root: Path, relative: str) -> Path:
@@ -56,6 +67,8 @@ def checked_path(root: Path, relative: str) -> Path:
 
 def verify(root: Path) -> dict:
     manifest = json.loads((root / MANIFEST).read_text())
+    if manifest["software_version"] != package_version(root):
+        raise ValueError("Release manifest version differs from package version")
     actual = {str(p.relative_to(root)) for p in package_files(root)}
     if actual != set(manifest["files"]):
         raise ValueError("Release file inventory differs from manifest")
@@ -64,6 +77,9 @@ def verify(root: Path) -> dict:
         if path.stat().st_size != info["bytes"] or sha256(path) != info["sha256"]:
             raise ValueError(f"Release file changed: {name}")
     inputs = json.loads((root / "data/PROVENANCE.json").read_text())
+    generation = inputs["ruverbench_generation"]
+    if sha256(checked_path(root, generation["prompt_module"])) != generation["prompt_module_sha256"]:
+        raise ValueError("Generation prompt module differs from recorded protocol")
     row_count = 0
     for item in inputs["files"]:
         path = checked_path(root, item["path"])

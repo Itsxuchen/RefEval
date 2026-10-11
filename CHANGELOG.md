@@ -1,40 +1,46 @@
 # Changelog
 
-## Unreleased — design RMSE correction, 2026-10-11
+## 0.3.0-rc.1 — manuscript review candidate, 2026-10-11
+
+- Publish the five RuVerBench generation configurations, frozen prompts/context serialization and fail-closed parsing; document retries, complete coverage and development-panel selection.
+- Isolate both publication renderers from ambient Matplotlib state and verify pixel-identical output in both call orders.
+- Align package, citation and release-manifest versions with this review candidate. Include the manuscript and all previously unreleased changes listed below. Author review remains ongoing; no arXiv submission is implied.
+
+### Included development change — design RMSE correction, 2026-10-11
 
 - Replace the focal 31-order empirical RMSE comparison with exact SRS, proportional and charged-pilot design RMSE; preserve the original simulation tables as diagnostics.
 - Report mix RMSE from averaged exact conditional variances, with Monte Carlo SE for the remaining first-stage randomness.
 - Correct the RQ2 efficiency interpretation, add explicit appendix formulas and a nine-cell table, and synchronize the figure, README and result documentation.
 - Add exhaustive sampling tests and integrate the new tables into extension replay and manuscript checks. No reference labels, query policies, interval rules or task-level results change.
 
-## Unreleased — README and abstract alignment, 2026-10-10
+### Included development change — README and abstract alignment, 2026-10-10
 
 - Reorder the README around four verified findings; replace the single-order update example with expected effects and cost thresholds.
 - Consolidate scope, link historical validation records, retain reproduction commands, and use the singular human-author statement.
 - Clarify design-based estimation and finite-population identification in the abstract; rebuild the PDF without changing scientific results.
 
-## Unreleased — manuscript clarity and external validation design, 2026-10-10
+### Included development change — manuscript clarity and external validation design, 2026-10-10
 
 - Lead with the verified 4,316-check example, add pure-certification endpoints and all-cell allocation context, and replace a single-order cost example with exact expected-loss thresholds.
 - State three accounting propositions, use distinct backlog/repair notation, simplify main-figure annotations and add the author-provided contact email.
 - Extend numerical checks from 503 to 536; refresh the compiled manuscript and display receipts while preserving scientific tables and inputs.
 - Add an explicitly unexecuted external-validation design, with metadata-screened candidates, pilot/confirmation separation, falsification criteria and missingness rules.
 
-## Unreleased — complete manuscript, 2026-10-10
+### Included development change — complete manuscript, 2026-10-10
 
 - Added the complete paper, mathematical and reproducibility appendices, selected bibliography, and compiled PDF.
 - Added a portable Tectonic build command and independent numerical claim checks against saved public inputs/results.
 - Included manuscript-specific numerical and primary-source citation audit records; linked the paper from the README.
 - Extended the package inventory to cover manuscript artifacts. Existing scientific inputs, results, figures and analysis protocols are unchanged.
 
-## Unreleased — nearest-neighbor and RQ alignment, 2026-10-10
+### Included development change — nearest-neighbor and RQ alignment, 2026-10-10
 
 - Align the three research questions with matched-query mechanisms, certificate-to-repair outcomes and task-association sufficiency; retain reference sensitivity as a cross-cutting analysis.
 - Compare six related-work families by target, acquired observation, update and guarantee, separating the three multi-predicate screening papers.
 - Add the formal ICLR2025 Trust or Escalate reference, Kim's two-stage evaluation design, and physician-disagreement analysis; distinguish their statistical guarantees and variance denominators.
 - Refine the contribution description around measured budget effects and their tested stability. Data, code, scientific results, figures and release tags remain unchanged.
 
-## Unreleased — presentation clarification, 2026-10-07
+### Included development change — presentation clarification, 2026-10-07
 
 - Show pointwise task-composition ranges in the main budget figure; retain the original constant-width simultaneous bands in the unchanged numerical tables.
 - Display empirical RMSE beside conservative interval width for all nine estimation cells.

@@ -6,6 +6,8 @@
 
 A reference check can estimate a judge's accuracy, certify an individual outcome, or repair an existing verdict. When every rubric criterion must pass, these gains can diverge. This repository contains the paper, compact analysis inputs, saved results, and code for studying that divergence in **RuVerBench** and **JudgmentBench**.
 
+**Review version: [v0.3.0-rc.1](https://github.com/Itsxuchen/RefEval/releases/tag/v0.3.0-rc.1).** Author review is ongoing; this is not an arXiv submission.
+
 **Manuscript draft:** [PDF](artifacts/manuscript/paper.pdf) · [LaTeX](artifacts/manuscript/paper.tex) · [Methods and proofs](artifacts/manuscript/methods_appendix.tex) · [Build instructions](docs/REPRODUCIBILITY.md#manuscript-build-and-claim-checks)
 
 ## Main findings

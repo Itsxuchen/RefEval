@@ -669,6 +669,85 @@ missing-link defect in that release.
 
 
 \clearpage
+\section{Generation of the RuVerBench judge panel}
+\label{app:generation}
+
+The five runs were collected during study development. Gemini and Qwen provide
+a cross-provider DeepResearch pair; Qwen and DeepSeek provide an AgenticCoding
+pair; GPT-5.4 low adds a third complete DeepResearch judge. API availability and
+budget influenced these choices. Each included run covers its full retained
+domain. Earlier partial GPT-5.4 experiments, unsuccessful model-access attempts,
+and a separate DeepSeek max-thinking diagnostic are outside this panel. Thus the
+panel supplies retrospective comparisons, rather than a representative sample
+of judges or an untouched confirmation set.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Generation settings for the saved RuVerBench predictions. A cap counts
+completion tokens. An omitted parameter is recorded as omitted rather than
+assigned an assumed provider default. All five final runs have zero unresolved
+labels.}
+\label{tab:generation}
+\begin{tabularx}{\linewidth}{lXX}
+\toprule
+Run & Requested model and controls & Execution and completion cap\\
+\midrule
+DR Gemini & \texttt{gemini-3.1-pro-preview}; low thinking; temperature 0 & Gemini Batch; 2,048\\
+DR Qwen & \texttt{qwen-plus}; thinking disabled; temperature 0 & Singapore DashScope Batch; 2,048\\
+AC Qwen & \texttt{qwen-plus}; thinking disabled; temperature 0 & Same Batch controls, six synchronous recoveries; 2,048\\
+AC DeepSeek & \texttt{deepseek-v4-pro}; thinking parameter omitted; temperature 0 & Synchronous; 2,048 in the initial probe, then 8,192; six full-run retries at 16,384\\
+DR GPT-5.4 & \texttt{gpt-5.4-2026-03-05}; low reasoning; temperature omitted & OpenAI Batch chat completions; 1,024\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The Gemini and Qwen runs were collected on September 1--2, 2026, DeepSeek on
+September 2, and GPT-5.4 on September 12. The aliases and controls in
+Table~\ref{tab:generation} describe the actual requests; they do not establish
+that a provider will serve identical model weights later. In particular, the
+DeepSeek run did not request the upstream paper's max-thinking setting, and
+its server-side default has not been reconstructed.
+
+\paragraph{Messages and context.}
+All judges in a domain use the same single-criterion content, adapted from
+RuVerBench revision \texttt{0af0256870d6322490c7ab15eb6370779b898a37}.
+DeepResearch uses an English system message and a user message containing the
+question, saved response and one criterion, requesting yes/no with a
+justification. AgenticCoding uses a Chinese user message containing the tools,
+trajectory and one check with its original category and identifier. Its rubric
+asks the judge to consider assistant messages, tool calls and available
+reasoning text. Released labels never enter the request messages.
+
+For AgenticCoding, preparation selects the longest message sequence among
+trajectory records containing tools, or among all records if none contains
+tools. Tools and messages are serialized as newline-separated JSON without
+ASCII escaping. Tool-message content is limited to 5,000 characters; assistant
+content and reasoning text are each limited to 50,000. Longer fields preserve
+the beginning and end around a truncation marker. No additional whole-context
+character cap is imposed. The public offline module
+\path{src/ruverbench_prompt_protocol.py} preserves the exact templates,
+serialization and parsers. It reconstructed all 2,458 unique frozen message
+arrays exactly during the release check: 1,615 DR and 843 AC requests.
+
+\paragraph{Parsing and recovery.}
+DeepResearch accepts a yes/no prefix, including a JSON-quoted string, or a
+single JSON object with an explicit \texttt{covered}/\texttt{answer} value.
+Positive forms are yes, true, 1 and positive; negative forms are no, false, 0
+and negative. AgenticCoding requires exactly one matching check identifier
+with result success or fail. Missing and malformed responses remain unresolved
+until technical recovery; they are never assigned guessed labels.
+
+Gemini and DR Qwen each produced 1,615 parsed labels. Six AC Qwen requests
+failed in Batch and succeeded synchronously with identical content and
+settings; one required a rate-limit backoff. DeepSeek's 86-criterion cost probe
+had six truncations at 2,048 tokens, resolved at 8,192; six remaining
+full-run truncations were resolved at 16,384. Its runner permits up to three
+attempts for rate-limit or server failures. GPT-5.4 produced 1,615 parsed
+labels, all with stop finish reasons. Recovery addressed technical failures,
+not disagreement with a reference. The final AC runs each contain all 843
+labels.
+
+\clearpage
 \section{Additional displays and reproduction}
 \label{app:reproduce}
 \begin{figure}[!htbp]

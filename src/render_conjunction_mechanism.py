@@ -214,6 +214,7 @@ def allocation_figure(summary):
     return save_figure(fig, "conjunction_allocation_mechanism"), focal
 
 
+@plt.rc_context(rc=plt.rcParamsDefault)
 def main(reports=None, figures=None):
     global REPORTS, FIGURES
     if reports is not None: REPORTS = Path(reports).resolve()

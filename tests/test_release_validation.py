@@ -12,6 +12,16 @@ from src.release_validation import assert_equal, compare_csv, verify_disclosure_
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def test_release_and_citation_versions_must_agree(tmp_path):
+    from src.check_package import package_version, write_manifest
+    (tmp_path / "pyproject.toml").write_text('[project]\nversion = "0.3.0-rc.1"\n')
+    (tmp_path / "CITATION.cff").write_text('version: 0.3.0-rc.1\n')
+    assert write_manifest(tmp_path)["software_version"] == "0.3.0-rc.1"
+    (tmp_path / "CITATION.cff").write_text('version: 0.2.0\n')
+    with pytest.raises(ValueError, match="Citation version"):
+        package_version(tmp_path)
+
+
 def test_public_schedule_and_smoke_are_explicit():
     assert configuration("full") == dict(mode="full", policy_seeds=32, label_seeds=31,
         disclosure_orders=10, leave_one_base_task_out=True, policy_summaries_and_figures=True)

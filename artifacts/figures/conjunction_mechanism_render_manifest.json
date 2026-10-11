@@ -1,6 +1,6 @@
 {
   "renderer": "src/render_conjunction_mechanism.py",
-  "renderer_sha256": "e31eea44da20cfd3710c25454fbff21b6a8a62d82bdd8b4d0836fd38d4547f67",
+  "renderer_sha256": "8dcfb4fd7c570bbb685f0bdfa33678dbc431b2088b6cabac01cc58869572c01c",
   "source_sha256": {
     "artifacts/expected/conjunction_mechanism/update_expected_grid.csv": "4c3ba6dbb3d581b432711d60dafc131e9631295d51d93cc9a6c5a9cf8ef74291",
     "artifacts/expected/conjunction_mechanism/update_structures.json": "2dab50f5d6124c5366edd3566e6e60d02aab7bf28bedc30f8db7e20423cf4eaf",
@@ -97,8 +97,8 @@
   ],
   "output_sha256": {
     "artifacts/figures/conjunction_update_mechanism.png": "e224895d0d3e69c27aaf08e7cea6e8805ef92e06788e6741ebea4a2762da85bc",
-    "artifacts/figures/conjunction_update_mechanism.pdf": "61a6a164e5f8a074c13c2c7545c6870599dc5ae8e07bc3f391632d1f58f6845d",
+    "artifacts/figures/conjunction_update_mechanism.pdf": "5c3940150c2af0df7dc57e8cd55c224a6507fa225daea392dc5ee69961d72c73",
     "artifacts/figures/conjunction_allocation_mechanism.png": "adffd561cec16bf77939a540fde34c141854de547c654328a9a47890e520599d",
-    "artifacts/figures/conjunction_allocation_mechanism.pdf": "6eb7cf3830033ce995dceaa7faab3cd258b7913c6e54d51b6c3d86d235d63ebb"
+    "artifacts/figures/conjunction_allocation_mechanism.pdf": "be7cbd97b51659e5b19408c1342c6916818ec3b6ddc8794ff793ace7ae39cab8"
   }
 }
