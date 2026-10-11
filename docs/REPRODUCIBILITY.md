@@ -148,9 +148,9 @@ The 0.2.0 execution receipts are saved under `artifacts/validation/extension_*` 
 
 ### Presentation clarification after 0.2.0
 
-The main budget figure now shows pointwise composition ranges, while the saved simultaneous-band values remain unchanged. The estimation figure displays both conservative interval widths and empirical RMSE in all nine cells. A/B descriptions use symmetric reference panels. These changes leave the tagged release and scientific outputs intact.
+The main budget figure now shows pointwise composition ranges, while the saved simultaneous-band values remain unchanged. That presentation used conservative interval widths and empirical RMSE in all nine cells; the 2026-10-11 design-risk correction below supersedes its precision comparison. A/B descriptions use symmetric reference panels. These changes leave the tagged release and scientific outputs intact.
 
-[Presentation verification](../artifacts/validation/presentation_verification.json) recomputes all 162 estimation summaries from the saved query-order rows, checks 1,674 matched-budget groups, and confirms that all 606 budget plotting rows and 64 data/result/protocol files match the 0.2.0 commit. All 215 tests passed again. The [current renderer manifest](../artifacts/figures/conjunction_robustness_render_manifest.json) identifies the revised figure inputs and outputs; the earlier full-run receipts retain their original hashes. This focused check does not claim a new full scientific replay.
+[Presentation verification](../artifacts/validation/presentation_verification.json) recomputes all 162 estimation summaries from the saved query-order rows, checks 1,674 matched-budget groups, and confirms that all 606 budget plotting rows and 64 data/result/protocol files match the 0.2.0 commit. All 215 tests passed again. The [updated renderer manifest](../artifacts/figures/conjunction_robustness_render_manifest.json) identifies the revised figure inputs and outputs; the earlier full-run receipts retain their original hashes. This focused check does not claim a new full scientific replay.
 
 ## Scope of reproducibility
 
@@ -170,6 +170,18 @@ an article version and can include supporting code and data. This repository is
 not itself an arXiv submission. Venue-specific anonymous review packages, if
 needed later, must follow that venue's instructions.
 
+
+## Design RMSE correction at the 20% cap
+
+```bash
+python -m src.conjunction_design_rmse --output artifacts/design-risk-replay
+```
+
+This command recomputes exact SRS and proportional-stratum risk and integrates all pilot success-count combinations for the charged-pilot design. It also regenerates 31 release-order first-stage mix transcripts, analytically integrates their fresh SRS variance, and reports the remaining Monte Carlo SE. Outputs are `design_rmse.csv` (36 rows) and `mix_conditional_variances.csv` (279 rows). The full extension command also runs and verifies this stage. The published main precision comparison covers the 20% cap; the original six-cap simulation tables remain unchanged as historical diagnostics.
+
+Small-population tests independently enumerate pilot identities and subsequent samples to check conditional unbiasedness and unconditional risk. The manuscript audit recomputes the complete risk tables from the inputs, reusing the allocation implementation. Input references, interval constructions, certification and repair outputs are unchanged by this correction.
+
+**2026-10-11 verification:** 223 tests and 547 manuscript checks passed. The complete extension replay matched all 27 scientific CSV tables (753,262 rows) and four scientific JSON payloads in 299.8 seconds. [Current correction receipt](../artifacts/validation/design_rmse_replay.json). Original 0.2.0 receipts above remain historical.
 
 ## Manuscript build and claim checks
 

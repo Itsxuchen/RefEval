@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — design RMSE correction, 2026-10-11
+
+- Replace the focal 31-order empirical RMSE comparison with exact SRS, proportional and charged-pilot design RMSE; preserve the original simulation tables as diagnostics.
+- Report mix RMSE from averaged exact conditional variances, with Monte Carlo SE for the remaining first-stage randomness.
+- Correct the RQ2 efficiency interpretation, add explicit appendix formulas and a nine-cell table, and synchronize the figure, README and result documentation.
+- Add exhaustive sampling tests and integrate the new tables into extension replay and manuscript checks. No reference labels, query policies, interval rules or task-level results change.
+
 ## Unreleased — README and abstract alignment, 2026-10-10
 
 - Reorder the README around four verified findings; replace the single-order update example with expected effects and cost thresholds.

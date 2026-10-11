@@ -47,7 +47,8 @@ def replay_fixture(tmp_path,monkeypatch):
 def test_frozen_configuration_and_scientific_target_scope():
     assert extension.CONFIG==dict(mechanism_permutations=64,order_seeds=31,
                                   cluster_replicates=399,cluster_seed=20261008,
-                                  reference_cells=4,stratified_cells=9)
+                                  reference_cells=4,stratified_cells=9,
+                                  design_rmse_budget_share=.20,mix_risk_first_stage_seeds=31)
     assert set(extension.DIRECTORIES)=={'conjunction_mechanism','conjunction_robustness/reference',
                                        'conjunction_robustness/cluster','conjunction_robustness/estimation'}
     assert set(extension.JSON_TARGETS)=={'conjunction_mechanism/update_structures.json',

@@ -526,8 +526,40 @@ def audit(root: Path):
                 approximate_normal_mean_width_pp=100*values["approximate_normal_width_mean"], pilot_queries_mean=values["pilot_queries_mean"]))
     claims["estimation"] = dict(source="conjunction_robustness/estimation/{stratified_rows.csv.gz,stratified_summary.csv}",
         selector="budget_share=0.2, 31 order seeds", unit="criterion microagreement percentage points", values=estimation_claims,
-        warning="Guaranteed simultaneous-stratum construction and approximate normal intervals have different coverage guarantees. RMSE is across fixed-frame random query orders.")
+        warning="Historical empirical RMSE is retained as a Monte Carlo diagnostic. Main 20% precision claims use design_rmse below. Guaranteed and approximate intervals have different coverage guarantees.")
     claims["estimation"]["inclusive_boundary_example"] = dict(population=16,sample=2,observed_successes=0,alpha=.05,count_interval=[0,13],upper_endpoint_lower_tail="3/120 = 1/40")
+
+    # Recompute risks from the input frames, including all pilot outcomes and
+    # fresh reconstruction of the 31 first-stage mix transcripts. Exhaustive
+    # identity-level tests separately validate the risk formulas.
+    from src.conjunction_design_rmse import compute as compute_design_rmse
+    risk_saved = table("conjunction_robustness/estimation/design_rmse.csv")
+    conditional_saved = table("conjunction_robustness/estimation/mix_conditional_variances.csv")
+    risk, conditional = compute_design_rmse(datasets)
+    for label, actual, saved, keys in (
+            ("design risk", risk, risk_saved, ["dataset", "policy"]),
+            ("mix conditional risk", conditional, conditional_saved, ["dataset", "seed"])):
+        a, b = actual.sort_values(keys).reset_index(drop=True), saved.sort_values(keys).reset_index(drop=True)
+        require(label + " schema", list(a.columns) == list(b.columns) and len(a) == len(b))
+        numeric = a.select_dtypes(include="number").columns.tolist()
+        equal(label + " numeric values", a[numeric].to_numpy(), b[numeric].to_numpy())
+        for column in a.columns.difference(numeric):
+            require(label + " labels " + column, a[column].tolist() == b[column].tolist())
+    paired_risk = risk.pivot(index="dataset", columns="policy", values="rmse")
+    improvement = 100 * (1 - paired_risk.proportional_stratified / paired_risk.random_criterion)
+    neyman_change = 100 * (paired_risk.charged_pilot_neyman / paired_risk.random_criterion - 1)
+    mix_change = 100 * (paired_risk.sc50_then_srs / paired_risk.random_criterion - 1)
+    require("20% proportional improves all nine cells", len(improvement) == 9 and (improvement > 0).all())
+    require("20% charged-pilot Neyman worsens eight cells", int((neyman_change > 0).sum()) == 8)
+    require("20% mix estimated risk increases all nine cells", (mix_change > 0).all())
+    claims["design_rmse"] = dict(
+        source="conjunction_robustness/estimation/{design_rmse.csv,mix_conditional_variances.csv}",
+        budget_share=.2, unit="RMSE fractions in rows; percentage changes in ranges",
+        values=risk.to_dict("records"), pilot_outcomes=int(risk.pilot_outcomes.sum()),
+        proportional_reduction_percent=[float(improvement.min()), float(improvement.max())],
+        charged_pilot_increase_percent=[float(neyman_change[neyman_change > 0].min()), float(neyman_change.max())],
+        mix_estimated_increase_percent=[float(mix_change.min()), float(mix_change.max())],
+        warning="Exact finite-sum design risks for SRS and strata. Mix averages exact conditional variances over 31 first stages; rmse_mcse is a delta-method Monte Carlo SE, not a confidence interval or reference uncertainty. Allocation code is reused; tests independently enumerate sampling identities.")
 
     tasks = table("conjunction_label_value/whole_task_sampling.csv.gz")
     errors, subset_ok, verdict_ok = [], [], []

@@ -171,6 +171,22 @@
       "path": "artifacts/expected/conjunction_robustness/reference/rq2_summary.csv",
       "sha256": "1e360302b537f81dbf1598792ce88e434c5fb5faa7e6872d378fa18a3b59d07c",
       "bytes": 80394
+    },
+    {
+      "path": "artifacts/expected/conjunction_robustness/estimation/design_rmse.csv",
+      "sha256": "45312758111d716249fbba81a3bdcea358c9ba670a42af89220c4c490c843bda",
+      "bytes": 5693
+    },
+    {
+      "path": "artifacts/expected/conjunction_robustness/estimation/mix_conditional_variances.csv",
+      "sha256": "933513970626225e645412b64ff1ded0f7f8a27739a5fb8b748c6f384d780a6e",
+      "bytes": 22313
     }
-  ]
+  ],
+  "design_rmse_correction": {
+    "date": "2026-10-11",
+    "budget_share": 0.2,
+    "module": "src/conjunction_design_rmse.py",
+    "scope": "Exact three-design risks; mix averages conditional variance over 31 first-stage orders, with Monte Carlo SE. Original simulation results retained."
+  }
 }

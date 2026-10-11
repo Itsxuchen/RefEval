@@ -1,0 +1,237 @@
+{
+  "date": "2026-10-11",
+  "scope": "Full mechanism/robustness replay including the 20% design-risk correction; original policy/disclosure replay not rerun locally in this revision.",
+  "unit_tests": {
+    "passed": 223,
+    "seconds": 7.85
+  },
+  "numerical_claim_checks": 547,
+  "extension_run": {
+    "created_utc": "2026-10-11T16:33:10.487291+00:00",
+    "configuration": {
+      "mechanism_permutations": 64,
+      "order_seeds": 31,
+      "cluster_replicates": 399,
+      "cluster_seed": 20261008,
+      "reference_cells": 4,
+      "stratified_cells": 9,
+      "design_rmse_budget_share": 0.2,
+      "mix_risk_first_stage_seeds": 31
+    },
+    "passed": true,
+    "complete_extension_reproduction": true,
+    "stage_seconds": {
+      "mechanism_update": 2.903,
+      "mechanism_allocation": 69.478,
+      "matched_reference": 13.15,
+      "task_composition": 187.48,
+      "stratified_estimation": 9.346,
+      "design_rmse": 13.11,
+      "mechanism_figures": 0.579,
+      "robustness_figures": 0.87,
+      "all_scientific_targets": 2.643
+    },
+    "seconds": 299.785,
+    "sources_sha256": {
+      "src/__init__.py": "74fd3aefdf24b5b2ed703d1fa87c6ceee8e8a3e0ad70095f04b47f70919bd5a1",
+      "src/build_paper.py": "84d1f1d8a8a5d9139790aa2651d8760bfc70beadeaedfb42e865c648ef72c168",
+      "src/check_package.py": "01c133ec5740cc44275ca6903436acf8da2456157d16fb6bd24e0fef93b89cd8",
+      "src/conjunction_allocation_mechanism.py": "9b438c30d5651107d8587b1e1b1bfa832457fba501564b7fb0447b42b21ffa3f",
+      "src/conjunction_cluster_sensitivity.py": "3741b366bf9776249c9d87670e1a631af7c541a4f802702ce4523e41f49552dc",
+      "src/conjunction_design_rmse.py": "4d256fb9a86e3680bdfb56c5000d5ba5b8bff8abcdf3abe727290ca5afeac209",
+      "src/conjunction_error_flow.py": "68dcf9a3d8d74e0fa1fd4b17dc0026d7e527deb01b942872c41055bbf7ef79dc",
+      "src/conjunction_label_value.py": "d371f16cf587c709c8ef400757ae28b7bd1bb910e15c9180e5be0e14ddbd94a5",
+      "src/conjunction_policy_data.py": "d8d47b73f8a0b41201a2f5c672960181678c862712b873f334ecaa77a7525eac",
+      "src/conjunction_policy_study.py": "431d17e25f4dcc4b8147ca99428ca1ca2fc137b263c30ebf9740ece53142e451",
+      "src/conjunction_reference_sensitivity.py": "8308c8e32b6b8f28d4b5e82f62b47f47e4a72a7a2bb4d6e53d05cdaae5b6ce16",
+      "src/conjunction_stratified_baseline.py": "468fa39efbda4dc176d3085380ddbb542df5a79e1af7e44d1b6cbf2edd4256ad",
+      "src/conjunction_task_sampling.py": "3363190a67e315a2f1e276f7b2222e9ae018f63ce52b2010d624cb38e5cfdaf2",
+      "src/conjunction_update_mechanism.py": "451c77e28712b1544439606b65c7c5d4d0550c966060842eea99c74c6f702b17",
+      "src/finite_population_intervals.py": "42ccbc7a27e6fe4b19274782a7885b36b72ac1ab2b6d5e456446656f980f0ec2",
+      "src/information_disclosure_replay.py": "ab177c77fffa6930fc2ea5c895b59d14d0713cf2c2c7a67a887efca4f300815b",
+      "src/judgmentbench_paired_gap.py": "d9845b0bd7c2b084c745bd19badb9b6abddaeb4e77582d7f21d8a6e7d8d87bbe",
+      "src/plot_conjunction_policy_study.py": "04aa7a7dea4b0ade95bb935d3cd373bcecbe38d4b3a5bde4d245bc490bd20a0a",
+      "src/plot_verdict_update_budget.py": "06648d80ac3c4c08b308fe4269fdf3370e119bc35bf8988542442dfa2c6f388b",
+      "src/release_validation.py": "d137f09e0f804ea7e66d0bda6a3ec2b5a4cafb6f35d321f5e7a8cd84e77bce2f",
+      "src/render_conjunction_mechanism.py": "e31eea44da20cfd3710c25454fbff21b6a8a62d82bdd8b4d0836fd38d4547f67",
+      "src/render_conjunction_robustness.py": "b7c305f36d93cf36f3c3ed67958754bb912d5e35b5d97821115e1fcb6db2e810",
+      "src/reproduce.py": "fe8c8c269a2cdd36fb701ea627c04b3326501816901454b8cd9e1a39107dd4d9",
+      "src/reproduce_extensions.py": "258f9332e1895d192893e2fc8b06cb5559461779b8f6617fba161be96eb06ec6",
+      "src/restore_source_projections.py": "e9ef387ae6385e49f59e1b453d70d053adb45754eef1d60d6c1727910bb620e1",
+      "src/summarize_conjunction_policy_study.py": "29df7f9442669a19351b135ca2d7d5b437d45aac0f2a87c29132ea5da6fd83ec",
+      "src/verify_conjunction_label_value.py": "542b409aa6ca251823b5960c3af91ba62f637de9b9f5a36746059f6e7cecd99b",
+      "src/verify_conjunction_policy_study.py": "f0c35d2dd665dbcf5f9101313885393beaaa5b9e678a32dda10d9aed0b063d7b",
+      "src/verify_manuscript_claims.py": "172544974128667b4b35c42d0da78748eb16947b278fb897c91112d3c7a049cf",
+      "src/verify_release.py": "a157d9d4f1b638707d6d593aac78a7135a4294acd225965e797600856be76394",
+      "context/conjunction_external_validation_protocol.md": "c0092e481ddfcaba5094065cf6a7f65ba79b79a724b9ec01264911e4f64b78c4",
+      "context/conjunction_label_value_protocol.md": "b094e21b900c43bc837e4f234a5a84de56e0522978e4074327a15d7622a18fa7",
+      "context/conjunction_mechanism_protocol.md": "320e1a996b3cd429dc07d33280ce05fedb2e5a283fb5fa346eba10888d133e75",
+      "context/conjunction_policy_protocol.md": "48aa3899862dfb420f1a63dc6a9666673c1c837adb39a08611839eee7e6e62bd",
+      "context/conjunction_robustness_protocol.md": "7151094ea84dcb11b587daf10df3196bdbd972059381adbefee35a5d171ed406"
+    },
+    "frozen_expected_files_unchanged": 49,
+    "scope": "Retrospective numeric extension; run src.reproduce separately for the original policy/disclosure study. No API calls or newly collected labels."
+  },
+  "extension_verification": {
+    "passed": true,
+    "configuration": {
+      "mechanism_permutations": 64,
+      "order_seeds": 31,
+      "cluster_replicates": 399,
+      "cluster_seed": 20261008,
+      "reference_cells": 4,
+      "stratified_cells": 9,
+      "design_rmse_budget_share": 0.2,
+      "mix_risk_first_stage_seeds": 31
+    },
+    "csv_checks": {
+      "conjunction_mechanism/allocation_focal_base_tasks.csv.gz": {
+        "rows": 43152,
+        "fields": 1855536,
+        "scope": "all rows"
+      },
+      "conjunction_mechanism/allocation_focal_error_paths.csv.gz": {
+        "rows": 4250,
+        "fields": 225250,
+        "scope": "all rows"
+      },
+      "conjunction_mechanism/allocation_focal_seeds.csv": {
+        "rows": 279,
+        "fields": 15903,
+        "scope": "all rows"
+      },
+      "conjunction_mechanism/allocation_rows.csv.gz": {
+        "rows": 5022,
+        "fields": 286254,
+        "scope": "all rows"
+      },
+      "conjunction_mechanism/allocation_summary.csv": {
+        "rows": 162,
+        "fields": 15714,
+        "scope": "all rows"
+      },
+      "conjunction_mechanism/update_expected_grid.csv": {
+        "rows": 1818,
+        "fields": 38178,
+        "scope": "all rows"
+      },
+      "conjunction_mechanism/update_permutation_rows.csv": {
+        "rows": 5760,
+        "fields": 69120,
+        "scope": "all rows"
+      },
+      "conjunction_mechanism/update_permutation_summary.csv": {
+        "rows": 90,
+        "fields": 4500,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/reference/pairing.csv": {
+        "rows": 206,
+        "fields": 2060,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/reference/rq1_reference_change_summary.csv": {
+        "rows": 3636,
+        "fields": 327240,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/reference/rq1_reference_changes.csv.gz": {
+        "rows": 112716,
+        "fields": 3494196,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/reference/rq1_rows.csv.gz": {
+        "rows": 150288,
+        "fields": 4208064,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/reference/rq1_summary.csv": {
+        "rows": 4848,
+        "fields": 586608,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/reference/rq2_reference_change_summary.csv": {
+        "rows": 72,
+        "fields": 5544,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/reference/rq2_reference_changes.csv.gz": {
+        "rows": 2232,
+        "fields": 60264,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/reference/rq2_rows.csv.gz": {
+        "rows": 2976,
+        "fields": 187488,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/reference/rq2_summary.csv": {
+        "rows": 96,
+        "fields": 10944,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/cluster/multiplicities.csv.gz": {
+        "rows": 125286,
+        "fields": 501144,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/cluster/rq1_curves.csv.gz": {
+        "rows": 242400,
+        "fields": 3393600,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/cluster/rq1_peaks.csv.gz": {
+        "rows": 2400,
+        "fields": 36000,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/cluster/rq2_frame_means.csv.gz": {
+        "rows": 1200,
+        "fields": 20400,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/cluster/rq2_seed_pairs.csv.gz": {
+        "rows": 37200,
+        "fields": 632400,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/estimation/design_rmse.csv": {
+        "rows": 36,
+        "fields": 540,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/estimation/mix_conditional_variances.csv": {
+        "rows": 279,
+        "fields": 3069,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/estimation/saved_mix_comparator.csv.gz": {
+        "rows": 1674,
+        "fields": 46872,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/estimation/stratified_rows.csv.gz": {
+        "rows": 5022,
+        "fields": 200880,
+        "scope": "all rows"
+      },
+      "conjunction_robustness/estimation/stratified_summary.csv": {
+        "rows": 162,
+        "fields": 2916,
+        "scope": "all rows"
+      }
+    },
+    "json_scientific_leaves": {
+      "conjunction_mechanism/update_structures.json": 117,
+      "conjunction_robustness/reference/frame_diagnostics.json": 232,
+      "conjunction_robustness/cluster/summary.json": 7714,
+      "conjunction_robustness/estimation/interval_regression.json": 4
+    },
+    "scientific_rows": 753262,
+    "comparison_tolerance": {
+      "absolute": 1e-08,
+      "relative": 1e-09
+    },
+    "scope": "All extension scientific CSV rows and four scientific JSON payloads; source paths, timestamps and compressed byte headers may differ."
+  }
+}

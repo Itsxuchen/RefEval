@@ -21,3 +21,7 @@ artifacts/reproduced-robustness-base/
 
 artifacts/paper-build/
 artifacts/paper-checks/
+
+artifacts/design-rmse-correction/
+artifacts/design-rmse-extension-replay/
+artifacts/design-rmse-paper-build/

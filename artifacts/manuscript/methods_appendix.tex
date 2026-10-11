@@ -401,14 +401,84 @@ counts. The accompanying normal approximation sums the variances in
 It is unavailable when a noncensused stratum has fewer than two sampled
 slots. These design-based controls are not an implementation of StratPPI.
 
-At each of six shares $0.006,0.05,0.20,0.50,0.60,1$, we report bias, empirical
-RMSE, coverage and interval width over 31 query-order replicates in each of
-nine analysis cells. RMSE is
+The archived simulation tables retain bias, empirical RMSE, observed coverage
+and interval width over 31 query-order replicates at each of six shares
+$0.006,0.05,0.20,0.50,0.60,1$. Their empirical RMSE is
 $[31^{-1}\sum_{s=1}^{31}(\widehat a_s-a)^2]^{1/2}$.
-The replications describe the finite frames; coverage guarantees derive
-from the sampling design and inversion, not the number of observed covered
-replicates. Conservative simultaneous stratum bounds can be wider despite
-a smaller empirical RMSE.
+We use it as a simulation diagnostic. The main precision comparison at the
+20\% cap uses design risk as follows. Coverage guarantees continue to follow
+from the sampling design and tail inversion.
+
+\subsection{Design risk at the 20\% criterion cap}\label{app:design-risk}
+For a binary population of size $N$ with $K$ successes, an SRS of size $n$
+has sample-mean variance
+\begin{equation}
+ v(N,K,n)=\frac{(N-n)K(N-K)}{nN^2(N-1)}.
+\end{equation}
+Set $v=0$ for a census, including an empty remainder. For fixed stratum
+sample sizes, the overall variance is
+$\sum_h(N_h/M)^2v(N_h,K_h,n_h)$, using the actual integer allocations.
+The estimators are unbiased, so design RMSE is the square root of variance.
+
+For charged-pilot Neyman, let $a_h$ be the predetermined pilot size and
+$T_h$ its agreement count. Independently across strata,
+\[
+ \Pr(T_h=t)=\frac{\binom{K_h}{t}\binom{N_h-K_h}{a_h-t}}
+ {\binom{N_h}{a_h}}.
+\]
+Write $R_h=N_h-a_h$ and let $n_h(\mathbf t)$ be the integer remainder
+allocation produced by the smoothed pilot rates above. Conditional on the
+pilot, \eqref{app:eq:strat-estimator} has expectation $a$, the fixed-frame
+microagreement. Thus the total-variance identity gives
+\begin{equation}
+ \operatorname{Var}(\widehat a_{\rm strat})=
+ \sum_{\mathbf t}\Pr(\mathbf T=\mathbf t)
+ \sum_h\left(\frac{R_h}{M}\right)^2
+ v\bigl(R_h,K_h-t_h,n_h(\mathbf t)\bigr).
+\end{equation}
+We evaluate the complete finite sum numerically, without Monte Carlo
+sampling of pilot counts. Across the nine cells this includes 564,528
+count combinations. The calculation describes the implemented conditional
+estimator: pilot observations enter as known totals, while only the fresh
+sample estimates each remainder.
+
+For the mix, first-stage set $C_s$ leaves population size $R_s$ and
+agreement count $K_s$; the fresh SRS has size $n_s$. Its exact conditional
+variance is $V_s=(R_s/M)^2v(R_s,K_s,n_s)$. We integrate this second-stage
+randomness analytically and average over $S=31$ first-stage realizations:
+\begin{equation}
+ \widehat{\operatorname{RMSE}}_{\rm mix}=\sqrt{\overline V},\qquad
+ \widehat{\operatorname{MCSE}}=
+ \frac{s_V}{2\sqrt{S}\sqrt{\overline V}},
+ \quad \overline V=S^{-1}\sum_s V_s.
+\end{equation}
+Here $s_V$ is the sample standard deviation of the conditional variances.
+The MCSE uses the delta method and measures remaining first-stage Monte
+Carlo error. This is an estimate of full-design RMSE, rather than an exact
+integration over every possible first-stage transcript. Table~\ref{tab:design-risk}
+reports the values; the stored empirical RMSEs use different, noisier
+summaries of the same sampling designs.
+
+
+\begin{table}[htbp]
+\centering\small
+\caption{Criterion microagreement RMSE at the 20\% cap, in percentage points. SRS, proportional strata and pilot Neyman use exact design variances. Mix uses the mean of 31 exact conditional variances; its Monte Carlo SE is reported separately.}\label{tab:design-risk}
+\begin{tabular}{lrrrrr}
+\toprule
+Cell & SRS & Proportional & Pilot Neyman & Mix estimate & Mix MCSE\\
+\midrule
+DR Gemini & 1.306 & 1.279 & 1.330 & 1.813 & 0.00158\\
+DR Qwen & 1.898 & 1.805 & 1.881 & 2.614 & 0.00087\\
+DR GPT-5.4 low & 1.325 & 1.299 & 1.369 & 1.824 & 0.00162\\
+AC Qwen & 2.244 & 2.208 & 2.407 & 2.985 & 0.00196\\
+AC DeepSeek & 1.836 & 1.769 & 1.857 & 2.494 & 0.00301\\
+JB full & 0.558 & 0.542 & 0.589 & 0.744 & 0.00013\\
+JB mini full & 0.609 & 0.594 & 0.650 & 0.816 & 0.00008\\
+JB binary-only & 0.550 & 0.549 & 0.602 & 0.745 & 0.00013\\
+JB mini binary-only & 0.623 & 0.622 & 0.681 & 0.846 & 0.00008\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{Whole-task sampling}
 \label{app:whole-task}
@@ -604,7 +674,7 @@ missing-link defect in that release.
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=\linewidth,height=0.79\textheight,keepaspectratio]{conjunction_robustness_estimation.pdf}
-\caption{Estimation controls at a 20\% criterion budget across all nine cells. Guaranteed interval widths and empirical RMSE are shown separately. The stratified intervals combine finite-population count bounds conservatively; their width alone does not rank point-estimation performance. Pilot labels count toward the same budget. Each empirical quantity summarizes 31 saved orders, while the coverage guarantee follows from the design.}
+\caption{Estimation controls at a 20\% criterion budget across all nine cells. Mean guaranteed interval widths over 31 saved orders (left) and exact design RMSE (right). Proportional stratification slightly improves RMSE in every cell; the charged-pilot design raises RMSE in eight. The stratified intervals combine count bounds conservatively. Pilot labels count toward the same budget. The coverage guarantee follows from the design.}
 \label{fig:estimation}
 \end{figure}
 \FloatBarrier

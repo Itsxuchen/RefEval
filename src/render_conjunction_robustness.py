@@ -26,9 +26,9 @@ def render(source,output):
   protected=(ROOT/folder).resolve()
   if output==protected or protected in output.parents or output in protected.parents:raise ValueError('figure output overlaps protected files')
  if output.exists() and any(p.is_symlink() for p in output.rglob('*')):raise ValueError('output contains symlinks')
- names=['cluster/summary.json','reference/rq1_summary.csv','reference/rq2_summary.csv','reference/frame_diagnostics.json','estimation/stratified_summary.csv']
+ names=['cluster/summary.json','reference/rq1_summary.csv','reference/rq2_summary.csv','reference/frame_diagnostics.json','estimation/stratified_summary.csv','estimation/design_rmse.csv']
  before={name:sha(source/name) for name in names}
- cluster=json.loads((source/names[0]).read_text());r1=pd.read_csv(source/names[1]);r2=pd.read_csv(source/names[2]);e=pd.read_csv(source/names[4])
+ cluster=json.loads((source/names[0]).read_text());r1=pd.read_csv(source/names[1]);r2=pd.read_csv(source/names[2]);e=pd.read_csv(source/names[4]);risk=pd.read_csv(source/names[5])
  output.mkdir(parents=True,exist_ok=True)
  plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'axes.titlesize':12,'axes.spines.top':False,'axes.spines.right':False,'pdf.fonttype':42,'savefig.facecolor':'white'})
  products=[];plot_rows=[]
@@ -71,12 +71,14 @@ def render(source,output):
  display=['DR · Gemini 3.1 Pro','DR · Qwen-plus','DR · GPT-5.4 low','AC · Qwen-plus','AC · DeepSeek v4-pro','JB full · GPT-5.4','JB full · GPT-5.4-mini','JB binary · GPT-5.4','JB binary · GPT-5.4-mini']
  y=np.arange(len(cells));bar_height=.23
  q=e[e.budget_share==.2].set_index(['dataset','policy'])
- for a,metric,title in zip(axes,['exact_ci_width_mean','rmse'],['Mean conservative 95% interval width','Empirical RMSE across 31 query orders']):
+ exact=risk[risk.calculation=='exact_design'].set_index(['dataset','policy'])
+ for a,metric,title in zip(axes,['exact_ci_width_mean','rmse'],['Mean conservative 95% interval width','Exact design RMSE']):
+  values_table=exact if metric=='rmse' else q
   for k,(pol,label,color) in enumerate(zip(pols,labels,[GRAY,BLUE,ORANGE])):
-   values=np.array([q.loc[(cell,pol),metric]*100 for cell in cells])
+   values=np.array([values_table.loc[(cell,pol),metric]*100 for cell in cells])
    bars=a.barh(y+(k-1)*bar_height,values,height=bar_height,color=color,label=label)
    a.bar_label(bars,fmt='%.2f',padding=3,fontsize=8)
-  vmax=max(q.loc[(cell,pol),metric]*100 for cell in cells for pol in pols)
+  vmax=max(values_table.loc[(cell,pol),metric]*100 for cell in cells for pol in pols)
   a.set_xlim(0,vmax*1.2);a.set_xticks(np.linspace(0,15 if metric=='exact_ci_width_mean' else 2.5,6))
   a.set_title(title);a.set_xlabel('Percentage points')
   a.grid(axis='x',alpha=.16);a.set_axisbelow(True)
@@ -86,7 +88,7 @@ def render(source,output):
  save(fig,'conjunction_robustness_estimation')
  p=output/'conjunction_robustness_budget_data.csv';pd.DataFrame(plot_rows).to_csv(p,index=False);products.append(p)
  assert before=={name:sha(source/name) for name in names}
- receipt={'source_sha256':before,'renderer_sha256':sha(Path(__file__)),'output_sha256':{p.name:sha(p) for p in products},'budget_figure':'Disagreement-then-random, all 101 caps. 399 empirical base-task resamples; RQ1 order expectation calculated exactly. Curated-task composition sensitivity, not automatic population confidence. Common vertical scales within each row. Only pointwise composition ranges are displayed; the historical constant-width simultaneous band remains in the source tables and plotting CSV.','reference_figure':'Same 206 output units and fixed primary/auxiliary predictions. Mean of 31 paired orders. Dashed RQ2 curves use fixed acquired positions and re-read queried labels under the scoring reference.','estimation_figure':'All nine cells at a matched 20% query cap. Left: mean conservative conditional 95% hypergeometric interval width, with Bonferroni combination for strata. Right: sqrt(mean squared estimation error) across 31 query orders, not a population performance guarantee. Pilot charged. The two metrics assess interval construction and point estimation separately.'}
+ receipt={'source_sha256':before,'renderer_sha256':sha(Path(__file__)),'output_sha256':{p.name:sha(p) for p in products},'budget_figure':'Disagreement-then-random, all 101 caps. 399 empirical base-task resamples; RQ1 order expectation calculated exactly. Curated-task composition sensitivity, not automatic population confidence. Common vertical scales within each row. Only pointwise composition ranges are displayed; the historical constant-width simultaneous band remains in the source tables and plotting CSV.','reference_figure':'Same 206 output units and fixed primary/auxiliary predictions. Mean of 31 paired orders. Dashed RQ2 curves use fixed acquired positions and re-read queried labels under the scoring reference.','estimation_figure':'All nine cells at a matched 20% query cap. Left: mean conservative conditional 95% hypergeometric interval width, with Bonferroni combination for strata. Right: exact design RMSE for SRS and the two stratified designs; all pilot count outcomes are integrated. Historical empirical RMSE remains in the simulation tables. Pilot charged. The two metrics assess interval construction and point estimation separately.'}
  (output/'conjunction_robustness_render_manifest.json').write_text(json.dumps(receipt,indent=2)+'\n')
  print(json.dumps(receipt,indent=2))
  return receipt

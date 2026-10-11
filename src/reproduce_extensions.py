@@ -18,7 +18,8 @@ from src.release_validation import assert_equal, compare_csv
 
 CONFIG = {"mechanism_permutations": 64, "order_seeds": 31,
           "cluster_replicates": 399, "cluster_seed": 20261008,
-          "reference_cells": 4, "stratified_cells": 9}
+          "reference_cells": 4, "stratified_cells": 9,
+          "design_rmse_budget_share": .20, "mix_risk_first_stage_seeds": 31}
 DIRECTORIES = ("conjunction_mechanism", "conjunction_robustness/reference",
                "conjunction_robustness/cluster", "conjunction_robustness/estimation")
 JSON_TARGETS = ("conjunction_mechanism/update_structures.json",
@@ -65,6 +66,7 @@ def reproduce(output: Path) -> dict:
     from src.conjunction_reference_sensitivity import run as reference
     from src.conjunction_cluster_sensitivity import run as cluster
     from src.conjunction_stratified_baseline import run as estimation
+    from src.conjunction_design_rmse import run as design_rmse
     frozen = digest_tree(EXPECTED)
     started, stages = time.perf_counter(), {}
     output.mkdir(parents=True, exist_ok=True)
@@ -86,6 +88,7 @@ def reproduce(output: Path) -> dict:
           seeds=range(1, 32), saved_reference={
               "budget": EXPECTED / "conjunction_label_value/budget_estimation_rows.csv.gz",
               "tasks": EXPECTED / "conjunction_label_value/whole_task_sampling.csv.gz"}))
+    stage("design_rmse", lambda: design_rmse(ROOT, output / DIRECTORIES[3]))
     from src.render_conjunction_mechanism import main as mechanism_figures
     from src.render_conjunction_robustness import render as robustness_figures
     stage("mechanism_figures", lambda: mechanism_figures(mechanism, output / "figures"))

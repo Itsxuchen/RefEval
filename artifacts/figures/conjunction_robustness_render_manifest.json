@@ -4,19 +4,20 @@
     "reference/rq1_summary.csv": "de9a33522ce2a2195026bcf13311e280d33282dcedd649d6fb0c9fd2ec4c8bb0",
     "reference/rq2_summary.csv": "1e360302b537f81dbf1598792ce88e434c5fb5faa7e6872d378fa18a3b59d07c",
     "reference/frame_diagnostics.json": "c5071fbd496f90b56e7f50664496afc634129efbe791fdc7b0d262c68caf3c89",
-    "estimation/stratified_summary.csv": "a6f48f95e797e3d5b5acc503b8e4bccd9eec7f52c7b2399720d1e01e88d7a46c"
+    "estimation/stratified_summary.csv": "a6f48f95e797e3d5b5acc503b8e4bccd9eec7f52c7b2399720d1e01e88d7a46c",
+    "estimation/design_rmse.csv": "45312758111d716249fbba81a3bdcea358c9ba670a42af89220c4c490c843bda"
   },
-  "renderer_sha256": "126508849c86db87c6ec5913f3d60934a7a3de29d287f47ca302712c71263843",
+  "renderer_sha256": "b7c305f36d93cf36f3c3ed67958754bb912d5e35b5d97821115e1fcb6db2e810",
   "output_sha256": {
     "conjunction_robustness_budget.png": "30a8c424d2f147a6d992f9ac1758ccb734d7c9009d849f3a23b6b5744dd04ae4",
-    "conjunction_robustness_budget.pdf": "dd5874c9f9079a1161f148b511f51ff031509ca3f9e667cff3ecac29e7326425",
+    "conjunction_robustness_budget.pdf": "23609f5e6498fa6771d015c427647ca81d30034289cb8973dd5147b3e7c07094",
     "conjunction_robustness_reference.png": "b6a5236e6d9b12028bf891c36912fbb7c4e3daf4861024ec481250d6fa2d1991",
-    "conjunction_robustness_reference.pdf": "8d285d0e0d73fc8ae495f203d10232027474d7a6dd9745f28a00cc1f75a0939e",
-    "conjunction_robustness_estimation.png": "95d0e512d8f2365471e2aed55df7da3586ac5451f9059f19dd8a5731ffb1b294",
-    "conjunction_robustness_estimation.pdf": "4f6ccc0db0265efbb901634cdc16e1a77f6eb66b86644b8a3471291326e9f335",
+    "conjunction_robustness_reference.pdf": "cea9b43cbd7235055627d28cd226353f8ddb8177afb0271f799df0048723f2c0",
+    "conjunction_robustness_estimation.png": "60852485cc53e72ed999e970c1531b9033482457a7680d5faca4995fd2b8d4b5",
+    "conjunction_robustness_estimation.pdf": "fc35c5ba2e5d027b44fa900d0d73a750b53924a789ae62bd6f887c7e933b574c",
     "conjunction_robustness_budget_data.csv": "bd0eae2a654a7377ebd5b1833d502dbcb41b1341f53223fecb9033a0f2a30925"
   },
   "budget_figure": "Disagreement-then-random, all 101 caps. 399 empirical base-task resamples; RQ1 order expectation calculated exactly. Curated-task composition sensitivity, not automatic population confidence. Common vertical scales within each row. Only pointwise composition ranges are displayed; the historical constant-width simultaneous band remains in the source tables and plotting CSV.",
   "reference_figure": "Same 206 output units and fixed primary/auxiliary predictions. Mean of 31 paired orders. Dashed RQ2 curves use fixed acquired positions and re-read queried labels under the scoring reference.",
-  "estimation_figure": "All nine cells at a matched 20% query cap. Left: mean conservative conditional 95% hypergeometric interval width, with Bonferroni combination for strata. Right: sqrt(mean squared estimation error) across 31 query orders, not a population performance guarantee. Pilot charged. The two metrics assess interval construction and point estimation separately."
+  "estimation_figure": "All nine cells at a matched 20% query cap. Left: mean conservative conditional 95% hypergeometric interval width, with Bonferroni combination for strata. Right: exact design RMSE for SRS and the two stratified designs; all pilot count outcomes are integrated. Historical empirical RMSE remains in the simulation tables. Pilot charged. The two metrics assess interval construction and point estimation separately."
 }

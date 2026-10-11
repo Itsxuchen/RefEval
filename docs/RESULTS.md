@@ -97,17 +97,17 @@ Release task order, 20% criterion cap, seeds 1–31:
 
 | Cell / allocation | Actual queries | Certified | Residual errors | Accuracy RMSE (pp) | 95% interval width (pp) |
 |---|---:|---:|---:|---:|---:|
-| DR Gemini / random criterion SRS | 323 | 131 | 8 | 1.37 | 5.51 |
+| DR Gemini / random criterion SRS | 323 | 131 | 8 | 1.31 | 5.51 |
 | DR Gemini / pure judge-first short circuit | 323 | 275 | 1 | — | — |
-| DR Gemini / fixed 50/50 | 323 | 169 | 9 | 1.54 | 7.62 |
-| AC DeepSeek / random criterion SRS | 169 | 31 | 24 | 2.35 | 7.95 |
+| DR Gemini / fixed 50/50 | 323 | 169 | 9 | 1.81 | 7.62 |
+| AC DeepSeek / random criterion SRS | 169 | 31 | 24 | 1.84 | 7.95 |
 | AC DeepSeek / pure judge-first short circuit | 169 | 75 | 23 | — | — |
-| AC DeepSeek / fixed 50/50 | 169 | 51 | 24 | 2.18 | 10.79 |
-| JB GPT-5.4 / random criterion SRS | 4,697 | 798 | 223 | 0.50 | 2.21 |
+| AC DeepSeek / fixed 50/50 | 169 | 51 | 24 | 2.49 | 10.79 |
+| JB GPT-5.4 / random criterion SRS | 4,697 | 798 | 223 | 0.56 | 2.21 |
 | JB GPT-5.4 / pure judge-first short circuit | 4,697 | 1,512 | 15 | — | — |
-| JB GPT-5.4 / fixed 50/50 | 4,697 | 1,035 | 133 | 0.56 | 2.95 |
+| JB GPT-5.4 / fixed 50/50 | 4,697 | 1,035 | 133 | 0.74 | 2.95 |
 
-Certification, residual errors, and widths are marginal medians. RMSE is computed across the 31 estimates, not a median. Pure-SC ranges are logical and are deliberately omitted from the confidence-interval column. Source: [`budget_estimation_summary.csv`](../artifacts/expected/conjunction_label_value/budget_estimation_summary.csv), keyed by exact cell, order, policy, and share.
+Certification, residual errors, and widths are marginal medians. SRS RMSE is exact under its sampling design. Mix RMSE is the square root of the mean exact conditional variance over 31 first-stage orders; its Monte Carlo SE is 0.0016, 0.0030 and 0.00013 pp for DR, AC and JB, respectively. It is an estimate of full-design RMSE. The original 31-order empirical RMSEs remain available as diagnostics. Pure-SC ranges are logical and are deliberately omitted from the confidence-interval column. Sources: [`budget_estimation_summary.csv`](../artifacts/expected/conjunction_label_value/budget_estimation_summary.csv) for task outcomes and widths; [`design_rmse.csv`](../artifacts/expected/conjunction_robustness/estimation/design_rmse.csv) for RMSE. Keys are cell, policy and 20% share, with release task order for the mix.
 
 The mixed allocation improves both task metrics over SRS in all 31 paired JB orders. In DR it improves certification in all 31, but leaves more residual errors in 18. AC illustrates a further boundary: its displayed mixed-allocation median residual is unchanged, and its interval is wider. A better value on one metric does not establish a common preferred policy without specifying the intended conclusion.
 
@@ -121,7 +121,7 @@ At an approximately 20% **unit sample**, both full-rubric and short-circuit proc
 | AC DeepSeek | 42 / 210 | 177 | 102 | 6.87 |
 | JB GPT-5.4 | 308 / 1,539 | 4,690 | 1,002 | 1.81 |
 
-Query costs are 31-seed medians. Fixed sample counts and variable label costs make this a different comparison from the preceding fixed-cap table. Exact design RMSE uses finite-frame variance; the allocation table reports empirical 31-seed RMSE. Source: [`whole_task_sampling.csv.gz`](../artifacts/expected/conjunction_label_value/whole_task_sampling.csv.gz), `requested_task_share=0.2`.
+Query costs are 31-seed medians. Fixed sample counts and variable label costs make this a different comparison from the preceding fixed-cap table. Exact design RMSE uses finite-frame variance; the allocation table uses exact SRS RMSE and an average-conditional-variance estimate for the mix. Source: [`whole_task_sampling.csv.gz`](../artifacts/expected/conjunction_label_value/whole_task_sampling.csv.gz), `requested_task_share=0.2`.
 
 ## RQ3: information sufficiency
 

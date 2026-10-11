@@ -37,7 +37,7 @@ At a **20% criterion-query cap**, compare criterion simple random sampling (SRS)
 
 Entries after queries are per-column medians over 31 randomized priority orders, with release task order. Accuracy means criterion-level microagreement; intervals use conditional, pointwise 95% hypergeometric inference. A dash marks the absence of a probability-sampling accuracy interval. [Paired effects and source keys](docs/RESULTS.md) · [Inclusive endpoint repair](docs/REPRODUCIBILITY.md#numerical-endpoint-repair-020)
 
-[Estimation controls](docs/ROBUSTNESS.md#budget-accounted-stratified-controls) also compare proportional and budget-charged pilot-Neyman sampling. The [nine-cell figure](artifacts/figures/conjunction_robustness_estimation.png) shows both conservative interval width and empirical RMSE; the [reference comparison](artifacts/figures/conjunction_robustness_reference.png) holds judge predictions fixed.
+[Estimation controls](docs/ROBUSTNESS.md#budget-accounted-stratified-controls) also compare proportional and budget-charged pilot-Neyman sampling. The [nine-cell figure](artifacts/figures/conjunction_robustness_estimation.png) shows conservative interval width and exact design RMSE at the 20% cap; the [reference comparison](artifacts/figures/conjunction_robustness_reference.png) holds judge predictions fixed.
 
 ## Research questions
 
