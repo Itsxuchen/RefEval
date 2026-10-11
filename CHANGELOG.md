@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased — README and abstract alignment, 2026-10-10
+
+- Reorder the README around four verified findings; replace the single-order update example with expected effects and cost thresholds.
+- Consolidate scope, link historical validation records, retain reproduction commands, and use the singular human-author statement.
+- Clarify design-based estimation and finite-population identification in the abstract; rebuild the PDF without changing scientific results.
+
 ## Unreleased — manuscript clarity and external validation design, 2026-10-10
 
 - Lead with the verified 4,316-check example, add pure-certification endpoints and all-cell allocation context, and replace a single-order cost example with exact expected-loss thresholds.
