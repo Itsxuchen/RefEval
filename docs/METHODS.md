@@ -121,6 +121,8 @@ The separate disclosure replay retains complete labels and prediction maps, hide
 
 For each release, binary-completion optimization finds the smallest and largest compatible reference conjunction rates. Its unknown criterion bits and task conjunctions obey exact disclosed counts, restored-label equalities, and conjunction constraints. Integer endpoint witnesses and solver results accompany the saved outputs. The intervals are finite feasible endpoint hulls, not confidence limits or claims that every continuous interior value is attainable. Task-uniform Mean Criteria is already identified by D0 and serves as a linear control.
 
+A trusted reference task-PASS total T would identify the aggregate directly as theta = T/N, without requiring every criterion-to-task link. D0 does not release T. The disclosure ladder compares sufficient-information sets rather than establishes a minimal release; knowing the aggregate alone generally leaves individual certificates and updating effects unresolved.
+
 The two-task bridge makes the distinction explicit. With two bits per task and a trusted total of two PASS bits, the aggregate pass rate initially lies in $[0,1/2]$. After the first task's two bits are observed PASS, it is exactly $1/2$ although the second task was not queried. Without that trusted total, the respective ranges are $[0,1]$ and $[1/2,1]$. Extra information changes identification; it does not improve a query policy at unchanged information.
 
 The original public release already contains the links hidden in F27. This is a constructed disclosure experiment, not an identified reporting defect in that release.

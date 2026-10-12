@@ -1,15 +1,14 @@
 cff-version: 1.2.0
-message: "Review candidate with manuscript and LaTeX sources; author review is ongoing and no arXiv submission has been made. Cite the matching v0.3.0-rc.1 tag."
+message: "Local review candidate with manuscript and LaTeX sources; public synchronization and arXiv submission await author approval. Local tag: v0.3.0-rc.2."
 type: software
 title: "Reference Label Value: Estimation, Certification, and Repair in Conjunctive Evaluations"
 authors:
   - name: "Xu Chen"
     email: "xchen992@gatech.edu"
     website: "https://github.com/Itsxuchen"
-version: 0.3.0-rc.1
-date-released: 2026-10-11
+version: 0.3.0-rc.2
 repository-code: "https://github.com/Itsxuchen/RefEval"
-url: "https://github.com/Itsxuchen/RefEval/releases/tag/v0.3.0-rc.1"
+url: "https://github.com/Itsxuchen/RefEval"
 license: MIT
 keywords:
   - evaluation

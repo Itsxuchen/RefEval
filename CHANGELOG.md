@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0-rc.2 — local evidence-clarification draft, 2026-10-11
+
+- Partition expected delayed repairs by observed peer-rating status without changing the query design.
+- Explain disagreement coverage using wrong-rejection location and item type; retain a clearly exploratory peer-item check.
+- Report all 90 matched-margin effect ranges, in counts and per 100 evaluation units, with executable table validation.
+- Clarify that a trusted task-PASS total identifies the aggregate without identifying individual certificates or policy effects.
+- Preserve scientific inputs, existing result tables and the preceding local tag. No GitHub publication or arXiv submission.
+
 ## 0.3.0-rc.1 — manuscript review candidate, 2026-10-11
 
 - Publish the five RuVerBench generation configurations, frozen prompts/context serialization and fail-closed parsing; document retries, complete coverage and development-panel selection.

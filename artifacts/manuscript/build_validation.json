@@ -1,34 +1,50 @@
 {
   "date": "2026-10-11",
   "status": "PASS",
-  "revision": "v0.3.0-rc.1 audit fixes; author review pending",
+  "revision": "v0.3.0-rc.2; local author review, not publicly synchronized",
   "arxiv_submitted": false,
   "compiler": "Tectonic 0.17.0",
-  "pdf_pages": 24,
+  "pdf_pages": 28,
   "main_text_ends_on_page": 11,
   "references_start_on_page": 11,
-  "appendix_starts_on_page": 13,
+  "appendix_starts_on_page": 14,
   "selected_citations": 27,
-  "unique_tex_labels": 64,
+  "unique_tex_labels": 68,
   "unresolved_references": 0,
   "latex_warnings": 0,
-  "visually_inspected_pages": 24,
+  "visually_inspected_pages": 28,
   "local_public_pdf_identical": true,
   "unit_tests": {
-    "passed": 226,
-    "seconds": 20.51,
+    "passed": 228,
+    "seconds": 10.54,
     "run_this_revision": true
   },
-  "numerical_claim_checks": 547,
-  "numerical_claim_source_files": 31,
-  "frozen_scientific_files_unchanged": 61,
-  "scientific_base_commit": "02d68147fe22c60f1afede1fea0da1e1f20c8ae2",
+  "numerical_claim_checks": 557,
+  "numerical_claim_source_files": 32,
+  "scientific_base_commit": "e60fb8a4049b0237ea21b75d69038b45f1461a98",
   "new_model_calls": 0,
   "new_external_validation_outcomes_computed": false,
   "full_extension_replay_run_this_revision": false,
   "original_policy_disclosure_replay_run_this_revision": false,
-  "carried_forward_full_replay": "Both suites passed in the immediately preceding audit of 02d6814, whose analysis code and scientific inputs/outputs remain unchanged. Current CI runs them again.",
-  "generation_validation": {
+  "carried_forward_full_replay": "Original and extension replays passed in the audit of 02d6814. This revision preserves all data/expected files and scientific experiment code; no new complete experimental replay or cloud CI run is claimed.",
+  "source_hash_scope": "Versioned public package; local renderer default paths are intentionally different.",
+  "source_sha256": {
+    "artifacts/manuscript/paper.tex": "374de101e5aa660cb52c174818c9839275e6c1fe4bf4d2177d6a0be63fe0b03e",
+    "artifacts/manuscript/methods_appendix.tex": "f497945bfb8fe295ad16c861909f352cea8b48799403938c16667f4a206daa67",
+    "artifacts/manuscript/paper_references.bib": "90882aca720afc36cfae91649d2e851e7dd251ede39608d281a2ed9f8da9dc31",
+    "src/ruverbench_prompt_protocol.py": "7a4bdd2b1d544061052e0516fcd877ec6eeabdefe1e555bb86574641b70b478e",
+    "src/render_conjunction_mechanism.py": "8dcfb4fd7c570bbb685f0bdfa33678dbc431b2088b6cabac01cc58869572c01c",
+    "src/render_conjunction_robustness.py": "ae22112f226f58667e8c4d37c7c15a647e074f7865101e4023c4368a9210a1ab",
+    "src/check_package.py": "ade04f71818dfacfe7b8b2a3295b3e437b4abc12e354aede2f554501b296a5b4",
+    "data/PROVENANCE.json": "bc9fadb3188f2aba65cc8aba323e284f6c0c1ef1e3879046747afbd4e606436e",
+    "src/verify_manuscript_claims.py": "f98d0407d4af36e4ba4b066d320456ffdc89c082e214bbc89466bd863951abb5",
+    "tests/test_conjunction_reference_sensitivity.py": "007f214d1171d6a49cd894c7ef4f015022342f684046e6959953d70e9f70027c"
+  },
+  "pdf_sha256": "6255fe780161b62044c0c23670d05c8b262ce2ab1c197081d71c630f996efca5",
+  "publication_status": "local-only by author instruction",
+  "preserved_data_and_expected_files": 62,
+  "new_retrospective_diagnostics": true,
+  "carried_forward_generation_validation": {
     "unique_requests_reconstructed_and_matched": 2458,
     "deepresearch": 1615,
     "agenticcoding": 843,
@@ -37,22 +53,26 @@
     "protocol_source": "data/PROVENANCE.json",
     "scope": "Original frozen inputs and local final records; no new provider calls."
   },
-  "render_validation": {
+  "carried_forward_render_validation": {
     "figures": 5,
     "ambient_style_and_both_call_orders_pixel_equal": true,
     "exception_restores_style": true,
     "published_pngs_equal_previous_revision": true
   },
-  "source_hash_scope": "Versioned public package; local renderer default paths are intentionally different.",
-  "source_sha256": {
-    "artifacts/manuscript/paper.tex": "fcd3dd39bb61829bb514c8e65d38ac19b296c26948336560529994a1b66a387a",
-    "artifacts/manuscript/methods_appendix.tex": "4fd31892f386dfc306484b7df0dadff651916cfb9139b7f6c32a748e4f6850b0",
-    "artifacts/manuscript/paper_references.bib": "90882aca720afc36cfae91649d2e851e7dd251ede39608d281a2ed9f8da9dc31",
-    "src/ruverbench_prompt_protocol.py": "7a4bdd2b1d544061052e0516fcd877ec6eeabdefe1e555bb86574641b70b478e",
-    "src/render_conjunction_mechanism.py": "8dcfb4fd7c570bbb685f0bdfa33678dbc431b2088b6cabac01cc58869572c01c",
-    "src/render_conjunction_robustness.py": "ae22112f226f58667e8c4d37c7c15a647e074f7865101e4023c4368a9210a1ab",
-    "src/check_package.py": "ade04f71818dfacfe7b8b2a3295b3e437b4abc12e354aede2f554501b296a5b4",
-    "data/PROVENANCE.json": "bc9fadb3188f2aba65cc8aba323e284f6c0c1ef1e3879046747afbd4e606436e"
-  },
-  "pdf_sha256": "fa9d614f446c6f79357961188cffb12ff7b3f3400dc6815ab6d9641d768b9e55"
+  "diagnostic_validation": {
+    "new_exhaustive_tests": 2,
+    "fixed_query_delay_groups": [
+      32,
+      22,
+      166
+    ],
+    "disagreement_coverage_partition": [
+      79,
+      80,
+      59,
+      2
+    ],
+    "amplitude_rows_verified": 90,
+    "exploratory_peer_check": "Original annotation-criterion instances; no rater adjudication or reference replacement."
+  }
 }

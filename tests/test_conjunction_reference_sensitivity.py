@@ -8,6 +8,7 @@ from src.conjunction_reference_sensitivity import (
 )
 from src.conjunction_policy_study import replay
 from src.conjunction_label_value import hybrid_queries
+from src.verify_manuscript_claims import false_fail_diagnostics
 
 
 def toy(gold=(1,0,1), prediction=(0,1,1)):
@@ -132,6 +133,53 @@ def test_original_peer_diagnostics_keep_current_judge_and_any_all_distinct():
     # Human peer conclusions hold per original annotation, independent of which
     # judge draw another annotation contains: only current-row eligibility moves.
     assert r['saved_judge_task_different_pairs']==2
+
+
+def test_delay_peer_split_matches_enumerated_remaining_query_sets():
+    data = dict(gold=np.array([1,1, 1,1, 1,1, 0,1, 1,1]),
+        prediction=np.array([0,1, 1,1, 0,1, 0,1, 0,1]),
+        secondary_predictions=np.array([[0,1, 1,1, 1,1, 0,1, 0,1]]),
+        task_index=np.repeat(np.arange(5),2), task_ids=list('abcde'),
+        output_ids=['x','x','y','y','z'], rater_ids=['a','b','a','b','a'],
+        criterion_ids=['c0','c1']*5, category=['binary','occurrence_count']*5)
+    # One flagged rejection is always read; exhaustively enumerate the rest.
+    remaining=[i for i in range(10) if i != 4]
+    group_units={'all_peers_pass':0, 'any_peer_fail':2, 'no_peer':4}
+    for cap in range(1,11):
+        totals=dict.fromkeys(group_units,0.)
+        queries=list(itertools.combinations(remaining,cap-1))
+        for extra in queries:
+            observed={4,*extra}
+            for group,t in group_units.items():
+                ix=(2*t,2*t+1)
+                eager=all(data['gold'][s] if s in observed else data['prediction'][s] for s in ix)
+                certified=all(s in observed for s in ix)
+                totals[group]+=bool(eager and not certified)/len(queries)
+        result=false_fail_diagnostics(data,cap/10)
+        assert result['expected_delayed_ff']==pytest.approx(sum(totals.values()))
+        for group,expected in totals.items():
+            assert result['delay_by_peer_status'][group]['n_units']==1
+            assert result['delay_by_peer_status'][group]['expected_delayed_ff']==pytest.approx(expected)
+    with pytest.raises(ValueError,match='random-continuation'):
+        false_fail_diagnostics(data,0.)
+    bad={**data,'criterion_ids':['wrong','c1']+data['criterion_ids'][2:]}
+    with pytest.raises(ValueError,match='identities'):
+        false_fail_diagnostics(bad)
+
+
+def test_disagreement_touch_rejection_coverage_and_certification_are_distinct():
+    d=dict(gold=np.ones(12,dtype=int),prediction=np.array([0,0,1]*4),
+        secondary_predictions=np.array([[0,0,1, 0,0,0, 1,0,1, 1,1,1]]),
+        task_index=np.repeat(np.arange(4),3),task_ids=list('abcd'),output_ids=list('abcd'),
+        rater_ids=['r']*4,criterion_ids=['c0','c1','c2']*4,
+        category=['binary','occurrence_count','binary']*4)
+    result=false_fail_diagnostics(d,1.)
+    assert result['coverage']==dict(no_flag=1,only_predicted_pass_flagged=1,
+                                   some_rejections_flagged=1,all_rejections_flagged=1)
+    assert result['whole_rubrics_flagged']==0
+    assert result['rejection_types']=={'binary':{'instances':4,'flagged':2},
+                                      'occurrence_count':{'instances':4,'flagged':1}}
+    assert result['expected_delayed_ff']==0
 
 
 def test_output_guard_blocks_protected_trees_ancestors_and_symlinks(tmp_path):

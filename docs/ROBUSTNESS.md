@@ -12,6 +12,22 @@ JudgmentBench contains 206 outputs with repeated human annotations. The original
 
 The [frame diagnostics](../artifacts/expected/conjunction_robustness/reference/frame_diagnostics.json) bridge three frames: all 1,539 original annotations, their 431 repeated-output annotations, and the new 206 equally weighted outputs. In the original repeated-annotation subset, 32 of 54 initial false fails have at least one peer rater who also says FAIL; only 22 of 56 reference-PASS annotations have all peers agree PASS. These are disagreement diagnostics, not known reference-error rates or percentages of the whole-frame update effect.
 
+Holding the original query population and design fixed, the expected 108.216 delayed repairs at the 84% cap decompose as follows. This is a partition of **D**, not of the net effect **D − A**; it neither deletes annotations nor changes their references.
+
+| Other raters on the same output | Initial false fails | Expected delayed repairs | Share of D |
+|---|---:|---:|---:|
+| At least one says FAIL | 32 | 15.455 | 14.3% |
+| All say PASS | 22 | 8.700 | 8.0% |
+| No other rater available | 166 | 84.061 | 77.7% |
+
+Most of the delay therefore has no repeated-rating check. The observed 32/54 peer-disagreement proportion cannot be extrapolated to the 166 unreplicated annotations. The [manuscript numerical audit](../artifacts/manuscript/numerical_claim_audit.json), `claims.false_fail_diagnostics`, reconstructs this table directly from the original criterion bits and integrates the random continuation exactly.
+
+### Which wrong rejections do disagreement flags reach?
+
+Among the 220 full-target initial false fails, 79 have no flagged criterion, 80 have flags only on predicted-PASS items, 59 have some erroneous rejections flagged, and two have every erroneous rejection flagged. Thus 159/220 (72.3%) have no wrong rejection flagged. None has its entire rubric flagged. Erroneous penalty rejections are flagged in 21/274 instances (7.7%), compared with 163/221 binary instances (73.8%). The changed binary-only target has complete rejection coverage in 36/67 initial false fails. This describes the scoring target's error structure, without identifying model-family membership as its cause.
+
+An exploratory repeated-rating check within these full-target false fails finds another rater rejecting 15/62 penalty instances jointly rejected by the judges, versus 6/11 analogous binary instances. Among flagged wrong rejections the counts are 0/3 penalty and 20/32 binary instances. These are annotation-criterion instances with shared outputs, not independent samples. The small selected groups do not establish that shared penalty rejections are the most unreliable references or adjudicate the raters. Counts are regenerated in the same audit under `exploratory_peer_items`.
+
 For the fixed GPT-5.4 anchor in the 206-output full-target frame, reference A has 31 PASS outputs and reference B has 23; the judge has four under either reference. The two references disagree on 32 output verdicts. Their criterion agreement is 2,462/3,098 (79.47%). This selected pair statistic has a different weighting from the all-pairs or all-annotations diagnostics.
 
 ### Updating: size can change, and some directions reverse

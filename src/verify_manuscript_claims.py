@@ -14,6 +14,7 @@ import importlib.util
 import itertools
 import json
 import math
+import re
 from pathlib import Path
 
 import numpy as np
@@ -106,6 +107,101 @@ def analytical_curve(data, policy, shares):
     return np.asarray(out)
 
 
+def false_fail_diagnostics(data, share=.84):
+    """Fixed original query design; peer evidence does not select or reweight units.
+
+    The budget must reach the random-continuation phase. Each delayed repair
+    then has probability Pr(all remaining rejections read) - Pr(rubric complete).
+    Peer checks use the original annotation's saved judge draw throughout.
+    """
+    slots, truth, prediction = unit_vectors(data)
+    primary = np.asarray(data["prediction"])
+    flags = np.any(data["secondary_predictions"] != primary[None, :], axis=0)
+    cap = round(share * len(primary))
+    G, h = int((~flags).sum()), cap - int(flags.sum())
+    if not 0 <= h <= G:
+        raise ValueError("Budget must lie in the random-continuation phase")
+    by_output = defaultdict(list)
+    for i, oid in enumerate(data["output_ids"]):
+        by_output[oid].append(i)
+    peers = {i: [j for j in ids if data["rater_ids"][j] != data["rater_ids"][i]]
+             for ids in by_output.values() for i in ids}
+    lookups = [{data["criterion_ids"][s]: s for s in ix} for ix in slots]
+    for i, other in peers.items():
+        if len(lookups[i]) != len(slots[i]) or any(set(lookups[i]) != set(lookups[j]) for j in other):
+            raise ValueError("Peer criterion identities do not align")
+    coverage = dict(no_flag=0, only_predicted_pass_flagged=0,
+                    some_rejections_flagged=0, all_rejections_flagged=0)
+    groups = {k: dict(n_units=0, expected_delayed_ff=0.) for k in
+              ("any_peer_fail", "all_peers_pass", "no_peer")}
+    types, peer_items = {}, {}
+    full_coverage = 0
+    for i, ix in enumerate(slots):
+        if not (truth[i] and not prediction[i]):
+            continue
+        rejected = ix[primary[ix] == 0]
+        seen = int(flags[rejected].sum())
+        kind = ("no_flag" if not flags[ix].any() else
+                "only_predicted_pass_flagged" if seen == 0 else
+                "all_rejections_flagged" if seen == len(rejected) else "some_rejections_flagged")
+        coverage[kind] += 1
+        full_coverage += int(flags[ix].all())
+        other = peers[i]
+        group = ("no_peer" if not other else
+                 "all_peers_pass" if all(truth[j] for j in other) else "any_peer_fail")
+        r, k = int((~flags[rejected]).sum()), int((~flags[ix]).sum())
+        delay = combination_event(G, h, r, 0) - combination_event(G, h, k, 0)
+        groups[group]["n_units"] += 1
+        groups[group]["expected_delayed_ff"] += delay
+        for s in rejected:
+            category = str(data["category"][s])
+            row = types.setdefault(category, dict(instances=0, flagged=0))
+            row["instances"] += 1
+            row["flagged"] += int(flags[s])
+            if other:
+                votes = [int(data["gold"][lookups[j][data["criterion_ids"][s]]]) for j in other]
+                key = category + ("_flagged" if flags[s] else "_shared_rejection")
+                row = peer_items.setdefault(key, dict(instances=0, any_peer_reject=0,
+                    all_peers_reject=0, peer_votes=0, peer_reject_votes=0))
+                row["instances"] += 1
+                row["any_peer_reject"] += int(0 in votes)
+                row["all_peers_reject"] += int(not any(votes))
+                row["peer_votes"] += len(votes)
+                row["peer_reject_votes"] += sum(1-v for v in votes)
+    total = sum(row["expected_delayed_ff"] for row in groups.values())
+    for row in groups.values():
+        row["share_of_delay"] = row["expected_delayed_ff"] / total if total else 0.
+        row["delay_per_unit"] = row["expected_delayed_ff"] / row["n_units"] if row["n_units"] else 0.
+    return dict(budget_share=share, budget_cap=cap, n_units=len(slots),
+        n_criteria=len(primary), disagreement_queries=int(flags.sum()),
+        initial_false_fails=int((truth & ~prediction).sum()), coverage=coverage,
+        whole_rubrics_flagged=full_coverage, rejection_types=types,
+        delay_by_peer_status=groups, expected_delayed_ff=total,
+        exploratory_peer_items=peer_items)
+
+
+def amplitude_table_latex(rows):
+    """Deterministic appendix table checked against all saved configurations."""
+    labels = {"DR Gemini 3.1 Pro": "DR Gemini", "DR Qwen-plus": "DR Qwen",
+        "DR GPT-5.4 low": "DR GPT-5.4", "AC Qwen-plus": "AC Qwen",
+        "AC DeepSeek v4-pro": "AC DeepSeek", "JB GPT-5.4": "JB GPT-5.4 full",
+        "JB GPT-5.4-mini": "JB mini full", "JB GPT-5.4 | binary_only": "JB GPT-5.4 binary",
+        "JB GPT-5.4-mini | binary_only": "JB mini binary"}
+    def number(value):
+        return f"{0. if abs(value) < .0000001 else value:.2f}"
+    out = []
+    for row in rows:
+        policy = "U" if row["policy"] == "random_criterion" else "D"
+        scale = 100 / row["n_units"]
+        orig, lo, hi = (row[k] for k in
+                       ("original_expected_delta", "configured_delta_min", "configured_delta_max"))
+        out.append(f"{labels[row['dataset']]} & {policy} & {100*row['budget_share']:.0f} & "
+                   f"{number(orig)} & [{number(lo)}, {number(hi)}] & "
+                   f"{number(scale*orig)} & [{number(scale*lo)}, {number(scale*hi)}] & "
+                   f"{row['opposite_sign_configurations']} \\\\")
+    return "\n".join(out)
+
+
 def audit(root: Path):
     root = root.resolve()
     source_hashes, checks, claims = {}, [], {}
@@ -192,6 +288,33 @@ def audit(root: Path):
         selector="JB GPT-5.4 full; all slots where GPT-5.4 and GPT-5.4-mini disagree",
         unit="criterion instances and output-by-rater verdicts", values=disagreement_endpoint,
         warning="Illustrative complete-set endpoint, not an average over new tasks or an adjudication of reference truth.")
+
+    ff_diagnostics = false_fail_diagnostics(jb)
+    equal("false-fail flag partitions", list(ff_diagnostics["coverage"].values()), [79,80,59,2])
+    equal("false-fail no-rejection coverage and complete rubrics",
+          [sum(list(ff_diagnostics["coverage"].values())[:2]), ff_diagnostics["whole_rubrics_flagged"]], [159,0])
+    equal("false-fail rejection coverage by item type",
+          [ff_diagnostics["rejection_types"][t][k] for t in ("binary","occurrence_count")
+           for k in ("instances","flagged")], [221,163,274,21])
+    binary_diagnostics = false_fail_diagnostics(datasets["JB GPT-5.4 | binary_only"])
+    equal("binary-only false-fail rejection coverage",
+          [binary_diagnostics["initial_false_fails"], binary_diagnostics["coverage"]["all_rejections_flagged"]], [67,36])
+    equal("fixed-design delay split by peer status",
+          [ff_diagnostics["delay_by_peer_status"][k][f] for k in ("any_peer_fail","all_peers_pass","no_peer")
+           for f in ("n_units","expected_delayed_ff")],
+          [32,15.455397781657604,22,8.699709254532936,166,84.06101815461308])
+    equal("peer-status contributions sum to original delay",
+          [ff_diagnostics["expected_delayed_ff"]], [analytical_curve(jb,"disagreement_then_random",[.84])[0,1]])
+    equal("exploratory repeated-rating item checks",
+          [ff_diagnostics["exploratory_peer_items"][group][k]
+           for group in ("occurrence_count_shared_rejection", "binary_shared_rejection",
+                         "occurrence_count_flagged", "binary_flagged")
+           for k in ("instances","any_peer_reject")], [62,15,11,6,3,0,32,20])
+    claims["false_fail_diagnostics"] = dict(
+        source="data/reference/judgmentbench; original annotation-specific saved judge vectors",
+        selector="JB GPT-5.4 full; initial reference-PASS, judge-FAIL annotations; original query population retained",
+        values=ff_diagnostics, binary_only_coverage=binary_diagnostics["coverage"],
+        warning="Retrospective diagnostics. Peer categories retain annotation weighting and are not truth adjudication. No unit is deleted or reweighted. Item instances share outputs and are not independent observations.")
 
     expected = table("conjunction_mechanism/update_expected_grid.csv")
     for (name, policy), group in expected.groupby(["dataset", "policy"], sort=False):
@@ -296,10 +419,12 @@ def audit(root: Path):
     for key, group in permutation.groupby(["dataset","policy","budget_share"]):
         saved = permutation_summary.loc[key]
         original = expected[(expected.dataset == key[0]) & (expected.policy == key[1]) & (expected.budget_share == key[2])].iloc[0].expected_delta
-        opposite = int((group.expected_delta * original < -1e-12).sum())
+        opposite = int((((group.expected_delta < -1e-12) & (original > 1e-12)) |
+                        ((group.expected_delta > 1e-12) & (original < -1e-12))).sum())
         equal("matched margins summary: " + str(key), [len(group),original,group.expected_delta.min(),group.expected_delta.max(),opposite],
               [saved.permutations,saved.original_expected_delta,saved.permutation_expected_delta_min,saved.permutation_expected_delta_max,saved.opposite_nonzero_sign_count])
         permutation_claims.append(dict(dataset=key[0],policy=key[1],budget_share=key[2],configurations=len(group),
+            n_units=len(datasets[key[0]]["task_ids"]),
             original_expected_delta=original, configured_delta_min=float(group.expected_delta.min()),
             configured_delta_max=float(group.expected_delta.max()),opposite_sign_configurations=opposite,
             reference_pass_min=int(group.reference_pass.min()), reference_pass_max=int(group.reference_pass.max())))
@@ -308,6 +433,17 @@ def audit(root: Path):
     claims["matched_marginal_configurations"] = dict(source="conjunction_mechanism/{update_permutation_rows.csv,update_permutation_summary.csv,update_expected_grid.csv}",
         unit="errors over fixed simulated label configurations; not a reversal probability", cells=len(permutation_claims),
         cells_admitting_opposite_sign=opposite_cells, focal=next(x for x in permutation_claims if x["dataset"] == "JB GPT-5.4" and x["policy"] == "random_criterion" and x["budget_share"] == .2))
+    small_reversals = [r for r in permutation_claims if r["opposite_sign_configurations"] and
+        abs(r["original_expected_delta"]) < 1 and
+        (-r["configured_delta_min"] if r["original_expected_delta"] > 0 else r["configured_delta_max"]) < 1]
+    equal("reversals with original and strongest opposite magnitude below one", [len(small_reversals)], [19])
+    require("all nineteen small reversals are DR cells", all(r["dataset"].startswith("DR ") for r in small_reversals))
+    claims["matched_marginal_configurations"].update(all_conditions=permutation_claims,
+        small_reversal_conditions=len(small_reversals),
+        amplitude_note="A one-unit magnitude threshold describes size, not statistical significance or a pre-specified practical threshold.")
+    appendix = source("artifacts/manuscript/methods_appendix.tex").read_text()
+    body = "\n".join(re.findall(r"% BEGIN VERIFIED AMPLITUDE ROWS\n(.*?)\n% END VERIFIED AMPLITUDE ROWS", appendix, re.S))
+    require("all ninety appendix amplitude rows match computed values", body == amplitude_table_latex(permutation_claims), 90)
     jb_permutations = permutation[permutation.dataset == "JB GPT-5.4"]
     require("full JB reference-pass totals agree across policy and budget for each permutation",
             (jb_permutations.groupby("permutation").reference_pass.nunique() == 1).all(), 64)

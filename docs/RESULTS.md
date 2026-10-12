@@ -127,6 +127,8 @@ Query costs are 31-seed medians. Fixed sample counts and variable label costs ma
 
 The query-only logical interval has width equal to the uncertified fraction. Statistical estimation can remain informative without certifying the full frame.
 
+The matched-margin counterexamples have different magnitudes. Of 90 cell–policy–cap conditions, 44 admit an effect of the opposite sign; in 19 of those, all DR conditions, both the original and strongest opposite effect are smaller than one evaluation unit. The manuscript's complete 90-row appendix table reports original values and the 64-configuration range in counts and per 100 units, plus the opposite-sign count. All rows are regenerated and checked by `src.verify_manuscript_claims`; full precision is retained in `claims.matched_marginal_configurations.all_conditions` in the manuscript audit. These ranges describe the saved configurations, not a reversal probability or extrema over every compatible assignment.
+
 The separate reference-link disclosure replay supplies additional trusted reference-containing counts. In DR Gemini, D0 has 38 count cells and no new labels; the compatible reference pass rate is **[4.23%, 16.90%]**, width **12.68 pp**, containing the fixed 9.86% reference score. Restoring all links recovers the exact score. Across all four original RuVerBench runs, task-uniform Mean Criteria is already identified at D0. Source: [`information_disclosure_replay.json`](../artifacts/expected/information_disclosure_replay.json), `ruverbench[run].baseline` and `task_link_curve`.
 
 ![Reference-link and optional pairing disclosure](../artifacts/figures/information_disclosure_replay.png)

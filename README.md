@@ -6,7 +6,7 @@
 
 A reference check can estimate a judge's accuracy, certify an individual outcome, or repair an existing verdict. When every rubric criterion must pass, these gains can diverge. This repository contains the paper, compact analysis inputs, saved results, and code for studying that divergence in **RuVerBench** and **JudgmentBench**.
 
-**Review version: [v0.3.0-rc.1](https://github.com/Itsxuchen/RefEval/releases/tag/v0.3.0-rc.1).** Author review is ongoing; this is not an arXiv submission.
+**Local review version: `v0.3.0-rc.2`.** This revision awaits author review and public synchronization; no arXiv submission has been made.
 
 **Manuscript draft:** [PDF](artifacts/manuscript/paper.pdf) · [LaTeX](artifacts/manuscript/paper.tex) · [Methods and proofs](artifacts/manuscript/methods_appendix.tex) · [Build instructions](docs/REPRODUCIBILITY.md#manuscript-build-and-claim-checks)
 
@@ -18,7 +18,7 @@ A reference check can estimate a judge's accuracy, certify an individual outcome
 
 3. **Certification gains translate unevenly into repair.** At a 20% budget, the fixed 50/50 certification-plus-sampling allocation increases certification in every paired query order across all nine cells. Mean residual-disagreement changes versus random criterion sampling range from **−2.26 to +0.81** in the five RuVerBench cells and **−91.48 to −58.68** in the four JudgmentBench cells. The focal DR Gemini comparison gains certificates throughout task-composition resampling, while its repair effect changes direction. JudgmentBench's focal allocation gains persist under the separate reference and task-composition checks. [Result keys](docs/RESULTS.md)
 
-4. **Criterion summaries leave task-level conclusions unresolved.** Holding criterion confusion counts fixed, alternative task-linked label configurations favor opposite update rules in **44 of 90 examined cell–policy–budget settings**. These constructive counterexamples show why aggregate agreement alone is insufficient for planning task-level checks. A complementary disclosure experiment hides and restores task associations to measure the resulting feasible pass-rate ranges. Design-based sampling intervals and logical identification bounds answer different questions. [Information analysis](docs/METHODS.md#information-sufficiency-and-pairing)
+4. **Criterion summaries leave task-level conclusions unresolved.** Holding criterion confusion counts fixed, alternative task-linked label configurations favor opposite update rules in **44 of 90 examined cell–policy–budget settings**. The appendix reports all 90 effect magnitudes; in 19 reversing conditions, both the original and strongest reverse effect are below one evaluation unit. These constructive counterexamples show why aggregate agreement alone is insufficient for planning task-level checks. A complementary disclosure experiment hides and restores task associations to measure the resulting feasible pass-rate ranges. Design-based sampling intervals and logical identification bounds answer different questions. [Information analysis](docs/METHODS.md#information-sufficiency-and-pairing)
 
 ![Full-budget update effects in three frames](artifacts/figures/conjunction_robustness_budget.png)
 
