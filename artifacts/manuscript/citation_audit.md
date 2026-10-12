@@ -92,3 +92,7 @@ The 27 selected keys were checked for exact presence and uniqueness in `referenc
 ## Manuscript clarity revision — 2026-10-10
 
 The revised introduction retains the same supported APEX motivation; the new JudgmentBench example and pure-certification rows are recomputed study results, checked in the numerical audit. The three accounting propositions use the existing definitions and appendix derivations. The cited keys and bibliography remain unchanged at27. The external-validation protocol is a separate unexecuted plan; candidate sources there are not new evidence in the paper.
+
+## Narrative alignment — 2026-10-11, local rc.3
+
+The introduction now names ActiveClean, correction-and-corruption analysis, and Query-Guided Verification alongside screening and Boolean evaluation. These placements retain the supported distinctions documented above: selection versus updating, opposing outcome changes, and AND/OR error propagation. The accounting identities are described as tools for the comparisons, not as novel principles. All27 selected citation keys and bibliography entries remain unchanged. This revision checks placement and consistency against the existing source audit; it does not claim a new exhaustive literature search. The new four-task example is independently enumerated study material, not attributed to a cited paper.

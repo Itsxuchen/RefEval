@@ -12,6 +12,29 @@ from src.release_validation import assert_equal, compare_csv, verify_disclosure_
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def test_portable_source_archive_is_complete_and_deterministic(tmp_path):
+    import re
+    import zipfile
+    from src.build_paper import source_archive
+    first = source_archive(ROOT, tmp_path / 'first.zip')
+    second = source_archive(ROOT, tmp_path / 'second.zip')
+    assert first.read_bytes() == second.read_bytes()
+    with zipfile.ZipFile(first) as archive:
+        main = archive.read('paper.tex').decode()
+        appendix = archive.read('methods_appendix.tex').decode()
+        figures = set(re.findall(r'\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}', main + appendix))
+        assert set(archive.namelist()) == {'paper.tex', 'methods_appendix.tex',
+            'paper_references.bib'} | {f'figures/{name}' for name in figures}
+        original = (ROOT / 'artifacts/manuscript/paper.tex').read_text()
+        assert main == original.replace(r'\graphicspath{{../figures/}}', r'\graphicspath{{figures/}}')
+        assert figures
+        assert all(archive.read(f'figures/{f}').startswith(b'%PDF') for f in figures)
+    with pytest.raises(ValueError, match='protected tree'):
+        source_archive(ROOT, ROOT / 'data/forbidden.zip')
+    with pytest.raises(ValueError, match='zip suffix'):
+        source_archive(ROOT, tmp_path / 'paper.tex')
+
+
 def test_release_and_citation_versions_must_agree(tmp_path):
     from src.check_package import package_version, write_manifest
     (tmp_path / "pyproject.toml").write_text('[project]\nversion = "0.3.0-rc.1"\n')

@@ -226,6 +226,55 @@ check against these expectations; their standard error is the sample
 standard deviation divided by $\sqrt{31}$, not uncertainty from sampling new
 tasks.
 
+\subsection{Task-order comparisons}
+\label{app:task-orders}
+
+Table~\ref{tab:task-orders} reports the three task orders for
+disagreement-first continuation. The five-percent budget often ends inside
+the flagged tier, so changing which task is visited first changes the
+endpoint effect. When the cap covers every flag, the remaining population
+is independent of the order of those completed queries. Its uniform
+continuation then has the same distribution. Purpose-specific random
+streams also make the saved paired continuations identical across task
+orders after this boundary.
+
+\begin{table}[!htbp]
+\centering\small
+\caption{Mean gated-minus-eager disagreements over seeds 1--31 for
+disagreement-first continuation. Columns distinguish release order (R),
+ascending predicted-failure count (F), and random task order (X).
+Counts use tasks in DR/AC and annotations in JB. A zero at an early budget
+can mean that no affected task has yet been reached. These are query-order
+means, not task-composition uncertainty intervals.}
+\label{tab:task-orders}
+\begin{tabular}{lrrrrrr}
+\toprule
+& \multicolumn{3}{c}{5\% budget} & \multicolumn{3}{c}{20\% budget}\\
+Frame / judge & R & F & X & R & F & X\\
+\midrule
+% TASK_ORDER_ROWS_START
+DR Gemini & 0.00 & 2.00 & 0.48 & 2.00 & 2.00 & 2.00 \\
+DR Qwen & 0.00 & 2.10 & 0.71 & 3.00 & 3.00 & 3.00 \\
+DR GPT-5.4 & 0.00 & 2.00 & 0.61 & 2.00 & 2.00 & 2.00 \\
+AC Qwen & 2.00 & 0.55 & 2.45 & 5.52 & 5.52 & 5.52 \\
+AC DeepSeek & 6.00 & 8.90 & 5.03 & 11.23 & 11.23 & 11.23 \\
+JB GPT-5.4 full & 0.00 & -1.00 & -0.97 & -2.06 & -2.06 & -2.06 \\
+JB mini full & -1.00 & -13.00 & -3.06 & -11.68 & -11.68 & -11.68 \\
+JB GPT-5.4 binary & 4.00 & 4.00 & 1.65 & 8.29 & 8.29 & 8.29 \\
+JB mini binary & 1.00 & 0.00 & -0.81 & -0.32 & -0.32 & -0.32 \\
+% TASK_ORDER_ROWS_END
+\bottomrule
+\end{tabular}
+\end{table}
+
+For full JB GPT-5.4, all 4,316 flags are covered at 18.4\% of the
+23,487-criterion frame. At 84\%, each of the three task orders has a saved
+31-realization mean of 97.65 disagreements; the common analytical expectation
+is 96.33. Their difference is query-randomization Monte Carlo error.
+Uniform criterion sampling has no task-priority stage. For serial
+short-circuit rules, the unresolved-task bound in
+Proposition~\ref{prop:serial} applies to every task order.
+
 \subsection{Peer evidence and disagreement-flag coverage}
 \label{app:flag-diagnostics}
 
@@ -249,6 +298,23 @@ Summing $d_i$ within the three peer groups gives 15.4554, 8.6997, and 84.0610,
 respectively, totaling 108.2161. This decomposes delayed repairs $D$, not the
 net update contrast $D-A$.
 
+The same fixed-query calculation can partition delay by the original
+rejected item types. The 156 false fails with only penalty rejections
+contribute 77.8711 expected delays; the 64 with both binary and penalty
+rejections contribute 30.3450. These are descriptive contributions on the
+original frame. Removing penalty items changes the scoring target and
+query design, so this partition is not the effect of deleting those items.
+
+The two terms in Equation~\eqref{eq:peer-delay} must be interpreted together.
+Holding $G,h,k_i^u$ fixed, decreasing the number $r_i$ of remaining wrong
+rejections increases the probability of eager repair, hence increases
+delay relative to certification. Changing the flagged set can also change
+$G,h,k_i^u$. Even when every wrong rejection is already queried, delay is
+$1-\Pr(\text{remaining rubric complete})$, rather than necessarily close
+to one. Under the displayed continuation design this is 0.1960 for one
+remaining item and 0.8872 for ten. The timing of both repair and certification
+determines the endpoint comparison.
+
 Coverage is measured after every disagreement flag has been queried. Among
 220 initial false fails, 79 have no flagged item, 80 have flags only on
 predicted-PASS items, 59 have some but not all erroneous rejections flagged,
@@ -269,6 +335,52 @@ an original annotation; repeated annotations share outputs and criteria.
 The sparse, selected groups do not establish that shared penalty rejections
 are the most unreliable references, and peer disagreement does not establish
 which rating is correct. This check changes neither references nor policies.
+
+\subsection{A counterexample with fixed reference verdicts}
+\label{app:fixed-verdict}
+
+The following constructed frames isolate the information question from a
+change in aggregate pass rate. Each has four tasks of three binary
+criteria, one criterion category, and the same primary predictions.
+Only the first reference bit of tasks 1 and 4 is exchanged:
+\begin{center}
+\begin{tabular}{crrr}
+\toprule
+Task & Prediction $P_i$ & Reference $Y_i^{(I)}$ & Reference $Y_i^{(II)}$\\
+\midrule
+1 & $(0,1,1)$ & $(0,0,0)$ & $(1,0,0)$\\
+2 & $(0,0,1)$ & $(1,1,1)$ & $(1,1,1)$\\
+3 & $(1,1,1)$ & $(0,0,0)$ & $(0,0,0)$\\
+4 & $(0,0,0)$ & $(1,0,0)$ & $(0,0,0)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Both frames have criterion-level $(TP,FP,FN,TN)=(1,5,3,3)$.
+All tasks have equal length and category, so the exchange also preserves
+the stratified criterion confusion counts used in the empirical test.
+Both reference verdict vectors are $(0,1,0,0)$; even task-level confusion
+counts and the PASS total $T=1$ agree.
+
+Apply the query-only update rules to a uniform five-of-twelve sample.
+Task 2 is the only initial false fail in either frame. With
+$H$ as defined in Equation~\eqref{app:eq:hypergeom-event},
+\[
+ \mathbb E[D]=H(12,5;2,0)-H(12,5;3,0)=\frac{7}{66}.
+\]
+In frame I, every initially correct rejection retains a correctly
+predicted reference failure, so $\mathbb E[A]=0$. In frame II, task 1
+can become a false pass when its first criterion is queried and its other
+two are not:
+\[
+ \mathbb E[A]=H(12,5;1,2)=\frac{7}{44}.
+\]
+Thus the expected gated-minus-eager effects are $7/66$ and $-7/132$.
+The implementation check enumerates all $\binom{12}{5}=792$ queried sets
+and directly recomputes both verdicts. The identical task truths are a
+constraint on this construction, not additional certificates handed to
+the query-only controllers. This example establishes non-identification
+of their effects even at a fixed task PASS total; it does not measure the
+range of such effects in the JudgmentBench data.
 
 \subsection{Matched-margin alternatives}
 \label{app:permutations}

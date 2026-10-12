@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 from collections import defaultdict
 from functools import lru_cache
+from fractions import Fraction
 import hashlib
 import importlib.util
 import itertools
@@ -134,7 +135,7 @@ def false_fail_diagnostics(data, share=.84):
                     some_rejections_flagged=0, all_rejections_flagged=0)
     groups = {k: dict(n_units=0, expected_delayed_ff=0.) for k in
               ("any_peer_fail", "all_peers_pass", "no_peer")}
-    types, peer_items = {}, {}
+    types, peer_items, delay_types = {}, {}, {}
     full_coverage = 0
     for i, ix in enumerate(slots):
         if not (truth[i] and not prediction[i]):
@@ -153,6 +154,10 @@ def false_fail_diagnostics(data, share=.84):
         delay = combination_event(G, h, r, 0) - combination_event(G, h, k, 0)
         groups[group]["n_units"] += 1
         groups[group]["expected_delayed_ff"] += delay
+        rejected_types = "+".join(sorted({str(data["category"][s]) for s in rejected}))
+        type_row = delay_types.setdefault(rejected_types, dict(n_units=0, expected_delayed_ff=0.))
+        type_row["n_units"] += 1
+        type_row["expected_delayed_ff"] += delay
         for s in rejected:
             category = str(data["category"][s])
             row = types.setdefault(category, dict(instances=0, flagged=0))
@@ -177,7 +182,56 @@ def false_fail_diagnostics(data, share=.84):
         initial_false_fails=int((truth & ~prediction).sum()), coverage=coverage,
         whole_rubrics_flagged=full_coverage, rejection_types=types,
         delay_by_peer_status=groups, expected_delayed_ff=total,
+        delay_by_rejected_types=delay_types,
         exploratory_peer_items=peer_items)
+
+
+def fixed_verdict_counterexample():
+    """Literal enumeration of the two displayed frames; no event formula reused."""
+    prediction = ((0, 1, 1), (0, 0, 1), (1, 1, 1), (0, 0, 0))
+    frames = (((0, 0, 0), (1, 1, 1), (0, 0, 0), (1, 0, 0)),
+              ((1, 0, 0), (1, 1, 1), (0, 0, 0), (0, 0, 0)))
+    outcomes = []
+    for gold in frames:
+        confusion = [sum(p == a and y == b for pp, yy in zip(prediction, gold)
+                         for p, y in zip(pp, yy)) for a, b in ((1,1),(1,0),(0,1),(0,0))]
+        total_a = total_d = total_delta = count = 0
+        for subset in itertools.combinations(range(12), 5):
+            queried = set(subset)
+            a = d = eager_errors = gated_errors = 0
+            for i, (pp, yy) in enumerate(zip(prediction, gold)):
+                initial, truth = all(pp), all(yy)
+                eager = all(yy[j] if 3*i+j in queried else pp[j] for j in range(3))
+                fail = any(3*i+j in queried and not yy[j] for j in range(3))
+                complete = all(3*i+j in queried for j in range(3))
+                gated = truth if fail or complete else initial
+                eager_errors += eager != truth
+                gated_errors += gated != truth
+                a += not truth and not initial and eager
+                d += truth and not initial and eager and not complete
+            assert gated_errors-eager_errors == d-a
+            total_a += a; total_d += d; total_delta += gated_errors-eager_errors; count += 1
+        outcomes.append(dict(reference=[list(row) for row in gold], criterion_confusion_TP_FP_FN_TN=confusion,
+            reference_verdicts=[int(all(row)) for row in gold], subsets=count,
+            expected_A=str(Fraction(total_a, count)), expected_D=str(Fraction(total_d, count)),
+            expected_delta=str(Fraction(total_delta, count))))
+    return dict(prediction=[list(row) for row in prediction], n_units=4, n_criteria=12, budget=5,
+                frames=outcomes, scope="Constructed query-only comparison, not a constrained empirical permutation.")
+
+
+def task_order_table_latex(rows):
+    labels = {"DR Gemini 3.1 Pro": "DR Gemini", "DR Qwen-plus": "DR Qwen",
+        "DR GPT-5.4 low": "DR GPT-5.4", "AC Qwen-plus": "AC Qwen",
+        "AC DeepSeek v4-pro": "AC DeepSeek", "JB GPT-5.4": "JB GPT-5.4 full",
+        "JB GPT-5.4-mini": "JB mini full", "JB GPT-5.4 | binary_only": "JB GPT-5.4 binary",
+        "JB GPT-5.4-mini | binary_only": "JB mini binary"}
+    lookup = {(r["dataset"], r["task_order"], r["budget_share"]): r["mean_delta"] for r in rows}
+    out = []
+    for name, label in labels.items():
+        values = [lookup[(name, order, cap)] for cap in (.05, .2)
+                  for order in ("release", "predicted_fail_count", "random")]
+        out.append(label + " & " + " & ".join(f"{0. if abs(v)<1e-10 else v:.2f}" for v in values) + r" \\")
+    return "\n".join(out)
 
 
 def amplitude_table_latex(rows):
@@ -305,6 +359,13 @@ def audit(root: Path):
           [32,15.455397781657604,22,8.699709254532936,166,84.06101815461308])
     equal("peer-status contributions sum to original delay",
           [ff_diagnostics["expected_delayed_ff"]], [analytical_curve(jb,"disagreement_then_random",[.84])[0,1]])
+    equal("fixed-design delay by original rejection types",
+          [ff_diagnostics["delay_by_rejected_types"][k][f]
+           for k in ("occurrence_count", "binary+occurrence_count") for f in ("n_units","expected_delayed_ff")],
+          [156,77.87112557457772,64,30.34499961622588])
+    equal("all wrong rejections read does not imply near-unit delay",
+          [1-combination_event(19171,15413,k,0) for k in (1,10)],
+          [.19602524646601638,.8872347036653503])
     equal("exploratory repeated-rating item checks",
           [ff_diagnostics["exploratory_peer_items"][group][k]
            for group in ("occurrence_count_shared_rejection", "binary_shared_rejection",
@@ -360,6 +421,28 @@ def audit(root: Path):
     claims["rq1"] = dict(source="conjunction_mechanism/update_expected_grid.csv; conjunction_policy_study/budget_curves.csv.gz",
                          selector="release order, disagreement_then_random; observed means use seeds 1 through 31",
                          unit="gated minus eager evaluation-unit errors", values=anchors[fields].to_dict("records"), extrema=extrema)
+    order_rows = curves[(curves.policy == "disagreement_then_random") & (curves.seed > 0)
+                       & curves.budget_share.isin([.05,.2])].copy()
+    order_rows["mean_delta"] = order_rows.gated_residual_errors - order_rows.residual_errors
+    order_values = order_rows.groupby(["dataset","task_order","budget_share"]).mean_delta.mean().reset_index().to_dict("records")
+    appendix_text = source("artifacts/manuscript/methods_appendix.tex").read_text()
+    printed = appendix_text.split("% TASK_ORDER_ROWS_START\n")[1].split("\n% TASK_ORDER_ROWS_END")[0]
+    require("all task-order table rows from raw trajectories", printed == task_order_table_latex(order_values), len(order_values))
+    later = curves[(curves.dataset == "JB GPT-5.4") & (curves.policy == "disagreement_then_random")
+                   & (curves.seed > 0) & (curves.budget_share >= .19)].copy()
+    later["delta"] = later.gated_residual_errors - later.residual_errors
+    same_order_effects = later.pivot(index=["seed","budget_share"], columns="task_order", values="delta")
+    require("post-flag effects agree across all three task orders", (same_order_effects.nunique(axis=1) == 1).all(), len(same_order_effects))
+    claims["rq1"]["task_order_comparison"] = dict(values=order_values, rows_checked=len(same_order_effects),
+        definition="31-realization mean differences; three task orders; query randomization, not composition uncertainty.")
+    ac_curve = analytical_curve(datasets["AC DeepSeek v4-pro"], "disagreement_then_random", [.2])[0]
+    equal("coding comparison at 20pct", ac_curve, [.9010695187165776,12.053629900392687,11.15256038167611])
+    equal("coding normalized effect and pass rate", [100*ac_curve[2]/210,100*117/210], [5.310743038893386,55.714285714285715])
+    witness = fixed_verdict_counterexample()
+    require("fixed-verdict witness exact fractions", [r["expected_delta"] for r in witness["frames"]] == ["7/66","-7/132"])
+    require("fixed-verdict witness observed invariants", all(r["subsets"] == 792 and r["criterion_confusion_TP_FP_FN_TN"] == [1,5,3,3]
+            and r["reference_verdicts"] == [0,1,0,0] for r in witness["frames"]))
+    claims["fixed_verdict_counterexample"] = witness
     cost_shares = [.2, .84]
     cost_values = analytical_curve(jb, "disagreement_then_random", cost_shares)
     cost_ratios = cost_values[:, 1] / cost_values[:, 0]
@@ -619,10 +702,11 @@ def audit(root: Path):
                 equal("cluster quantile " + saved["dataset"] + "/" + saved["policy"] + "/" + label + "/" + key,
                       np.quantile(pivot.loc[pivot.index >= 0], prob, axis=0), saved[label][key])
     cluster_claims1, cluster_claims2 = [], []
-    for (name, share), group in cluster1[(cluster1.policy == "disagreement_then_random") & cluster1.budget_share.isin([.2,.84])].groupby(["dataset","budget_share"]):
+    for (name, share), group in cluster1[(cluster1.policy == "disagreement_then_random") & cluster1.budget_share.isin([.2,.5,.84])].groupby(["dataset","budget_share"]):
         sampled = group[group.replicate >= 0]
         cluster_claims1.append(dict(dataset=name, budget_share=share, original_expected_delta_per100=float(group.loc[group.replicate == -1,"expected_delta_per100"].iloc[0]),
-            composition_quantiles_per100=np.quantile(sampled.expected_delta_per100,[.025,.5,.975]).tolist(), replicates=len(sampled)))
+            composition_quantiles_per100=np.quantile(sampled.expected_delta_per100,[.025,.5,.975]).tolist(), replicates=len(sampled),
+            positive=int((sampled.expected_delta > 1e-12).sum()), negative=int((sampled.expected_delta < -1e-12).sum())))
     for name, group in frames.groupby("dataset", sort=False):
         sampled = group[group.replicate >= 0]
         row = dict(dataset=name, replicates=len(sampled), cert_gain_replicates=int((sampled.certified_tasks_delta_mean > 0).sum()),

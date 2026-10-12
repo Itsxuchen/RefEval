@@ -61,3 +61,22 @@ def test_permutation_preserves_declared_strata_and_observable_data():
     np.testing.assert_array_equal(d['gold'],before)
     for key in ['prediction','task_index','secondary_predictions']:
         np.testing.assert_array_equal(changed[key],d[key])
+
+
+def test_fixed_verdict_counterexample_by_literal_queries_and_event_formula():
+    from fractions import Fraction
+    from src.verify_manuscript_claims import fixed_verdict_counterexample
+    witness = fixed_verdict_counterexample()
+    assert witness['frames'][0]['reference_verdicts'] == witness['frames'][1]['reference_verdicts'] == [0,1,0,0]
+    for frame, target in zip(witness['frames'], (Fraction(7,66), Fraction(-7,132))):
+        assert frame['subsets'] == 792
+        assert frame['criterion_confusion_TP_FP_FN_TN'] == [1,5,3,3]
+        assert Fraction(frame['expected_delta']) == target
+        d = dict(gold=np.asarray(frame['reference']).ravel(),
+                 prediction=np.asarray(witness['prediction']).ravel(),
+                 task_index=np.repeat(np.arange(4),3), task_ids=list('abcd'),
+                 secondary_predictions=np.empty((0,12),dtype=int), category=['binary']*12)
+        result = expected_curve(d,'random_criterion',[5/12])[0]
+        assert result['expected_delta'] == pytest.approx(float(target),abs=1e-14)
+        assert result['expected_introduced_fp'] == pytest.approx(float(Fraction(frame['expected_A'])),abs=1e-14)
+        assert result['expected_delayed_ff'] == pytest.approx(float(Fraction(frame['expected_D'])),abs=1e-14)

@@ -23,9 +23,9 @@
     "artifacts/expected/conjunction_mechanism/update_structures.json": "2dab50f5d6124c5366edd3566e6e60d02aab7bf28bedc30f8db7e20423cf4eaf",
     "artifacts/expected/conjunction_mechanism/update_expected_grid.csv": "4c3ba6dbb3d581b432711d60dafc131e9631295d51d93cc9a6c5a9cf8ef74291",
     "artifacts/expected/conjunction_policy_study/budget_curves.csv.gz": "cdf86a96200e6cb368baa55fb393482c9fc8e4235ac6f09929b59f7a4dc376f2",
+    "artifacts/manuscript/methods_appendix.tex": "41be6cf88969446bcd091e0b85ff9f252e317053646dd991b9efe0bb334edc74",
     "artifacts/expected/conjunction_mechanism/update_permutation_rows.csv": "f915bea3c80d19fc6d075d9566fb724660e216f11663552aa5fbf4c60985c8f9",
     "artifacts/expected/conjunction_mechanism/update_permutation_summary.csv": "34717e827996ba9331fffef9e674ac9fbde46b3aa837e084c050e15ded3c166c",
-    "artifacts/manuscript/methods_appendix.tex": "f497945bfb8fe295ad16c861909f352cea8b48799403938c16667f4a206daa67",
     "artifacts/expected/conjunction_mechanism/allocation_rows.csv.gz": "a31c1d7fb04e8558c6b12a8732bb4613b16fc405e2fedba676b09e631c47e829",
     "artifacts/expected/conjunction_label_value/budget_estimation_rows.csv.gz": "0a95916efbabd8555d3dfbdff8e1077f9c708b0535a589f207016bafac7dd5a7",
     "artifacts/expected/conjunction_robustness/reference/frame_diagnostics.json": "c5071fbd496f90b56e7f50664496afc634129efbe791fdc7b0d262c68caf3c89",
@@ -194,6 +194,18 @@
       "check": "peer-status contributions sum to original delay",
       "scalar_values": 1,
       "max_absolute_difference": 1.5631940186722204e-13,
+      "passed": true
+    },
+    {
+      "check": "fixed-design delay by original rejection types",
+      "scalar_values": 4,
+      "max_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "all wrong rejections read does not imply near-unit delay",
+      "scalar_values": 2,
+      "max_absolute_difference": 0.0,
       "passed": true
     },
     {
@@ -456,6 +468,38 @@
     {
       "check": "exactly 31 noncanonical order rows per RQ1 cell",
       "instances": 1818,
+      "passed": true
+    },
+    {
+      "check": "all task-order table rows from raw trajectories",
+      "instances": 54,
+      "passed": true
+    },
+    {
+      "check": "post-flag effects agree across all three task orders",
+      "instances": 2542,
+      "passed": true
+    },
+    {
+      "check": "coding comparison at 20pct",
+      "scalar_values": 3,
+      "max_absolute_difference": 1.7763568394002505e-15,
+      "passed": true
+    },
+    {
+      "check": "coding normalized effect and pass rate",
+      "scalar_values": 2,
+      "max_absolute_difference": 8.881784197001252e-16,
+      "passed": true
+    },
+    {
+      "check": "fixed-verdict witness exact fractions",
+      "instances": 1,
+      "passed": true
+    },
+    {
+      "check": "fixed-verdict witness observed invariants",
+      "instances": 1,
       "passed": true
     },
     {
@@ -3516,6 +3560,16 @@
           }
         },
         "expected_delayed_ff": 108.2161251908036,
+        "delay_by_rejected_types": {
+          "binary+occurrence_count": {
+            "n_units": 64,
+            "expected_delayed_ff": 30.34499961622588
+          },
+          "occurrence_count": {
+            "n_units": 156,
+            "expected_delayed_ff": 77.87112557457772
+          }
+        },
         "exploratory_peer_items": {
           "occurrence_count_shared_rejection": {
             "instances": 62,
@@ -4265,6 +4319,336 @@
           "delta": 16.516129032258064
         }
       ],
+      "task_order_comparison": {
+        "values": [
+          {
+            "dataset": "AC DeepSeek v4-pro",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.05,
+            "mean_delta": 8.903225806451612
+          },
+          {
+            "dataset": "AC DeepSeek v4-pro",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.2,
+            "mean_delta": 11.225806451612904
+          },
+          {
+            "dataset": "AC DeepSeek v4-pro",
+            "task_order": "random",
+            "budget_share": 0.05,
+            "mean_delta": 5.032258064516129
+          },
+          {
+            "dataset": "AC DeepSeek v4-pro",
+            "task_order": "random",
+            "budget_share": 0.2,
+            "mean_delta": 11.225806451612904
+          },
+          {
+            "dataset": "AC DeepSeek v4-pro",
+            "task_order": "release",
+            "budget_share": 0.05,
+            "mean_delta": 6.0
+          },
+          {
+            "dataset": "AC DeepSeek v4-pro",
+            "task_order": "release",
+            "budget_share": 0.2,
+            "mean_delta": 11.225806451612904
+          },
+          {
+            "dataset": "AC Qwen-plus",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.05,
+            "mean_delta": 0.5483870967741935
+          },
+          {
+            "dataset": "AC Qwen-plus",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.2,
+            "mean_delta": 5.516129032258065
+          },
+          {
+            "dataset": "AC Qwen-plus",
+            "task_order": "random",
+            "budget_share": 0.05,
+            "mean_delta": 2.4516129032258065
+          },
+          {
+            "dataset": "AC Qwen-plus",
+            "task_order": "random",
+            "budget_share": 0.2,
+            "mean_delta": 5.516129032258065
+          },
+          {
+            "dataset": "AC Qwen-plus",
+            "task_order": "release",
+            "budget_share": 0.05,
+            "mean_delta": 2.0
+          },
+          {
+            "dataset": "AC Qwen-plus",
+            "task_order": "release",
+            "budget_share": 0.2,
+            "mean_delta": 5.516129032258065
+          },
+          {
+            "dataset": "DR GPT-5.4 low",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.05,
+            "mean_delta": 2.0
+          },
+          {
+            "dataset": "DR GPT-5.4 low",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.2,
+            "mean_delta": 2.0
+          },
+          {
+            "dataset": "DR GPT-5.4 low",
+            "task_order": "random",
+            "budget_share": 0.05,
+            "mean_delta": 0.6129032258064516
+          },
+          {
+            "dataset": "DR GPT-5.4 low",
+            "task_order": "random",
+            "budget_share": 0.2,
+            "mean_delta": 2.0
+          },
+          {
+            "dataset": "DR GPT-5.4 low",
+            "task_order": "release",
+            "budget_share": 0.05,
+            "mean_delta": 0.0
+          },
+          {
+            "dataset": "DR GPT-5.4 low",
+            "task_order": "release",
+            "budget_share": 0.2,
+            "mean_delta": 2.0
+          },
+          {
+            "dataset": "DR Gemini 3.1 Pro",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.05,
+            "mean_delta": 2.0
+          },
+          {
+            "dataset": "DR Gemini 3.1 Pro",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.2,
+            "mean_delta": 2.0
+          },
+          {
+            "dataset": "DR Gemini 3.1 Pro",
+            "task_order": "random",
+            "budget_share": 0.05,
+            "mean_delta": 0.4838709677419355
+          },
+          {
+            "dataset": "DR Gemini 3.1 Pro",
+            "task_order": "random",
+            "budget_share": 0.2,
+            "mean_delta": 2.0
+          },
+          {
+            "dataset": "DR Gemini 3.1 Pro",
+            "task_order": "release",
+            "budget_share": 0.05,
+            "mean_delta": 0.0
+          },
+          {
+            "dataset": "DR Gemini 3.1 Pro",
+            "task_order": "release",
+            "budget_share": 0.2,
+            "mean_delta": 2.0
+          },
+          {
+            "dataset": "DR Qwen-plus",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.05,
+            "mean_delta": 2.096774193548387
+          },
+          {
+            "dataset": "DR Qwen-plus",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.2,
+            "mean_delta": 3.0
+          },
+          {
+            "dataset": "DR Qwen-plus",
+            "task_order": "random",
+            "budget_share": 0.05,
+            "mean_delta": 0.7096774193548387
+          },
+          {
+            "dataset": "DR Qwen-plus",
+            "task_order": "random",
+            "budget_share": 0.2,
+            "mean_delta": 3.0
+          },
+          {
+            "dataset": "DR Qwen-plus",
+            "task_order": "release",
+            "budget_share": 0.05,
+            "mean_delta": 0.0
+          },
+          {
+            "dataset": "DR Qwen-plus",
+            "task_order": "release",
+            "budget_share": 0.2,
+            "mean_delta": 3.0
+          },
+          {
+            "dataset": "JB GPT-5.4",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.05,
+            "mean_delta": -1.0
+          },
+          {
+            "dataset": "JB GPT-5.4",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.2,
+            "mean_delta": -2.064516129032258
+          },
+          {
+            "dataset": "JB GPT-5.4",
+            "task_order": "random",
+            "budget_share": 0.05,
+            "mean_delta": -0.967741935483871
+          },
+          {
+            "dataset": "JB GPT-5.4",
+            "task_order": "random",
+            "budget_share": 0.2,
+            "mean_delta": -2.064516129032258
+          },
+          {
+            "dataset": "JB GPT-5.4",
+            "task_order": "release",
+            "budget_share": 0.05,
+            "mean_delta": 0.0
+          },
+          {
+            "dataset": "JB GPT-5.4",
+            "task_order": "release",
+            "budget_share": 0.2,
+            "mean_delta": -2.064516129032258
+          },
+          {
+            "dataset": "JB GPT-5.4 | binary_only",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.05,
+            "mean_delta": 4.0
+          },
+          {
+            "dataset": "JB GPT-5.4 | binary_only",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.2,
+            "mean_delta": 8.290322580645162
+          },
+          {
+            "dataset": "JB GPT-5.4 | binary_only",
+            "task_order": "random",
+            "budget_share": 0.05,
+            "mean_delta": 1.6451612903225807
+          },
+          {
+            "dataset": "JB GPT-5.4 | binary_only",
+            "task_order": "random",
+            "budget_share": 0.2,
+            "mean_delta": 8.290322580645162
+          },
+          {
+            "dataset": "JB GPT-5.4 | binary_only",
+            "task_order": "release",
+            "budget_share": 0.05,
+            "mean_delta": 4.0
+          },
+          {
+            "dataset": "JB GPT-5.4 | binary_only",
+            "task_order": "release",
+            "budget_share": 0.2,
+            "mean_delta": 8.290322580645162
+          },
+          {
+            "dataset": "JB GPT-5.4-mini",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.05,
+            "mean_delta": -13.0
+          },
+          {
+            "dataset": "JB GPT-5.4-mini",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.2,
+            "mean_delta": -11.67741935483871
+          },
+          {
+            "dataset": "JB GPT-5.4-mini",
+            "task_order": "random",
+            "budget_share": 0.05,
+            "mean_delta": -3.064516129032258
+          },
+          {
+            "dataset": "JB GPT-5.4-mini",
+            "task_order": "random",
+            "budget_share": 0.2,
+            "mean_delta": -11.67741935483871
+          },
+          {
+            "dataset": "JB GPT-5.4-mini",
+            "task_order": "release",
+            "budget_share": 0.05,
+            "mean_delta": -1.0
+          },
+          {
+            "dataset": "JB GPT-5.4-mini",
+            "task_order": "release",
+            "budget_share": 0.2,
+            "mean_delta": -11.67741935483871
+          },
+          {
+            "dataset": "JB GPT-5.4-mini | binary_only",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.05,
+            "mean_delta": 0.0
+          },
+          {
+            "dataset": "JB GPT-5.4-mini | binary_only",
+            "task_order": "predicted_fail_count",
+            "budget_share": 0.2,
+            "mean_delta": -0.3225806451612903
+          },
+          {
+            "dataset": "JB GPT-5.4-mini | binary_only",
+            "task_order": "random",
+            "budget_share": 0.05,
+            "mean_delta": -0.8064516129032258
+          },
+          {
+            "dataset": "JB GPT-5.4-mini | binary_only",
+            "task_order": "random",
+            "budget_share": 0.2,
+            "mean_delta": -0.3225806451612903
+          },
+          {
+            "dataset": "JB GPT-5.4-mini | binary_only",
+            "task_order": "release",
+            "budget_share": 0.05,
+            "mean_delta": 1.0
+          },
+          {
+            "dataset": "JB GPT-5.4-mini | binary_only",
+            "task_order": "release",
+            "budget_share": 0.2,
+            "mean_delta": -0.3225806451612903
+          }
+        ],
+        "rows_checked": 2542,
+        "definition": "31-realization mean differences; three task orders; query randomization, not composition uncertainty."
+      },
       "expected_loss_break_even": {
         "unit": "false-PASS cost divided by false-FAIL cost",
         "condition": "For c_FF > 0 and expected A > 0, gating has lower expected endpoint loss iff c_FP/c_FF > E[D]/E[A].",
@@ -4293,6 +4677,116 @@
         "gating_minus_eager_loss_FF_coefficient": 9,
         "cost_ratio_crossover": 1.5
       }
+    },
+    "fixed_verdict_counterexample": {
+      "prediction": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "n_units": 4,
+      "n_criteria": 12,
+      "budget": 5,
+      "frames": [
+        {
+          "reference": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "criterion_confusion_TP_FP_FN_TN": [
+            1,
+            5,
+            3,
+            3
+          ],
+          "reference_verdicts": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "subsets": 792,
+          "expected_A": "0",
+          "expected_D": "7/66",
+          "expected_delta": "7/66"
+        },
+        {
+          "reference": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "criterion_confusion_TP_FP_FN_TN": [
+            1,
+            5,
+            3,
+            3
+          ],
+          "reference_verdicts": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "subsets": 792,
+          "expected_A": "7/44",
+          "expected_D": "7/66",
+          "expected_delta": "-7/132"
+        }
+      ],
+      "scope": "Constructed query-only comparison, not a constrained empirical permutation."
     },
     "discovery_vs_certification": {
       "source": "conjunction_policy_study/budget_curves.csv.gz",
@@ -6172,7 +6666,22 @@
             0.352112676056338,
             1.7533645198608834
           ],
-          "replicates": 399
+          "replicates": 399,
+          "positive": 300,
+          "negative": 0
+        },
+        {
+          "dataset": "DR Gemini 3.1 Pro",
+          "budget_share": 0.5,
+          "original_expected_delta_per100": 0.5692689660235548,
+          "composition_quantiles_per100": [
+            0.0,
+            0.4424125397546569,
+            1.5936982599103149
+          ],
+          "replicates": 399,
+          "positive": 346,
+          "negative": 0
         },
         {
           "dataset": "DR Gemini 3.1 Pro",
@@ -6183,7 +6692,9 @@
             0.2373896438275493,
             0.929404035439375
           ],
-          "replicates": 399
+          "replicates": 399,
+          "positive": 346,
+          "negative": 0
         },
         {
           "dataset": "JB GPT-5.4",
@@ -6194,7 +6705,22 @@
             -0.1291989664082687,
             0.3927703149703267
           ],
-          "replicates": 399
+          "replicates": 399,
+          "positive": 104,
+          "negative": 286
+        },
+        {
+          "dataset": "JB GPT-5.4",
+          "budget_share": 0.5,
+          "original_expected_delta_per100": 2.907773138032309,
+          "composition_quantiles_per100": [
+            1.052074421380481,
+            2.803954337089666,
+            5.195946886167378
+          ],
+          "replicates": 399,
+          "positive": 399,
+          "negative": 0
         },
         {
           "dataset": "JB GPT-5.4",
@@ -6205,7 +6731,9 @@
             6.239653183817912,
             9.43645364170131
           ],
-          "replicates": 399
+          "replicates": 399,
+          "positive": 399,
+          "negative": 0
         },
         {
           "dataset": "JB GPT-5.4 | binary_only",
@@ -6216,7 +6744,22 @@
             0.5567153792623522,
             1.5012173598739993
           ],
-          "replicates": 399
+          "replicates": 399,
+          "positive": 328,
+          "negative": 65
+        },
+        {
+          "dataset": "JB GPT-5.4 | binary_only",
+          "budget_share": 0.5,
+          "original_expected_delta_per100": 1.8804185204172108,
+          "composition_quantiles_per100": [
+            0.8516442818528703,
+            1.9114772107730416,
+            3.1006750518566886
+          ],
+          "replicates": 399,
+          "positive": 399,
+          "negative": 0
         },
         {
           "dataset": "JB GPT-5.4 | binary_only",
@@ -6227,7 +6770,9 @@
             2.31827350319098,
             3.5538745250250035
           ],
-          "replicates": 399
+          "replicates": 399,
+          "positive": 399,
+          "negative": 0
         }
       ],
       "rq2": [

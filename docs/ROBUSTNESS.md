@@ -113,3 +113,12 @@ The measured question is how limited checks translate into estimates, certificat
 Sequential testing already supplies short-circuit logic and cost-sensitive check ordering. Human-uncertainty work already establishes that judge assessment depends on reference choice. The new evidence here measures the consequences jointly for fixed-label acquisition and conjunctive verdict updates, with counterexamples and sensitivity analyses on the released frames. [Ünlüyurt](https://doi.org/10.1016/j.dam.2002.08.001), [Elangovan et al.](https://proceedings.iclr.cc/paper_files/paper/2025/hash/8798321486948322be2b4d658744ba72-Abstract-Conference.html)
 
 The earlier matched-margin rearrangements show that criterion confusion summaries can be compatible with different downstream checking outcomes. This is a concrete reporting-sufficiency example built on classical dependence facts. RuVerBench releases linked records, enabling our analysis; the issue is relying on its criterion summaries alone. The rearrangements also change task pass rates, so they do not isolate a causal correlation effect. [Mechanism tables](../artifacts/expected/conjunction_mechanism/update_permutation_summary.csv)
+
+
+## Timing and sensitivity interpretations (local rc.3)
+
+Full JB at 50% budget has an original effect of +2.91 disagreements per 100 annotations, with pointwise task-composition quantiles [1.05, 5.20]; all 399 resamples are positive. At 84%, the range remains [3.51, 9.44]. Binary-only at 20% has range [−0.44, 1.50], with 328 positive, 65 negative and six zero resampled effects. These resamples retain within-task reference structure. Matched-margin label rearrangements deliberately alter it, so their reversals concern information sufficiency.
+
+AC DeepSeek has 117/210 reference-PASS tasks. Disagreement-first continuation at 20% has expected A = 0.9011, D = 12.0536 and D−A = 11.1526 tasks (5.3107 per 100). This comparison lacks JB penalty items but remains a constructed conjunction. No AC reference-panel or cluster experiment is implied.
+
+Full-JB delay at 84% splits into 77.8711 on 156 penalty-only-rejected false fails and 30.3450 on 64 false fails rejected by both item types. This partitions original D = 108.2161 without changing acquisition; it is not an intervention deleting penalties. Low flag coverage delays eager repair but does not itself increase the gap to certification. The last mistaken-rejection query and completion of the remaining rubric jointly determine that gap.

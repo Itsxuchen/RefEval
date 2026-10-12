@@ -1,5 +1,15 @@
 # Changelog
 
+
+## 0.3.0-rc.3 — local narrative and evidence alignment
+
+- Align the abstract, introduction, contributions and discussion with declared constructed targets and the three RQs; use eager updating consistently and distinguish units.
+- Bring AC, three task orders and intermediate-budget composition results into the paper.
+- Correct low-coverage interpretation; separate descriptive delay contributions from deleting penalties and label rearrangements from task resampling.
+- Add an exhaustively verified fixed-verdict logical example and portable TeX sources. Original data and frozen outputs remain unchanged.
+- Keep this revision local for author review; no GitHub publication or arXiv submission.
+
+
 ## 0.3.0-rc.2 — local evidence-clarification draft, 2026-10-11
 
 - Partition expected delayed repairs by observed peer-rating status without changing the query design.

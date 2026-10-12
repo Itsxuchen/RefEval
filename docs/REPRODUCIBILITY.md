@@ -2,7 +2,7 @@
 
 ## Current review candidate
 
-`v0.3.0-rc.2` is the local author-review snapshot, including peer-status delay decomposition, disagreement-flag diagnostics and the complete 90-condition amplitude table. The preceding local `v0.3.0-rc.1` snapshot is preserved. Neither candidate has been pushed or publicly released; no arXiv submission has been made. Package, CFF and manuscript version agree. Public synchronization remains an author decision. Historical receipts below retain their original scope and dates.
+Local review version v0.3.0-rc.3 aligns the narrative, adds the AC comparison and task-order table, reports intermediate-budget composition sensitivity, and verifies a fixed-verdict logical counterexample. Earlier local candidates remain preserved. No candidate has been pushed or publicly released; no arXiv submission has been made. Historical receipts retain their original scope and dates.
 
 The five author-run RuVerBench configurations, prompts, context truncation and recovery rules are documented in [DATA_SOURCES](DATA_SOURCES.md#generation-protocol-for-the-five-study-runs). The offline prompt module reconstructs inputs and parses responses; it does not call providers. Publication renderers now reset their own style within a scoped context. The regression check renders both call orders under different ambient colors and compares all five PNGs pixel for pixel, while also checking restoration after errors.
 
@@ -214,3 +214,18 @@ python -m src.verify_manuscript_claims --output artifacts/paper-checks/numerical
 ```
 
 The [saved claim audit](../artifacts/manuscript/numerical_claim_audit.json) records source hashes, row selectors, units, and independently recomputed arithmetic and combinatorial expectations. It distinguishes analytical expectations, paired order means, marginal medians, composition ranges, and matched-reference subsets. The [citation audit](../artifacts/manuscript/citation_audit.md) records the primary sources and the claims they support. The audit also reconstructs the fixed-query delay split by peer status, flag coverage by item type, and the exploratory repeated-rating item check. It compares every one of the 90 printed amplitude rows with the underlying configurations and stores full-precision rows in the receipt. These checks complement the full scientific replay; they do not adjudicate reference correctness.
+
+
+### Portable source and narrative revision (local rc.3)
+
+[arxiv_source.zip](../artifacts/manuscript/arxiv_source.zip) contains only the main TeX file, methods appendix, selected BibTeX bibliography and three cited PDF figures. Figure paths are adjusted for compilation from the extracted directory; the scientific text is unchanged. Extract into an empty directory and run Tectonic on paper.tex (or use a compatible full LaTeX installation). This archive is preparation for author review, not a submission or arXiv compilation receipt.
+
+The numerical audit additionally verifies all 54 task-order table entries against raw trajectories, the AC 20% comparison, delay by rejected item type, the 50% composition ranges and the 792-query fixed-verdict construction. It distinguishes that construction from the empirical rearrangements, whose task PASS totals vary. Current checks are recorded in [build_validation.json](../artifacts/manuscript/build_validation.json). Frozen data and expected replay outputs remain unchanged.
+
+The portable archive can be rebuilt with the same compiler invocation:
+
+```bash
+python -m src.build_paper --source-archive artifacts/manuscript/arxiv_source.zip
+```
+
+The archive places the main TeX file, appendix, selected bibliography, and the three referenced figures at paths that resolve from its root. It excludes compilation logs, the output PDF, and unused figures.
