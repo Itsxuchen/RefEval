@@ -1,8 +1,10 @@
 # Reproducibility
 
-## Current review candidate
+## Current release: v0.3.0
 
-Local review version v0.3.0-rc.5 adopts the author-selected title, clarifies the contrasting repair timing, and adds the existing coding composition result to the abstract. Scientific results and code are unchanged from rc.4. Earlier local candidates remain preserved. No candidate has been pushed or publicly released; no arXiv submission has been made. Historical receipts retain their original scope and dates.
+The [v0.3.0 snapshot](https://github.com/Itsxuchen/RefEval/tree/v0.3.0) aligns the manuscript, portable sources, citation metadata and complete numerical package. It includes the task-order table, Appendix B.4 fixed-verdict example, and Appendix E.3 coding sensitivity. No arXiv identifier or Zenodo DOI has been assigned.
+
+The original policy/disclosure analysis and the complete extension analysis were both rerun for this release. The extension comparison covers **29 CSV tables / 998,652 rows and five scientific JSON payloads**. Release receipts: [original run](../artifacts/validation/v030_original_run_manifest.json), [original comparisons](../artifacts/validation/v030_original_verification.json), [extension run](../artifacts/validation/v030_extension_run_manifest.json), and [extension comparisons](../artifacts/validation/v030_extension_verification.json). Tests, manuscript claims and PDF/source checks are recorded in [build validation](../artifacts/manuscript/build_validation.json). Earlier validation counts below are dated historical records.
 
 The five author-run RuVerBench configurations, prompts, context truncation and recovery rules are documented in [DATA_SOURCES](DATA_SOURCES.md#generation-protocol-for-the-five-study-runs). The offline prompt module reconstructs inputs and parses responses; it does not call providers. Publication renderers now reset their own style within a scoped context. The regression check renders both call orders under different ambient colors and compares all five PNGs pixel for pixel, while also checking restoration after errors.
 
@@ -143,7 +145,7 @@ python -m src.reproduce_extensions --output artifacts/reproduced-extensions
 python -m src.reproduce_extensions --output artifacts/reproduced-extensions --verify-only
 ```
 
-The extension runs the 64-permutation mechanism analysis, all 31-seed allocation decompositions, four matched-reference cells with crossed acquisition/scoring references, 399 whole-base-task composition resamples, and nine-cell budget-accounted estimation controls. It regenerates the mechanism and robustness figures. It then compares every extension scientific CSV row and four scientific JSON payloads against the versioned expected tables. Sources, protocols and output checks receive separate manifests. A new/empty output directory preserves earlier run receipts. The original `src.verify_release` command covers the original study; it does not claim to verify the extension.
+The extension runs the 64-permutation mechanism analysis, all 31-seed allocation decompositions, four matched-reference cells with crossed acquisition/scoring references, 399 whole-base-task composition resamples, and nine-cell budget-accounted estimation controls. It regenerates the mechanism and robustness figures. It then compares every extension scientific CSV row and five scientific JSON payloads (four in the original 0.2.0 extension) against the versioned expected tables. Sources, protocols and output checks receive separate manifests. A new/empty output directory preserves earlier run receipts. The original `src.verify_release` command covers the original study; it does not claim to verify the extension.
 
 The extension's interval tests and direct small-world arithmetic complement replay equality. Equality to saved tables alone cannot validate reference correctness, statistical transport or an untested procedure. Reference replacement keeps both judge draws fixed; its off-diagonal cells re-read queried labels as well as the endpoint truth. Task-composition sensitivity retains the observed raters. Normal approximate intervals are separate from guarantee-based comparisons; the old mix table has only its original conditional interval.
 
@@ -216,7 +218,7 @@ python -m src.verify_manuscript_claims --output artifacts/paper-checks/numerical
 The [saved claim audit](../artifacts/manuscript/numerical_claim_audit.json) records source hashes, row selectors, units, and independently recomputed arithmetic and combinatorial expectations. It distinguishes analytical expectations, paired order means, marginal medians, composition ranges, and matched-reference subsets. The [citation audit](../artifacts/manuscript/citation_audit.md) records the primary sources and the claims they support. The audit also reconstructs the fixed-query delay split by peer status, flag coverage by item type, and the exploratory repeated-rating item check. It compares every one of the 90 printed amplitude rows with the underlying configurations and stores full-precision rows in the receipt. These checks complement the full scientific replay; they do not adjudicate reference correctness.
 
 
-### Portable source and narrative revision (local rc.3)
+### Portable manuscript sources
 
 [arxiv_source.zip](../artifacts/manuscript/arxiv_source.zip) contains only the main TeX file, methods appendix, selected BibTeX bibliography and three cited PDF figures. Figure paths are adjusted for compilation from the extracted directory; the scientific text is unchanged. Extract into an empty directory and run Tectonic on paper.tex (or use a compatible full LaTeX installation). This archive is preparation for author review, not a submission or arXiv compilation receipt.
 
@@ -230,7 +232,7 @@ python -m src.build_paper --source-archive artifacts/manuscript/arxiv_source.zip
 
 The archive places the main TeX file, appendix, selected bibliography, and the three referenced figures at paths that resolve from its root. It excludes compilation logs, the output PDF, and unused figures.
 
-### Coding supplement and current review checks (local rc.4)
+### Coding sensitivity supplement
 
 The new supplement is saved separately in `artifacts/expected/conjunction_coding_sensitivity/`: `multiplicities.csv.gz`, `rq1_curves.csv.gz`, `summary.json`, and `manifest.json`. The protocol was extended before these resampling outcomes were computed. Both coding judges use the same 399 task-composition draws; both policies and all 101 budget shares are retained.
 
@@ -241,12 +243,8 @@ python -m src.conjunction_cluster_sensitivity --coding-only --output artifacts/c
 python -m src.conjunction_cluster_sensitivity --coding-only --output artifacts/coding-replayed --verify-against artifacts/expected/conjunction_coding_sensitivity
 ```
 
-The current full extension replay reproduced **29 CSV tables / 998,652 rows and five scientific JSON payloads**. See [run receipt](../artifacts/validation/rc4_extension_run_manifest.json) and [rowwise comparison](../artifacts/validation/rc4_extension_verification.json). The test suite passes 233 tests, and the claim audit passes 607 checks using 35 source files. All 62 data/expected files that existed at rc.3 remain byte-identical; four new supplement files are added. The original policy/disclosure replay was not repeated in this revision; its prior validation is retained separately.
+The historical rc.4 extension replay reproduced **29 CSV tables / 998,652 rows and five scientific JSON payloads**. See [run receipt](../artifacts/validation/rc4_extension_run_manifest.json) and [rowwise comparison](../artifacts/validation/rc4_extension_verification.json). That revision passed 233 tests and 607 claim checks using 35 source files. All 62 data/expected files that existed at rc.3 remain byte-identical; four new supplement files are added. The original policy/disclosure replay was not repeated for rc.4; v0.3.0 reruns both analyses as recorded above.
 
 The portable source archive contains the two TeX files, the selected `.bib`, and three PDF figures. [arXiv's TeX instructions](https://info.arxiv.org/help/submit_tex.html) support `.bib` processing; [its compiler documentation](https://info.arxiv.org/help/faq/texlive.html) lists XeLaTeX, supported since November 2025. The local Tectonic build and an independent extracted-source build are checked; the eventual arXiv preview is a separate check. The rc.4 abstract had 1,488 plain-text characters, below the [1,920-character limit](https://info.arxiv.org/help/prep.html). Author affiliation was explicitly confirmed, and the fixed title-page date was removed.
 
-The current paper identifies package version 0.3.0-rc.5. It remains a local review candidate. Publishing the matching snapshot before submission is a project reproducibility step; no public snapshot, Zenodo DOI or arXiv identifier has been created for this candidate. Detailed PDF, citation, source-package and file-integrity checks are in [build validation](../artifacts/manuscript/build_validation.json).
-
-### Title and timing clarification (local rc.5)
-
-The author selected **Beyond Criterion Accuracy: The Limits of Reference Checking in Conjunctive LLM Evaluation**. Section 7 now completes the full-JB low-coverage explanation before introducing the earlier coding repair timing. The abstract adds the saved at-least-396/399 positive-resample count for each coding judge at the same 20% budget and disagreement-first policy; its plain-text length is 1,577 characters. This revision changes prose and metadata only. The rc.4 test suite and full scientific replay remain the applicable scientific validation; compilation, source packaging and file integrity are checked again for this text.
+The paper identifies package version 0.3.0 and links to its tag. The release commit identifies the exact snapshot; a future arXiv identifier or archive DOI can be added to citation metadata when obtained. The author-selected title is **Beyond Criterion Accuracy: The Limits of Reference Checking in Conjunctive LLM Evaluation**. Section 7 completes the full-JB timing explanation before introducing the contrasting coding timing. All release-level checks and their scope are recorded above and in the build receipt.

@@ -148,7 +148,7 @@ The mechanism extension adds 1,818 exact-expectation points, 5,760 matched-margi
 References are treated as correct for the defined target; query costs omit human-time variation and model inference costs. Nine cells do not establish universal external validity. JudgmentBench's strict scoring construction, primary judge, within-unit order, task order, and update rule all affect the results. Conditional pointwise inference should not be relabeled as sequential or simultaneous coverage. The completed study supports explicit choices among evaluation targets and resource designs, rather than a new universally optimal audit method.
 
 
-## Additional manuscript comparisons (local rc.3)
+## Task order, intermediate budgets and fixed-verdict example
 
 The main update table now includes the existing AC DeepSeek 20% effect: +11.1526 tasks, or +5.3107 per 100, under disagreement-first continuation. Its reference PASS count is 117/210. The appendix task-order table reports all nine cells at 5% and 20% budgets for release, ascending predicted-failure count and random task order. Entries are 31-realization means reconstructed from conjunction_policy_study/budget_curves.csv.gz.
 
@@ -156,6 +156,6 @@ Full-JB composition sensitivity at 50% has [1.0521, 5.1959] pointwise per-100 qu
 
 A separate four-task construction fixes the reference verdict vector and criterion confusion matrix while changing the location of one PASS bit within the predicted-FAIL stratum. Uniform five-of-twelve sampling gives expected gated-minus-eager effects +7/66 and −7/132. The manuscript verifier enumerates all 792 queried sets in each frame. This logical result does not replace the empirical 64-configuration analysis or imply that those configurations preserve task pass totals.
 
-## Both coding judges (local rc.4)
+## Both coding judges
 
-The main matched-update table now includes AC Qwen as well as DeepSeek. At 20% under disagreement-first continuation, expected A/D/net counts are 0.8118/6.1852/+5.3734 and 0.9011/12.0536/+11.1526 tasks, respectively. The supplement reports both policies and full budgets, with 399 whole-task composition draws and no new reference labels. [Results and uncertainty units](ROBUSTNESS.md#coding-task-sensitivity-supplement-local-rc4).
+The main matched-update table now includes AC Qwen as well as DeepSeek. At 20% under disagreement-first continuation, expected A/D/net counts are 0.8118/6.1852/+5.3734 and 0.9011/12.0536/+11.1526 tasks, respectively. The supplement reports both policies and full budgets, with 399 whole-task composition draws and no new reference labels. [Results and uncertainty units](ROBUSTNESS.md#coding-task-sensitivity-supplement).

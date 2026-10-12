@@ -1,6 +1,6 @@
-# Manuscript citation audit — reading record 2026-10-10, key alignment 2026-10-11
+# Manuscript citation audit — reading record 2026-10-10, key and placement alignment 2026-10-12
 
-**Local rc.4 alignment:** the same 27 cited keys resolve in the selected, public and local bibliographies (27/52/55 entries). The coding supplement adds no new citation. This update checks manuscript correspondence; it does not claim a fresh full-text rereading of every source below.
+**Version 0.3.0 alignment:** the same 27 cited keys resolve in the selected, public and local bibliographies (27/52/55 entries). The coding supplement adds no new citation. This update checks manuscript correspondence; it does not claim a fresh full-text rereading of every source below.
 
 This is the claim-specific reading record for the full RefEval manuscript. It selects 27 references, all present in the 52-entry public technical bibliography and the broader 55-entry local reading library. It does not certify the remaining 28 entries, establish an exhaustive novelty search, or replace checking the final sentences that cite these papers. The selection covers the data sources, the closest operational comparisons, Boolean evaluation, inference, reference uncertainty and information sufficiency. Primary records and relevant full-text sections were checked on 2026-10-10; Horvitz–Thompson has the narrower access qualification stated below.
 
@@ -98,3 +98,7 @@ The revised introduction retains the same supported APEX motivation; the new Jud
 ## Narrative alignment — 2026-10-11, local rc.3
 
 The introduction now names ActiveClean, correction-and-corruption analysis, and Query-Guided Verification alongside screening and Boolean evaluation. These placements retain the supported distinctions documented above: selection versus updating, opposing outcome changes, and AND/OR error propagation. The accounting identities are described as tools for the comparisons, not as novel principles. All27 selected citation keys and bibliography entries remain unchanged. This revision checks placement and consistency against the existing source audit; it does not claim a new exhaustive literature search. The new four-task example is independently enumerated study material, not attributed to a cited paper.
+
+## Version 0.3.0 placement review
+
+The current introduction connects updating, allocation and information sufficiency. All 27 cited keys retain the supported uses above; the selected bibliography and broader 52/55-entry libraries are unchanged. The stratification paragraph now distinguishes conventional sampling controls from the cited prediction-powered estimators. This is a placement and consistency check against existing primary-source readings, not a new literature search.

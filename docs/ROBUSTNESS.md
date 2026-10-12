@@ -115,15 +115,16 @@ Sequential testing already supplies short-circuit logic and cost-sensitive check
 The earlier matched-margin rearrangements show that criterion confusion summaries can be compatible with different downstream checking outcomes. This is a concrete reporting-sufficiency example built on classical dependence facts. RuVerBench releases linked records, enabling our analysis; the issue is relying on its criterion summaries alone. The rearrangements also change task pass rates, so they do not isolate a causal correlation effect. [Mechanism tables](../artifacts/expected/conjunction_mechanism/update_permutation_summary.csv)
 
 
-## Timing and sensitivity interpretations (local rc.3)
+## Timing and sensitivity interpretations
 
 Full JB at 50% budget has an original effect of +2.91 disagreements per 100 annotations, with pointwise task-composition quantiles [1.05, 5.20]; all 399 resamples are positive. At 84%, the range remains [3.51, 9.44]. Binary-only at 20% has range [−0.44, 1.50], with 328 positive, 65 negative and six zero resampled effects. These resamples retain within-task reference structure. Matched-margin label rearrangements deliberately alter it, so their reversals concern information sufficiency.
 
-AC DeepSeek has 117/210 reference-PASS tasks. Disagreement-first continuation at 20% has expected A = 0.9011, D = 12.0536 and D−A = 11.1526 tasks (5.3107 per 100). This comparison lacks JB penalty items but remains a constructed conjunction. The subsequent local rc.4 supplement below adds AC task-composition checks; no AC reference-panel experiment is available.
+AC DeepSeek has 117/210 reference-PASS tasks. Disagreement-first continuation at 20% has expected A = 0.9011, D = 12.0536 and D−A = 11.1526 tasks (5.3107 per 100). This comparison lacks JB penalty items but remains a constructed conjunction. The coding supplement below supplies AC task-composition checks; no AC reference-panel experiment is available.
 
 Full-JB delay at 84% splits into 77.8711 on 156 penalty-only-rejected false fails and 30.3450 on 64 false fails rejected by both item types. This partitions original D = 108.2161 without changing acquisition; it is not an intervention deleting penalties. Low flag coverage delays eager repair but does not itself increase the gap to certification. The last mistaken-rejection query and completion of the remaining rubric jointly determine that gap.
 
-## Coding-task sensitivity supplement (local rc.4)
+<a id="coding-task-sensitivity-supplement-local-rc4"></a>
+## Coding-task sensitivity supplement
 
 At a 20% cap (169 of 843 criteria), disagreement-first continuation yields +5.3734 tasks for AC Qwen and +11.1526 for AC DeepSeek, or 2.5588 and 5.3107 per 100 of the 210 tasks. Under uniform criterion sampling, the corresponding effects are 0.6755 and 1.1416 per 100. These are exact query-order expectations in the original frames.
 

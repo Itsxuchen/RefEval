@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Local review candidate with manuscript and LaTeX sources; public synchronization and arXiv submission await author approval. Local tag: v0.3.0-rc.5."
+message: "Please cite version v0.3.0 for the accompanying manuscript and reproducible analyses. A paper identifier will be added when available."
 type: software
 title: "Beyond Criterion Accuracy: The Limits of Reference Checking in Conjunctive LLM Evaluation"
 authors:
@@ -7,7 +7,8 @@ authors:
     affiliation: "Georgia Institute of Technology"
     email: "xchen992@gatech.edu"
     website: "https://github.com/Itsxuchen"
-version: 0.3.0-rc.5
+version: 0.3.0
+date-released: 2026-10-12
 repository-code: "https://github.com/Itsxuchen/RefEval"
 url: "https://github.com/Itsxuchen/RefEval"
 license: MIT

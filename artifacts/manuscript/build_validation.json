@@ -1,7 +1,8 @@
 {
   "date": "2026-10-12",
   "status": "PASS",
-  "revision": "v0.3.0-rc.5; local author review, not publicly synchronized",
+  "revision": "v0.3.0",
+  "paper_title": "Beyond Criterion Accuracy: The Limits of Reference Checking in Conjunctive LLM Evaluation",
   "arxiv_submitted": false,
   "compiler": "Tectonic 0.17.0",
   "pdf_pages": 30,
@@ -12,33 +13,43 @@
   "unique_tex_labels": 73,
   "unresolved_references": 0,
   "latex_warnings": 0,
-  "visually_inspected_pages": 8,
+  "visually_inspected_pages": 30,
+  "readable_resolution_detail_pages": [
+    5,
+    9,
+    11,
+    22
+  ],
   "embedded_subset_fonts": 33,
-  "abstract_plain_text_characters": 1577,
+  "abstract_plain_text_characters": 1576,
   "local_public_pdf_identical": true,
   "unit_tests": {
     "passed": 233,
-    "seconds": 20.76,
-    "run_this_revision": false,
-    "source_revision": "v0.3.0-rc.4"
+    "seconds": 21.69,
+    "run_this_revision": true
   },
   "numerical_claim_checks": 607,
   "numerical_claim_source_files": 35,
-  "scientific_base_commit": "f10b9b71391baa885952b58a07e6a742dfacbee4",
+  "numerical_claim_audit_rerun_this_revision": true,
+  "scientific_base_commit": "4384504ce30b54de54508fb1262a919d7d391ac9",
   "new_model_calls": 0,
   "new_external_validation_outcomes_computed": false,
-  "full_extension_replay_run_this_revision": false,
+  "full_extension_replay_run_this_revision": true,
   "extension_replay": {
     "csv_tables": 29,
     "scientific_rows": 998652,
     "scientific_json_payloads": 5,
-    "seconds": 314.123,
-    "source_receipt": "artifacts/validation/rc4_extension_run_manifest.json",
-    "comparison_receipt": "artifacts/validation/rc4_extension_verification.json",
-    "source_revision": "v0.3.0-rc.4"
+    "seconds": 334.361,
+    "source_receipt": "artifacts/validation/v030_extension_run_manifest.json",
+    "comparison_receipt": "artifacts/validation/v030_extension_verification.json"
   },
-  "original_policy_disclosure_replay_run_this_revision": false,
-  "carried_forward_original_replay": "Original policy/disclosure replay passed before rc.1. This revision preserves its data, expected results and producer code; the full extension replay was rerun including the new AC supplement.",
+  "original_policy_disclosure_replay_run_this_revision": true,
+  "original_replay": {
+    "seconds": 166.197,
+    "complete_reproduction": true,
+    "source_receipt": "artifacts/validation/v030_original_run_manifest.json",
+    "comparison_receipt": "artifacts/validation/v030_original_verification.json"
+  },
   "source_archive": {
     "entries": [
       "figures/conjunction_allocation_mechanism.pdf",
@@ -52,55 +63,35 @@
     "text_identical_all_pages": true,
     "render_identical_all_pages": true,
     "render_long_edge_pixels": 1200,
-    "sha256": "de93cc3f5a346c4de5cbd626147831b0af17d1b46af7a9f7410c60c9909e4fde"
+    "sha256": "f39926e9f62471ef0b279df7be88e8293305ba94fc149b558f80da6ccf739a52"
   },
   "structural_checks": {
-    "original_scientific_files_preserved": 66,
-    "selected_citations": 27,
-    "unique_tex_labels": 73,
+    "relative_links_checked": 159,
+    "broken_links": [],
+    "citations": 27,
+    "missing_citations": [],
     "bibliography_entries": {
       "selected": 27,
       "public": 52,
       "local": 55
     },
-    "public_document_local_links": 118,
-    "scientific_code_and_figure_files_unchanged": 140
+    "labels": 73,
+    "unique_labels": 73,
+    "missing_refs": [],
+    "abstract_chars": 1576,
+    "unchanged_data_expected_files": 66,
+    "changed_data_expected_files": [],
+    "science_code_figure_protocol_files_checked": 145,
+    "changed_science_files": [],
+    "mirror_mismatches": []
   },
   "source_hashes": {
-    "paper.tex": "c66b0316db40a41338264fab5516c55ea307b5bd64b8acfaa2d0b58346928178",
-    "methods_appendix.tex": "b23334967c355fb750b5f2aca18387c28a562f4d56d7d762904e98a29e3b46b5",
+    "paper.tex": "fcad03c4d2794cfaf236b5fbf8617fe90b3a1d0d30a3f5f9f6fc47c286b1485b",
+    "methods_appendix.tex": "13e0a800506000b8f22bfcccd4c17c010f30631c4e8851557e77a564c473be82",
     "paper_references.bib": "90882aca720afc36cfae91649d2e851e7dd251ede39608d281a2ed9f8da9dc31",
-    "paper.pdf": "154ebf8cfb91d0d38020d829b7f59f0ff6f0a7e800f10fb8ffdd766e1f59bad4",
-    "numerical_claim_audit.json": "3144cc9f7ac3d9068082cc6d52c367a862fd8f5bb763e9932979e2f107cafbe7",
-    "citation_audit.md": "3ea733264caa7db5b98cca7ebfe7f1ff464f7ef0cd7e2e4d592cf365d986ab3d"
+    "paper.pdf": "3366fee0aac50db5467183a95e2510ffd4df92d87e16f02c50bcf98279a66643",
+    "numerical_claim_audit.json": "5342ced248fc549f06e99ed510bb43c716b6cfaec8df1396b47f247b0403af67",
+    "citation_audit.md": "8abe434842213abe96bc91b3a93f617c3e88d6b401fe4fe1a055f77ef8e86dc7"
   },
-  "scope": "Prose/title-only revision: direct abstract-count and paragraph-order checks, compilation, packaging and affected-page visual review. Full scientific tests, numerical audit and extension replay are carried forward from unchanged rc.4 inputs/code/results; no new experiment, publication or arXiv submission.",
-  "paper_title": "Beyond Criterion Accuracy: The Limits of Reference Checking in Conjunctive LLM Evaluation",
-  "visually_inspected_page_numbers": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    11,
-    12
-  ],
-  "carried_forward_visual_pages": 22,
-  "numerical_claim_audit_rerun_this_revision": false,
-  "focused_packaging_tests": {
-    "passed": 2,
-    "run_this_revision": true,
-    "scope": "portable archive and citation/package version alignment"
-  },
-  "direct_claim_checks": {
-    "policy": "disagreement_then_random",
-    "budget_share": 0.2,
-    "positive_resamples": {
-      "AC_Qwen": 396,
-      "AC_DeepSeek": 399
-    },
-    "replicates": 399,
-    "timing_paragraph_order_verified": true
-  }
+  "scope": "Full local original and extension replay, unit tests and numerical audit, manuscript coherence and citation-placement review, bibliography/key and link checks, PDF compilation and visual inspection, independent source-archive build. No fresh exhaustive literature search, model calls, reference adjudication, external confirmation study or arXiv submission. Remote publication and CI are verified separately in the release record."
 }

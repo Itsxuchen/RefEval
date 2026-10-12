@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 — 2026-10-12
+
+- Publish the complete manuscript, methods appendix and portable LaTeX source under the author-selected title.
+- Include task-order results, the fixed-verdict counterexample and both coding judges' full-budget task-composition supplement.
+- Clarify endpoint error counts, the two stratified designs, sampling targets and the three connected contributions.
+- Align README, citation metadata and reproduction documentation; rerun the original and extension analyses and numerical checks.
+- Retain historical candidate notes below. This release does not submit the paper to arXiv or claim new external-validation evidence.
+
 ## 0.3.0-rc.5 — local title and timing clarification
 
 - Adopt the author-selected Beyond Criterion Accuracy title throughout current manuscript metadata and documentation.

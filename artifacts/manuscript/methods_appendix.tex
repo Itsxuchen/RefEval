@@ -581,13 +581,13 @@ initial-error classes to choose queries.
 \subsection{An adaptive first phase followed by fresh sampling}
 
 Set $a_u=\mathbf1\{P_u=Y_u\}$. Let the first-phase transcript reveal a set
-$C$ of $c$ criterion labels with known correct count $t_C=\sum_{u\in C}a_u$.
+$\mathcal C$ of $c$ criterion labels with known correct count $t_C=\sum_{u\in\mathcal C}a_u$.
 Condition on that complete transcript. The remaining $R=M-c$ slots form a
-fixed population. Draw an independent simple random sample $S$ of size $n$
-without replacement from it, and observe $x=\sum_{u\in S}a_u$. For $n>0$,
+fixed population. Draw an independent simple random sample $\mathcal S$ of size $n$
+without replacement from it, and observe $x=\sum_{u\in\mathcal S}a_u$. For $n>0$,
 \begin{equation}
  \widehat a=\frac{t_C+R x/n}{M},
- \qquad \mathbb E[\widehat a\mid C,\hbox{first-phase observations}]=a.
+ \qquad \mathbb E[\widehat a\mid\mathcal C,\hbox{first-phase observations}]=a.
  \label{app:eq:conditional-estimator}
 \end{equation}
 The expectation follows from inclusion probability $n/R$ for every remaining
@@ -729,7 +729,7 @@ count combinations. The calculation describes the implemented conditional
 estimator: pilot observations enter as known totals, while only the fresh
 sample estimates each remainder.
 
-For the mix, first-stage set $C_s$ leaves population size $R_s$ and
+For the mix, first-stage set $\mathcal C_s$ leaves population size $R_s$ and
 agreement count $K_s$; the fresh SRS has size $n_s$. Its exact conditional
 variance is $V_s=(R_s/M)^2v(R_s,K_s,n_s)$. We integrate this second-stage
 randomness analytically and average over $S=31$ first-stage realizations:
