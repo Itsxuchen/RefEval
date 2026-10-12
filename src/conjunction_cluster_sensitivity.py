@@ -31,6 +31,7 @@ POLICIES = ("random_criterion", "disagreement_then_random")
 SHARES = tuple(np.arange(101) / 100)
 SEEDS = tuple(range(1, 32))
 ALLOCATION_SHARE = .20
+CODING_CELLS = ("AC Qwen-plus", "AC DeepSeek v4-pro")
 
 
 def base_order(data: dict) -> list[str]:
@@ -345,6 +346,85 @@ def run(root: Path, output: Path, protocol: Path, replicates=399, seed=20261008)
     return manifest
 
 
+def run_coding(root: Path, output: Path, protocol: Path, replicates=399, seed=20261008) -> dict:
+    """Separate two-judge RQ1 supplement; leave the original three-cell run intact."""
+    root, protocol = Path(root).resolve(), Path(protocol).resolve()
+    output = validate_output_path(root, output)
+    if not protocol.is_file():
+        raise ValueError("a saved protocol is required before generating results")
+    all_data = load_datasets(root)
+    datasets = {name: all_data[name] for name in CODING_CELLS}
+    bases = base_order(datasets[CODING_CELLS[0]])
+    if any(base_order(d) != bases for d in datasets.values()):
+        raise ValueError("coding primaries must have the same base-task order")
+    draws = composition_draws(bases, replicates, seed, "AC")
+    sources = [Path(__file__), root / "src/conjunction_policy_data.py",
+               root / "src/conjunction_update_mechanism.py", protocol]
+    preserved = {str(p.relative_to(root)) if p.is_relative_to(root) else str(p): _sha(p) for p in sources}
+    for data in datasets.values():
+        preserved.update(data["source_hashes"])
+    started = time.perf_counter()
+    output.mkdir(parents=True, exist_ok=True)
+    matrices, originals = defaultdict(list), {}
+    with ExitStack() as stack:
+        sinks = {name: CsvSink(stack.enter_context(gzip.open(output / name, "wt", newline="", encoding="utf-8")))
+                 for name in ("multiplicities.csv.gz", "rq1_curves.csv.gz")}
+        for rep, counts in enumerate(draws):
+            for base, count in zip(bases, counts):
+                sinks["multiplicities.csv.gz"].append(dict(family="AC", replicate=rep, base_task_id=base, multiplicity=int(count)))
+        for name, original in datasets.items():
+            for rep in range(-1, replicates):
+                data = original if rep == -1 else resample_frame(original, dict(zip(bases, draws[rep])))
+                n, m = len(data["task_ids"]), len(data["gold"])
+                for policy in POLICIES:
+                    curve = expected_curve(data, policy, SHARES)
+                    values = []
+                    for row in curve:
+                        row = dict(dataset=name, replicate=rep, n_units=n, n_criteria=m, **row)
+                        for key in ("expected_introduced_fp", "expected_delayed_ff", "expected_delta"):
+                            row[key + "_per100"] = 100 * row[key] / n
+                        assert abs(row["expected_delta"] - row["expected_delayed_ff"] + row["expected_introduced_fp"]) < 1e-9
+                        sinks["rq1_curves.csv.gz"].append(row)
+                        values.append(row["expected_delta_per100"])
+                    assert abs(values[0]) < 1e-9 and abs(values[-1]) < 1e-9
+                    if rep == -1:
+                        originals[(name, policy)] = values
+                    else:
+                        matrices[(name, policy)].append(values)
+                if rep == -1 or (rep + 1) % 100 == 0 or rep == replicates - 1:
+                    print(f"coding {name}: {rep+1}/{replicates}; {time.perf_counter()-started:.1f}s", flush=True)
+        output_counts = {name: sink.rows for name, sink in sinks.items()}
+    summary = dict(kind="coding RQ1 task-composition sensitivity", replicates=replicates,
+                   root_seed=seed, budget_shares=list(SHARES), rq1=[])
+    for (name, policy), original in originals.items():
+        values = np.asarray(matrices[(name, policy)])
+        point = np.quantile(values, [.025, .5, .975], axis=0)
+        summary["rq1"].append(dict(dataset=name, policy=policy, original_per100=original,
+            pointwise_q025_per100=point[0].tolist(), pointwise_median_per100=point[1].tolist(),
+            pointwise_q975_per100=point[2].tolist(),
+            positive_replicates=(values > 1e-12).sum(axis=0).tolist(),
+            negative_replicates=(values < -1e-12).sum(axis=0).tolist()))
+    (output / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    assert all(_sha(root / p if not Path(p).is_absolute() else Path(p)) == h for p, h in preserved.items())
+    manifest = dict(kind=summary["kind"], cells=list(CODING_CELLS), replicates=replicates,
+        root_seed=seed, family_base_order=bases, shared_AC_multiplicities=True,
+        policies=list(POLICIES), budget_shares=list(SHARES), source_hashes=preserved,
+        output_rows=output_counts, elapsed_seconds=time.perf_counter()-started,
+        scope="Retrospective composition sensitivity; no new tasks, rater resampling, reference adjudication, or RQ2 analysis.")
+    manifest["output_sha256"] = {p.name: _sha(p) for p in sorted(output.iterdir()) if p.is_file()}
+    (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    return manifest
+
+
+def verify_coding(output: Path, expected: Path) -> dict:
+    from src.release_validation import assert_equal, compare_csv
+    tables = {name: compare_csv(output / name, expected / name)
+              for name in ("multiplicities.csv.gz", "rq1_curves.csv.gz")}
+    leaves = assert_equal(json.loads((output / "summary.json").read_text()),
+                          json.loads((expected / "summary.json").read_text()))
+    return dict(passed=True, tables=tables, summary_scientific_leaves=leaves)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=ROOT)
@@ -352,10 +432,19 @@ def main():
     parser.add_argument("--protocol", type=Path)
     parser.add_argument("--replicates", type=int, default=399)
     parser.add_argument("--seed", type=int, default=20261008)
+    parser.add_argument("--coding-only", action="store_true", help="Run the separate two-judge AC RQ1 supplement")
+    parser.add_argument("--verify-against", type=Path, help="Verify an existing coding supplement against archived results")
     args = parser.parse_args()
-    output = args.output or args.root / "artifacts/reports/conjunction_robustness/cluster"
+    output = args.output or args.root / ("artifacts/reports/conjunction_coding_sensitivity" if args.coding_only else "artifacts/reports/conjunction_robustness/cluster")
     protocol = args.protocol or args.root / "context/conjunction_robustness_protocol.md"
-    print(json.dumps(run(args.root, output, protocol, args.replicates, args.seed), indent=2))
+    if args.verify_against:
+        if not args.coding_only:
+            parser.error("--verify-against requires --coding-only")
+        result = verify_coding(output, args.verify_against)
+    else:
+        runner = run_coding if args.coding_only else run
+        result = runner(args.root, output, protocol, args.replicates, args.seed)
+    print(json.dumps(result, indent=2))
 
 
 if __name__ == "__main__":

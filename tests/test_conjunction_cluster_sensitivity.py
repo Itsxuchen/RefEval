@@ -58,6 +58,32 @@ def test_draws_are_family_shared_reproducible_and_fixed_size():
     assert not np.array_equal(a, composition_draws(["a", "b", "c"], 30, 20261008, "DR"))
 
 
+def test_coding_supplement_retains_both_judges_and_checks_replay(monkeypatch, tmp_path):
+    import json
+    from pathlib import Path
+    from src import conjunction_cluster_sensitivity as cluster
+    datasets = {name: {**toy(), "name": name} for name in cluster.CODING_CELLS}
+    monkeypatch.setattr(cluster, "load_datasets", lambda root: datasets)
+    monkeypatch.setattr(cluster, "SHARES", (0., .2, 1.))
+    root = Path(__file__).resolve().parents[1]
+    protocol = tmp_path / "protocol.md"
+    protocol.write_text("Both toy primaries, all three shares, three draws; seed 123.")
+    first, second = tmp_path / "first", tmp_path / "second"
+    for output in (first, second):
+        manifest = cluster.run_coding(root, output, protocol, replicates=3, seed=123)
+        assert manifest["shared_AC_multiplicities"]
+        assert manifest["output_rows"]["rq1_curves.csv.gz"] == 2 * 4 * 2 * 3
+        assert manifest["output_rows"]["multiplicities.csv.gz"] == 3 * 2
+    assert cluster.verify_coding(first, second)["passed"]
+    summary = json.loads((second / "summary.json").read_text())
+    assert len(summary["rq1"]) == 4
+    assert all(row["original_per100"][0] == row["original_per100"][-1] == 0 for row in summary["rq1"])
+    summary["rq1"][0]["original_per100"][1] += 1
+    (second / "summary.json").write_text(json.dumps(summary))
+    with pytest.raises(AssertionError):
+        cluster.verify_coding(first, second)
+
+
 def test_resampled_expected_curve_matches_literal_uniform_subsets():
     data = resample_frame(toy(), {"a": 2, "b": 0})
     m = len(data["gold"])

@@ -1,4 +1,6 @@
-# Manuscript citation audit — 2026-10-10
+# Manuscript citation audit — reading record 2026-10-10, key alignment 2026-10-11
+
+**Local rc.4 alignment:** the same 27 cited keys resolve in the selected, public and local bibliographies (27/52/55 entries). The coding supplement adds no new citation. This update checks manuscript correspondence; it does not claim a fresh full-text rereading of every source below.
 
 This is the claim-specific reading record for the full RefEval manuscript. It selects 27 references, all present in the 52-entry public technical bibliography and the broader 55-entry local reading library. It does not certify the remaining 28 entries, establish an exhaustive novelty search, or replace checking the final sentences that cite these papers. The selection covers the data sources, the closest operational comparisons, Boolean evaluation, inference, reference uncertainty and information sufficiency. Primary records and relevant full-text sections were checked on 2026-10-10; Horvitz–Thompson has the narrower access qualification stated below.
 

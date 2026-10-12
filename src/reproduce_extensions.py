@@ -18,14 +18,17 @@ from src.release_validation import assert_equal, compare_csv
 
 CONFIG = {"mechanism_permutations": 64, "order_seeds": 31,
           "cluster_replicates": 399, "cluster_seed": 20261008,
+          "coding_rq1_cells": 2, "coding_cluster_replicates": 399,
           "reference_cells": 4, "stratified_cells": 9,
           "design_rmse_budget_share": .20, "mix_risk_first_stage_seeds": 31}
 DIRECTORIES = ("conjunction_mechanism", "conjunction_robustness/reference",
-               "conjunction_robustness/cluster", "conjunction_robustness/estimation")
+               "conjunction_robustness/cluster", "conjunction_robustness/estimation",
+               "conjunction_coding_sensitivity")
 JSON_TARGETS = ("conjunction_mechanism/update_structures.json",
                 "conjunction_robustness/reference/frame_diagnostics.json",
                 "conjunction_robustness/cluster/summary.json",
-                "conjunction_robustness/estimation/interval_regression.json")
+                "conjunction_robustness/estimation/interval_regression.json",
+                "conjunction_coding_sensitivity/summary.json")
 
 
 def verify(output: Path) -> dict:
@@ -52,7 +55,7 @@ def verify(output: Path) -> dict:
               "json_scientific_leaves": payloads,
               "scientific_rows": sum(r["rows"] for r in tables.values()),
               "comparison_tolerance": {"absolute": 1e-8, "relative": 1e-9},
-              "scope": "All extension scientific CSV rows and four scientific JSON payloads; source paths, timestamps and compressed byte headers may differ."}
+              "scope": "All extension scientific CSV rows and five scientific JSON payloads, including the separate coding RQ1 supplement; source paths, timestamps and compressed byte headers may differ."}
     write_json(output / "extension_verification.json", result)
     return result
 
@@ -65,6 +68,7 @@ def reproduce(output: Path) -> dict:
     from src.conjunction_allocation_mechanism import run as allocation
     from src.conjunction_reference_sensitivity import run as reference
     from src.conjunction_cluster_sensitivity import run as cluster
+    from src.conjunction_cluster_sensitivity import run_coding
     from src.conjunction_stratified_baseline import run as estimation
     from src.conjunction_design_rmse import run as design_rmse
     frozen = digest_tree(EXPECTED)
@@ -83,6 +87,8 @@ def reproduce(output: Path) -> dict:
     stage("mechanism_allocation", lambda: allocation(mechanism, seeds=31))
     stage("matched_reference", lambda: reference(ROOT, output / DIRECTORIES[1], seeds=31))
     stage("task_composition", lambda: cluster(ROOT, output / DIRECTORIES[2],
+          ROOT / "context/conjunction_robustness_protocol.md", replicates=399, seed=20261008))
+    stage("coding_task_composition", lambda: run_coding(ROOT, output / DIRECTORIES[4],
           ROOT / "context/conjunction_robustness_protocol.md", replicates=399, seed=20261008))
     stage("stratified_estimation", lambda: estimation(ROOT, output / DIRECTORIES[3],
           seeds=range(1, 32), saved_reference={

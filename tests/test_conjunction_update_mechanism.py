@@ -6,6 +6,19 @@ import pytest
 from src.conjunction_update_mechanism import event_probability, expected_curve, ordered_groups, permutation_strata, permute_gold
 
 
+def test_wrong_rejection_coverage_distinguishes_four_query_states():
+    from src.verify_manuscript_claims import wrong_rejection_coverage
+    frame = dict(gold=np.ones(8, dtype=int),
+        prediction=np.array([0,1,0,1,0,0,0,1]),
+        secondary_predictions=np.array([[0,1,0,0,1,0,1,1]]),
+        task_index=np.repeat(np.arange(4),2), task_ids=list('abcd'))
+    result = wrong_rejection_coverage(frame)
+    assert result['initial_false_fails'] == 4
+    assert result['coverage_partition'] == [1,1,1,1]
+    assert result['all_wrong_rejections_flagged'] == 1
+    assert result['whole_rubrics_flagged'] == 0
+
+
 def test_uniform_group_probability_against_literal_subsets():
     for G in range(8):
         for h in range(G+1):

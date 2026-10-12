@@ -31,7 +31,7 @@ The following rows use **canonical seed 0, release task order**. Each row compar
 | JB GPT-5.4 / random criterion | 4,697 | 231 | 18 | 238 | 25 |
 | JB GPT-5.4 / judge-first short circuit | 4,697 | 10 | 0 | 11 | 1 |
 | JB GPT-5.4 / disagreement only | 4,316 | 245 | 5 | 242 | 2 |
-| JB GPT-5.4 / disagreement then random | 4,697 | 239 | 6 | 242 | 9 |
+| JB GPT-5.4 / disagreement-first continuation | 4,697 | 239 | 6 | 242 | 9 |
 
 Source: [`study.json`](../artifacts/expected/conjunction_policy_study/study.json), `canonical_20pct`, filtering the cell and policy with `task_order=release`; fields `residual_errors`, `introduced_fp`, `gated_residual_errors`, and `delayed_ff_corrections`.
 
@@ -41,7 +41,7 @@ Scoring construction changes the regime. Full JB strong has 24 FP and 220 FF; bi
 
 ### Full-budget matched-query effects
 
-For **JB GPT-5.4, release task order, disagreement-then-random, 20% cap**, distinguish the canonical example from randomized-order summaries:
+For **JB GPT-5.4, release task order, disagreement-first continuation, 20% cap**, distinguish the canonical example from randomized-order summaries:
 
 | Scoring target | Actual queries | Seed0 eager → gated errors | Seed0 prevented FP / delayed FF repairs | Mean gated − eager, seeds 1–31 |
 |---|---:|---:|---:|---:|
@@ -52,7 +52,7 @@ The cap is `int(round(0.2 * M))`, including `round(0.2 * 20,229)=4,046`. Means a
 
 ![Full-budget matched-query update decomposition](../artifacts/figures/conjunction_policy_study/verdict_update_budget.png)
 
-For full-target disagreement-then-random, the mean net difference spans −4 to +97.645 across the 99 interior percentage caps. The 20% point is not representative of all budgets. Serial short-circuit policies differ by at most one verdict across the saved grid. Gated absolute errors are nonincreasing along a fixed growing transcript with correct references; the gated-minus-eager difference need not be.
+For full-target disagreement-first continuation, the mean net difference spans −4 to +97.645 across the 99 interior percentage caps. The 20% point is not representative of all budgets. Serial short-circuit policies differ by at most one verdict across the saved grid. Gated absolute errors are nonincreasing along a fixed growing transcript with correct references; the gated-minus-eager difference need not be.
 
 The main figure selects two targets, release order and three policies. The [nine-page supplement](../artifacts/figures/conjunction_policy_study/verdict_update_budget_all_cells.pdf) covers nine cells, three task orders and those same three policies; the [plotting CSV](../artifacts/figures/conjunction_policy_study/verdict_update_budget_data.csv) contains all seven policies and 19,089 groups. Lines show arithmetic means and bands show 5th–95th order percentiles, not confidence intervals; quantile bands need not contain the mean. The short-circuit axis is expanded and labeled. [Figure/source receipt](../artifacts/figures/conjunction_policy_study/verdict_update_budget.json).
 
@@ -65,13 +65,13 @@ These are **marginal medians over seeds 1–31**, release task order, at a 20% c
 | Cell / policy | Actual queries | Criterion errors found | Certified units | Residual task errors |
 |---|---:|---:|---:|---:|
 | DR Gemini / judge-first short circuit | 323 | 14 | 275 | 1 |
-| DR Gemini / disagreement then random | 323 | 83 | 160 | 1 |
+| DR Gemini / disagreement-first continuation | 323 | 83 | 160 | 1 |
 | JB GPT-5.4 / judge-first short circuit | 4,697 | 1,431 | 1,512 | 15 |
-| JB GPT-5.4 / disagreement then random | 4,697 | 1,306 | 779 | 243 |
+| JB GPT-5.4 / disagreement-first continuation | 4,697 | 1,306 | 779 | 243 |
 | JB mini / judge-first short circuit | 4,697 | 1,661 | 1,328 | 39 |
-| JB mini / disagreement then random | 4,697 | 3,188 | 779 | 243 |
+| JB mini / disagreement-first continuation | 4,697 | 3,188 | 779 | 243 |
 | AC DeepSeek / judge-first short circuit | 169 | 10 | 75 | 23 |
-| AC DeepSeek / disagreement then random | 169 | 33 | 49 | 14 |
+| AC DeepSeek / disagreement-first continuation | 169 | 33 | 49 | 14 |
 
 Source: [`budget_curves.csv.gz`](../artifacts/expected/conjunction_policy_study/budget_curves.csv.gz), filter `task_order=release`, `budget_share=0.2`, and seeds 1–31. Marginal medians need not coexist in a single run.
 
@@ -155,3 +155,7 @@ The main update table now includes the existing AC DeepSeek 20% effect: +11.1526
 Full-JB composition sensitivity at 50% has [1.0521, 5.1959] pointwise per-100 quantiles and 399/399 positive replicates. Binary-only at 20% has [−0.4398, 1.5012] quantiles. These summarize the saved 101-point resampling grid.
 
 A separate four-task construction fixes the reference verdict vector and criterion confusion matrix while changing the location of one PASS bit within the predicted-FAIL stratum. Uniform five-of-twelve sampling gives expected gated-minus-eager effects +7/66 and −7/132. The manuscript verifier enumerates all 792 queried sets in each frame. This logical result does not replace the empirical 64-configuration analysis or imply that those configurations preserve task pass totals.
+
+## Both coding judges (local rc.4)
+
+The main matched-update table now includes AC Qwen as well as DeepSeek. At 20% under disagreement-first continuation, expected A/D/net counts are 0.8118/6.1852/+5.3734 and 0.9011/12.0536/+11.1526 tasks, respectively. The supplement reports both policies and full budgets, with 399 whole-task composition draws and no new reference labels. [Results and uncertainty units](ROBUSTNESS.md#coding-task-sensitivity-supplement-local-rc4).

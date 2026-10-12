@@ -2,7 +2,7 @@
 
 ## Current review candidate
 
-Local review version v0.3.0-rc.3 aligns the narrative, adds the AC comparison and task-order table, reports intermediate-budget composition sensitivity, and verifies a fixed-verdict logical counterexample. Earlier local candidates remain preserved. No candidate has been pushed or publicly released; no arXiv submission has been made. Historical receipts retain their original scope and dates.
+Local review version v0.3.0-rc.4 reports both coding judges, adds their full-budget task-composition supplement, and aligns the manuscript, author metadata and portable source package. Earlier local candidates remain preserved. No candidate has been pushed or publicly released; no arXiv submission has been made. Historical receipts retain their original scope and dates.
 
 The five author-run RuVerBench configurations, prompts, context truncation and recovery rules are documented in [DATA_SOURCES](DATA_SOURCES.md#generation-protocol-for-the-five-study-runs). The offline prompt module reconstructs inputs and parses responses; it does not call providers. Publication renderers now reset their own style within a scoped context. The regression check renders both call orders under different ambient colors and compares all five PNGs pixel for pixel, while also checking restoration after errors.
 
@@ -229,3 +229,20 @@ python -m src.build_paper --source-archive artifacts/manuscript/arxiv_source.zip
 ```
 
 The archive places the main TeX file, appendix, selected bibliography, and the three referenced figures at paths that resolve from its root. It excludes compilation logs, the output PDF, and unused figures.
+
+### Coding supplement and current review checks (local rc.4)
+
+The new supplement is saved separately in `artifacts/expected/conjunction_coding_sensitivity/`: `multiplicities.csv.gz`, `rq1_curves.csv.gz`, `summary.json`, and `manifest.json`. The protocol was extended before these resampling outcomes were computed. Both coding judges use the same 399 task-composition draws; both policies and all 101 budget shares are retained.
+
+The standard `src.reproduce_extensions` command now includes this supplement. A separate replay is also available:
+
+```bash
+python -m src.conjunction_cluster_sensitivity --coding-only --output artifacts/coding-replayed
+python -m src.conjunction_cluster_sensitivity --coding-only --output artifacts/coding-replayed --verify-against artifacts/expected/conjunction_coding_sensitivity
+```
+
+The current full extension replay reproduced **29 CSV tables / 998,652 rows and five scientific JSON payloads**. See [run receipt](../artifacts/validation/rc4_extension_run_manifest.json) and [rowwise comparison](../artifacts/validation/rc4_extension_verification.json). The test suite passes 233 tests, and the claim audit passes 607 checks using 35 source files. All 62 data/expected files that existed at rc.3 remain byte-identical; four new supplement files are added. The original policy/disclosure replay was not repeated in this revision; its prior validation is retained separately.
+
+The portable source archive contains the two TeX files, the selected `.bib`, and three PDF figures. [arXiv's TeX instructions](https://info.arxiv.org/help/submit_tex.html) support `.bib` processing; [its compiler documentation](https://info.arxiv.org/help/faq/texlive.html) lists XeLaTeX, supported since November 2025. The local Tectonic build and an independent extracted-source build are checked; the eventual arXiv preview is a separate check. The abstract has 1,488 plain-text characters, below the [1,920-character limit](https://info.arxiv.org/help/prep.html). Author affiliation was explicitly confirmed, and the fixed title-page date was removed.
+
+The paper identifies package version 0.3.0-rc.4. It remains a local review candidate. Publishing the matching snapshot before submission is a project reproducibility step; no public snapshot, Zenodo DOI or arXiv identifier has been created for this candidate. Detailed PDF, citation, source-package and file-integrity checks are in [build validation](../artifacts/manuscript/build_validation.json).

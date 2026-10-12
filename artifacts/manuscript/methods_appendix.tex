@@ -68,7 +68,7 @@ order, random order, or predicted-FAIL-first order, respectively. They stop
 the current task at its first observed reference failure or after completing
 its rubric. Disagreement-only visits flagged criteria within each task and
 stops after the flagged pool is exhausted; it can leave budget unused.
-Disagreement-then-random uses that same flagged prefix, followed by a global
+Disagreement-first continuation uses that same flagged prefix, followed by a global
 random ordering of all unflagged criteria. Disagreement-prioritized short
 circuit visits, within a task, flagged slots first, then unflagged predicted
 FAIL slots, then the remaining predicted PASS slots; its stopping rule is
@@ -208,13 +208,13 @@ event is determined directly by the complete query set. Substituting this
 event probability for each term in
 \eqref{app:eq:uniform-expectations} gives the grouped-order expectations.
 
-For disagreement-then-random, a criterion is flagged when any available
+For disagreement-first continuation, a criterion is flagged when any available
 auxiliary judge disagrees with the primary prediction. Each task's flagged
 criteria form one group, tasks follow release order, and the final group
 contains all unflagged criteria. The flagged tier is therefore not a single
 global random sample. These groups depend on saved predictions and task
 order, not hidden references. The analytical grid covers uniform criterion
-and disagreement-then-random querying at 101 shares from zero to one. It
+and disagreement-first continuation querying at 101 shares from zero to one. It
 does not apply the predetermined-group formula to adaptive short-circuit
 paths. Budget caps use the implementation's nearest-integer rule
 $m=\operatorname{round}(bM)$, with ties to an even integer.
@@ -325,6 +325,8 @@ item level, 163 of 221 erroneous binary rejections and 21 of 274 erroneous
 penalty rejections are flagged. The corresponding all-rejections-covered
 count for the changed binary-only target is 36 of 67 initial false fails.
 
+For coding, the flag-coverage partitions (none flagged, only predicted PASS flagged, some wrong rejections flagged, all wrong rejections flagged) are $(3,0,1,6)$ for Qwen and $(3,0,1,12)$ for DeepSeek. Neither primary has an initial false fail with its whole rubric flagged. Both use the same 95 flagged slots among 843 criteria; after these are exhausted, the 20\% cap leaves 74 uniform queries among 748 remaining slots. This directly establishes the earlier eager-repair opportunity, without inferring coverage from an aggregate expected delay.
+
 We also made an exploratory item-level check within the repeated-rating
 subset of these original full-target false fails. Both judges reject 62
 penalty instances that the current reference passes; another rater rejects
@@ -385,28 +387,22 @@ range of such effects in the JudgmentBench data.
 \subsection{Matched-margin alternatives}
 \label{app:permutations}
 
-We construct 64 alternative assignments in each of nine analysis cells by
-permuting reference labels within strata defined by task length, primary
-prediction and criterion category or scoring mode. This preserves every
-stratum's prediction/reference confusion counts, the task slots and lengths,
-and all primary and auxiliary predictions. Root seed 20261007 and a
-dataset-specific hash define the random streams. Both analytical policies
-are evaluated at shares $0.05,0.20,0.50,0.84,0.95$, including originally
-observed focal and peak regions. An alternative assignment with a different
-update effect demonstrates that the retained summaries do not determine
-that effect. These are retrospective counterexamples, not a null test for
-random reference noise. The permutations can also change reference task
-pass counts, initial task errors and their joint configuration, so they do
-not isolate a causal effect of error correlation.
+For each of nine cells, we permute reference labels 64 times within task-length,
+primary-prediction and criterion-category strata. This preserves each stratum's
+confusion counts, task slots and lengths, and all primary and auxiliary
+predictions. Root seed 20261007 and a dataset-specific hash define the streams.
+We evaluate both analytical policies at shares $0.05,0.20,0.50,0.84,0.95$,
+covering the observed focal and peak regions. Different effects under the same
+summaries demonstrate insufficiency. These retrospective counterexamples are
+not a null test for reference noise. They also change task pass counts and
+initial errors, so they do not isolate error correlation.
 
-Table~\ref{tab:amplitudes} gives the entire saved grid. Each range is the
-minimum and maximum over 64 configurations, not an identification bound over
-all compatible assignments or a confidence interval. The 19 opposite-sign
-conditions with both original and strongest reversed effects below one
-unit are all DR cells. This threshold describes magnitude, not statistical
-significance or a prespecified practical cutoff. Counts retain each cell's
-original evaluation unit: tasks for DR/AC and output-by-rater annotations
-for JB. The per-100 columns facilitate scale comparisons across frames.
+Table~\ref{tab:amplitudes} reports all 90 conditions. Ranges are extrema over
+64 configurations, not sharp identification or confidence bounds. The 19
+reversing conditions with both original and strongest reverse effects below
+one unit are all DR cells; this is a descriptive magnitude threshold.
+Counts use tasks in DR/AC and output-by-rater annotations in JB, with
+per-100 columns for scale comparison.
 
 \clearpage
 \begin{table}[!ht]
@@ -816,7 +812,7 @@ silently treating panel B as truth. Nonadaptive policies have identical
 query sets for either acquisition panel. Adaptive short circuit can change
 its stopping decisions and actual query count.
 
-The update grid includes uniform criterion, disagreement-then-random and
+The update grid includes uniform criterion, disagreement-first continuation and
 judge-first short circuit at all 101 budget shares and seeds 1--31. The
 allocation grid compares the mixed and uniform designs at the six shares
 listed above, with equal actual query counts within each contrast. The four
@@ -858,6 +854,28 @@ composition experiments are conducted separately. Their ranges therefore
 do not estimate joint uncertainty over tasks and raters or correct selection
 bias. A pointwise range at the original curve's selected peak is also not a
 simultaneous guarantee for that curve.
+
+
+\subsection{Coding task-composition supplement}\label{app:coding-composition}
+We apply the same complete-base-task resampling construction to both coding judges, drawing 210 base tasks with replacement and sharing the 399 AC multiplicity draws across primaries. The root seed is 20261008, with a separate AC family stream. Each resampled criterion population determines its own rounded cap. Both analytical policies are rerun over all 101 budget shares; Table~\ref{tab:coding-composition} reports the 20\% cap fixed in the supplementary protocol before these resampling outcomes were computed. The original effects were already known, so this is retrospective sensitivity rather than independent confirmation. No new human reference panel or coding RQ2 experiment is added.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Coding update differences at the 20\% criterion cap. Effects and pointwise 2.5--97.5\% task-composition ranges are disagreements per 100 tasks. Positive values favor eager updating under equal error costs. SRS is uniform criterion sampling; D is disagreement-first continuation. The last column counts positive effects among 399 resamples. These are composition ranges, not reference-validity or population confidence intervals.}
+\label{tab:coding-composition}
+\begin{tabular}{llrrr}
+\toprule
+Primary & Policy & Original & Composition range & Positive\\
+\midrule
+% CODING_COMPOSITION_ROWS_START
+Qwen & SRS & 0.68 & $[0.28,1.30]$ & 399\\
+Qwen & D & 2.56 & $[0.65,4.95]$ & 396\\
+DeepSeek & SRS & 1.14 & $[0.55,1.83]$ & 399\\
+DeepSeek & D & 5.31 & $[2.50,9.13]$ & 399\\
+% CODING_COMPOSITION_ROWS_END
+\bottomrule
+\end{tabular}
+\end{table}
 
 \section{Information disclosure and sharp logical endpoints}
 \label{app:disclosure}
@@ -1043,18 +1061,19 @@ labels.
 \label{app:reproduce}
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=\linewidth,height=0.79\textheight,keepaspectratio]{conjunction_robustness_estimation.pdf}
+\includegraphics[width=0.9\linewidth,keepaspectratio]{conjunction_robustness_estimation.pdf}
 \caption{Estimation controls at a 20\% criterion budget across all nine cells. Mean guaranteed interval widths over 31 saved orders (left) and exact design RMSE (right). Proportional stratification slightly improves RMSE in every cell; the charged-pilot design raises RMSE in eight. The stratified intervals combine count bounds conservatively. Pilot labels count toward the same budget. The coverage guarantee follows from the design.}
 \label{fig:estimation}
 \end{figure}
 \FloatBarrier
+\clearpage
+\subsection{Reproduction and numerical sources}
 
-The released package separates data integrity, scientific replay, and manuscript
-validation. Inputs are compact numerical projections with task, output, rater,
-criterion and scoring metadata. Original input provenance and content hashes
-are in \texttt{data/PROVENANCE.json}; result provenance is stored with the
-archived numerical outputs. The following commands run from the repository
-root after installing the pinned Python dependencies:
+The package separates integrity checks, scientific replay and manuscript
+validation. Compact inputs retain task, output, rater and criterion metadata;
+\texttt{data/PROVENANCE.json} records their sources and hashes. After installing
+the pinned dependencies, run these commands from the repository root:
+{\small
 \begin{verbatim}
 python -m src.check_package
 python -m pytest -q
@@ -1065,21 +1084,15 @@ python -m src.reproduce_extensions --output artifacts/reproduced-extensions --ve
 python -m src.verify_manuscript_claims --output artifacts/paper-checks/claims.json
 python -m src.build_paper
 \end{verbatim}
-The final command additionally requires Tectonic (tested with version 0.17.0)
-and writes a rebuilt PDF separately from the published copy. Initial dependency
-installation can require network access; the scientific replay does not call
-judge APIs. Rebuilding the PDF can change PDF metadata without changing the
-scientific results. The published manuscript includes a claim audit and a
-citation audit; the broader technical reading library remains separate from
-the selected manuscript bibliography.
+}
+The build requires Tectonic (tested with 0.17.0) and writes a separate PDF.
+Scientific replay runs offline; installing dependencies may require a network.
+The claim audit verifies selected anchors, identities and row keys; replay
+compares the complete archived grids. Table~\ref{tab:sources} locates the
+results under \texttt{artifacts/expected/}. Citation checks and the broader
+reading library remain separate from the manuscript's selected bibliography.
 
-Table~\ref{tab:sources} maps the paper's numerical claims to the result groups.
-For compactness, paths below are relative to
-\texttt{artifacts/expected/}. The executable claim audit records exact row
-keys, units, recomputed values and source hashes. It checks selected paper
-anchors and accounting identities; the complete scientific reproduction
-commands compare the larger archived grids.
-\begin{table}[h]
+\begin{table}[ht]
 \centering\small
 \caption{Numerical source routing for the paper.}
 \label{tab:sources}
@@ -1093,6 +1106,7 @@ Exact expectations and permutations & \texttt{conjunction\_mechanism/}\\
 Paired allocation decomposition & \texttt{conjunction\_mechanism/}\\
 SRS/mix and whole-task estimates & \texttt{conjunction\_label\_value/}\\
 Reference and composition sensitivity & \texttt{conjunction\_robustness/}\\
+Coding composition supplement & \texttt{conjunction\_coding\_sensitivity/}\\
 Stratified estimation controls & \texttt{conjunction\_robustness/}\\
 Disclosure endpoints and witnesses & \texttt{information\_disclosure\_replay.json}\\
 \bottomrule

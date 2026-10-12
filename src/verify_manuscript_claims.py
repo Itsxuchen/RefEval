@@ -219,6 +219,38 @@ def fixed_verdict_counterexample():
                 frames=outcomes, scope="Constructed query-only comparison, not a constrained empirical permutation.")
 
 
+def wrong_rejection_coverage(data):
+    """Count original false-fail flag coverage directly from criterion slots."""
+    slots, truth, prediction = unit_vectors(data)
+    flags = np.any(data["secondary_predictions"] != data["prediction"][None, :], axis=0)
+    partition = [0, 0, 0, 0]
+    complete = 0
+    for ix, z, hatz in zip(slots, truth, prediction):
+        if not z or hatz:
+            continue
+        rejected = ix[data["prediction"][ix] == 0]
+        covered = int(flags[rejected].sum())
+        group = 0 if not flags[ix].any() else 1 if covered == 0 else 2 if covered < len(rejected) else 3
+        partition[group] += 1
+        complete += int(flags[ix].all())
+    return dict(n_units=len(slots), n_criteria=len(flags), flagged=int(flags.sum()),
+        initial_false_fails=int((truth & ~prediction).sum()), coverage_partition=partition,
+        all_wrong_rejections_flagged=partition[3], whole_rubrics_flagged=complete,
+        cap20=round(.2 * len(flags)))
+
+
+def coding_composition_table_latex(rows):
+    out = []
+    for r in rows:
+        label = "Qwen" if r["dataset"] == "AC Qwen-plus" else "DeepSeek"
+        policy = "SRS" if r["policy"] == "random_criterion" else "D"
+        i = 20
+        out.append(f'{label} & {policy} & {r["original_per100"][i]:.2f} & '
+                   f'$[{r["pointwise_q025_per100"][i]:.2f},{r["pointwise_q975_per100"][i]:.2f}]$ & '
+                   f'{r["positive_replicates"][i]}' + r"\\")
+    return "\n".join(out)
+
+
 def task_order_table_latex(rows):
     labels = {"DR Gemini 3.1 Pro": "DR Gemini", "DR Qwen-plus": "DR Qwen",
         "DR GPT-5.4 low": "DR GPT-5.4", "AC Qwen-plus": "AC Qwen",
@@ -438,6 +470,49 @@ def audit(root: Path):
     ac_curve = analytical_curve(datasets["AC DeepSeek v4-pro"], "disagreement_then_random", [.2])[0]
     equal("coding comparison at 20pct", ac_curve, [.9010695187165776,12.053629900392687,11.15256038167611])
     equal("coding normalized effect and pass rate", [100*ac_curve[2]/210,100*117/210], [5.310743038893386,55.714285714285715])
+    coding_summary = document("conjunction_coding_sensitivity/summary.json")
+    coding_rows = table("conjunction_coding_sensitivity/rq1_curves.csv.gz")
+    multiplicities = table("conjunction_coding_sensitivity/multiplicities.csv.gz")
+    require("coding complete retrospective grid", len(coding_rows) == 2*400*2*101
+            and not coding_rows.duplicated(["dataset","replicate","policy","budget_share"]).any())
+    equal("coding rounded caps", coding_rows.budget_cap,
+          (coding_rows.budget_share*coding_rows.n_criteria).map(round))
+    equal("coding endpoint accounting", coding_rows.expected_delta,
+          coding_rows.expected_delayed_ff-coding_rows.expected_introduced_fp)
+    equal("coding finite endpoints", coding_rows[coding_rows.budget_share.isin([0.,1.])].expected_delta, np.zeros(2*400*2*2))
+    equal("coding bootstrap base draw totals", multiplicities.groupby("replicate").multiplicity.sum(), np.full(399,210))
+    require("coding multiplicity inventory", len(multiplicities)==399*210 and
+            not multiplicities.duplicated(["replicate","base_task_id"]).any())
+    coding_coverage = {}
+    for name, wanted in (("AC Qwen-plus",[3,0,1,6]),("AC DeepSeek v4-pro",[3,0,1,12])):
+        coding_coverage[name] = cov = wrong_rejection_coverage(datasets[name])
+        equal("coding flag partition "+name, cov["coverage_partition"], wanted)
+        equal("coding flag budget "+name, [cov[k] for k in ("flagged","n_criteria","cap20","whole_rubrics_flagged")], [95,843,169,0])
+        frame = coding_rows[coding_rows.dataset==name]
+        for policy in ("random_criterion","disagreement_then_random"):
+            original = frame[(frame.policy==policy)&(frame.replicate==-1)].sort_values("budget_share")
+            equal("coding original independently calculated "+name+policy,
+                  original[["expected_introduced_fp","expected_delayed_ff","expected_delta"]],
+                  analytical_curve(datasets[name],policy,original.budget_share.tolist()))
+        k=np.bincount(datasets[name]["task_index"])
+        perbase=dict(zip(map(str,datasets[name]["base_task_ids"]),k))
+        counted=multiplicities.assign(size=multiplicities.base_task_id.astype(str).map(perbase)*multiplicities.multiplicity).groupby("replicate")["size"].sum()
+        actual=frame[frame.replicate>=0].groupby("replicate").n_criteria.first()
+        equal("coding recomputed criterion totals "+name,actual,counted)
+    for saved in coding_summary["rq1"]:
+        grid=coding_rows[(coding_rows.dataset==saved["dataset"])&(coding_rows.policy==saved["policy"])].pivot(index="replicate",columns="budget_share",values="expected_delta_per100")
+        equal("coding original per100 "+saved["dataset"]+saved["policy"],grid.loc[-1],saved["original_per100"])
+        for prob,key in ((.025,"pointwise_q025_per100"),(.5,"pointwise_median_per100"),(.975,"pointwise_q975_per100")):
+            equal("coding composition "+saved["dataset"]+saved["policy"]+key,np.quantile(grid.loc[grid.index>=0],prob,axis=0),saved[key])
+        equal("coding positive counts "+saved["dataset"]+saved["policy"],(grid.loc[grid.index>=0]>1e-12).sum(axis=0),saved["positive_replicates"])
+        equal("coding negative counts "+saved["dataset"]+saved["policy"],(grid.loc[grid.index>=0]<-1e-12).sum(axis=0),saved["negative_replicates"])
+    printed=appendix_text.split("% CODING_COMPOSITION_ROWS_START\n")[1].split("\n% CODING_COMPOSITION_ROWS_END")[0]
+    require("coding appendix table matches saved full grid",printed==coding_composition_table_latex(coding_summary["rq1"]))
+    mean_delay=[ff_diagnostics["delay_by_rejected_types"][key]["expected_delayed_ff"]/ff_diagnostics["delay_by_rejected_types"][key]["n_units"] for key in ("occurrence_count","binary+occurrence_count")]
+    equal("JB per-false-fail delay by rejection group",mean_delay,[77.87112557457772/156,30.34499961622588/64])
+    claims["coding_supplement"] = dict(summary=coding_summary,flag_coverage=coding_coverage,
+        jb_mean_delay_by_rejected_type=mean_delay,
+        scope="399 whole-base-task resamples with fixed original references; no repeated-reference AC panel or independent external test.")
     witness = fixed_verdict_counterexample()
     require("fixed-verdict witness exact fractions", [r["expected_delta"] for r in witness["frames"]] == ["7/66","-7/132"])
     require("fixed-verdict witness observed invariants", all(r["subsets"] == 792 and r["criterion_confusion_TP_FP_FN_TN"] == [1,5,3,3]

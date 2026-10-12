@@ -219,3 +219,7 @@ Under uniform five-of-twelve querying, expected D is 7/66 in both frames. Expect
 The example shows that the overall PASS count does not generally identify update effects, although it identifies the aggregate pass rate T/N. Empirical rearrangements still allow PASS totals to vary and cannot isolate prevalence from co-occurrence changes.
 
 Task ordering and within-task priorities are distinct. Under disagreement-first continuation, task ordering affects the incomplete flagged tier. After every flag is queried, the remaining set and continuation distribution agree. The appendix now displays all three task orders, while exact mechanism curves retain their two declared acquisition policies.
+
+## Coding composition supplement
+
+The local rc.4 supplement applies the existing whole-base-task RQ1 resampling procedure to both AC judges and the two analytically evaluated acquisition policies. One shared set of 399 AC multinomial task-multiplicity draws is generated with seed 20261008; each 210-task frame is reconstructed, its criterion count and all 101 percentage budgets recomputed, and exact query-order expectations evaluated. The complete grid, including all Qwen sign reversals, is saved separately. This retrospective development-frame analysis neither changes the original three-cell study nor supplies repeated-rater or external validation. [Protocol section D](../context/conjunction_robustness_protocol.md) and [results](ROBUSTNESS.md#coding-task-sensitivity-supplement-local-rc4).

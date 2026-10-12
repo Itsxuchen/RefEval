@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0-rc.4 — local coding sensitivity and manuscript alignment
+
+- Report both coding judges, their policy-specific effects and 399-draw whole-task sensitivity across the full budget grid. Retain three reversed Qwen draws.
+- Add exact wrong-rejection coverage diagnostics, average delay contributions, and executable manuscript-table checks. Existing scientific inputs and outputs are preserved.
+- Confirm Georgia Institute of Technology affiliation, add LLM to the title, remove the fixed date, unify policy prose and clarify panel colors.
+- Align the writing outline, literature route and reproducibility instructions; keep this candidate local for author review.
+
 
 ## 0.3.0-rc.3 — local narrative and evidence alignment
 

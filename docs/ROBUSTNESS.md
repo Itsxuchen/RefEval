@@ -32,7 +32,7 @@ For the fixed GPT-5.4 anchor in the 206-output full-target frame, reference A ha
 
 ### Updating: size can change, and some directions reverse
 
-For disagreement-then-random, the same nonadaptive query sets support both reference evaluations. Entries are means over 31 query orders, in **gated minus eager residual disagreements**:
+For disagreement-first continuation, the same nonadaptive query sets support both reference evaluations. Entries are means over 31 query orders, in **gated minus eager residual disagreements**:
 
 | Fixed GPT-5.4 frame | Budget | Reference A | Reference B | A / B per 100 outputs |
 |---|---:|---:|---:|---:|
@@ -41,7 +41,7 @@ For disagreement-then-random, the same nonadaptive query sets support both refer
 | Binary-only | 20% | −0.13 | −3.61 | −0.06 / −1.75 |
 | Binary-only | 84% | +4.29 | +1.48 | +2.08 / +0.72 |
 
-Thus the large high-budget penalty is reference-sensitive even where its direction persists. The low-budget advantage in the original 1,539-unit full frame is absent under both references in this matched subset. That difference also involves changing the sample, weights and anchor draw; it is not a pure reference-replacement effect. On the *same* 206 outputs, binary-only random criterion sampling at 20% changes from +1.00 with A to −1.00 with B. For the mini judge under binary-only disagreement-then-random, the same endpoint changes from −1.48 to +0.94. The complete grid retains these contrary cases. At the smallest 0.6% allocation cap, some binary-only reference configurations lose certificates and increase disagreement; the 20% benefit is not a whole-grid dominance claim. [RQ1 table](../artifacts/expected/conjunction_robustness/reference/rq1_summary.csv)
+Thus the large high-budget penalty is reference-sensitive even where its direction persists. The low-budget advantage in the original 1,539-unit full frame is absent under both references in this matched subset. That difference also involves changing the sample, weights and anchor draw; it is not a pure reference-replacement effect. On the *same* 206 outputs, binary-only random criterion sampling at 20% changes from +1.00 with A to −1.00 with B. For the mini judge under binary-only disagreement-first continuation, the same endpoint changes from −1.48 to +0.94. The complete grid retains these contrary cases. At the smallest 0.6% allocation cap, some binary-only reference configurations lose certificates and increase disagreement; the 20% benefit is not a whole-grid dominance claim. [RQ1 table](../artifacts/expected/conjunction_robustness/reference/rq1_summary.csv)
 
 ### Allocation: distinguish re-reading from reacquiring
 
@@ -60,7 +60,7 @@ All four mean contrasts increase certification and reduce disagreement. The cros
 
 ![Fixed-judge reference sensitivity](../artifacts/figures/conjunction_robustness_reference.png)
 
-Top: disagreement-then-random update differences on the same 206 outputs. Bottom: allocation differences; dashed curves hold queried positions from one reference and re-read using the other. Lines summarize 31 orders, without population confidence bands. The full and binary-only percentage caps correspond to different absolute query counts.
+Top: disagreement-first continuation update differences on the same 206 outputs. Bottom: allocation differences; dashed curves hold queried positions from one reference and re-read using the other. Lines summarize 31 orders, without population confidence bands. The full and binary-only percentage caps correspond to different absolute query counts.
 
 ## Base-task composition sensitivity
 
@@ -68,7 +68,7 @@ We resample complete base-task blocks 399 times, preserving all their outputs, r
 
 ![Three frames over the complete budget](../artifacts/figures/conjunction_robustness_budget.png)
 
-Disagreement-then-random, 101 budget caps. Both rows use common vertical scales across frames. Shading is the pointwise 2.5th–97.5th percentile across compositions. Every curve is exactly zero at 0% and 100% budget. The original constant-width simultaneous bands remain in the source tables and plotting CSV but are omitted here: their constant radius obscures the known endpoints. Peaks are recomputed in every replicate. [All curves and summaries](../artifacts/expected/conjunction_robustness/cluster/summary.json)
+Disagreement-first continuation, 101 budget caps. Both rows use common vertical scales across frames. Shading is the pointwise 2.5th–97.5th percentile across compositions. Every curve is exactly zero at 0% and 100% budget. The original constant-width simultaneous bands remain in the source tables and plotting CSV but are omitted here: their constant radius obscures the known endpoints. Peaks are recomputed in every replicate. [All curves and summaries](../artifacts/expected/conjunction_robustness/cluster/summary.json)
 
 For full JudgmentBench, the original order-expected gated-minus-eager difference at 20% is −0.13 per 100 annotations; its composition range is [−0.54, +0.39]. At 84%, it is +6.26, with range [+3.51, +9.44]. The high-budget burden and the small low-budget advantage thus have different stability for this query policy. This composition study retains the original reference and annotation weights; the separate 206-output A/B study does not provide a joint reference-by-composition interval. Original full and binary-only count curves retain their different scales, rather than being represented by a single favorable endpoint.
 
@@ -119,6 +119,23 @@ The earlier matched-margin rearrangements show that criterion confusion summarie
 
 Full JB at 50% budget has an original effect of +2.91 disagreements per 100 annotations, with pointwise task-composition quantiles [1.05, 5.20]; all 399 resamples are positive. At 84%, the range remains [3.51, 9.44]. Binary-only at 20% has range [−0.44, 1.50], with 328 positive, 65 negative and six zero resampled effects. These resamples retain within-task reference structure. Matched-margin label rearrangements deliberately alter it, so their reversals concern information sufficiency.
 
-AC DeepSeek has 117/210 reference-PASS tasks. Disagreement-first continuation at 20% has expected A = 0.9011, D = 12.0536 and D−A = 11.1526 tasks (5.3107 per 100). This comparison lacks JB penalty items but remains a constructed conjunction. No AC reference-panel or cluster experiment is implied.
+AC DeepSeek has 117/210 reference-PASS tasks. Disagreement-first continuation at 20% has expected A = 0.9011, D = 12.0536 and D−A = 11.1526 tasks (5.3107 per 100). This comparison lacks JB penalty items but remains a constructed conjunction. The subsequent local rc.4 supplement below adds AC task-composition checks; no AC reference-panel experiment is available.
 
 Full-JB delay at 84% splits into 77.8711 on 156 penalty-only-rejected false fails and 30.3450 on 64 false fails rejected by both item types. This partitions original D = 108.2161 without changing acquisition; it is not an intervention deleting penalties. Low flag coverage delays eager repair but does not itself increase the gap to certification. The last mistaken-rejection query and completion of the remaining rubric jointly determine that gap.
+
+## Coding-task sensitivity supplement (local rc.4)
+
+At a 20% cap (169 of 843 criteria), disagreement-first continuation yields +5.3734 tasks for AC Qwen and +11.1526 for AC DeepSeek, or 2.5588 and 5.3107 per 100 of the 210 tasks. Under uniform criterion sampling, the corresponding effects are 0.6755 and 1.1416 per 100. These are exact query-order expectations in the original frames.
+
+| Judge / policy | Original per 100 | 2.5–97.5% composition range | Positive draws / 399 |
+|---|---:|---:|---:|
+| Qwen / uniform | 0.68 | [0.28, 1.30] | 399 |
+| Qwen / disagreement-first continuation | 2.56 | [0.65, 4.95] | 396 |
+| DeepSeek / uniform | 1.14 | [0.55, 1.83] | 399 |
+| DeepSeek / disagreement-first continuation | 5.31 | [2.50, 9.13] | 399 |
+
+Each draw resamples 210 complete base tasks, recomputes the criterion count and budget, and integrates over query-order randomness. Both judges share the AC task multiplicities. The retrospective protocol fixed both judges, both policies, all 101 budget points, seed 20261008 and 399 draws before this supplement was computed. These ranges describe task-composition sensitivity, not an external population or reference-adjudication interval. Three Qwen draws reverse the disagreement-first effect; all are retained.
+
+Disagreement flags cover every wrong rejection in 6/10 Qwen and 12/16 DeepSeek initial false fails. None has every rubric item flagged. Of 843 criteria, 95 are flagged, followed by 74 random checks at the 20% cap. This contrasts with 2/220 full-JB false fails and explains earlier delayed-repair exposure in coding. In the existing 64 matched-margin DeepSeek configurations, the 20% disagreement-first effect ranges from 2.07 to 12.27 tasks and remains positive; those rearrangements are a different analysis from the 399 composition draws.
+
+[Protocol, section D](../context/conjunction_robustness_protocol.md) · [Full-grid summary](../artifacts/expected/conjunction_coding_sensitivity/summary.json) · [Curves](../artifacts/expected/conjunction_coding_sensitivity/rq1_curves.csv.gz) · [Task multiplicities](../artifacts/expected/conjunction_coding_sensitivity/multiplicities.csv.gz)

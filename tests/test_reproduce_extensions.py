@@ -47,14 +47,17 @@ def replay_fixture(tmp_path,monkeypatch):
 def test_frozen_configuration_and_scientific_target_scope():
     assert extension.CONFIG==dict(mechanism_permutations=64,order_seeds=31,
                                   cluster_replicates=399,cluster_seed=20261008,
+                                  coding_rq1_cells=2,coding_cluster_replicates=399,
                                   reference_cells=4,stratified_cells=9,
                                   design_rmse_budget_share=.20,mix_risk_first_stage_seeds=31)
     assert set(extension.DIRECTORIES)=={'conjunction_mechanism','conjunction_robustness/reference',
-                                       'conjunction_robustness/cluster','conjunction_robustness/estimation'}
+                                       'conjunction_robustness/cluster','conjunction_robustness/estimation',
+                                       'conjunction_coding_sensitivity'}
     assert set(extension.JSON_TARGETS)=={'conjunction_mechanism/update_structures.json',
                                         'conjunction_robustness/reference/frame_diagnostics.json',
                                         'conjunction_robustness/cluster/summary.json',
-                                        'conjunction_robustness/estimation/interval_regression.json'}
+                                        'conjunction_robustness/estimation/interval_regression.json',
+                                        'conjunction_coding_sensitivity/summary.json'}
 
 
 def test_verifies_every_table_and_row_ignoring_runtime_metadata(replay_fixture):
@@ -63,8 +66,8 @@ def test_verifies_every_table_and_row_ignoring_runtime_metadata(replay_fixture):
     relative=extension.DIRECTORIES[0]+'/curves.csv.gz'
     assert (output/relative).read_bytes()!=(expected/relative).read_bytes()
     receipt=extension.verify(output)
-    assert receipt['passed'] and receipt['scientific_rows']==20
-    assert len(receipt['csv_checks'])==8 and len(receipt['json_scientific_leaves'])==4
+    assert receipt['passed'] and receipt['scientific_rows']==25
+    assert len(receipt['csv_checks'])==10 and len(receipt['json_scientific_leaves'])==5
     assert {r['scope'] for r in receipt['csv_checks'].values()}=={'all rows'}
     assert all(r['fields']==3*r['rows'] for r in receipt['csv_checks'].values())
     assert json.loads((output/'extension_verification.json').read_text())==receipt

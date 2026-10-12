@@ -1,106 +1,75 @@
 {
   "date": "2026-10-11",
   "status": "PASS",
-  "revision": "v0.3.0-rc.3; local author review, not publicly synchronized",
+  "revision": "v0.3.0-rc.4; local author review, not publicly synchronized",
   "arxiv_submitted": false,
   "compiler": "Tectonic 0.17.0",
-  "pdf_pages": 29,
+  "pdf_pages": 30,
   "main_text_ends_on_page": 12,
   "references_start_on_page": 12,
-  "appendix_starts_on_page": 14,
+  "appendix_starts_on_page": 15,
   "selected_citations": 27,
-  "unique_tex_labels": 71,
+  "unique_tex_labels": 73,
   "unresolved_references": 0,
   "latex_warnings": 0,
-  "visually_inspected_pages": 29,
+  "visually_inspected_pages": 30,
+  "embedded_subset_fonts": 33,
+  "abstract_plain_text_characters": 1488,
   "local_public_pdf_identical": true,
   "unit_tests": {
-    "passed": 230,
-    "seconds": 20.19,
+    "passed": 233,
+    "seconds": 20.76,
     "run_this_revision": true
   },
-  "numerical_claim_checks": 565,
-  "numerical_claim_source_files": 32,
-  "scientific_base_commit": "e60fb8a4049b0237ea21b75d69038b45f1461a98",
+  "numerical_claim_checks": 607,
+  "numerical_claim_source_files": 35,
+  "scientific_base_commit": "c8f394b7ed7f7b594f8ca5da55aed6910bfa59c9",
   "new_model_calls": 0,
   "new_external_validation_outcomes_computed": false,
-  "full_extension_replay_run_this_revision": false,
+  "full_extension_replay_run_this_revision": true,
+  "extension_replay": {
+    "csv_tables": 29,
+    "scientific_rows": 998652,
+    "scientific_json_payloads": 5,
+    "seconds": 314.123,
+    "source_receipt": "artifacts/validation/rc4_extension_run_manifest.json",
+    "comparison_receipt": "artifacts/validation/rc4_extension_verification.json"
+  },
   "original_policy_disclosure_replay_run_this_revision": false,
-  "carried_forward_full_replay": "Original and extension replays passed in the audit of 02d6814. This revision preserves all data/expected files and scientific experiment code; it adds deterministic manuscript diagnostics and source packaging. No new complete experimental replay or cloud CI run is claimed.",
-  "source_hash_scope": "Versioned public package; local renderer default paths are intentionally different.",
-  "source_sha256": {
-    "artifacts/manuscript/paper.tex": "1a2adccbf5f43ec2e3f0fbaefb28f1bcf4c59d251f7da43a163a1c65a4aa74db",
-    "artifacts/manuscript/methods_appendix.tex": "41be6cf88969446bcd091e0b85ff9f252e317053646dd991b9efe0bb334edc74",
-    "artifacts/manuscript/paper_references.bib": "90882aca720afc36cfae91649d2e851e7dd251ede39608d281a2ed9f8da9dc31",
-    "src/ruverbench_prompt_protocol.py": "7a4bdd2b1d544061052e0516fcd877ec6eeabdefe1e555bb86574641b70b478e",
-    "src/render_conjunction_mechanism.py": "8dcfb4fd7c570bbb685f0bdfa33678dbc431b2088b6cabac01cc58869572c01c",
-    "src/render_conjunction_robustness.py": "ae22112f226f58667e8c4d37c7c15a647e074f7865101e4023c4368a9210a1ab",
-    "src/check_package.py": "ade04f71818dfacfe7b8b2a3295b3e437b4abc12e354aede2f554501b296a5b4",
-    "data/PROVENANCE.json": "bc9fadb3188f2aba65cc8aba323e284f6c0c1ef1e3879046747afbd4e606436e",
-    "src/verify_manuscript_claims.py": "b2f18e8fe361fae3ad67db9000c0acb7d12331d888609df7f5636d8923551801",
-    "tests/test_conjunction_reference_sensitivity.py": "007f214d1171d6a49cd894c7ef4f015022342f684046e6959953d70e9f70027c",
-    "tests/test_release_validation.py": "0877581a054208b9d840eac7e46890b9dd368f66b46464008e8eb47cef2a0c41",
-    "src/build_paper.py": "93571dcf6cc60f74e8bb2993ab0c1c21c92b221d28a3c608a4bb2d6d37bced52",
-    "tests/test_conjunction_update_mechanism.py": "60e92a310f3918954e1aa6ce41d869239890113193acd6457d92f1be278103a0"
-  },
-  "pdf_sha256": "f27c7aa3212e8efb96405b43fde1d6f879ed4001a20b5bde2c4ed0fb1631d210",
-  "publication_status": "local-only by author instruction",
-  "preserved_data_and_expected_files": 62,
-  "new_retrospective_diagnostics": true,
-  "carried_forward_generation_validation": {
-    "unique_requests_reconstructed_and_matched": 2458,
-    "deepresearch": 1615,
-    "agenticcoding": 843,
-    "final_labels_in_five_runs": 6531,
-    "unresolved_final": 0,
-    "protocol_source": "data/PROVENANCE.json",
-    "scope": "Original frozen inputs and local final records; no new provider calls."
-  },
-  "carried_forward_render_validation": {
-    "figures": 5,
-    "ambient_style_and_both_call_orders_pixel_equal": true,
-    "exception_restores_style": true,
-    "published_pngs_equal_previous_revision": true
-  },
-  "diagnostic_validation": {
-    "new_exhaustive_tests": 2,
-    "fixed_query_delay_groups": [
-      32,
-      22,
-      166
+  "carried_forward_original_replay": "Original policy/disclosure replay passed before rc.1. This revision preserves its data, expected results and producer code; the full extension replay was rerun including the new AC supplement.",
+  "source_archive": {
+    "entries": [
+      "figures/conjunction_allocation_mechanism.pdf",
+      "figures/conjunction_robustness_budget.pdf",
+      "figures/conjunction_robustness_estimation.pdf",
+      "methods_appendix.tex",
+      "paper.tex",
+      "paper_references.bib"
     ],
-    "disagreement_coverage_partition": [
-      79,
-      80,
-      59,
-      2
-    ],
-    "amplitude_rows_verified": 90,
-    "exploratory_peer_check": "Original annotation-criterion instances; no rater adjudication or reference replacement.",
-    "new_exhaustive_tests_this_revision": 1,
-    "task_order_table_numeric_entries": 54,
-    "fixed_verdict_example": {
-      "frames": 2,
-      "query_subsets_per_frame": 792,
-      "expected_differences": [
-        "7/66",
-        "-7/132"
-      ],
-      "scope": "Logical construction, not an empirical fixed-PASS-total rearrangement."
-    },
-    "added_composition_cap": 0.5,
-    "new_exhaustive_tests_scope": "Two tests added in rc.2, carried forward; one further exhaustive witness test added in rc.3."
-  },
-  "parent_review_commit": "b47bdd7e31c47cfccbc6736b35205000d0d20a55",
-  "local_markdown_links_checked": 108,
-  "portable_source_archive": {
-    "path": "artifacts/manuscript/arxiv_source.zip",
-    "sha256": "a4eb3a01b9f27b76ce9f82efce06ffa8597050caf940a567f1160029b946d8e1",
-    "entries": 6,
-    "compiled_from_independent_directory": true,
-    "pdf_pages": 29,
+    "independently_compiled": true,
     "text_identical_all_pages": true,
-    "render_pixel_identical_all_pages_at_90dpi": true,
-    "includes": "Main TeX, appendix, selected bibliography, three referenced PDF figures; no compiled manuscript or logs."
-  }
+    "render_identical_all_pages": true,
+    "render_long_edge_pixels": 1100,
+    "sha256": "727b43e80f3d341fa7b616e1e95e27e5217f43330c97ca4c10104f41f47b2fc8"
+  },
+  "structural_checks": {
+    "original_scientific_files_preserved": 62,
+    "selected_citations": 27,
+    "unique_tex_labels": 73,
+    "bibliography_entries": {
+      "selected": 27,
+      "public": 52,
+      "local": 55
+    },
+    "public_document_local_links": 118
+  },
+  "source_hashes": {
+    "paper.tex": "41c14dcbb5d252ae68c95e4c248cdafbc3a9d389d34366cae0041b39d455f416",
+    "methods_appendix.tex": "b23334967c355fb750b5f2aca18387c28a562f4d56d7d762904e98a29e3b46b5",
+    "paper_references.bib": "90882aca720afc36cfae91649d2e851e7dd251ede39608d281a2ed9f8da9dc31",
+    "paper.pdf": "7fb9c449d654519ba775fd68fd3e9c64848dafee6c4619e634bf8975ad49295c",
+    "numerical_claim_audit.json": "3144cc9f7ac3d9068082cc6d52c367a862fd8f5bb763e9932979e2f107cafbe7",
+    "citation_audit.md": "3ea733264caa7db5b98cca7ebfe7f1ff464f7ef0cd7e2e4d592cf365d986ab3d"
+  },
+  "scope": "Numerical anchors, full extension replay, source/bibliography resolution and visual compilation checks. This is not external validation, a complete new literature review, an arXiv submission, or moderation approval."
 }
