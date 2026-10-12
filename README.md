@@ -1,12 +1,12 @@
-# What Should Reference Labels Buy?
+# Beyond Criterion Accuracy
 
-### Estimation, Certification, and Repair in Conjunctive LLM Evaluation
+### The Limits of Reference Checking in Conjunctive LLM Evaluation
 
 [![Reproduction checks](https://github.com/Itsxuchen/RefEval/actions/workflows/reproduce.yml/badge.svg)](https://github.com/Itsxuchen/RefEval/actions/workflows/reproduce.yml)
 
 A reference check can estimate a judge's accuracy, certify an individual outcome, or repair an existing verdict. When every rubric criterion must pass, these gains can diverge. This repository studies constructed all-pass targets on **RuVerBench** and **JudgmentBench**, with compact analysis inputs, saved results and reproduction code. The full JudgmentBench target is a FAIL-dominated stress test; coding, research and binary-only targets provide contrasting error structures.
 
-**Local review version: `v0.3.0-rc.4`.** This revision awaits author review and public synchronization; no arXiv submission has been made.
+**Local review version: `v0.3.0-rc.5`.** This revision awaits author review and public synchronization; no arXiv submission has been made.
 
 **Manuscript draft:** [PDF](artifacts/manuscript/paper.pdf) · [LaTeX](artifacts/manuscript/paper.tex) · [Methods and proofs](artifacts/manuscript/methods_appendix.tex) · [Build instructions](docs/REPRODUCIBILITY.md#manuscript-build-and-claim-checks) · [Portable TeX source](artifacts/manuscript/arxiv_source.zip)
 

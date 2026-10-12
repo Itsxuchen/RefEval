@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0-rc.5 — local title and timing clarification
+
+- Adopt the author-selected Beyond Criterion Accuracy title throughout current manuscript metadata and documentation.
+- Complete the JB delayed-repair explanation before introducing the opposite coding timing; identify the antecedent explicitly.
+- Add the existing coding composition sign count to the abstract and rebuild portable sources. Data, methods, code and results remain unchanged.
+- Keep the revision local for author review.
+
 ## 0.3.0-rc.4 — local coding sensitivity and manuscript alignment
 
 - Report both coding judges, their policy-specific effects and 399-draw whole-task sensitivity across the full budget grid. Retain three reversed Qwen draws.
