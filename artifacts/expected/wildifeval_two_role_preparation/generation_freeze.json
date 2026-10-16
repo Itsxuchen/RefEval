@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "status": "frozen",
+  "created_utc": "2026-10-16T17:31:01.316249+00:00",
+  "config_sha256": "be13cfcd92fc1d57bbf0ced5710567689571ba874711ed3761e48bb25181f2d9",
+  "jobs_sha256": "914683b47714464ed85fea1f7505cbadc5f91e3246b4c959052e5c62aa857cd3",
+  "calibration_sha256": "ae00fcfdbf85d7a22bb083bd193ea69d54297cd082631d1726b8e66a62b40b58",
+  "runner_sha256": "8c6c5b214a926f945fe0bed3930cec930af2bd276451c32f30d7afb933ad4594",
+  "ledger_id": "28a8c1cf-b1d8-4e2a-b443-41446fc9fefd",
+  "state_directory_sha256": "9a060c73ee7ceccbd47e2a64b052dcca356fbdecf50a968b21ee8287fe626ef5",
+  "canary_job_ids_sha256": "6af1361be9be7c759e51317f5b6422ebee6fd7678b444b1e56d3ae189afbb70f",
+  "job_manifest_sha256": "c9e3987da6a432bac9a157df89d47cacfa76654e977c4306a06a5e3678fcabb9",
+  "upstream_template_sha256": "2864bbed5efbf0ba4263e47617f1cac35e3dfd456987d27de5bc84a75c68ddac",
+  "upstream_parser_sha256": "3aea201eee29b6d91c03ac0e21774242526332d43f9f7cc69d9c71601c571774",
+  "reference_values_opened": false,
+  "scope": "Generation only; completed-data design and pilot prediction freezes remain pending"
+}

@@ -33,3 +33,7 @@ artifacts/wildifeval-verification/
 artifacts/wildifeval-alternatives/
 artifacts/profbench-cache/
 artifacts/external-route-recheck/
+
+# Private generated prompts, scoring ledger and staged reference analyses.
+artifacts/wildifeval-execution-private/
+data/interim/

@@ -1,0 +1,23 @@
+{
+  "source": "unrelated_synthetic_logprob_compatibility",
+  "status": "completed",
+  "calls": 32,
+  "conservative_usage_usd": 0.000484,
+  "reserved_outside_generation_usd": 0.5,
+  "diagnostic_file_sha256": "f2d80af194e8e9f7896d8551285865b1792e7d1662ba449aded634f664c8f4f8",
+  "observed_issues": [
+    {
+      "case": 31,
+      "score_position": 0,
+      "parse_error": "malformed_logprobs",
+      "issues": [
+        {
+          "position": 3,
+          "issue": "positive_logprob",
+          "value": 3.814697265625e-06
+        }
+      ]
+    }
+  ],
+  "scope": "Valid selected scoring token followed by an unused positive log-probability; dataset failures were not repeated and R was not accessed."
+}

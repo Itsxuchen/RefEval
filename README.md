@@ -8,9 +8,7 @@ A reference check can estimate a judge's accuracy, certify an individual outcome
 
 **Reproducibility release: [v0.3.0](https://github.com/Itsxuchen/RefEval/releases/tag/v0.3.0).** The tagged snapshot contains the matching manuscript, source archive, data and analyses. arXiv submission remains a separate step.
 
-**External-validation update (2026-10-15):** WildIFEval failed the masked association and completeness checks. The planned four-judge frame retains four common task clusters; even a two-judge diagnostic retains only 40. Pilot and held-out analyses have not run. [Findings and reproduction](docs/WILDIFEVAL.md).
-
-An expanded check of all saved grading channels found no alternative combination meeting the original gates. We recommend generating one aligned primary judge on the larger saved-reference frame, with ProfBench as a later human-reference replication. The [route comparison](docs/EXTERNAL_VALIDATION_OPTIONS.md) reports coverage, prospective costs and remaining limitations. No paid grading or revised design freeze has occurred.
+**External-validation update (2026-10-16):** The original saved-score frame failed the association and coverage gates. A new two-role study has now been adopted: one newly aligned primary judge plus the saved DeepSeek reference. All 134,485 reference-free grading jobs are prepared. API and 160-request fee calibration have returned; full scoring is running after a documented response-evidence compatibility repair. No completed P dataset, pilot or held-out result exists yet. [Execution status and safeguards](docs/WILDIFEVAL_EXECUTION.md) · [Original failure](docs/WILDIFEVAL.md) · [Route comparison](docs/EXTERNAL_VALIDATION_OPTIONS.md).
 
 **Manuscript draft:** [PDF](artifacts/manuscript/paper.pdf) · [LaTeX](artifacts/manuscript/paper.tex) · [Methods and proofs](artifacts/manuscript/methods_appendix.tex) · [Build instructions](docs/REPRODUCIBILITY.md#manuscript-build-and-claim-checks) · [Portable TeX source](artifacts/manuscript/arxiv_source.zip)
 

@@ -1,0 +1,107 @@
+{
+  "builder_source_sha256": "eaf9724adc61cb5ca9a86f6a34c35874ad1a75b5880f75cdc58d8ccca01f28f1",
+  "counts": {
+    "clusters": 6847,
+    "jobs": 134485,
+    "tasks": 7418,
+    "units": 37090
+  },
+  "distribution": "Do not publish jobs.jsonl: it contains upstream prompts and outputs. This manifest and unit hashes contain no source text or reference values.",
+  "files": {
+    "jobs.jsonl": {
+      "bytes": 471100315,
+      "sha256": "914683b47714464ed85fea1f7505cbadc5f91e3246b4c959052e5c62aa857cd3"
+    },
+    "units.jsonl": {
+      "bytes": 45747435,
+      "sha256": "056e34a2e571e089f0bfbd4a26f3f34c183ed439268ddefa6fc4e5a24b1e249e"
+    }
+  },
+  "generation_results_included": false,
+  "job_id_rule": "SHA256(wildifeval-new-p-v1|criterion_id|rendered_prompt_sha256)",
+  "job_order": "lexicographic producer, unit_id, then original criterion position",
+  "new_model_calls": 0,
+  "producers": {
+    "deepseek-v3": {
+      "confirmation_criteria": 21622,
+      "confirmation_units": 5944,
+      "criteria": 26897,
+      "pilot_criteria": 5275,
+      "pilot_units": 1474,
+      "units": 7418
+    },
+    "llama3.1-405b": {
+      "confirmation_criteria": 21622,
+      "confirmation_units": 5944,
+      "criteria": 26897,
+      "pilot_criteria": 5275,
+      "pilot_units": 1474,
+      "units": 7418
+    },
+    "llama3.3-70b": {
+      "confirmation_criteria": 21622,
+      "confirmation_units": 5944,
+      "criteria": 26897,
+      "pilot_criteria": 5275,
+      "pilot_units": 1474,
+      "units": 7418
+    },
+    "mistral-large": {
+      "confirmation_criteria": 21622,
+      "confirmation_units": 5944,
+      "criteria": 26897,
+      "pilot_criteria": 5275,
+      "pilot_units": 1474,
+      "units": 7418
+    },
+    "qwen2.5-72b": {
+      "confirmation_criteria": 21622,
+      "confirmation_units": 5944,
+      "criteria": 26897,
+      "pilot_criteria": 5275,
+      "pilot_units": 1474,
+      "units": 7418
+    }
+  },
+  "reference_files_opened": false,
+  "reference_values_accessed": false,
+  "rendered_template_sha256": "b41e6797c794c541ec862dcf3406c6f620925f03e61532d21a8116fb97450484",
+  "schema_version": 1,
+  "scope": "All five producer outputs on the complete saved-DeepSeek-reference common frame; new judge completeness is not yet known",
+  "source_inputs": {
+    "consumed_source_sha256": {
+      "benchmark/data/test-00000-of-00001.parquet": "1744726301fe8adade0d2648009c8c57146325608f528578f8e919882a798462",
+      "predictions/model_predictions/deepseek-v3-0shot-wild-if-eval.json": "555301b6abff72e4b792a7fd35d9dd72dace43c905c3deeca6978904cfe07c2b",
+      "predictions/model_predictions/llama3.1-405b-0shot-wild-if-eval.json": "4c3e65c202ab4cd235119ead331bd4989f8849f0e2c776b73550a254c5d8ef15",
+      "predictions/model_predictions/llama3.3-70b-0shot-wild-if-eval.json": "a4590c9b78f7ade5789129a5d87be0b0d52f97564e28c0045d849f5120fa0587",
+      "predictions/model_predictions/mistral-large-0shot-wild-if-eval.json": "69523bcc0a24074d13925af31aca87312cf6df51322c8b9922336a707dfe0bfe",
+      "predictions/model_predictions/qwen2.5-72b-0shot-wild-if-eval.json": "c7eee7dff59816fcea4a7416daa3e427fd151c8b6330a8a4fb931bd47efb5f67"
+    },
+    "masked_units_sha256": "5d55fc361840ee6f198143b38494585dc9817c1ee4ee6ab192c85b17eb0ad9e1",
+    "preflight_report_sha256": "fa211048c50818423b44d61e4ccbe233f719c7c32b4e291d246a1ed7d2e0e605",
+    "source_manifest_sha256": "8454bb1e69b29565dd44f8591d583bb7ccd6a708214cc86292d07505b94551da",
+    "source_revisions": {
+      "benchmark": "fc5f47b2b1be19ac95986624a4c0d8fd25dd316c",
+      "predictions": "e34bc0fcc01b7f1d49032878563e8c32393c9d59"
+    },
+    "template_file_sha256": "2864bbed5efbf0ba4263e47617f1cac35e3dfd456987d27de5bc84a75c68ddac"
+  },
+  "split_rule": "First floor(0.20 G) clusters sorted by SHA256(refeval-external-v1|cluster_id) are pilot",
+  "splits": {
+    "confirmation": {
+      "clusters": 5478,
+      "criteria": 108110,
+      "tasks": 5944,
+      "units": 29720
+    },
+    "pilot": {
+      "clusters": 1369,
+      "criteria": 26375,
+      "tasks": 1474,
+      "units": 7370
+    }
+  },
+  "status": "reference_value_free_jobs_built",
+  "template_commit": "82ebff7068b9faeadc5468d55935d62b1601d89c",
+  "template_name": "PROMPT_EVAL"
+}

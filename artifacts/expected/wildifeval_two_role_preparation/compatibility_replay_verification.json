@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "saved_unrelated_responses": 32,
+  "label_checks": 32,
+  "probability_invariance_checks": 32,
+  "stored_prefix_recomputation_checks": 32,
+  "api_calls": 0,
+  "reference_values_accessed": false,
+  "scope": "Replay of saved unrelated synthetic API responses after evidence-only correction; not dataset outcomes"
+}

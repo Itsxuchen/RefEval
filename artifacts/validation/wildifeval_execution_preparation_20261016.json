@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-16",
+  "status": "PASS",
+  "scientific_status": "Execution preparation passed; full primary-judge generation is running. No completed-data freeze, pilot or held-out result.",
+  "checks": {
+    "pytest": {
+      "passed": 402,
+      "seconds": 32.07
+    },
+    "manuscript_numerical_checks": 607,
+    "manuscript_sources": 35,
+    "independent_job_ids_and_hashes_checked": 134485,
+    "candidate_outputs": 37090,
+    "candidate_tasks": 7418,
+    "candidate_clusters": 6847,
+    "independently_rendered_prompts": 100,
+    "canary_usage_rows_independently_checked": 160,
+    "unrelated_saved_response_replays": 32,
+    "probability_invariance_checks": 32,
+    "prefix_recomputation_checks": 32,
+    "existing_protected_files_unchanged": 175,
+    "baseline_commit": "207fbd1af8c020d1840c93af68650f372bf65b0a",
+    "local_public_module_test_pairs_identical": 8,
+    "local_document_links": 86,
+    "broken_local_document_links": 0,
+    "new_files_secret_and_private_data_scan": "passed",
+    "clean_export": {
+      "files": 254,
+      "package_integrity_passed": true,
+      "new_module_tests_passed": 92,
+      "test_seconds": 10.98,
+      "source": "Manifest-only clean directory using the pinned project environment; no private generation files copied."
+    }
+  },
+  "scoring": {
+    "planned_criterion_requests": 134485,
+    "fixed_canary_requests": 160,
+    "v1_success_preserved": 152,
+    "v1_terminal_missing_preserved": 8,
+    "full_generation_requests_after_canary": 134325,
+    "generation_budget_usd": 99.5,
+    "separate_diagnostic_budget_usd": 0.5,
+    "combined_cap_usd": 100,
+    "canary_projection_usd": 12.44455182421875,
+    "projection_scope": "Conservative token-price projection from fixed canary, not an invoice or spending guarantee.",
+    "evidence_serialization": "selected-prefix-v2",
+    "repair_scope": "Evidence storage only; no request, parser, threshold or selected job changed. Eight earlier missing rows remain missing."
+  },
+  "current_module_sha256": {
+    "wildifeval_jobs": "eaf9724adc61cb5ca9a86f6a34c35874ad1a75b5880f75cdc58d8ccca01f28f1",
+    "wildifeval_scoring": "10c99f72d32d6b254f66f78ebead42a3e182ae312ec224320af54af1ba0fc39a",
+    "wildifeval_scoring_migration": "de1736001f602c981776aaf6be914b0f9cde6e1d505e3d52e423f81c64a9f67b",
+    "wildifeval_external_run": "6ae2e29f5577f9096fd088b900a496933ac059933405ca0f05bba3b2a95a6429"
+  },
+  "reference_outcome_analysis": false,
+  "scope": "Synthetic preparation tests and saved unrelated API compatibility replay, metadata association, fee arithmetic and protection checks. No external scientific conclusion. Existing complete scientific grids were not rerun locally; tracked scientific inputs, source, outputs and manuscript remain unchanged. Public records exclude source text, API credentials, live results and private ledger."
+}

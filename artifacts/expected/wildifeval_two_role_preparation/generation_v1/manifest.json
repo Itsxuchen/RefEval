@@ -1,0 +1,38 @@
+{
+  "scoring.py": {
+    "sha256": "8c6c5b214a926f945fe0bed3930cec930af2bd276451c32f30d7afb933ad4594",
+    "bytes": 50885
+  },
+  "config.json": {
+    "sha256": "0bcd3556cd616bbf0d5bc2a61df351e56bd3882f21d2477a08c41c36467c04da",
+    "bytes": 1010
+  },
+  "generation_freeze.json": {
+    "sha256": "e69cd9c037477129bad747bab258bcc619b27d54cbf485de6758aa453167a25d",
+    "bytes": 1118
+  },
+  "api_calibration.json": {
+    "sha256": "ae00fcfdbf85d7a22bb083bd193ea69d54297cd082631d1726b8e66a62b40b58",
+    "bytes": 3087
+  },
+  "fee_candidate.json": {
+    "sha256": "0ef8e9d584bec2d32f461921a6fb54d567ffa255ec9f2880fa7e25d56faa69e5",
+    "bytes": 1604
+  },
+  "results.jsonl": {
+    "sha256": "f01fb88bad8745423ae8d2fcefcca2caed8c9c867445d74290f971d35a6a8ab5",
+    "bytes": 284845
+  },
+  "failures.jsonl": {
+    "sha256": "bd13c3edf83d630c2942904d1f0e297dff8b0faa76af10de52d12192a595dc36",
+    "bytes": 101102802
+  },
+  "summary.json": {
+    "sha256": "fb973c1c8acf7f54262530049a80c94e9b6c8c4b392af98eab8a5d08874b5534",
+    "bytes": 573
+  },
+  "completion.json": {
+    "sha256": "5740b54db275f5edf601301a739219509847df05b64957a599815935ecb6d088",
+    "bytes": 1138
+  }
+}

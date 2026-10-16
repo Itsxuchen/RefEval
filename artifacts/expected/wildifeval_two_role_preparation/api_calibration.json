@@ -1,0 +1,109 @@
+{
+  "created_at": "2026-10-16T17:23:55.678132+00:00",
+  "source": "unrelated_synthetic_probe",
+  "status": "passed",
+  "cases": [
+    {
+      "case": "yes",
+      "expected": 1,
+      "returned": {
+        "prob_yes": 1.0,
+        "score_position": 0,
+        "yes_no_mass": 1.0,
+        "label": 1,
+        "status": "success",
+        "model": "gpt-6-luna",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "parser_version": "wild-top5-position-top5-token-yes-no-mass-gt-1e-4-v1",
+        "top_logprobs": [
+          {
+            "top_logprobs": [
+              {
+                "token": "Yes",
+                "logprob": 0.0
+              }
+            ]
+          }
+        ],
+        "finish_reason": "stop",
+        "response_text_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e",
+        "response_id_sha256": "812696b9da060295c8b6c5ad97599aa489df9af960c72552ef9968712b246b8f"
+      },
+      "cost": {
+        "usage": {
+          "prompt_tokens": 32,
+          "completion_tokens": 4,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "cache_write_tokens_reported": true,
+          "reasoning_tokens": 0
+        },
+        "modeled_nano": 5200,
+        "conservative_nano": 6000,
+        "price_tier": "short"
+      }
+    },
+    {
+      "case": "no",
+      "expected": 0,
+      "returned": {
+        "prob_yes": 0.0,
+        "score_position": 0,
+        "yes_no_mass": 0.9999961853100103,
+        "label": 0,
+        "status": "success",
+        "model": "gpt-6-luna",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "parser_version": "wild-top5-position-top5-token-yes-no-mass-gt-1e-4-v1",
+        "top_logprobs": [
+          {
+            "top_logprobs": [
+              {
+                "token": "No",
+                "logprob": -3.814697265625e-06
+              }
+            ]
+          }
+        ],
+        "finish_reason": "stop",
+        "response_text_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d",
+        "response_id_sha256": "511f10eed5dc96c6e9ec3240a48b6735bf6f57ff8320806a56e7417b26b72e75"
+      },
+      "cost": {
+        "usage": {
+          "prompt_tokens": 32,
+          "completion_tokens": 4,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "cache_write_tokens_reported": true,
+          "reasoning_tokens": 0
+        },
+        "modeled_nano": 5200,
+        "conservative_nano": 6000,
+        "price_tier": "short"
+      }
+    }
+  ],
+  "known_conservative_nano": 12000,
+  "prior_unresolved_reserve_usd": 0.001,
+  "model_requested": "gpt-6-luna",
+  "response_model": "gpt-6-luna",
+  "system_fingerprint": null,
+  "request_parameters": {
+    "reasoning_effort": "none",
+    "temperature": 0,
+    "logprobs": true,
+    "top_logprobs": 5,
+    "max_completion_tokens": 1000,
+    "service_tier": "default",
+    "store": false
+  },
+  "usage_bound_ok": true,
+  "score_parse_ok": true
+}

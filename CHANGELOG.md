@@ -1,5 +1,12 @@
 # Changelog
 
+### Two-role external-study preparation — 2026-10-16
+
+- Adopt the new-P/saved-R scope before outcome access; preserve the original gates, split and primary test. Auxiliary-judge and alternative-reference analyses are omitted explicitly.
+- Prepare immutable reference-free grading jobs, resumable budget-reserved scoring and design/prediction-gated analysis, with synthetic tests.
+- Pass unrelated API calibration and the fixed 160-request fee canary. A pre-reference evidence-serialization repair preserves 152 stored predictions and 8 terminal missing records. Full P, pilot/confirmation results and final-data freeze remain incomplete; the manuscript is unchanged.
+
+
 ### External-route feasibility follow-up — 2026-10-15
 
 - Check all 50 saved WildIFEval channel combinations (39 with distinct judge identities); none meets the original sample gates. Publish a separate independent source verification.

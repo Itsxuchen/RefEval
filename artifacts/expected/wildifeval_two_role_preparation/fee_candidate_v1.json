@@ -1,0 +1,54 @@
+{
+  "complete": true,
+  "estimable": true,
+  "selected_jobs": 160,
+  "by_producer": {
+    "mistral-large": {
+      "total_jobs": 26897,
+      "selected_jobs": 32,
+      "successful_jobs": 30,
+      "known_cost_jobs": 32,
+      "known_nano": 3106875,
+      "unknown_nano": 0
+    },
+    "deepseek-v3": {
+      "total_jobs": 26897,
+      "selected_jobs": 32,
+      "successful_jobs": 31,
+      "known_cost_jobs": 32,
+      "known_nano": 2679875,
+      "unknown_nano": 0
+    },
+    "llama3.1-405b": {
+      "total_jobs": 26897,
+      "selected_jobs": 32,
+      "successful_jobs": 31,
+      "known_cost_jobs": 32,
+      "known_nano": 2776500,
+      "unknown_nano": 0
+    },
+    "qwen2.5-72b": {
+      "total_jobs": 26897,
+      "selected_jobs": 32,
+      "successful_jobs": 30,
+      "known_cost_jobs": 32,
+      "known_nano": 3166500,
+      "unknown_nano": 0
+    },
+    "llama3.3-70b": {
+      "total_jobs": 26897,
+      "selected_jobs": 32,
+      "successful_jobs": 30,
+      "known_cost_jobs": 32,
+      "known_nano": 3074625,
+      "unknown_nano": 0
+    }
+  },
+  "projected_total_usd": 12.44455182421875,
+  "canary_accounting_sha256": "3654f186959aed707f34d296ac054f558e7874c33701c24914e2aaafa0e18b9b",
+  "scope": "Fee projection from fixed canary, plus unresolved charges; no P values or reference outcomes; not a spending guarantee",
+  "status": "review_required",
+  "config_sha256": "be13cfcd92fc1d57bbf0ced5710567689571ba874711ed3761e48bb25181f2d9",
+  "ledger_id": "28a8c1cf-b1d8-4e2a-b443-41446fc9fefd",
+  "canary_job_ids_sha256": "6af1361be9be7c759e51317f5b6422ebee6fd7678b444b1e56d3ae189afbb70f"
+}

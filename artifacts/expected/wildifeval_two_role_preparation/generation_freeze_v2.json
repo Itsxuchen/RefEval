@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "status": "frozen",
+  "created_utc": "2026-10-16T17:43:30.558830+00:00",
+  "config_sha256": "f3cbd297e1daed109fa1791b234270ae168256165e585fdc669b5b32a9743292",
+  "jobs_sha256": "914683b47714464ed85fea1f7505cbadc5f91e3246b4c959052e5c62aa857cd3",
+  "calibration_sha256": "ae00fcfdbf85d7a22bb083bd193ea69d54297cd082631d1726b8e66a62b40b58",
+  "runner_sha256": "10c99f72d32d6b254f66f78ebead42a3e182ae312ec224320af54af1ba0fc39a",
+  "ledger_id": "28a8c1cf-b1d8-4e2a-b443-41446fc9fefd",
+  "state_directory_sha256": "9a060c73ee7ceccbd47e2a64b052dcca356fbdecf50a968b21ee8287fe626ef5",
+  "canary_job_ids_sha256": "6af1361be9be7c759e51317f5b6422ebee6fd7678b444b1e56d3ae189afbb70f",
+  "job_manifest_sha256": "c9e3987da6a432bac9a157df89d47cacfa76654e977c4306a06a5e3678fcabb9",
+  "upstream_template_sha256": "2864bbed5efbf0ba4263e47617f1cac35e3dfd456987d27de5bc84a75c68ddac",
+  "upstream_parser_sha256": "3aea201eee29b6d91c03ac0e21774242526332d43f9f7cc69d9c71601c571774",
+  "reference_values_opened": false,
+  "scope": "Same model, requests, score algorithm and jobs; evidence serialization only; preserve v1 successes and terminal missing records without retries.",
+  "previous_generation_freeze_sha256": "e69cd9c037477129bad747bab258bcc619b27d54cbf485de6758aa453167a25d",
+  "migration_script_sha256": "de1736001f602c981776aaf6be914b0f9cde6e1d505e3d52e423f81c64a9f67b",
+  "compatibility_diagnostic_sha256": "f2d80af194e8e9f7896d8551285865b1792e7d1662ba449aded634f664c8f4f8",
+  "evidence_serialization_version": "selected-prefix-v2",
+  "external_diagnostic_reserved_usd": 0.5,
+  "combined_ceiling_usd": 100
+}

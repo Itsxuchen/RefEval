@@ -1,5 +1,8 @@
 # Next external-validation route
 
+**Follow-up,2026-10-16:** The author has adopted the proposed two-role scope. See [execution preparation](WILDIFEVAL_EXECUTION.md) for the current stage. The dated comparison below records the decision's basis; no external outcomes have been produced.
+
+
 2026-10-15. **Recommendation: generate one fixed, aligned primary judge on WildIFEval and use the saved DeepSeek reference for a two-role mechanism-forecast test.** ProfBench is a useful subsequent human-reference replication. This is a prospective recommendation: no new model call, amended design freeze, pilot or held-out outcome has been executed.
 
 ## Other saved WildIFEval judges

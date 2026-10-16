@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "checks": {
+    "file_hashes": 2,
+    "unit_rows": 37090,
+    "job_hash_and_identity_rows": 134485,
+    "split_clusters": 6847,
+    "independent_rendered_prompt_samples": 100
+  },
+  "reference_files_opened": false,
+  "reference_values_accessed": false,
+  "api_calls": 0,
+  "job_manifest_sha256": "c9e3987da6a432bac9a157df89d47cacfa76654e977c4306a06a5e3678fcabb9",
+  "scope": "Every job identity/hash and split checked; 100 prompts independently reconstructed from source text. No reference outcomes."
+}

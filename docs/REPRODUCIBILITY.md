@@ -254,3 +254,8 @@ The paper identifies package version 0.3.0 and links to its tag. The release com
 [The masked audit](WILDIFEVAL.md) is separate from the v0.3.0 experiments. The planned frame fails the predeclared association/completeness gates, so no external pilot or held-out results exist. CI validates the included compressed metadata offline. Optional source-level reproduction downloads 28 pinned files, verifies their hashes and repeats both independent joins; the exact commands and scope are in that document.
 
 The [expanded feasibility comparison](EXTERNAL_VALIDATION_OPTIONS.md) adds all saved grading-channel combinations, a masked ProfBench inventory and offline prompt-cost scenarios. Its independent source check verifies 39 hashes, six channels and 50 combinations. These are input checks and planning estimates, not external mechanism results. The optional `external` dependency installs pinned Parquet and tokenizer readers; no API client or credential is needed for these checks. The new modules have synthetic tests, and saved reports are covered by the package integrity manifest.
+
+
+## Two-role execution preparation (2026-10-16)
+
+[Execution instructions](WILDIFEVAL_EXECUTION.md) separate local job preparation, API calibration, generation, completed-frame freezing, pilot prediction freezing and confirmation. This extension has no empirical external outputs yet. Core package tests use synthetic requests and references and never require a key. Optional `scoring` installs the API SDK for explicitly authorized future generation; it is not required to reproduce the paper's existing results.
