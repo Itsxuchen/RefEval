@@ -8,6 +8,8 @@ A reference check can estimate a judge's accuracy, certify an individual outcome
 
 **Reproducibility release: [v0.3.0](https://github.com/Itsxuchen/RefEval/releases/tag/v0.3.0).** The tagged snapshot contains the matching manuscript, source archive, data and analyses. arXiv submission remains a separate step.
 
+**External-validation update (2026-10-15):** WildIFEval failed the masked association and completeness checks. The planned four-judge frame retains four common task clusters; even a two-judge diagnostic retains only 40. Pilot and held-out analyses have not run. [Findings and reproduction](docs/WILDIFEVAL.md).
+
 **Manuscript draft:** [PDF](artifacts/manuscript/paper.pdf) · [LaTeX](artifacts/manuscript/paper.tex) · [Methods and proofs](artifacts/manuscript/methods_appendix.tex) · [Build instructions](docs/REPRODUCIBILITY.md#manuscript-build-and-claim-checks) · [Portable TeX source](artifacts/manuscript/arxiv_source.zip)
 
 ## Main findings
@@ -55,7 +57,7 @@ The three contributions measure matched-query update effects, connect certificat
 - Strict all-pass targets are constructed for this study. JudgmentBench includes positive binary conditions and zero-occurrence penalty conditions; RuVerBench uses its retained released criteria.
 - Nine analysis cells share tasks within two data families. JudgmentBench's 1,539 annotations arise from 30 base tasks, and its full-target judge predicts only 31 PASS verdicts.
 - Query-order variation, task-composition resampling, and reference replacement describe different sensitivities. Population confidence intervals come from the stated sampling designs; the fixed allocation split is a comparison condition.
-- One query reveals one stored reference bit. Budgets measure label access, with expert time and auxiliary-judge costs outside this replay. The [external-validation protocol](context/conjunction_external_validation_protocol.md) describes a planned, unexecuted study.
+- One query reveals one stored reference bit. Budgets measure label access, with expert time and auxiliary-judge costs outside this replay. The [external-validation protocol](context/conjunction_external_validation_protocol.md) retains the prospective design and records the failed masked preflight; outcome validation remains unexecuted.
 
 ## Reproduce
 

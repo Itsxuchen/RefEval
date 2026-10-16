@@ -56,3 +56,11 @@ The notices were checked against the pinned official releases on 2026-09-15:
 | `licenses/JudgmentBench-LICENSE` | `56ace6ecda489de9c775e2536367717438856e5c05646983e9262d93c0a5a160` |
 
 This notice records the release declarations and scope used for this package. It does not grant additional rights to upstream materials.
+
+## WildIFEval masked association audit
+
+Affected files: `artifacts/expected/wildifeval_external/`. These contain source hashes, derived aggregate counts, hashed record/criterion identities, condition counts and missingness/association metadata. They contain no source task text, responses, rubric text, judge explanations or numeric judge scores.
+
+Sources are [gililior/wild-if-eval](https://huggingface.co/datasets/gililior/wild-if-eval/tree/fc5f47b2b1be19ac95986624a4c0d8fd25dd316c) and [gililior/wild-if-eval-predictions](https://huggingface.co/datasets/gililior/wild-if-eval-predictions/tree/e34bc0fcc01b7f1d49032878563e8c32393c9d59). The pinned cards and file SHA-256 values are included in `source_manifest.json`. Read those source cards and their underlying-data notices before obtaining or reusing source content. This repository's software license does not relicense that content. Raw downloads remain local and are excluded from this package.
+
+The added metadata identify an association failure for the specific planned roles and snapshots, not a benchmark-wide quality judgment. [Audit scope and checks](docs/WILDIFEVAL.md).

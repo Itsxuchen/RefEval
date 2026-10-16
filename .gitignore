@@ -25,3 +25,8 @@ artifacts/paper-checks/
 artifacts/design-rmse-correction/
 artifacts/design-rmse-extension-replay/
 artifacts/design-rmse-paper-build/
+
+# Optional WildIFEval sources and regenerated metadata stay local.
+artifacts/wildifeval-cache/
+artifacts/wildifeval-preflight/
+artifacts/wildifeval-verification/

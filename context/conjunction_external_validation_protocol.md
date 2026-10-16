@@ -1,6 +1,6 @@
 # External validation design: task structure, update effects, and allocation
 
-Date: 2026-10-10. Status: **design completed; metadata feasibility checked; execution and outcome access not started**. This is a prospective analysis plan for new-to-this-study outcomes, not a claim that an external validation has succeeded or that this draft has been externally preregistered. It does not change the current manuscript's three RQs.
+Design date: 2026-10-10. **2026-10-15 status: full masked preflight failed; pilot and confirmation were not opened or run.** Section 10 records the source-version and coverage findings. The original prospective plan below is retained for traceability; it is not an executed external validation or an externally registered study. The manuscript's three RQs remain unchanged.
 
 ## 1. Decision and the claim being tested
 
@@ -12,9 +12,9 @@ The identities `E_gate − E_eager = D − A` and `E_eager = E0 − C_W − D + 
 
 We will not predict that gating must be worse at high budgets in every environment. The existing paper already implies regimes in which delay is absent or offset by avoided false passes. A transport test must permit these cases to contradict a forecast.
 
-## 2. Public-data feasibility screen
+## 2. Original description-level screen (superseded by Section 10 for WildIFEval)
 
-The screen inspected official descriptions, code, directory inventories and limited schema/headers. It did not compute the proposed outcomes. Search of current project source, progress, decisions and analysis inventory found no prior execution on the selected candidates. WildIFEval and AGENTIF were read as literature; IFEval and SWE-bench were actually analyzed earlier and cannot be relabeled unused confirmation data.
+This initial screen did not establish full record-level feasibility. In particular, the WildIFEval same-output association was inferred from release filenames, and complete criterion compatibility had not been checked. Section 10 supersedes that initial recommendation. The screen inspected official descriptions, code, directory inventories and limited schema/headers. It did not compute the proposed outcomes. Search of current project source, progress, decisions and analysis inventory found no prior execution on the selected candidates. WildIFEval and AGENTIF were read as literature; IFEval and SWE-bench were actually analyzed earlier and cannot be relabeled unused confirmation data.
 
 | Candidate | Verified usable structure | Main gap and role |
 |---|---|---|
@@ -115,3 +115,29 @@ For AGENTIF, first count tasks whose entire original condition set has executabl
 WildIFEval assets cite Apache-2.0, but underlying LMSYS prompt terms restrict redistribution. Publish download instructions, version hashes, analysis code and non-text derived aggregates; do not rehost raw prompts or outputs without applicable permission. [Underlying dataset terms](https://huggingface.co/datasets/lmsys/lmsys-chat-1m/blob/main/README.md). ProfBench uses the NVIDIA Evaluation Dataset License for data and MIT for code; AGENTIF's data card specifies CC-BY-NC-4.0. InFoBench's code is MIT; tie the expert archive to its actual terms before redistributing it.
 
 **Completed now:** source/schema screen, candidate decision, hypotheses, predictors, rejection criteria, split/cost/missingness rules and outcome-access plan. **Required before execution:** exact HF snapshot IDs and file hashes; masked full joins/counts; parser/synthetic probability checks; implementation/code freeze; pilot prediction freeze. No external score matrix, new policy result, judge call, human annotation or prospective success claim has been produced in this turn.
+
+
+## 10. Masked execution check — 2026-10-15
+
+The user authorized a masked full join and missingness check, followed by design freezing, pilot and confirmation only if usable. We downloaded 28 pinned source files (1,094,111,058 bytes) and checked identifiers, complete criterion sets, output metadata, numerical-value validity masks and duplicate connections. No score was thresholded for an external outcome, no pilot fit was produced, and no confirmation result was calculated. Numerical scores were excluded from the analyst-visible preflight outputs. The raw cache is not an encrypted holdout; stage controls prevent passing its reference values into analysis before the recorded gates.
+
+Pinned benchmark: `fc5f47b2b1be19ac95986624a4c0d8fd25dd316c`; pinned predictions/scores: `e34bc0fcc01b7f1d49032878563e8c32393c9d59`.
+
+| Planned check | Four-role common frame | P/R-only diagnostic |
+|---|---:|---:|
+| Complete current-benchmark tasks across all five producers | 4 | 40 |
+| Producer-output units | 20 | 200 |
+| Task clusters | 4 | 40 |
+| Hash-split pilot / confirmation clusters | 0 / 4 | 8 / 32 |
+| Retention relative to 7,523 benchmark tasks | 0.0532% | 0.5317% |
+| Original feasibility thresholds | Failed | Failed |
+
+The P/R-only frame was inspected as a metadata-only rescue diagnostic. It was not adopted as a new confirmatory design. No thresholds were lowered and no alternative model roles or criterion subsets were substituted.
+
+The decisive problem is criterion alignment, beyond the sparse auxiliary/alternative-reference coverage. P and R share 9,779 task-text keys in each producer's files, but only 212 complete criterion sets agree exactly; whitespace normalization still yields 212. In 5,835 shared tasks the criterion counts differ. Requiring the complete current benchmark criterion set yields only 40 valid P vectors per producer, compared with 7,418–7,419 R vectors. Q and R2 each cover a small additional-grader subset. These are source-association findings, not performance comparisons or evidence that one judge is wrong.
+
+The benchmark release supplies conversation IDs and decompositions, without the original task-text column. The join uses unique exact complete criterion sets to link these IDs to saved task-text keys. Thirty-one repeated sets involving 84 benchmark rows are excluded as ambiguous. Score artifacts identify the producing model and task text but omit an evaluated-output hash; exact output identity across grading runs remains a source-provenance assumption. Neither fuzzy semantic matching nor deleting unmatched criteria preserves the proposed native target.
+
+**Decision: STOP before design/label-access freeze.** Section 3's gates fail, so there is no pilot, prediction-freeze file or held-out mechanism result. A coverage count alone initially suggested P/R could support a revised frame; the full criterion join rejected that possibility before any amendment or outcome access. Obtaining correctly aligned saved scores, or making a new fixed judge run on the exact released criteria, is necessary before reconsidering this route. Any such input or role change requires a new dated protocol revision and masked checks before labels are used.
+
+The execution report, masked identity/exclusion tables, source hashes and independent verification are published with the code. The forecast and policy modules were checked only on synthetic fixtures; their presence does not mean this external study ran. This feasibility failure neither confirms nor refutes the manuscript's empirical mechanisms.

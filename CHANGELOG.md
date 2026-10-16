@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased — 2026-10-15
+
+- Publish the WildIFEval masked association/missingness audit and independent source verification. Both the planned four-judge frame and two-judge diagnostic fail the original feasibility gates.
+- Include pinned downloads, compressed metadata, stage-access checks and synthetic forecast/policy tests. No pilot, held-out result, new model inference or experimental design freeze was performed.
+- Preserve the v0.3.0 manuscript and scientific artifacts; the failed preflight adds no evidence for or against the proposed mechanism.
+
 ## 0.3.0 — 2026-10-12
 
 - Publish the complete manuscript, methods appendix and portable LaTeX source under the author-selected title.

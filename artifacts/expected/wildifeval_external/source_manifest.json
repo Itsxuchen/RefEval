@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "revisions": {
+    "benchmark": "fc5f47b2b1be19ac95986624a4c0d8fd25dd316c",
+    "predictions": "e34bc0fcc01b7f1d49032878563e8c32393c9d59"
+  },
+  "files": [
+    {
+      "path": "benchmark/data/test-00000-of-00001.parquet",
+      "repo_id": "gililior/wild-if-eval",
+      "revision": "fc5f47b2b1be19ac95986624a4c0d8fd25dd316c",
+      "upstream_path": "data/test-00000-of-00001.parquet",
+      "bytes": 1478881,
+      "sha256": "1744726301fe8adade0d2648009c8c57146325608f528578f8e919882a798462"
+    },
+    {
+      "path": "benchmark/README.md",
+      "repo_id": "gililior/wild-if-eval",
+      "revision": "fc5f47b2b1be19ac95986624a4c0d8fd25dd316c",
+      "upstream_path": "README.md",
+      "bytes": 3495,
+      "sha256": "64414ff980bd75778d4ac96129a458aac3722ad6b82e86d8977f32986bc50e55"
+    },
+    {
+      "path": "predictions/README.md",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "README.md",
+      "bytes": 3512,
+      "sha256": "761613803289dcc96bbea8204d3c32b0584beda62a5a2618fe2c2c5b5b66a586"
+    },
+    {
+      "path": "predictions/model_predictions/deepseek-v3-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "model_predictions/deepseek-v3-0shot-wild-if-eval.json",
+      "bytes": 31788123,
+      "sha256": "555301b6abff72e4b792a7fd35d9dd72dace43c905c3deeca6978904cfe07c2b"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/llm-aaj-llama3.1-70b.deepseek-v3-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/llm-aaj-llama3.1-70b.deepseek-v3-0shot-wild-if-eval.json",
+      "bytes": 70251053,
+      "sha256": "a941934e374577adcf4f95882ad6d806c0b9834c1cd069b4101b3c13a08ffff6"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/llm-aaj-deepseek-v3.deepseek-v3-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/llm-aaj-deepseek-v3.deepseek-v3-0shot-wild-if-eval.json",
+      "bytes": 108029514,
+      "sha256": "af4585e5405fb531ae7f938f72b627ab0cc0c750a9d31521c7a2cb706f2fb4b8"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/other_judges/llm-aaj-gpt-4o-2024-08-06.deepseek-v3-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/other_judges/llm-aaj-gpt-4o-2024-08-06.deepseek-v3-0shot-wild-if-eval.json",
+      "bytes": 4657211,
+      "sha256": "554958dbcd679b7cb31e6a551796f29e67d10490ca143353a027b9ecf309d13f"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/other_judges/llm-aaj-qwen2.5-72b.deepseek-v3-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/other_judges/llm-aaj-qwen2.5-72b.deepseek-v3-0shot-wild-if-eval.json",
+      "bytes": 4953067,
+      "sha256": "a7f939d2be037420480793dbdfc02d19cad669aad381a906ee8d7a2787d86fdf"
+    },
+    {
+      "path": "predictions/model_predictions/llama3.1-405b-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "model_predictions/llama3.1-405b-0shot-wild-if-eval.json",
+      "bytes": 30150490,
+      "sha256": "4c3e65c202ab4cd235119ead331bd4989f8849f0e2c776b73550a254c5d8ef15"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/llm-aaj-llama3.1-70b.llama3.1-405b-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/llm-aaj-llama3.1-70b.llama3.1-405b-0shot-wild-if-eval.json",
+      "bytes": 70247041,
+      "sha256": "f5eb05affa8414534a4db419d368f02045aed7a99f147ae03bada37d1330cd0e"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/llm-aaj-deepseek-v3.llama3.1-405b-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/llm-aaj-deepseek-v3.llama3.1-405b-0shot-wild-if-eval.json",
+      "bytes": 108069195,
+      "sha256": "46bff526e69e82532382e81f7b571fe064bf4f9f8fc7d8661d7145a68b2a90da"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/other_judges/llm-aaj-gpt-4o-2024-08-06.llama3.1-405b-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/other_judges/llm-aaj-gpt-4o-2024-08-06.llama3.1-405b-0shot-wild-if-eval.json",
+      "bytes": 4644091,
+      "sha256": "63f520de309e0b56fe920ef5be07858d0b5e214153f72faa95baab8c9826098f"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/other_judges/llm-aaj-qwen2.5-72b.llama3.1-405b-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/other_judges/llm-aaj-qwen2.5-72b.llama3.1-405b-0shot-wild-if-eval.json",
+      "bytes": 4958716,
+      "sha256": "43fc3a35289d459161a01cf0dccd4f3f17d8865b41d29c03b0fce7d8f28ed8fc"
+    },
+    {
+      "path": "predictions/model_predictions/llama3.3-70b-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "model_predictions/llama3.3-70b-0shot-wild-if-eval.json",
+      "bytes": 30996224,
+      "sha256": "a4590c9b78f7ade5789129a5d87be0b0d52f97564e28c0045d849f5120fa0587"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/llm-aaj-llama3.1-70b.llama3.3-70b-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/llm-aaj-llama3.1-70b.llama3.3-70b-0shot-wild-if-eval.json",
+      "bytes": 70261533,
+      "sha256": "4781b952c2ffcfa8583f96b3c588abe1e0246281192a66e23ba9d98be17fdd8e"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/llm-aaj-deepseek-v3.llama3.3-70b-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/llm-aaj-deepseek-v3.llama3.3-70b-0shot-wild-if-eval.json",
+      "bytes": 108059214,
+      "sha256": "0e0fd07d5b3c67cb6a8e150d12eb2003854e01611cc19b5e18714ba85a56eed1"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/other_judges/llm-aaj-gpt-4o-2024-08-06.llama3.3-70b-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/other_judges/llm-aaj-gpt-4o-2024-08-06.llama3.3-70b-0shot-wild-if-eval.json",
+      "bytes": 4637907,
+      "sha256": "9dc79c9b723861855f9fe3f57a0e7ca3d26f4a33f6189a6ca9fcd078a4b783cb"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/other_judges/llm-aaj-qwen2.5-72b.llama3.3-70b-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/other_judges/llm-aaj-qwen2.5-72b.llama3.3-70b-0shot-wild-if-eval.json",
+      "bytes": 4957599,
+      "sha256": "5d8713dde726824fc707ed118c113bce2db71a57e643f09ca6ab07fa57379893"
+    },
+    {
+      "path": "predictions/model_predictions/mistral-large-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "model_predictions/mistral-large-0shot-wild-if-eval.json",
+      "bytes": 28725539,
+      "sha256": "69523bcc0a24074d13925af31aca87312cf6df51322c8b9922336a707dfe0bfe"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/llm-aaj-llama3.1-70b.mistral-large-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/llm-aaj-llama3.1-70b.mistral-large-0shot-wild-if-eval.json",
+      "bytes": 70246689,
+      "sha256": "3b8703ac508f808e8879aeaf0f62845ced30072952bf02242239ee6e6f5f5d00"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/llm-aaj-deepseek-v3.mistral-large-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/llm-aaj-deepseek-v3.mistral-large-0shot-wild-if-eval.json",
+      "bytes": 108049278,
+      "sha256": "0d06e5194f2710bc8534a5d193ebf5c46ea298fd4cb837f8dc1b705f2cec4113"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/other_judges/llm-aaj-gpt-4o-2024-08-06.mistral-large-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/other_judges/llm-aaj-gpt-4o-2024-08-06.mistral-large-0shot-wild-if-eval.json",
+      "bytes": 4697524,
+      "sha256": "5c0b1a5c292be960f54e47e8319f68eb4f9b124c5e2f976d8bdd8e4b94424aaf"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/other_judges/llm-aaj-qwen2.5-72b.mistral-large-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/other_judges/llm-aaj-qwen2.5-72b.mistral-large-0shot-wild-if-eval.json",
+      "bytes": 4952420,
+      "sha256": "67f6e004bf099d005225df5b43d520910293c3a9e6837b722d44afd2541e7589"
+    },
+    {
+      "path": "predictions/model_predictions/qwen2.5-72b-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "model_predictions/qwen2.5-72b-0shot-wild-if-eval.json",
+      "bytes": 31409795,
+      "sha256": "c7eee7dff59816fcea4a7416daa3e427fd151c8b6330a8a4fb931bd47efb5f67"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/llm-aaj-llama3.1-70b.qwen2.5-72b-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/llm-aaj-llama3.1-70b.qwen2.5-72b-0shot-wild-if-eval.json",
+      "bytes": 70199891,
+      "sha256": "89d2e0ff2684037c15d784382fc0d757c5d8513c46cdcc56d799c52091007618"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/llm-aaj-deepseek-v3.qwen2.5-72b-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/llm-aaj-deepseek-v3.qwen2.5-72b-0shot-wild-if-eval.json",
+      "bytes": 108075978,
+      "sha256": "ef51674d78553710cb17814258a5b8d070ae9cbd4a3ecdca182d5e466cf7e107"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/other_judges/llm-aaj-gpt-4o-2024-08-06.qwen2.5-72b-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/other_judges/llm-aaj-gpt-4o-2024-08-06.qwen2.5-72b-0shot-wild-if-eval.json",
+      "bytes": 4645330,
+      "sha256": "19d112d21badc95636c51c50e248d4cc9e55030be54f722afbbe080b7b440140"
+    },
+    {
+      "path": "predictions/llm_aaj_scores/other_judges/llm-aaj-qwen2.5-72b.qwen2.5-72b-0shot-wild-if-eval.json",
+      "repo_id": "gililior/wild-if-eval-predictions",
+      "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+      "upstream_path": "llm_aaj_scores/other_judges/llm-aaj-qwen2.5-72b.qwen2.5-72b-0shot-wild-if-eval.json",
+      "bytes": 4961748,
+      "sha256": "790ceed4b59fba70fd74a3ee452228870b4c69494bed40d006fbaab532696dd5"
+    }
+  ],
+  "distribution": "local sealed cache; do not redistribute text or score JSON"
+}
