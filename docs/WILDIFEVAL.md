@@ -29,7 +29,7 @@ The benchmark omits task text, so the join maps only unique exact complete crite
 
 ## What is needed to continue
 
-Obtain a correctly aligned saved primary-judge file, or generate a new fixed judge run on the exact benchmark rubric and saved output. Then repeat masked joins and freeze any revised model roles, source versions and protocol before pilot access. Do not use semantic approximate criterion matching, delete failed conditions, lower feasibility thresholds to fit the observed subset, or report these four/forty clusters as the intended external confirmation.
+Obtain a correctly aligned saved primary-judge file, or generate a new fixed judge run on the exact benchmark rubric and saved output. Aligning P is necessary but insufficient for the original four-role design: Q and R2 also need substantially more complete coverage. Any narrower P/R design would require an explicit pre-outcome amendment and would omit the original auxiliary-query and alternative-reference tests. Repeat masked joins and freeze the revised model roles, source versions and protocol before pilot access; retain the feasibility gates. Do not use semantic approximate criterion matching, delete failed conditions, lower feasibility thresholds to fit the observed subset, or report these four/forty clusters as the intended external confirmation.
 
 The staged access loader refuses failed frames. Prediction and policy code has been tested on synthetic fixtures for later use; no claim of real-data external validation follows from those tests. The current manuscript and v0.3.0 scientific outputs are unchanged.
 
