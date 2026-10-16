@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "metadata_only": true,
+  "numeric_scores_retained": false,
+  "threshold_applied": false,
+  "production_join_helpers_imported": false,
+  "source_files_hash_checked": 39,
+  "channels_independently_checked": 6,
+  "combinations_independently_checked": 50,
+  "channel_counts": {
+    "main/deepseek-v3": {
+      "common_tasks": 7418,
+      "clusters": 6847,
+      "pilot_clusters": 1369,
+      "confirmation_clusters": 5478,
+      "criteria_per_producer": 26897,
+      "coverage_feasible": true
+    },
+    "main/llama3.1-70b": {
+      "common_tasks": 40,
+      "clusters": 40,
+      "pilot_clusters": 8,
+      "confirmation_clusters": 32,
+      "criteria_per_producer": 96,
+      "coverage_feasible": false
+    },
+    "agreement/deepseek-v3": {
+      "common_tasks": 348,
+      "clusters": 340,
+      "pilot_clusters": 68,
+      "confirmation_clusters": 272,
+      "criteria_per_producer": 1227,
+      "coverage_feasible": false
+    },
+    "agreement/gpt-4o-2024-08-06": {
+      "common_tasks": 335,
+      "clusters": 328,
+      "pilot_clusters": 65,
+      "confirmation_clusters": 263,
+      "criteria_per_producer": 1177,
+      "coverage_feasible": false
+    },
+    "agreement/llama3.3-70b": {
+      "common_tasks": 332,
+      "clusters": 324,
+      "pilot_clusters": 64,
+      "confirmation_clusters": 260,
+      "criteria_per_producer": 1165,
+      "coverage_feasible": false
+    },
+    "agreement/qwen2.5-72b": {
+      "common_tasks": 337,
+      "clusters": 329,
+      "pilot_clusters": 65,
+      "confirmation_clusters": 264,
+      "criteria_per_producer": 1173,
+      "coverage_feasible": false
+    }
+  },
+  "top_distinct_judge_combinations": [
+    {
+      "channels": [
+        "agreement/deepseek-v3",
+        "agreement/qwen2.5-72b"
+      ],
+      "common_tasks": 337,
+      "clusters": 329,
+      "pilot_clusters": 65,
+      "confirmation_clusters": 264,
+      "criteria_per_producer": 1173,
+      "coverage_feasible": false,
+      "distinct_judges": true
+    },
+    {
+      "channels": [
+        "agreement/qwen2.5-72b",
+        "main/deepseek-v3"
+      ],
+      "common_tasks": 337,
+      "clusters": 329,
+      "pilot_clusters": 65,
+      "confirmation_clusters": 264,
+      "criteria_per_producer": 1173,
+      "coverage_feasible": false,
+      "distinct_judges": true
+    },
+    {
+      "channels": [
+        "agreement/deepseek-v3",
+        "agreement/gpt-4o-2024-08-06"
+      ],
+      "common_tasks": 335,
+      "clusters": 328,
+      "pilot_clusters": 65,
+      "confirmation_clusters": 263,
+      "criteria_per_producer": 1177,
+      "coverage_feasible": false,
+      "distinct_judges": true
+    },
+    {
+      "channels": [
+        "agreement/gpt-4o-2024-08-06",
+        "main/deepseek-v3"
+      ],
+      "common_tasks": 335,
+      "clusters": 328,
+      "pilot_clusters": 65,
+      "confirmation_clusters": 263,
+      "criteria_per_producer": 1177,
+      "coverage_feasible": false,
+      "distinct_judges": true
+    },
+    {
+      "channels": [
+        "agreement/deepseek-v3",
+        "agreement/llama3.3-70b"
+      ],
+      "common_tasks": 332,
+      "clusters": 324,
+      "pilot_clusters": 64,
+      "confirmation_clusters": 260,
+      "criteria_per_producer": 1165,
+      "coverage_feasible": false,
+      "distinct_judges": true
+    }
+  ],
+  "survey_report_sha256": "7aaafbb824f02889e510a07046d24229f36c7c3de7c1dd6c45860a2b7f3b8629",
+  "verifier_source_sha256": "29111b8d7b2d36cdc581b7fb352c2f6daab1e31da4349042034762075272d8c4"
+}

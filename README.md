@@ -10,6 +10,8 @@ A reference check can estimate a judge's accuracy, certify an individual outcome
 
 **External-validation update (2026-10-15):** WildIFEval failed the masked association and completeness checks. The planned four-judge frame retains four common task clusters; even a two-judge diagnostic retains only 40. Pilot and held-out analyses have not run. [Findings and reproduction](docs/WILDIFEVAL.md).
 
+An expanded check of all saved grading channels found no alternative combination meeting the original gates. We recommend generating one aligned primary judge on the larger saved-reference frame, with ProfBench as a later human-reference replication. The [route comparison](docs/EXTERNAL_VALIDATION_OPTIONS.md) reports coverage, prospective costs and remaining limitations. No paid grading or revised design freeze has occurred.
+
 **Manuscript draft:** [PDF](artifacts/manuscript/paper.pdf) · [LaTeX](artifacts/manuscript/paper.tex) · [Methods and proofs](artifacts/manuscript/methods_appendix.tex) · [Build instructions](docs/REPRODUCIBILITY.md#manuscript-build-and-claim-checks) · [Portable TeX source](artifacts/manuscript/arxiv_source.zip)
 
 ## Main findings

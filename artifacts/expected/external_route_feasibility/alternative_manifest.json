@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "repo_id": "gililior/wild-if-eval-predictions",
+  "revision": "e34bc0fcc01b7f1d49032878563e8c32393c9d59",
+  "files": [
+    {
+      "path": "hf_inventory.json",
+      "bytes": 6897,
+      "sha256": "005ea5a96993eb15bf5ef30748864bc00903f51347a3993cbfed9f0214044a2b"
+    },
+    {
+      "path": "llm_aaj_scores/other_judges/llm-aaj-deepseek-v3.deepseek-v3-0shot-wild-if-eval.json",
+      "bytes": 5089712,
+      "sha256": "86482f067999cb88c18cec8edb41fa43695378a9a93ffff61891904bedd9877f"
+    },
+    {
+      "path": "llm_aaj_scores/other_judges/llm-aaj-deepseek-v3.llama3.1-405b-0shot-wild-if-eval.json",
+      "bytes": 5090726,
+      "sha256": "7a59eeb703f73033ad8cd28e65cad66c3a7de0ced7898bd3da87bde0fc064b33"
+    },
+    {
+      "path": "llm_aaj_scores/other_judges/llm-aaj-deepseek-v3.llama3.3-70b-0shot-wild-if-eval.json",
+      "bytes": 5090950,
+      "sha256": "d7b4ddb128e3e384144cd5378719664bad0dd122d865891dec2bd2d7d9cb1d2f"
+    },
+    {
+      "path": "llm_aaj_scores/other_judges/llm-aaj-deepseek-v3.mistral-large-0shot-wild-if-eval.json",
+      "bytes": 5089860,
+      "sha256": "6340aa82395d214b31093d8be9b532504a55ff46f30091ef7e7c971c4b268395"
+    },
+    {
+      "path": "llm_aaj_scores/other_judges/llm-aaj-deepseek-v3.qwen2.5-72b-0shot-wild-if-eval.json",
+      "bytes": 5091464,
+      "sha256": "ddcf3664bda832de7f7901f1b7c3512e6e3c75ac1f0e92c69e1135ae07564b82"
+    },
+    {
+      "path": "llm_aaj_scores/other_judges/llm-aaj-llama3.3-70b.deepseek-v3-0shot-wild-if-eval.json",
+      "bytes": 4884144,
+      "sha256": "e15f6039a338d6fb632f837c57acb417cde984056e315c66e43acb0dc1e15681"
+    },
+    {
+      "path": "llm_aaj_scores/other_judges/llm-aaj-llama3.3-70b.llama3.1-405b-0shot-wild-if-eval.json",
+      "bytes": 4900477,
+      "sha256": "c4664f890ccdc6882d2864342db4ac4d8b3e805e9d20b3f49428c2aa3d0ad194"
+    },
+    {
+      "path": "llm_aaj_scores/other_judges/llm-aaj-llama3.3-70b.llama3.3-70b-0shot-wild-if-eval.json",
+      "bytes": 4899423,
+      "sha256": "159d233c813a1ddce084b9ed20bf71e9de551116517cb4a757e4f9e481ce77b7"
+    },
+    {
+      "path": "llm_aaj_scores/other_judges/llm-aaj-llama3.3-70b.mistral-large-0shot-wild-if-eval.json",
+      "bytes": 4894871,
+      "sha256": "82c81ab0797c363446e57d14c47729255b2e5f4f210d43cdbd788a95102c2a98"
+    },
+    {
+      "path": "llm_aaj_scores/other_judges/llm-aaj-llama3.3-70b.qwen2.5-72b-0shot-wild-if-eval.json",
+      "bytes": 4900015,
+      "sha256": "553dc003d9343e2e29ee61aff3b5596e66b99aef2ab02b9bbb3f21539a007ba5"
+    }
+  ],
+  "new_score_files": 10,
+  "original_sources_manifest_sha256": "8454bb1e69b29565dd44f8591d583bb7ccd6a708214cc86292d07505b94551da",
+  "scope": "Pinned repository inventory and previously uncached grader files; original 28-file cache unchanged"
+}

@@ -1,5 +1,11 @@
 # Changelog
 
+### External-route feasibility follow-up — 2026-10-15
+
+- Check all 50 saved WildIFEval channel combinations (39 with distinct judge identities); none meets the original sample gates. Publish a separate independent source verification.
+- Add masked ProfBench public-subset counts and offline grading-cost scenarios. No labels are unmasked for outcomes and no model is called.
+- Recommend one newly aligned primary judge with the saved WildIFEval reference, followed by a small ProfBench human-reference replication. The proposal is not an adopted amendment or completed validation; manuscript and previous scientific results are unchanged.
+
 ## Unreleased — 2026-10-15
 
 - Publish the WildIFEval masked association/missingness audit and independent source verification. Both the planned four-judge frame and two-judge diagnostic fail the original feasibility gates.

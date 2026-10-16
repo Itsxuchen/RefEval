@@ -1,0 +1,615 @@
+{
+  "status": "prospective_cost_estimate_no_api_calls",
+  "pricing_checked": "2026-10-15",
+  "pricing": {
+    "gpt-6-luna_standard_short": {
+      "input_per_million": 0.1,
+      "output_per_million": 0.5
+    },
+    "gpt-6.1-sol_standard_short": {
+      "input_per_million": 2.0,
+      "output_per_million": 10.0
+    }
+  },
+  "pricing_source": "https://developers.openai.com/api/docs/pricing",
+  "tokenizer_version": "0.12.0",
+  "tokenization_scope": "Exact text counts in named local encodings; neither a validated GPT-6 tokenizer nor an API billing measurement. Chat-wrapper allowance 8\u201316 tokens/request is a sensitivity assumption, not a guarantee.",
+  "output_scope": "1/32/128/1000 output-token scenarios, not observed generations. Reasoning consumes the output-token allowance; retries and cache-write surcharges are excluded.",
+  "model_compatibility": {
+    "source": "https://developers.openai.com/api/docs/guides/latest-model#gpt-6-astra-update-api-and-model-parameters",
+    "gpt-6-luna": "reasoning=none is a candidate for the temperature/logprobs interface; no API fixture or account access check has run",
+    "gpt-6.1-sol": "does not support reasoning=none; non-none reasoning requires removing temperature/logprobs/top_logprobs, so this is a price tier only, not a drop-in replacement for the released Wild grader",
+    "new_protocol_required": "Hard Yes/No labels or joint-criterion prompts change the grader and must be frozen as a prospective design before revealing validation outcomes"
+  },
+  "source_commits": {
+    "wild": "82ebff7068b9faeadc5468d55935d62b1601d89c",
+    "prof": "b06a29cda4d1433e9a9aad8171e4086299083e94"
+  },
+  "template_hashes": {
+    "wild": "2864bbed5efbf0ba4263e47617f1cac35e3dfd456987d27de5bc84a75c68ddac",
+    "prof": "6aa796c531e1601369cd7249e1f33b0a941e993ef90a7e9004170ee01665d3fe"
+  },
+  "wild": {
+    "scenarios": {
+      "full_aligned_saved_R_frame": {
+        "tasks": 7418,
+        "clusters": 6847,
+        "output_units": 37090,
+        "criterion_requests_per_new_judge": 134485,
+        "joint_requests_per_new_judge": 37090,
+        "by_producer": {
+          "deepseek-v3": {
+            "units": 7418,
+            "criteria": 26897
+          },
+          "llama3.1-405b": {
+            "units": 7418,
+            "criteria": 26897
+          },
+          "llama3.3-70b": {
+            "units": 7418,
+            "criteria": 26897
+          },
+          "mistral-large": {
+            "units": 7418,
+            "criteria": 26897
+          },
+          "qwen2.5-72b": {
+            "units": 7418,
+            "criteria": 26897
+          }
+        },
+        "token_counts": {
+          "o200k_base": {
+            "criterion_prompt_text": {
+              "count": 134485,
+              "total": 79254572,
+              "minimum": 74,
+              "median": 512.0,
+              "p95": 1220.0,
+              "maximum": 1784
+            },
+            "joint_prompt_text": {
+              "count": 37090,
+              "total": 21762261,
+              "minimum": 75,
+              "median": 512.0,
+              "p95": 1227.0,
+              "maximum": 1975
+            },
+            "criterion_input_with_8_to_16_wrapper_tokens": [
+              80330452,
+              81406332
+            ],
+            "joint_input_with_8_to_16_wrapper_tokens": [
+              22058981,
+              22355701
+            ]
+          },
+          "cl100k_base": {
+            "criterion_prompt_text": {
+              "count": 134485,
+              "total": 80597313,
+              "minimum": 74,
+              "median": 521.0,
+              "p95": 1242.0,
+              "maximum": 2734
+            },
+            "joint_prompt_text": {
+              "count": 37090,
+              "total": 22119657,
+              "minimum": 75,
+              "median": 520.0,
+              "p95": 1250.0,
+              "maximum": 2748
+            },
+            "criterion_input_with_8_to_16_wrapper_tokens": [
+              81673193,
+              82749073
+            ],
+            "joint_input_with_8_to_16_wrapper_tokens": [
+              22416377,
+              22713097
+            ]
+          }
+        },
+        "cost_scenarios": [
+          {
+            "model": "gpt-6-luna_standard_short",
+            "output_tokens_per_criterion": 1,
+            "minimum_encoding_proxy_usd": 8.1002877,
+            "maximum_encoding_proxy_usd": 8.342149800000001,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6-luna_standard_short",
+            "output_tokens_per_criterion": 32,
+            "minimum_encoding_proxy_usd": 10.1848052,
+            "maximum_encoding_proxy_usd": 10.4266673,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6-luna_standard_short",
+            "output_tokens_per_criterion": 128,
+            "minimum_encoding_proxy_usd": 16.640085199999998,
+            "maximum_encoding_proxy_usd": 16.8819473,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6-luna_standard_short",
+            "output_tokens_per_criterion": 1000,
+            "minimum_encoding_proxy_usd": 75.2755452,
+            "maximum_encoding_proxy_usd": 75.5174073,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6.1-sol_standard_short",
+            "output_tokens_per_criterion": 1,
+            "minimum_encoding_proxy_usd": 162.005754,
+            "maximum_encoding_proxy_usd": 166.842996,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6.1-sol_standard_short",
+            "output_tokens_per_criterion": 32,
+            "minimum_encoding_proxy_usd": 203.696104,
+            "maximum_encoding_proxy_usd": 208.533346,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6.1-sol_standard_short",
+            "output_tokens_per_criterion": 128,
+            "minimum_encoding_proxy_usd": 332.801704,
+            "maximum_encoding_proxy_usd": 337.638946,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6.1-sol_standard_short",
+            "output_tokens_per_criterion": 1000,
+            "minimum_encoding_proxy_usd": 1505.510904,
+            "maximum_encoding_proxy_usd": 1510.348146,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          }
+        ],
+        "pilot_cost_bits": 26375,
+        "pilot_clusters": 1369,
+        "confirmation_clusters": 5478,
+        "benchmark_retention": 0.9860428020736408
+      },
+      "new_prospective_1250_cluster_cohort": {
+        "tasks": 1288,
+        "clusters": 1250,
+        "output_units": 6440,
+        "criterion_requests_per_new_judge": 23185,
+        "joint_requests_per_new_judge": 6440,
+        "by_producer": {
+          "deepseek-v3": {
+            "units": 1288,
+            "criteria": 4637
+          },
+          "llama3.1-405b": {
+            "units": 1288,
+            "criteria": 4637
+          },
+          "llama3.3-70b": {
+            "units": 1288,
+            "criteria": 4637
+          },
+          "mistral-large": {
+            "units": 1288,
+            "criteria": 4637
+          },
+          "qwen2.5-72b": {
+            "units": 1288,
+            "criteria": 4637
+          }
+        },
+        "token_counts": {
+          "o200k_base": {
+            "criterion_prompt_text": {
+              "count": 23185,
+              "total": 13831344,
+              "minimum": 82,
+              "median": 533.0,
+              "p95": 1192.0,
+              "maximum": 1724
+            },
+            "joint_prompt_text": {
+              "count": 6440,
+              "total": 3807719,
+              "minimum": 79,
+              "median": 521.0,
+              "p95": 1206.0,
+              "maximum": 1769
+            },
+            "criterion_input_with_8_to_16_wrapper_tokens": [
+              14016824,
+              14202304
+            ],
+            "joint_input_with_8_to_16_wrapper_tokens": [
+              3859239,
+              3910759
+            ]
+          },
+          "cl100k_base": {
+            "criterion_prompt_text": {
+              "count": 23185,
+              "total": 14042427,
+              "minimum": 82,
+              "median": 541.0,
+              "p95": 1212.0,
+              "maximum": 1745
+            },
+            "joint_prompt_text": {
+              "count": 6440,
+              "total": 3863818,
+              "minimum": 79,
+              "median": 529.0,
+              "p95": 1226.0,
+              "maximum": 1790
+            },
+            "criterion_input_with_8_to_16_wrapper_tokens": [
+              14227907,
+              14413387
+            ],
+            "joint_input_with_8_to_16_wrapper_tokens": [
+              3915338,
+              3966858
+            ]
+          }
+        },
+        "cost_scenarios": [
+          {
+            "model": "gpt-6-luna_standard_short",
+            "output_tokens_per_criterion": 1,
+            "minimum_encoding_proxy_usd": 1.4132749000000002,
+            "maximum_encoding_proxy_usd": 1.4529312,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6-luna_standard_short",
+            "output_tokens_per_criterion": 32,
+            "minimum_encoding_proxy_usd": 1.7726424,
+            "maximum_encoding_proxy_usd": 1.8122987000000002,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6-luna_standard_short",
+            "output_tokens_per_criterion": 128,
+            "minimum_encoding_proxy_usd": 2.8855224,
+            "maximum_encoding_proxy_usd": 2.9251787,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6-luna_standard_short",
+            "output_tokens_per_criterion": 1000,
+            "minimum_encoding_proxy_usd": 12.9941824,
+            "maximum_encoding_proxy_usd": 13.033838699999999,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6.1-sol_standard_short",
+            "output_tokens_per_criterion": 1,
+            "minimum_encoding_proxy_usd": 28.265498,
+            "maximum_encoding_proxy_usd": 29.058624,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6.1-sol_standard_short",
+            "output_tokens_per_criterion": 32,
+            "minimum_encoding_proxy_usd": 35.452848,
+            "maximum_encoding_proxy_usd": 36.245974,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6.1-sol_standard_short",
+            "output_tokens_per_criterion": 128,
+            "minimum_encoding_proxy_usd": 57.710448,
+            "maximum_encoding_proxy_usd": 58.503574,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6.1-sol_standard_short",
+            "output_tokens_per_criterion": 1000,
+            "minimum_encoding_proxy_usd": 259.883648,
+            "maximum_encoding_proxy_usd": 260.676774,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          }
+        ],
+        "scope": "cost illustration only; a new cohort amendment, not a rescue of the original 70% retention gate"
+      },
+      "new_prospective_1500_cluster_cohort": {
+        "tasks": 1666,
+        "clusters": 1500,
+        "output_units": 8330,
+        "criterion_requests_per_new_judge": 30175,
+        "joint_requests_per_new_judge": 8330,
+        "by_producer": {
+          "deepseek-v3": {
+            "units": 1666,
+            "criteria": 6035
+          },
+          "llama3.1-405b": {
+            "units": 1666,
+            "criteria": 6035
+          },
+          "llama3.3-70b": {
+            "units": 1666,
+            "criteria": 6035
+          },
+          "mistral-large": {
+            "units": 1666,
+            "criteria": 6035
+          },
+          "qwen2.5-72b": {
+            "units": 1666,
+            "criteria": 6035
+          }
+        },
+        "token_counts": {
+          "o200k_base": {
+            "criterion_prompt_text": {
+              "count": 30175,
+              "total": 17824800,
+              "minimum": 82,
+              "median": 524.0,
+              "p95": 1192.2999999999993,
+              "maximum": 1724
+            },
+            "joint_prompt_text": {
+              "count": 8330,
+              "total": 4891598,
+              "minimum": 79,
+              "median": 516.0,
+              "p95": 1209.0,
+              "maximum": 1769
+            },
+            "criterion_input_with_8_to_16_wrapper_tokens": [
+              18066200,
+              18307600
+            ],
+            "joint_input_with_8_to_16_wrapper_tokens": [
+              4958238,
+              5024878
+            ]
+          },
+          "cl100k_base": {
+            "criterion_prompt_text": {
+              "count": 30175,
+              "total": 18108647,
+              "minimum": 82,
+              "median": 532.0,
+              "p95": 1211.0,
+              "maximum": 1833
+            },
+            "joint_prompt_text": {
+              "count": 8330,
+              "total": 4964377,
+              "minimum": 79,
+              "median": 524.5,
+              "p95": 1227.0,
+              "maximum": 1942
+            },
+            "criterion_input_with_8_to_16_wrapper_tokens": [
+              18350047,
+              18591447
+            ],
+            "joint_input_with_8_to_16_wrapper_tokens": [
+              5031017,
+              5097657
+            ]
+          }
+        },
+        "cost_scenarios": [
+          {
+            "model": "gpt-6-luna_standard_short",
+            "output_tokens_per_criterion": 1,
+            "minimum_encoding_proxy_usd": 1.8217075,
+            "maximum_encoding_proxy_usd": 1.8742322000000002,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6-luna_standard_short",
+            "output_tokens_per_criterion": 32,
+            "minimum_encoding_proxy_usd": 2.28942,
+            "maximum_encoding_proxy_usd": 2.3419447,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6-luna_standard_short",
+            "output_tokens_per_criterion": 128,
+            "minimum_encoding_proxy_usd": 3.73782,
+            "maximum_encoding_proxy_usd": 3.7903447000000003,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6-luna_standard_short",
+            "output_tokens_per_criterion": 1000,
+            "minimum_encoding_proxy_usd": 16.89412,
+            "maximum_encoding_proxy_usd": 16.9466447,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6.1-sol_standard_short",
+            "output_tokens_per_criterion": 1,
+            "minimum_encoding_proxy_usd": 36.43415,
+            "maximum_encoding_proxy_usd": 37.484644,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6.1-sol_standard_short",
+            "output_tokens_per_criterion": 32,
+            "minimum_encoding_proxy_usd": 45.7884,
+            "maximum_encoding_proxy_usd": 46.838894,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6.1-sol_standard_short",
+            "output_tokens_per_criterion": 128,
+            "minimum_encoding_proxy_usd": 74.7564,
+            "maximum_encoding_proxy_usd": 75.806894,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          },
+          {
+            "model": "gpt-6.1-sol_standard_short",
+            "output_tokens_per_criterion": 1000,
+            "minimum_encoding_proxy_usd": 337.8824,
+            "maximum_encoding_proxy_usd": 338.932894,
+            "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+          }
+        ],
+        "scope": "cost illustration only; a new cohort amendment, not a rescue of the original 70% retention gate"
+      }
+    },
+    "input_hashes": {
+      "masked_csv": "5d55fc361840ee6f198143b38494585dc9817c1ee4ee6ab192c85b17eb0ad9e1",
+      "benchmark_parquet": "1744726301fe8adade0d2648009c8c57146325608f528578f8e919882a798462",
+      "producer_outputs/deepseek-v3": "555301b6abff72e4b792a7fd35d9dd72dace43c905c3deeca6978904cfe07c2b",
+      "producer_outputs/llama3.1-405b": "4c3e65c202ab4cd235119ead331bd4989f8849f0e2c776b73550a254c5d8ef15",
+      "producer_outputs/llama3.3-70b": "a4590c9b78f7ade5789129a5d87be0b0d52f97564e28c0045d849f5120fa0587",
+      "producer_outputs/mistral-large": "69523bcc0a24074d13925af31aca87312cf6df51322c8b9922336a707dfe0bfe",
+      "producer_outputs/qwen2.5-72b": "c7eee7dff59816fcea4a7416daa3e427fd151c8b6330a8a4fb931bd47efb5f67"
+    },
+    "benchmark_tasks": 7523,
+    "complete_benchmark_criterion_requests": 136050,
+    "score_files_opened": false,
+    "stored_reference_values_accessed": false
+  },
+  "prof": {
+    "inventory": {
+      "tasks": 40,
+      "clusters": 40,
+      "output_units": 120,
+      "criterion_requests_per_new_judge": 3486,
+      "joint_requests_per_new_judge": 120,
+      "by_producer": {
+        "grok4": {
+          "units": 40,
+          "criteria": 1162
+        },
+        "o3": {
+          "units": 40,
+          "criteria": 1162
+        },
+        "r1-0528": {
+          "units": 40,
+          "criteria": 1162
+        }
+      },
+      "token_counts": {
+        "o200k_base": {
+          "criterion_prompt_text": {
+            "count": 3486,
+            "total": 5617274,
+            "minimum": 96,
+            "median": 1408.0,
+            "p95": 3166.0,
+            "maximum": 4132
+          },
+          "joint_prompt_text": {
+            "count": 120,
+            "total": 318716,
+            "minimum": 444,
+            "median": 2497.5,
+            "p95": 4442.499999999998,
+            "maximum": 5796
+          },
+          "criterion_input_with_8_to_16_wrapper_tokens": [
+            5645162,
+            5673050
+          ],
+          "joint_input_with_8_to_16_wrapper_tokens": [
+            319676,
+            320636
+          ]
+        },
+        "cl100k_base": {
+          "criterion_prompt_text": {
+            "count": 3486,
+            "total": 5682307,
+            "minimum": 95,
+            "median": 1422.5,
+            "p95": 3176.0,
+            "maximum": 4153
+          },
+          "joint_prompt_text": {
+            "count": 120,
+            "total": 321981,
+            "minimum": 441,
+            "median": 2519.0,
+            "p95": 4525.799999999999,
+            "maximum": 5794
+          },
+          "criterion_input_with_8_to_16_wrapper_tokens": [
+            5710195,
+            5738083
+          ],
+          "joint_input_with_8_to_16_wrapper_tokens": [
+            322941,
+            323901
+          ]
+        }
+      },
+      "cost_scenarios": [
+        {
+          "model": "gpt-6-luna_standard_short",
+          "output_tokens_per_criterion": 1,
+          "minimum_encoding_proxy_usd": 0.5662592000000001,
+          "maximum_encoding_proxy_usd": 0.5755513000000001,
+          "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+        },
+        {
+          "model": "gpt-6-luna_standard_short",
+          "output_tokens_per_criterion": 32,
+          "minimum_encoding_proxy_usd": 0.6202922000000001,
+          "maximum_encoding_proxy_usd": 0.6295843000000001,
+          "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+        },
+        {
+          "model": "gpt-6-luna_standard_short",
+          "output_tokens_per_criterion": 128,
+          "minimum_encoding_proxy_usd": 0.7876202000000001,
+          "maximum_encoding_proxy_usd": 0.7969123,
+          "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+        },
+        {
+          "model": "gpt-6-luna_standard_short",
+          "output_tokens_per_criterion": 1000,
+          "minimum_encoding_proxy_usd": 2.3075162000000002,
+          "maximum_encoding_proxy_usd": 2.3168083,
+          "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+        },
+        {
+          "model": "gpt-6.1-sol_standard_short",
+          "output_tokens_per_criterion": 1,
+          "minimum_encoding_proxy_usd": 11.325184,
+          "maximum_encoding_proxy_usd": 11.511026,
+          "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+        },
+        {
+          "model": "gpt-6.1-sol_standard_short",
+          "output_tokens_per_criterion": 32,
+          "minimum_encoding_proxy_usd": 12.405844,
+          "maximum_encoding_proxy_usd": 12.591686,
+          "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+        },
+        {
+          "model": "gpt-6.1-sol_standard_short",
+          "output_tokens_per_criterion": 128,
+          "minimum_encoding_proxy_usd": 15.752404,
+          "maximum_encoding_proxy_usd": 15.938246,
+          "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+        },
+        {
+          "model": "gpt-6.1-sol_standard_short",
+          "output_tokens_per_criterion": 1000,
+          "minimum_encoding_proxy_usd": 46.150324,
+          "maximum_encoding_proxy_usd": 46.336166,
+          "rate_basis": "standard short context; all input at noncached input rate; no retries/tools/taxes"
+        }
+      ]
+    },
+    "input_sha256": "c6b01278e67cb94acde66864ae2f4fb2af4b2d3c637491e9abf2190e00c56721",
+    "reference_values_accessed": false
+  }
+}

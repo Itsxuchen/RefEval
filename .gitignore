@@ -30,3 +30,6 @@ artifacts/design-rmse-paper-build/
 artifacts/wildifeval-cache/
 artifacts/wildifeval-preflight/
 artifacts/wildifeval-verification/
+artifacts/wildifeval-alternatives/
+artifacts/profbench-cache/
+artifacts/external-route-recheck/

@@ -2,6 +2,8 @@
 
 Date: 2026-10-15. Status: **input association failed; no external outcome analysis**.
 
+Follow-up: the [expanded route comparison](EXTERNAL_VALIDATION_OPTIONS.md) checks every saved grading-channel combination and compares new aligned grading with ProfBench. It proposes a narrower two-role study; the original failure and gates below remain unchanged.
+
 The proposed four-judge frame cannot support the planned external validation from the inspected public snapshot. Two separate problems arise: extra judges cover a small subset, and the two broadly covered judges score different complete criterion sets on most shared task texts. Removing the extra-judge requirement does not repair the join.
 
 | Frame | Common tasks / clusters | Producer-output units | Pilot / confirmation clusters | Retained benchmark tasks |

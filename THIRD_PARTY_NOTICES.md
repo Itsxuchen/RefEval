@@ -59,8 +59,14 @@ This notice records the release declarations and scope used for this package. It
 
 ## WildIFEval masked association audit
 
+The expanded audit also contributes source hashes, derived counts and non-text metadata under `artifacts/expected/external_route_feasibility/`. The original WildIFEval terms and underlying prompt restrictions below continue to apply; raw tasks, responses and judge scores are not redistributed.
+
 Affected files: `artifacts/expected/wildifeval_external/`. These contain source hashes, derived aggregate counts, hashed record/criterion identities, condition counts and missingness/association metadata. They contain no source task text, responses, rubric text, judge explanations or numeric judge scores.
 
 Sources are [gililior/wild-if-eval](https://huggingface.co/datasets/gililior/wild-if-eval/tree/fc5f47b2b1be19ac95986624a4c0d8fd25dd316c) and [gililior/wild-if-eval-predictions](https://huggingface.co/datasets/gililior/wild-if-eval-predictions/tree/e34bc0fcc01b7f1d49032878563e8c32393c9d59). The pinned cards and file SHA-256 values are included in `source_manifest.json`. Read those source cards and their underlying-data notices before obtaining or reusing source content. This repository's software license does not relicense that content. Raw downloads remain local and are excluded from this package.
 
 The added metadata identify an association failure for the specific planned roles and snapshots, not a benchmark-wide quality judgment. [Audit scope and checks](docs/WILDIFEVAL.md).
+
+## ProfBench feasibility metadata
+
+`artifacts/expected/external_route_feasibility/profbench_feasibility.json` contains derived counts, hashed identities and source checksums from [NVIDIA ProfBench](https://huggingface.co/datasets/nvidia/ProfBench/tree/f5c471cf2f277c264621e4b5c0cad5bb466f9260), with code inspected at [b06a29c](https://github.com/NVlabs/ProfBench/tree/b06a29cda4d1433e9a9aad8171e4086299083e94). The upstream data use the NVIDIA Evaluation Dataset License; upstream code uses MIT. This package includes no source prompt, response, rubric text or human fulfilment values. Local downloads remain subject to the upstream terms. Price assumptions link to provider documentation and do not relicense that documentation or promise future pricing.
