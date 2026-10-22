@@ -17,6 +17,12 @@ python -m src.wildifeval_external_run pilot --design artifacts/reports/wildifeva
 
 The pilot stage reads R for pilot clusters only. It fits the frozen forecasters and writes the prediction freeze before any confirmation value can be read.
 
+**Pilot, 2026-10-22.** The pilot stage read the 21,070 pilot reference bits (1,245 tasks × 5 producers) and wrote the prediction freeze at 02:07 UTC. The freeze holds 60 primary forecasts in 15 producer-by-budget cells, plus allocation forecasts. Its payload SHA-256 is `56920ca7c1132ad9154823d8d127060a00c12ff346de6c321bd66b3ec0461b94`, and the files are in [`artifacts/expected/wildifeval_flashlite/pilot/`](../artifacts/expected/wildifeval_flashlite/pilot/). No confirmation reference value had been read when the freeze was published. Confirmation then runs as follows:
+
+```bash
+python -m src.wildifeval_external_run confirmation --design artifacts/reports/wildifeval_external/flashlite_design/design_freeze.json --predictions artifacts/reports/wildifeval_external/flashlite_pilot/prediction_freeze.json --output artifacts/reports/wildifeval_external/flashlite_confirmation
+```
+
 **Earlier status, 2026-10-16:** the author adopted the two-role study and two unrelated API calibration cases passed. The 160-request fee canary and evidence-only compatibility repair are complete, and full grading is running. Dataset-level P is not complete; this page reports no completed-data design freeze, pilot fit or held-out result. It describes the executable workflow and the completed API calibration.
 
 The [original masked preflight](WILDIFEVAL.md) failed because saved judges did not share complete rubrics. The [dated amendment](../context/conjunction_external_validation_protocol.md#12-author-adopted-two-role-execution-amendment--2026-10-16) instead generates a fixed new P on the exact saved outputs and conditions, with saved DeepSeek scores as R. R is a machine reference. Its historical output association still depends on upstream producer/task provenance because its release lacks evaluated-output hashes. New P records output hashes but does not repair that historical gap.

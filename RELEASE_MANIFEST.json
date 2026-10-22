@@ -16,8 +16,8 @@
       "bytes": 838
     },
     "CHANGELOG.md": {
-      "sha256": "350d9c0dcdf3802a1a4aadc9547a86d19c4493d558ba843e29e276eb2c148f93",
-      "bytes": 13192
+      "sha256": "5da1b3bdad85718cfa77e9d248b0e49f15eb8172aa704dc3400e51e27fb4ed43",
+      "bytes": 13523
     },
     "CITATION.cff": {
       "sha256": "49cc968aafbcc9cc4129ccc301dcc52918d74a5877d7a2a4f9481ca9137b91cb",
@@ -330,6 +330,18 @@
     "artifacts/expected/wildifeval_flashlite/gemini_batch/summary.json": {
       "sha256": "e10d227fcd4611030d2108d9078fae0d8d374a4e9461c4fc098542f67a218ec7",
       "bytes": 3428
+    },
+    "artifacts/expected/wildifeval_flashlite/pilot/attempt.json": {
+      "sha256": "f1ab77255c4044d96ecaf6a567b37cb7159135a1f9e969eff38adbfe39612b9a",
+      "bytes": 126
+    },
+    "artifacts/expected/wildifeval_flashlite/pilot/prediction_freeze.json": {
+      "sha256": "abb33c8ede9dea048663db1552adef4b8f89bb0355a57eee4087bcde131e6e42",
+      "bytes": 577
+    },
+    "artifacts/expected/wildifeval_flashlite/pilot/predictions.json": {
+      "sha256": "56920ca7c1132ad9154823d8d127060a00c12ff346de6c321bd66b3ec0461b94",
+      "bytes": 2363138
     },
     "artifacts/expected/wildifeval_flashlite/repair/freeze.json": {
       "sha256": "b804e4a65bbdd1bcc92e221973b953f8d5e344094271b06f665e83b3b9e1113b",
@@ -752,8 +764,8 @@
       "bytes": 7939
     },
     "docs/WILDIFEVAL_EXECUTION.md": {
-      "sha256": "b96cca89792bd6bec3b6769b6eeb61bbe6bf50769b1a7ced3fc8c098ac58d36b",
-      "bytes": 22339
+      "sha256": "8c399751c77f32593e07c80b1510f5cb10b18d62f544a2f3933e057beb05c2e1",
+      "bytes": 23223
     },
     "docs/references.bib": {
       "sha256": "2bf3929b0d7cb4353bb26234c8b2ef3c69df37f1c5cda9373c77f524931b7d5a",

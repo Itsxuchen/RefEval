@@ -1,0 +1,13 @@
+{
+  "confirmation_reference_bits_revealed": 0,
+  "created_utc": "2026-10-22T02:07:36.352036+00:00",
+  "design_receipt_sha256": "88f75eb26ec73f5eadf40fc4b3a20453f6a35fe53c4eacdd34b38f5030dd29c1",
+  "diagnostic": false,
+  "n_primary_cells": 15,
+  "n_primary_predictions": 60,
+  "prediction_files": {
+    "artifacts/reports/wildifeval_external/flashlite_pilot/predictions.json": "56920ca7c1132ad9154823d8d127060a00c12ff346de6c321bd66b3ec0461b94"
+  },
+  "predictions_path": "artifacts/reports/wildifeval_external/flashlite_pilot/predictions.json",
+  "stage": "prediction_freeze"
+}

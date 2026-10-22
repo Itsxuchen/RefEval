@@ -1,5 +1,9 @@
 # Changelog
 
+### Pilot prediction freeze before confirmation access — 2026-10-22
+
+- Publish the WildIFEval pilot prediction freeze (payload SHA-256 `56920ca7…`). It holds 60 primary forecasts in 15 producer-by-budget cells and the allocation forecasts, fitted on 21,070 pilot reference bits. No confirmation reference value had been read.
+
 ### Completed P and design freeze before pilot access — 2026-10-22
 
 - Publish protocol sections 13 to 18: the ProfBench plan, the switch of P to `gemini-3.1-flash-lite` through Gemini API Batch Mode, parser amendment A1, the repair sensitivity, the completed-data design freeze, and a correction about an earlier Vertex AI batch run that had also completed.
