@@ -1,0 +1,54 @@
+{
+  "protocol_version": "wildifeval-p-vertex-batch-v3",
+  "status": "frozen",
+  "created_utc": "2026-10-21T20:46:06+00:00",
+  "jobs_sha256": "914683b47714464ed85fea1f7505cbadc5f91e3246b4c959052e5c62aa857cd3",
+  "jobs": 134485,
+  "config": {
+    "model": "gemini-3.1-flash-lite",
+    "thinking_level": "LOW",
+    "temperature": 0.0,
+    "max_output_tokens": 2048,
+    "mode": "vertex-batch",
+    "price_in_per_m": 0.125,
+    "price_out_per_m": 0.75
+  },
+  "parser_version": "first-five-words-yes-no-text-v1",
+  "code_sha256": {
+    "batch": "2bf989f7c3f2132f163931d0ca1e91ebdb4342ab209a243ac391c924655b4817",
+    "shared": "831cb5c46ad47a3efbf9b8b396bc1c1af98a9973c6d2a3acc77a792f6d0945e1"
+  },
+  "protocol_section_sha256": "4ae3cb58081986c0c70c9d6d4b2a7e017533c9d23c5d1764425a0eede830d70f",
+  "canary": {
+    "salt": "fee-calibration-v1",
+    "per_producer": 32,
+    "job_ids_sha256": "20f59b64195f2471733e1a130c2be7a59609a317f7e420616df7f0496bdf2897"
+  },
+  "cost": {
+    "cap_usd": 100.0,
+    "price_source": "https://ai.google.dev/gemini-api/docs/pricing, Batch row for gemini-3.1-flash-lite, read 2026-10-21 (0.125 / 0.75 USD per million tokens, thinking counted as output). Vertex batch is assumed to bill the same half rate; the Google Cloud invoice is the final record",
+    "projection_margin": 1.25,
+    "probe_rates": {
+      "price_in_per_m": 0.25,
+      "price_out_per_m": 1.5
+    },
+    "accounting": "each answered request settles at its returned usage and the batch rates; a request without a response is not billed; a running batch job cannot stop at the cap, so the cap applies to the canary projection and to every later submission"
+  },
+  "reference_values_opened": false,
+  "excluded_predecessor": "all OpenAI gpt-6-luna results of luna_run (v1/v2); none enters analysis",
+  "shard_plan": {
+    "max_shard": 30000,
+    "canary_shards": 1,
+    "canary_sha256": "c7c843ae27fd76ad1e64a74fe8e32f777c34b315e4971ae2907a4fd23aad7142",
+    "full_shards": 5,
+    "full_sizes": [
+      30000,
+      30000,
+      30000,
+      30000,
+      14325
+    ],
+    "full_sha256": "caa2911bfc07f9b7901cb830949b324ac0a2f4a06432575691909d07dfbb016a"
+  },
+  "retry_rounds": 2
+}

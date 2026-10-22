@@ -1,6 +1,23 @@
 # WildIFEval: aligned grading and staged external validation
 
-**Status, 2026-10-16:** the author adopted the two-role study and two unrelated API calibration cases passed. The 160-request fee canary and evidence-only compatibility repair are complete, and full grading is running. Dataset-level P is not complete; this page reports no completed-data design freeze, pilot fit or held-out result. It describes the executable workflow and the completed API calibration.
+**Status, 2026-10-22:** P is complete and the completed-data design freeze is issued. Pilot R opens after this publication; no reference value had been read when it was made. Sections 14 to 18 of the [protocol](../context/conjunction_external_validation_protocol.md) record the route, and the receipts are in [`artifacts/expected/wildifeval_flashlite/`](../artifacts/expected/wildifeval_flashlite/). They contain counts, hashes and identifiers but no prompt, output or answer text.
+
+- **Judge (section 14).** The `gpt-6-luna` run of section 12 stopped at its cap after 7,357 predictions, which are archived and excluded. P is `gemini-3.1-flash-lite` (temperature 0, thinking LOW, 2,048 output tokens) through Gemini API Batch Mode. All 134,485 requests returned an answer, at a settled cost of 29.84 USD.
+- **Parser A1 (section 15).** The pinned prompt does not ask for Yes or No, so the section 14 yes/no parser left 18,996 answers (14.1%) missing. A1 keeps every section 14 label and reads explicit first-line verdicts, which leaves 4,430 missing (3.3%). The section 14 parser fails the 70% retention gate, and that result is reported as a sensitivity analysis.
+- **Repair sensitivity (section 16).** The 2,398 unblocked missing jobs were asked once more with "Answer with Yes or No." added, for 0.45 USD. This repaired P is a sensitivity analysis only.
+- **Design freeze (sections 17 and 18).** The freeze re-derives every request, answer, cost and label from the raw batch files. Its frame has 6,188 complete tasks (retention 0.8225 per producer) in 5,742 clusters: 1,148 pilot and 4,594 confirmation. All gates pass.
+- **Correction (section 18).** An earlier Vertex AI batch run with the same configuration had also completed, which section 14 had misreported. Its outputs serve only as a replication check. Criterion labels agree 97.0% between the two runs, and output verdicts agree 96.0%.
+
+The pilot stage runs in the private research tree, which holds the job texts, the P metadata and the saved references:
+
+```bash
+python -m src.wildifeval_external_run validate --design artifacts/reports/wildifeval_external/flashlite_design/design_freeze.json
+python -m src.wildifeval_external_run pilot --design artifacts/reports/wildifeval_external/flashlite_design/design_freeze.json --output artifacts/reports/wildifeval_external/flashlite_pilot
+```
+
+The pilot stage reads R for pilot clusters only. It fits the frozen forecasters and writes the prediction freeze before any confirmation value can be read.
+
+**Earlier status, 2026-10-16:** the author adopted the two-role study and two unrelated API calibration cases passed. The 160-request fee canary and evidence-only compatibility repair are complete, and full grading is running. Dataset-level P is not complete; this page reports no completed-data design freeze, pilot fit or held-out result. It describes the executable workflow and the completed API calibration.
 
 The [original masked preflight](WILDIFEVAL.md) failed because saved judges did not share complete rubrics. The [dated amendment](../context/conjunction_external_validation_protocol.md#12-author-adopted-two-role-execution-amendment--2026-10-16) instead generates a fixed new P on the exact saved outputs and conditions, with saved DeepSeek scores as R. R is a machine reference. Its historical output association still depends on upstream producer/task provenance because its release lacks evaluated-output hashes. New P records output hashes but does not repair that historical gap.
 

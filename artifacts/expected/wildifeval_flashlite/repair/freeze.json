@@ -1,0 +1,47 @@
+{
+  "protocol_version": "wildifeval-p-repair-r1",
+  "status": "frozen",
+  "created_utc": "2026-10-22T01:43:47+00:00",
+  "jobs_sha256": "914683b47714464ed85fea1f7505cbadc5f91e3246b4c959052e5c62aa857cd3",
+  "source_a1_sha256": "34f917077f86db1d7386e5826cb05ba170fb7036cf0306ad1a5e7f9005439c29",
+  "repair_rules": [
+    "missing-abstain",
+    "missing-conflict",
+    "missing-no-verdict",
+    "missing-partial"
+  ],
+  "jobs": 2398,
+  "job_ids_sha256": "df4e0334dad135a87c15637a6ef5120d75f02ccdfb8c42dafbbd32bf4abc49ff",
+  "instruction": "Answer with Yes or No.",
+  "config": {
+    "model": "gemini-3.1-flash-lite",
+    "thinking_level": "LOW",
+    "temperature": 0.0,
+    "max_output_tokens": 2048,
+    "mode": "gemini-api-batch",
+    "price_in_per_m": 0.125,
+    "price_out_per_m": 0.75
+  },
+  "parser_version": "first-line-verdict-text-v2",
+  "code_sha256": {
+    "repair": "39e4011d52ba3459c81d5cd0f9e9098f36e4ee237deb8ce2b09c960216bad69d",
+    "batch": "9223370b3eeb4f0f06b0e3e5bad4ba3ca03b84c5cbc0acdc297ff2d2fa4b8b0b",
+    "shared": "831cb5c46ad47a3efbf9b8b396bc1c1af98a9973c6d2a3acc77a792f6d0945e1",
+    "parser": "98817fcf2188de312bffdfc3b6f51e982747fc4cfc4a1990ae2c702b453fcfb8"
+  },
+  "protocol_section_sha256": "90b5f3370a27173f2cd6699474ee572de9d6cb824c09dbbdafef55bc842bbf24",
+  "shard_plan": {
+    "shards": 1,
+    "sizes": [
+      2398
+    ],
+    "sha256": "df4e0334dad135a87c15637a6ef5120d75f02ccdfb8c42dafbbd32bf4abc49ff"
+  },
+  "retry_rounds": 2,
+  "cost": {
+    "cap_usd": 10.0,
+    "price_source": "https://ai.google.dev/gemini-api/docs/pricing, Batch row for gemini-3.1-flash-lite, read 2026-10-21: 0.125 / 0.75 USD per million tokens, thinking counted as output",
+    "accounting": "each answered request settles at its returned usage and the batch rates; a submission needs the worst-case bound of section 14 to fit under the cap"
+  },
+  "reference_values_opened": false
+}

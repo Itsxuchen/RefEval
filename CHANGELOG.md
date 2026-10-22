@@ -1,5 +1,11 @@
 # Changelog
 
+### Completed P and design freeze before pilot access — 2026-10-22
+
+- Publish protocol sections 13 to 18: the ProfBench plan, the switch of P to `gemini-3.1-flash-lite` through Gemini API Batch Mode, parser amendment A1, the repair sensitivity, the completed-data design freeze, and a correction about an earlier Vertex AI batch run that had also completed.
+- Add the batch runners, the A1 parser, the repair runner, the design-freeze adapter, the replication check and their synthetic tests. The analysis code of section 12 is unchanged apart from verifying the new archive type.
+- Add text-free receipts for the run, the relabelling, the repair, the replication check and both design freezes (v1 superseded). No reference value had been read when this was published.
+
 ### Two-role external-study preparation — 2026-10-16
 
 - Adopt the new-P/saved-R scope before outcome access; preserve the original gates, split and primary test. Auxiliary-judge and alternative-reference analyses are omitted explicitly.

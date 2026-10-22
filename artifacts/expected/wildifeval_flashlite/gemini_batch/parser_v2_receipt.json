@@ -1,0 +1,135 @@
+{
+  "amendment": "A1",
+  "parser_version": "first-line-verdict-text-v2",
+  "replaces_for_primary": "first-five-words-yes-no-text-v1",
+  "source_results_sha256": "0efa57522a3e5b37f6392bf49ccd717aa215051bcdc5eb2fbc79f97336f2fd75",
+  "output_sha256": "34f917077f86db1d7386e5826cb05ba170fb7036cf0306ad1a5e7f9005439c29",
+  "code_sha256": "98817fcf2188de312bffdfc3b6f51e982747fc4cfc4a1990ae2c702b453fcfb8",
+  "protocol_section_sha256": "8fdffd0be496746f3a4a3c1313e49243cba59e957f2fefb225c8292da31ff42d",
+  "rows": 134485,
+  "tasks": 7418,
+  "units": 37090,
+  "rules": {
+    "first-word-lexicon": 289,
+    "missing-abstain": 1221,
+    "missing-conflict": 12,
+    "missing-empty": 2032,
+    "missing-no-verdict": 401,
+    "missing-partial": 764,
+    "v1-yes-no": 115489,
+    "verdict-phrase": 14277
+  },
+  "rules_by_producer": {
+    "deepseek-v3": {
+      "first-word-lexicon": 56,
+      "missing-abstain": 235,
+      "missing-conflict": 3,
+      "missing-empty": 385,
+      "missing-no-verdict": 74,
+      "missing-partial": 129,
+      "v1-yes-no": 23215,
+      "verdict-phrase": 2800
+    },
+    "llama3.1-405b": {
+      "first-word-lexicon": 48,
+      "missing-abstain": 261,
+      "missing-conflict": 2,
+      "missing-empty": 391,
+      "missing-no-verdict": 85,
+      "missing-partial": 140,
+      "v1-yes-no": 23106,
+      "verdict-phrase": 2864
+    },
+    "llama3.3-70b": {
+      "first-word-lexicon": 56,
+      "missing-abstain": 248,
+      "missing-conflict": 1,
+      "missing-empty": 470,
+      "missing-no-verdict": 68,
+      "missing-partial": 184,
+      "v1-yes-no": 23060,
+      "verdict-phrase": 2810
+    },
+    "mistral-large": {
+      "first-word-lexicon": 71,
+      "missing-abstain": 225,
+      "missing-conflict": 3,
+      "missing-empty": 390,
+      "missing-no-verdict": 80,
+      "missing-partial": 154,
+      "v1-yes-no": 23179,
+      "verdict-phrase": 2795
+    },
+    "qwen2.5-72b": {
+      "first-word-lexicon": 58,
+      "missing-abstain": 252,
+      "missing-conflict": 3,
+      "missing-empty": 396,
+      "missing-no-verdict": 94,
+      "missing-partial": 157,
+      "v1-yes-no": 22929,
+      "verdict-phrase": 3008
+    }
+  },
+  "labels": {
+    "v1": {
+      "fail": 23505,
+      "missing": 18996,
+      "pass": 91984
+    },
+    "v2": {
+      "fail": 34402,
+      "missing": 4430,
+      "pass": 95653
+    },
+    "partial_as_fail": {
+      "fail": 35166,
+      "missing": 3666,
+      "pass": 95653
+    }
+  },
+  "common_frame_preview": {
+    "v1": {
+      "tasks_complete": 3634,
+      "task_retention": 0.489889,
+      "clusters": 3297,
+      "pilot_clusters": 643,
+      "confirmation_clusters": 2654,
+      "gates_preview": {
+        "clusters_ge_500": true,
+        "pilot_ge_100": true,
+        "confirmation_ge_300": true,
+        "retention_ge_0.70_each_producer": false
+      }
+    },
+    "v2": {
+      "tasks_complete": 6188,
+      "task_retention": 0.834187,
+      "clusters": 5742,
+      "pilot_clusters": 1137,
+      "confirmation_clusters": 4605,
+      "gates_preview": {
+        "clusters_ge_500": true,
+        "pilot_ge_100": true,
+        "confirmation_ge_300": true,
+        "retention_ge_0.70_each_producer": true
+      }
+    },
+    "partial_as_fail": {
+      "tasks_complete": 6600,
+      "task_retention": 0.889728,
+      "clusters": 6141,
+      "pilot_clusters": 1226,
+      "confirmation_clusters": 4915,
+      "gates_preview": {
+        "clusters_ge_500": true,
+        "pilot_ge_100": true,
+        "confirmation_ge_300": true,
+        "retention_ge_0.70_each_producer": true
+      }
+    }
+  },
+  "note": "Missingness preview from P alone: a task is complete when every criterion of all five producers has a label, and a cluster counts when at least one of its tasks is complete. It is not the completed-data design freeze of section 14 step 6.",
+  "reference_values_opened": false,
+  "utc": "2026-10-22T01:05:45+00:00"
+}

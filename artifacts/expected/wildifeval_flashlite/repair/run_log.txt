@@ -1,0 +1,39 @@
+submitted repair-r0-s00: 2398 requests as batches/29v1obuq26cai8r83ts06iwmcb26sinjjd4r
+repair-r0-s00=JOB_STATE_PENDING
+repair-r0-s00=JOB_STATE_RUNNING
+collected repair-r0-s00: 2398/2398 answered, 0.4481 USD
+{
+  "repair_outcomes": {
+    "missing-abstain": {
+      "fail": 743,
+      "missing": 2,
+      "pass": 476
+    },
+    "missing-conflict": {
+      "fail": 4,
+      "pass": 8
+    },
+    "missing-no-verdict": {
+      "fail": 257,
+      "missing": 3,
+      "pass": 141
+    },
+    "missing-partial": {
+      "fail": 188,
+      "pass": 576
+    }
+  },
+  "labels": {
+    "a1": {
+      "fail": 34402,
+      "missing": 4430,
+      "pass": 95653
+    },
+    "repaired": {
+      "fail": 35594,
+      "missing": 2037,
+      "pass": 96854
+    }
+  },
+  "settled_usd": 0.44805925
+}

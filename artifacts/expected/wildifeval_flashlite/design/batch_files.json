@@ -1,0 +1,150 @@
+{
+  "inputs": {
+    "canary-r0-s00": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/canary-r0-s00.jsonl",
+      "sha256": "20c7938d00abea348c59c81b16e9fdfcb8eb0381fad7a9de318bdfe680b70db8"
+    },
+    "full-r0-s00": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/full-r0-s00.jsonl",
+      "sha256": "8a9b33d1c16d27a4ef56a3faa6dfb3b53e1e82a90b34dc8476a416709a980a94"
+    },
+    "full-r0-s01": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/full-r0-s01.jsonl",
+      "sha256": "12cd8ed8e5cb11ceb8ca00c8cab98d4ea6a9daeebbea179e189ff69b29203462"
+    },
+    "full-r0-s02": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/full-r0-s02.jsonl",
+      "sha256": "f2c2f00b5caec3514ac548d1ecd4915c49eb8ddc9dffa766ff6e44a6ab0a875b"
+    },
+    "full-r0-s03": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/full-r0-s03.jsonl",
+      "sha256": "20d90ab66371e565c9891437a52240b1d1c450d653802b35e76e20b57d9a46da"
+    },
+    "full-r0-s04": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/full-r0-s04.jsonl",
+      "sha256": "b3ec891e59c3601686458161106e69e5d04773fba1cc63bac85b1b107da171ac"
+    },
+    "full-r0-s05": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/full-r0-s05.jsonl",
+      "sha256": "e0e0922256e81870ac9ee00132fc3ea9ad2d42cf3f0c26757f7480c97e702963"
+    },
+    "full-r0-s06": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/full-r0-s06.jsonl",
+      "sha256": "ec568722c5184e3c19fef43b1d617dfb72ea62bd29473c63adda6f77d333b9e8"
+    },
+    "full-r0-s07": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/full-r0-s07.jsonl",
+      "sha256": "a1798a7fbc0a89346769b98785ef4878c76ef1ac3506f91d95dbf4d7716f7a3c"
+    },
+    "full-r0-s08": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/full-r0-s08.jsonl",
+      "sha256": "682fd324e5386f499097713f14c3d34f52e1515bc4ec1f028d37b38b7fc6b396"
+    },
+    "full-r0-s09": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/full-r0-s09.jsonl",
+      "sha256": "b1d68ea00a194da934a0fe1edc8a957b22efbde907e6fa44c165840cd069a2ec"
+    },
+    "full-r0-s10": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/full-r0-s10.jsonl",
+      "sha256": "d44d60570dd7aa7fbede656c13361b7de228caa7a21e4fe2cd72db35ada3603d"
+    },
+    "full-r0-s11": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/full-r0-s11.jsonl",
+      "sha256": "9f0064ea3e779574b170186aad217df213d73ec5eb05ad7e64fde802090846a3"
+    },
+    "full-r0-s12": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/full-r0-s12.jsonl",
+      "sha256": "2137375631eb887d4371f7f9f2c3fd044a0b20883c78c0d0f1d6509c36b9016a"
+    },
+    "full-r0-s13": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/full-r0-s13.jsonl",
+      "sha256": "c6c0c33db5d9f0063eab446f5840c668be109d9be9d2ce56d1bfa3330d398fb2"
+    },
+    "full-r0-s14": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/full-r0-s14.jsonl",
+      "sha256": "2d9f193f362469b897bc873679ca4d6ad38bbb995c27bf2f21b5e154da600a73"
+    },
+    "full-r0-s15": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/full-r0-s15.jsonl",
+      "sha256": "33c78a96890a62373431015bc66e595caa3d73c2c801ec078260a591db5553a7"
+    },
+    "full-r0-s16": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_inputs/full-r0-s16.jsonl",
+      "sha256": "23845b09e7b64a515b9cbb3f106de007398c9edea9433315c5c63005650ecfcb"
+    }
+  },
+  "outputs": {
+    "canary-r0-s00": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/canary-r0-s00.jsonl",
+      "sha256": "141f9f71d83eba8b43b6e95b2276927d79d434b7cd905bc0644e4fca8999f834"
+    },
+    "full-r0-s00": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/full-r0-s00.jsonl",
+      "sha256": "c76d9863944c462d2056ff52ff9b28852a7865c3387cd63ec2e0fa7aed30d0a0"
+    },
+    "full-r0-s01": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/full-r0-s01.jsonl",
+      "sha256": "5b78d5d7a1fb4fbf1222898438b96baba4f2cc81f30361b856d8abbe8c22f1b1"
+    },
+    "full-r0-s02": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/full-r0-s02.jsonl",
+      "sha256": "a23b72aa7e5b05a9ab95860214242af924caef39f2cf7ad601a8390899eb4eec"
+    },
+    "full-r0-s03": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/full-r0-s03.jsonl",
+      "sha256": "651560f24a3b8f71058d9b3a7ebc3981801a7ebbe86f6c863a038423c91152c6"
+    },
+    "full-r0-s04": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/full-r0-s04.jsonl",
+      "sha256": "7e99d7013f8f7fabb5adafecc920867f454d1b92f647bd1b4d7fa1cb5bd77bff"
+    },
+    "full-r0-s05": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/full-r0-s05.jsonl",
+      "sha256": "f368317c6bf309cd0b44bf821f5d384e453046de0e3b2d484ff3c21fe43bfcd5"
+    },
+    "full-r0-s06": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/full-r0-s06.jsonl",
+      "sha256": "87ab429d13382c19f280886fc31750712181529384124df198aa38e7654a8153"
+    },
+    "full-r0-s07": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/full-r0-s07.jsonl",
+      "sha256": "204a0cd1533328218aabbe88515d85e097c7685891312fda1b593d5dd4798c47"
+    },
+    "full-r0-s08": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/full-r0-s08.jsonl",
+      "sha256": "7fbb573c95b0ba161f7f2ecb328eb2ab6233673cc6db057779dfea16f24f46be"
+    },
+    "full-r0-s09": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/full-r0-s09.jsonl",
+      "sha256": "e777aa33c6173315a10af97e655479c03eb44eaee92bf8802da06dc331268223"
+    },
+    "full-r0-s10": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/full-r0-s10.jsonl",
+      "sha256": "4edcabeefdc7a692a6aeed68f2030c4022b0a91c18cc0a557ef7f18fe1ed6385"
+    },
+    "full-r0-s11": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/full-r0-s11.jsonl",
+      "sha256": "59bde3106428313ecdd78ccbe7b9505c8cef5cf95a9c6fe48f892d206d4601c0"
+    },
+    "full-r0-s12": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/full-r0-s12.jsonl",
+      "sha256": "e464f015d5fbac38d95df3f7b218cd668df6cfb6fadcd984b6e2080a663c596d"
+    },
+    "full-r0-s13": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/full-r0-s13.jsonl",
+      "sha256": "8ceff1cbd0dd024b8b70f50a54e37af074282a10ad3b38635aa614242a562b05"
+    },
+    "full-r0-s14": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/full-r0-s14.jsonl",
+      "sha256": "092952ba64ad6a4742de98280b8b1c695d3d4cea4ef6de34c380f27203c3351a"
+    },
+    "full-r0-s15": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/full-r0-s15.jsonl",
+      "sha256": "7f73bdd10660001c7047a3d0e239c25db2b44f86afa744c01129ef163a19d500"
+    },
+    "full-r0-s16": {
+      "path": "data/interim/wildifeval_external/flashlite_gemini_batch/batch_outputs/full-r0-s16.jsonl",
+      "sha256": "47e27ab784f596e4a3ff80e39a1a8154e529c5e74632be967635f69cee73d26e"
+    }
+  }
+}

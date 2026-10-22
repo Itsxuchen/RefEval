@@ -1,0 +1,101 @@
+STOPPED: probe probe-ok failed: ClientError: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. ', 'status': 'RESOURCE_EXHAUSTED'}}
+STOPPED: probe probe-ok failed: ClientError: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. ', 'status': 'RESOURCE_EXHAUSTED'}}
+STOPPED: probe probe-ok failed: ClientError: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. ', 'status': 'RESOURCE_EXHAUSTED'}}
+probe probe-ok: model_version=gemini-3.1-flash-lite answer='OK' usage={'prompt': 8, 'candidates': 1, 'thoughts': 102}
+probe probe-yes-no: model_version=gemini-3.1-flash-lite answer='Yes' usage={'prompt': 27, 'candidates': 1, 'thoughts': 123}
+submitted canary-r0-s00: 160 requests as batches/9egpxae5te4sll2203j2nyxy2juc9fxiadtl
+canary: canary-r0-s00=JOB_STATE_PENDING
+canary: canary-r0-s00=JOB_STATE_RUNNING
+collected canary-r0-s00: 160/160 answered, 0.0362 USD
+canary projection: 30.39 USD for all requests (cap 100.00 USD, margin 1.25)
+submitted full-r0-s00: 7812 requests as batches/1uxsyuiagtsopqt9mzvl8gbw1jzkqsrfa6hw
+full-r0-s01 waits: the enqueued-token limit allows 1 running batch job(s)
+1/3 batch jobs collected; full-r0-s00=JOB_STATE_PENDING, full-r0-s01=queued
+collected full-r0-s00: 7812/7812 answered, 1.7478 USD
+submitted full-r0-s01: 7704 requests as batches/onup1q5ekap8t3vcfue4pvjj5idzlrmgbvnv
+2/3 batch jobs collected; full-r0-s01=JOB_STATE_PENDING
+2/3 batch jobs collected; full-r0-s01=JOB_STATE_RUNNING
+collected full-r0-s01: 7704/7704 answered, 1.7262 USD
+submitted full-r0-s02: 7843 requests as batches/2e1t30hplwihcbg2p5zaq2a6zganmc1x23hm
+3/4 batch jobs collected; full-r0-s02=JOB_STATE_PENDING
+3/4 batch jobs collected; full-r0-s02=JOB_STATE_RUNNING
+collected full-r0-s02: 7843/7843 answered, 1.7773 USD
+submitted full-r0-s03: 7937 requests as batches/b0yvpmmcszobz1v5jeaymupgvlmr0un01spu
+4/5 batch jobs collected; full-r0-s03=JOB_STATE_PENDING
+4/5 batch jobs collected; full-r0-s03=JOB_STATE_RUNNING
+4/5 batch jobs collected; full-r0-s03=JOB_STATE_RUNNING
+collected full-r0-s03: 7937/7937 answered, 1.7713 USD
+submitted full-r0-s04: 8117 requests as batches/gpnmpbyvsd75zzdkh3v6ex9mgcgpn5d2paph
+5/6 batch jobs collected; full-r0-s04=JOB_STATE_PENDING
+5/6 batch jobs collected; full-r0-s04=JOB_STATE_RUNNING
+collected full-r0-s04: 8117/8117 answered, 1.8091 USD
+submitted full-r0-s05: 8095 requests as batches/acechnnj3brs9ijr81z3j482l53zz3znfcww
+6/7 batch jobs collected; full-r0-s05=JOB_STATE_PENDING
+collected full-r0-s05: 8095/8095 answered, 1.7954 USD
+submitted full-r0-s06: 8016 requests as batches/eoqh3rudyzxiav94uxrsh864wf2c8etua1km
+7/8 batch jobs collected; full-r0-s06=JOB_STATE_PENDING
+collected full-r0-s06: 8016/8016 answered, 1.7852 USD
+submitted full-r0-s07: 7885 requests as batches/aj8auejzm0q1gzooths9arsxvmzqvrbgezvl
+8/9 batch jobs collected; full-r0-s07=JOB_STATE_PENDING
+8/9 batch jobs collected; full-r0-s07=JOB_STATE_RUNNING
+collected full-r0-s07: 7885/7885 answered, 1.7592 USD
+submitted full-r0-s08: 7989 requests as batches/p87z4zgghw8flp857cwnyrybgxpllkgqk9oe
+9/10 batch jobs collected; full-r0-s08=JOB_STATE_PENDING
+9/10 batch jobs collected; full-r0-s08=JOB_STATE_RUNNING
+collected full-r0-s08: 7989/7989 answered, 1.7617 USD
+submitted full-r0-s09: 7883 requests as batches/186e4jg9xv0dc7ts25sko92cjm7nqaswsakl
+10/11 batch jobs collected; full-r0-s09=JOB_STATE_PENDING
+10/11 batch jobs collected; full-r0-s09=JOB_STATE_RUNNING
+collected full-r0-s09: 7883/7883 answered, 1.7592 USD
+submitted full-r0-s10: 8273 requests as batches/29l0f0ecaocwhaozn6zs4haty478355e6ube
+11/12 batch jobs collected; full-r0-s10=JOB_STATE_PENDING
+11/12 batch jobs collected; full-r0-s10=JOB_STATE_RUNNING
+11/12 batch jobs collected; full-r0-s10=JOB_STATE_RUNNING
+11/12 batch jobs collected; full-r0-s10=JOB_STATE_RUNNING
+11/12 batch jobs collected; full-r0-s10=JOB_STATE_RUNNING
+11/12 batch jobs collected; full-r0-s10=JOB_STATE_RUNNING
+collected full-r0-s10: 8273/8273 answered, 1.8028 USD
+submitted full-r0-s11: 8193 requests as batches/xg5cigfd6ejwuztwo0nnvsvs8v6cq4at91l4
+12/13 batch jobs collected; full-r0-s11=JOB_STATE_PENDING
+collected full-r0-s11: 8193/8193 answered, 1.8121 USD
+submitted full-r0-s12: 8526 requests as batches/hcfeeprzu0q3rujg4ws3odm1r6ma3y5lsk0u
+13/14 batch jobs collected; full-r0-s12=JOB_STATE_PENDING
+13/14 batch jobs collected; full-r0-s12=JOB_STATE_RUNNING
+collected full-r0-s12: 8526/8526 answered, 1.8466 USD
+submitted full-r0-s13: 8075 requests as batches/8397l11434lkxj9mkah9i3p20t47gsbbjsmb
+14/15 batch jobs collected; full-r0-s13=JOB_STATE_PENDING
+14/15 batch jobs collected; full-r0-s13=JOB_STATE_RUNNING
+14/15 batch jobs collected; full-r0-s13=JOB_STATE_RUNNING
+14/15 batch jobs collected; full-r0-s13=JOB_STATE_RUNNING
+14/15 batch jobs collected; full-r0-s13=JOB_STATE_RUNNING
+14/15 batch jobs collected; full-r0-s13=JOB_STATE_RUNNING
+14/15 batch jobs collected; full-r0-s13=JOB_STATE_RUNNING
+14/15 batch jobs collected; full-r0-s13=JOB_STATE_RUNNING
+14/15 batch jobs collected; full-r0-s13=JOB_STATE_RUNNING
+collected full-r0-s13: 8075/8075 answered, 1.7760 USD
+submitted full-r0-s14: 7828 requests as batches/6uu2omft9b7sqn8esplelzu8hoh9127uoe2y
+15/16 batch jobs collected; full-r0-s14=JOB_STATE_PENDING
+15/16 batch jobs collected; full-r0-s14=JOB_STATE_RUNNING
+collected full-r0-s14: 7828/7828 answered, 1.7339 USD
+submitted full-r0-s15: 7981 requests as batches/tffuxjzn2816vh4p6dnsb5lmmxdhafahexik
+16/17 batch jobs collected; full-r0-s15=JOB_STATE_PENDING
+16/17 batch jobs collected; full-r0-s15=JOB_STATE_RUNNING
+collected full-r0-s15: 7981/7981 answered, 1.7561 USD
+submitted full-r0-s16: 6168 requests as batches/7jdv4rxacxy124gdclydsj9s0fiezlcfougd
+17/18 batch jobs collected; full-r0-s16=JOB_STATE_PENDING
+17/18 batch jobs collected; full-r0-s16=JOB_STATE_RUNNING
+collected full-r0-s16: 6168/6168 answered, 1.3874 USD
+{
+  "states": {
+    "done": 134485
+  },
+  "labels": {
+    "pass": 91984,
+    "fail": 23505,
+    "missing": 18996
+  },
+  "settled_usd": 29.843650375,
+  "model_versions": [
+    "gemini-3.1-flash-lite"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "producers": {
+    "deepseek-v3": {
+      "canary": 32,
+      "answered": 32,
+      "parsed": 30,
+      "mean_prompt_tokens": 589.34375,
+      "mean_output_tokens": 166.21875,
+      "mean_cost_usd": 0.00019833203125,
+      "jobs": 26897,
+      "projected_usd": 5.33453664453125
+    },
+    "llama3.1-405b": {
+      "canary": 32,
+      "answered": 32,
+      "parsed": 27,
+      "mean_prompt_tokens": 586.96875,
+      "mean_output_tokens": 189.125,
+      "mean_cost_usd": 0.00021521484375,
+      "jobs": 26897,
+      "projected_usd": 5.78863365234375
+    },
+    "llama3.3-70b": {
+      "canary": 32,
+      "answered": 32,
+      "parsed": 23,
+      "mean_prompt_tokens": 679.03125,
+      "mean_output_tokens": 210.28125,
+      "mean_cost_usd": 0.00024258984375,
+      "jobs": 26897,
+      "projected_usd": 6.52493902734375
+    },
+    "mistral-large": {
+      "canary": 32,
+      "answered": 32,
+      "parsed": 28,
+      "mean_prompt_tokens": 683.09375,
+      "mean_output_tokens": 195.4375,
+      "mean_cost_usd": 0.00023196484375,
+      "jobs": 26897,
+      "projected_usd": 6.23915840234375
+    },
+    "qwen2.5-72b": {
+      "canary": 32,
+      "answered": 32,
+      "parsed": 27,
+      "mean_prompt_tokens": 691.40625,
+      "mean_output_tokens": 225.0625,
+      "mean_cost_usd": 0.00025522265625,
+      "jobs": 26897,
+      "projected_usd": 6.864723785156251
+    }
+  },
+  "projected_total_usd": 30.751991511718753,
+  "margin": 1.25,
+  "cap_usd": 100.0,
+  "passed": true,
+  "settled_usd": 0.036933625,
+  "traffic_types": {
+    "ON_DEMAND": 160
+  },
+  "rates": {
+    "price_in_per_m": 0.125,
+    "price_out_per_m": 0.75
+  },
+  "utc": "2026-10-21T21:28:10+00:00"
+}

@@ -1,0 +1,153 @@
+{
+  "section": 18,
+  "purpose": "replication check on P; never changes P or the frame",
+  "batch_jobs": [
+    {
+      "key": "canary-r0-s00",
+      "n": 160
+    },
+    {
+      "key": "full-r0-s00",
+      "n": 30000
+    },
+    {
+      "key": "full-r0-s01",
+      "n": 30000
+    },
+    {
+      "key": "full-r0-s02",
+      "n": 30000
+    },
+    {
+      "key": "full-r0-s03",
+      "n": 30000
+    },
+    {
+      "key": "full-r0-s04",
+      "n": 14325
+    }
+  ],
+  "output_files": {
+    "replication_outputs/canary-r0-s00/prediction-model-2026-10-21T21:20:06.880426Z/predictions.jsonl": "17333dde52313588dbaccfb4b05b1e7acc0f5e4b476bad0432198b773cc5046b",
+    "replication_outputs/full-r0-s00/prediction-model-2026-10-21T21:28:44.986507Z/predictions.jsonl": "92c6edfbbdcfad988a66da665c2d6a91f46b602e23d7ff0c60f6fd2de286ce1f",
+    "replication_outputs/full-r0-s01/prediction-model-2026-10-21T21:29:16.879449Z/predictions.jsonl": "896b1639b146ee166d171d463ae835c93763cb41b3a9d640a969c9a5f8fa8367",
+    "replication_outputs/full-r0-s02/prediction-model-2026-10-21T21:29:48.769191Z/predictions.jsonl": "f737d017dd037b919c4bf68ca4434b186c89c8d9960eb877b90f23576658239a",
+    "replication_outputs/full-r0-s03/prediction-model-2026-10-21T21:30:20.156677Z/predictions.jsonl": "8b145ba75fb690afd2ab0270d495c73e14262622d40d3658c044bfeaf8c87f7c",
+    "replication_outputs/full-r0-s04/prediction-model-2026-10-21T21:30:36.329724Z/predictions.jsonl": "9627315756b569ce8ca3cbf6e134c136b21041a4b58ddca6fd788c829072a257"
+  },
+  "p_sha256": "34f917077f86db1d7386e5826cb05ba170fb7036cf0306ad1a5e7f9005439c29",
+  "comparison_sha256": "469f17a8f83281f68180cc37f5cadc970037bcd0d22510c35b11560133d86e31",
+  "code_sha256": "e643a97df459b4a31e703b0b029a0890f0c3f875c7637dd5dd0df4ecf6e2b585",
+  "jobs": 134485,
+  "identical_answer_text": 24513,
+  "criterion_pairs": {
+    "agree": 125321,
+    "both_missing": 1890,
+    "p_fail_vertex_pass": 1945,
+    "p_missing": 2540,
+    "p_pass_vertex_fail": 1976,
+    "vertex_missing": 813
+  },
+  "criterion_agreement_where_both_labelled": 0.969662,
+  "section14_parser_pairs": {
+    "agree": 110264,
+    "disagree": 1316
+  },
+  "by_producer": {
+    "deepseek-v3": {
+      "agree": 25223,
+      "both_missing": 361,
+      "p_fail_vertex_pass": 364,
+      "p_missing": 465,
+      "p_pass_vertex_fail": 351,
+      "vertex_missing": 133
+    },
+    "llama3.1-405b": {
+      "agree": 25014,
+      "both_missing": 382,
+      "p_fail_vertex_pass": 401,
+      "p_missing": 497,
+      "p_pass_vertex_fail": 406,
+      "vertex_missing": 197
+    },
+    "llama3.3-70b": {
+      "agree": 24961,
+      "both_missing": 368,
+      "p_fail_vertex_pass": 378,
+      "p_missing": 603,
+      "p_pass_vertex_fail": 421,
+      "vertex_missing": 166
+    },
+    "mistral-large": {
+      "agree": 25085,
+      "both_missing": 370,
+      "p_fail_vertex_pass": 408,
+      "p_missing": 482,
+      "p_pass_vertex_fail": 385,
+      "vertex_missing": 167
+    },
+    "qwen2.5-72b": {
+      "agree": 25038,
+      "both_missing": 409,
+      "p_fail_vertex_pass": 394,
+      "p_missing": 493,
+      "p_pass_vertex_fail": 413,
+      "vertex_missing": 150
+    }
+  },
+  "by_p_rule": {
+    "first-word-lexicon": {
+      "agree": 278,
+      "p_fail_vertex_pass": 2,
+      "p_pass_vertex_fail": 4,
+      "vertex_missing": 5
+    },
+    "missing-abstain": {
+      "both_missing": 938,
+      "p_missing": 283
+    },
+    "missing-conflict": {
+      "both_missing": 3,
+      "p_missing": 9
+    },
+    "missing-empty": {
+      "both_missing": 268,
+      "p_missing": 1764
+    },
+    "missing-no-verdict": {
+      "both_missing": 267,
+      "p_missing": 134
+    },
+    "missing-partial": {
+      "both_missing": 414,
+      "p_missing": 350
+    },
+    "v1-yes-no": {
+      "agree": 112926,
+      "p_fail_vertex_pass": 735,
+      "p_pass_vertex_fail": 1462,
+      "vertex_missing": 366
+    },
+    "verdict-phrase": {
+      "agree": 12117,
+      "p_fail_vertex_pass": 1208,
+      "p_pass_vertex_fail": 510,
+      "vertex_missing": 442
+    }
+  },
+  "vertex_tasks_complete": 6363,
+  "tasks_complete_in_both": 5972,
+  "tasks": 7418,
+  "unit_verdicts_where_both_complete": {
+    "agree": 32519,
+    "p_fail_vertex_pass": 692,
+    "p_pass_vertex_fail": 668
+  },
+  "unit_verdict_agreement": 0.959857,
+  "vertex_model_versions": {
+    "gemini-3.1-flash-lite": 134485
+  },
+  "vertex_cost_at_frozen_batch_rates_usd": 30.149071,
+  "reference_values_opened": false,
+  "utc": "2026-10-22T02:05:07+00:00"
+}

@@ -26,7 +26,8 @@ from src import wildifeval_policy as policy
 
 PRODUCERS = ("deepseek-v3", "llama3.1-405b", "llama3.3-70b", "mistral-large", "qwen2.5-72b")
 CODE_PATHS = ("src/wildifeval_external_run.py", "src/wildifeval_forecast.py",
-              "src/wildifeval_policy.py", "src/finite_population_intervals.py")
+              "src/wildifeval_policy.py", "src/finite_population_intervals.py",
+              "src/wildifeval_flashlite_design.py")
 GENERATION_ARTIFACTS = {"jobs", "units", "results", "config", "receipt", "calibration", "runner",
                         "job_manifest", "source_manifest", "completion", "failures", "accounting_summary", "fee"}
 MIGRATION_ARTIFACTS = {"predecessor_runner", "predecessor_config", "predecessor_freeze",
@@ -301,6 +302,9 @@ def read_generated_labels(jobs_path: Path, results_path: Path, *, expected_model
 
 
 def _generation_roles(freeze: Mapping) -> set[str]:
+    from src import wildifeval_flashlite_design as flashlite
+    if flashlite.is_gemini_receipt(freeze):     # protocol section 14: Gemini batch archive labelled by A1
+        return set(flashlite.ROLES)
     return GENERATION_ARTIFACTS | (MIGRATION_ARTIFACTS if "previous_generation_freeze_sha256" in freeze else set())
 
 
@@ -465,6 +469,9 @@ def _verify_generation(root: Path, artifacts: Mapping[str, str], config: Mapping
                        metadata: list[dict], reference_files: Mapping[str, str]) -> dict:
     if "receipt" not in artifacts or set(artifacts) != _generation_roles(read_json(_path(root, artifacts["receipt"]))):
         raise ValueError("Complete new-P generation evidence bundle required, including any migration predecessor")
+    from src import wildifeval_flashlite_design as flashlite
+    if flashlite.is_gemini_receipt(read_json(_path(root, artifacts["receipt"]))):
+        return flashlite.verify_generation(root, artifacts, config, metadata, reference_files)
     paths = {key: _path(root, value) for key, value in artifacts.items()}
     manifest = read_json(paths["job_manifest"])
     for role, name in (("jobs", "jobs.jsonl"), ("units", "units.jsonl")):

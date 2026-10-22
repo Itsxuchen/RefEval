@@ -1,0 +1,77 @@
+{
+  "protocol_version": "wildifeval-p-repair-r1",
+  "jobs": 2398,
+  "states": {
+    "done": 2398
+  },
+  "finish_reasons": {
+    "STOP": 2396,
+    "None": 2
+  },
+  "repair_outcomes": {
+    "missing-abstain": {
+      "fail": 743,
+      "missing": 2,
+      "pass": 476
+    },
+    "missing-conflict": {
+      "fail": 4,
+      "pass": 8
+    },
+    "missing-no-verdict": {
+      "fail": 257,
+      "missing": 3,
+      "pass": 141
+    },
+    "missing-partial": {
+      "fail": 188,
+      "pass": 576
+    }
+  },
+  "labels": {
+    "a1": {
+      "fail": 34402,
+      "missing": 4430,
+      "pass": 95653
+    },
+    "repaired": {
+      "fail": 35594,
+      "missing": 2037,
+      "pass": 96854
+    }
+  },
+  "common_frame_preview": {
+    "a1": {
+      "tasks_complete": 6188,
+      "task_retention": 0.834187,
+      "clusters": 5742,
+      "pilot_clusters": 1137,
+      "confirmation_clusters": 4605
+    },
+    "repaired": {
+      "tasks_complete": 7129,
+      "task_retention": 0.961041,
+      "clusters": 6612,
+      "pilot_clusters": 1321,
+      "confirmation_clusters": 5291
+    }
+  },
+  "model_versions": [
+    "gemini-3.1-flash-lite"
+  ],
+  "settled_usd": 0.44805925,
+  "cap_usd": 10.0,
+  "batches": [
+    {
+      "key": "repair-r0-s00",
+      "n": 2398,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 2398,
+      "settled_usd": 0.44805925000000046
+    }
+  ],
+  "results_sha256": "781afbb52756b8af3941bb43bdb938cc022d7cc2af7de3366c608fd6ab9033b4",
+  "note": "Sensitivity only: repaired P mixes the section 14 prompt with the one-line Yes/No variant for the repair set. The primary analysis keeps A1.",
+  "reference_values_opened": false,
+  "utc": "2026-10-22T01:48:04+00:00"
+}

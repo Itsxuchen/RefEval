@@ -1,0 +1,67 @@
+{
+  "protocol_version": "wildifeval-p-gemini-batch-v3",
+  "status": "frozen",
+  "created_utc": "2026-10-21T21:33:19+00:00",
+  "jobs_sha256": "914683b47714464ed85fea1f7505cbadc5f91e3246b4c959052e5c62aa857cd3",
+  "jobs": 134485,
+  "config": {
+    "model": "gemini-3.1-flash-lite",
+    "thinking_level": "LOW",
+    "temperature": 0.0,
+    "max_output_tokens": 2048,
+    "mode": "gemini-api-batch",
+    "price_in_per_m": 0.125,
+    "price_out_per_m": 0.75
+  },
+  "parser_version": "first-five-words-yes-no-text-v1",
+  "code_sha256": {
+    "batch": "9223370b3eeb4f0f06b0e3e5bad4ba3ca03b84c5cbc0acdc297ff2d2fa4b8b0b",
+    "shared": "831cb5c46ad47a3efbf9b8b396bc1c1af98a9973c6d2a3acc77a792f6d0945e1"
+  },
+  "protocol_section_sha256": "d178b4b9c14e636b4a6d8ebfa93b9fe1c72cf353c34e3618bf8d1a70c78c4ea4",
+  "canary": {
+    "salt": "fee-calibration-v1",
+    "per_producer": 32,
+    "job_ids_sha256": "20f59b64195f2471733e1a130c2be7a59609a317f7e420616df7f0496bdf2897"
+  },
+  "cost": {
+    "cap_usd": 100.0,
+    "price_source": "https://ai.google.dev/gemini-api/docs/pricing, Batch row for gemini-3.1-flash-lite, read 2026-10-21: 0.125 / 0.75 USD per million tokens, thinking counted as output",
+    "projection_margin": 1.25,
+    "probe_rates": {
+      "price_in_per_m": 0.25,
+      "price_out_per_m": 1.5
+    },
+    "accounting": "each answered request settles at its returned usage and the batch rates; a request without a response is not billed; a running batch job cannot stop at the cap, so the cap applies to the canary projection and to every later submission"
+  },
+  "reference_values_opened": false,
+  "excluded_predecessor": "all OpenAI gpt-6-luna results of luna_run (v1/v2); none enters analysis",
+  "shard_plan": {
+    "max_shard": 10000,
+    "max_shard_bytes": 28000000,
+    "canary_shards": 1,
+    "canary_sha256": "c7c843ae27fd76ad1e64a74fe8e32f777c34b315e4971ae2907a4fd23aad7142",
+    "full_shards": 17,
+    "full_sizes": [
+      7812,
+      7704,
+      7843,
+      7937,
+      8117,
+      8095,
+      8016,
+      7885,
+      7989,
+      7883,
+      8273,
+      8193,
+      8526,
+      8075,
+      7828,
+      7981,
+      6168
+    ],
+    "full_sha256": "1866a5d4bf96f2c86b2a2027272f3c8495638a89e3410a301b2a2c7a9a725ddd"
+  },
+  "retry_rounds": 2
+}

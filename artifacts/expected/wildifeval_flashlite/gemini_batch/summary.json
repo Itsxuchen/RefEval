@@ -1,0 +1,153 @@
+{
+  "protocol_version": "wildifeval-p-gemini-batch-v3",
+  "states": {
+    "done": 134485
+  },
+  "labels": {
+    "pass": 91984,
+    "fail": 23505,
+    "missing": 18996
+  },
+  "finish_reasons": {
+    "STOP": 132437,
+    "PROHIBITED_CONTENT": 247,
+    "None": 1785,
+    "MAX_TOKENS": 16
+  },
+  "model_versions": [
+    "gemini-3.1-flash-lite"
+  ],
+  "settled_usd": 29.843650375,
+  "probe_usd": 0.00034925,
+  "cap_usd": 100.0,
+  "batches": [
+    {
+      "key": "canary-r0-s00",
+      "n": 160,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 160,
+      "settled_usd": 0.036158625000000014
+    },
+    {
+      "key": "full-r0-s00",
+      "n": 7812,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 7812,
+      "settled_usd": 1.7477562500000041
+    },
+    {
+      "key": "full-r0-s01",
+      "n": 7704,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 7704,
+      "settled_usd": 1.7261672500000016
+    },
+    {
+      "key": "full-r0-s02",
+      "n": 7843,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 7843,
+      "settled_usd": 1.7773159999999975
+    },
+    {
+      "key": "full-r0-s03",
+      "n": 7937,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 7937,
+      "settled_usd": 1.771348000000002
+    },
+    {
+      "key": "full-r0-s04",
+      "n": 8117,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 8117,
+      "settled_usd": 1.8090822499999981
+    },
+    {
+      "key": "full-r0-s05",
+      "n": 8095,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 8095,
+      "settled_usd": 1.7953571249999982
+    },
+    {
+      "key": "full-r0-s06",
+      "n": 8016,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 8016,
+      "settled_usd": 1.7852417499999997
+    },
+    {
+      "key": "full-r0-s07",
+      "n": 7885,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 7885,
+      "settled_usd": 1.7591665000000012
+    },
+    {
+      "key": "full-r0-s08",
+      "n": 7989,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 7989,
+      "settled_usd": 1.7617018749999962
+    },
+    {
+      "key": "full-r0-s09",
+      "n": 7883,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 7883,
+      "settled_usd": 1.7591620000000003
+    },
+    {
+      "key": "full-r0-s10",
+      "n": 8273,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 8273,
+      "settled_usd": 1.8027641250000006
+    },
+    {
+      "key": "full-r0-s11",
+      "n": 8193,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 8193,
+      "settled_usd": 1.8121042499999962
+    },
+    {
+      "key": "full-r0-s12",
+      "n": 8526,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 8526,
+      "settled_usd": 1.84662512500001
+    },
+    {
+      "key": "full-r0-s13",
+      "n": 8075,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 8075,
+      "settled_usd": 1.7760224999999965
+    },
+    {
+      "key": "full-r0-s14",
+      "n": 7828,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 7828,
+      "settled_usd": 1.7338641249999984
+    },
+    {
+      "key": "full-r0-s15",
+      "n": 7981,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 7981,
+      "settled_usd": 1.756086874999993
+    },
+    {
+      "key": "full-r0-s16",
+      "n": 6168,
+      "state": "JOB_STATE_SUCCEEDED",
+      "matched": 6168,
+      "settled_usd": 1.3873764999999965
+    }
+  ],
+  "results_sha256": "0efa57522a3e5b37f6392bf49ccd717aa215051bcdc5eb2fbc79f97336f2fd75",
+  "utc": "2026-10-22T00:36:09+00:00"
+}
