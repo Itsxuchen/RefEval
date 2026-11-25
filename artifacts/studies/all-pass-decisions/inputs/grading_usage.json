@@ -1,0 +1,22 @@
+{
+  "gpt_mini": {
+    "calls": 124,
+    "received": 124,
+    "ledger_usd": 0.076072
+  },
+  "gpt_strong": {
+    "calls": 142,
+    "received": 142,
+    "ledger_usd": 2.400675
+  },
+  "claude_haiku": {
+    "calls": 124,
+    "received": 124,
+    "ledger_usd": 0.242448
+  },
+  "claude_opus": {
+    "calls": 124,
+    "received": 124,
+    "ledger_usd": 1.753125
+  }
+}

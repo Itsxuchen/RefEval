@@ -1,0 +1,412 @@
+{
+  "timestamp": "2026-11-25T09:49:15.669833+00:00",
+  "freeze_sha256": "1c37311fef2879a6a72917e94e0736803a6b3d433a4efb4045cf11bc28c58599",
+  "results_code_sha256": "bf7316b0bdbb9a622033be5e43d2c7bc22dafe86bc9714ac8bb8f9912c4bfb7a",
+  "receipts_sha256": {
+    "professional_gemma_dev.jsonl": "773020beb335efad6dd526cf12ba2d8fd2e841e31e56fa6084040a90b28992ed",
+    "professional_qwen_dev.jsonl": "6c1f33f9fb936035e1c5af44920759c0eba7ea9a33d15e052050c91e4f157ffc"
+  },
+  "provider_fees_usd": 0,
+  "acquisition": {
+    "gemma": {
+      "calls": 24,
+      "status": {
+        "complete": 24
+      },
+      "prompt_tokens": 65252,
+      "completion_tokens": 2517,
+      "elapsed_inference_seconds": 190.379
+    },
+    "qwen": {
+      "calls": 24,
+      "status": {
+        "complete": 24
+      },
+      "prompt_tokens": 65063,
+      "completion_tokens": 2241,
+      "elapsed_inference_seconds": 145.165
+    }
+  },
+  "frames": [
+    {
+      "frame": "JudgmentBench full",
+      "groups": 4,
+      "units": 12,
+      "criteria": 171,
+      "reference_pass_units": 1,
+      "reference_pass_criteria": 129,
+      "reference_fail_criteria": 42,
+      "judges": {
+        "gemma": {
+          "criterion_correct": 66,
+          "criterion_FP": 22,
+          "criterion_FF": 83,
+          "task_FP": 2,
+          "task_FF": 1
+        },
+        "qwen": {
+          "criterion_correct": 56,
+          "criterion_FP": 16,
+          "criterion_FF": 99,
+          "task_FP": 3,
+          "task_FF": 1
+        }
+      },
+      "costs": {
+        "1:1": {
+          "choices": {
+            "criterion": "gemma",
+            "empirical_task": "gemma",
+            "independent_task": "qwen"
+          },
+          "ties": {
+            "criterion": [
+              "gemma"
+            ],
+            "empirical_task": [
+              "gemma"
+            ],
+            "independent_task": [
+              "qwen"
+            ]
+          },
+          "objectives": {
+            "criterion": {
+              "gemma": 0.6140350877192983,
+              "qwen": 0.672514619883041
+            },
+            "empirical_task": {
+              "gemma": 0.25,
+              "qwen": 0.3333333333333333
+            },
+            "independent_task": {
+              "gemma": 0.08343575366170704,
+              "qwen": 0.0833371268344966
+            }
+          },
+          "predicted_task_FP_rate": {
+            "gemma": 0.0001025510789348898,
+            "qwen": 3.7940449806459e-06
+          },
+          "predicted_task_FF_rate": {
+            "gemma": 0.08333320258277215,
+            "qwen": 0.08333333278951595
+          },
+          "different_verdict_units_vs_criterion": {
+            "criterion": 0,
+            "empirical_task": 0,
+            "independent_task": 3
+          }
+        },
+        "3:1": {
+          "choices": {
+            "criterion": "gemma",
+            "empirical_task": "gemma",
+            "independent_task": "qwen"
+          },
+          "ties": {
+            "criterion": [
+              "gemma"
+            ],
+            "empirical_task": [
+              "gemma"
+            ],
+            "independent_task": [
+              "qwen"
+            ]
+          },
+          "objectives": {
+            "criterion": {
+              "gemma": 0.6140350877192983,
+              "qwen": 0.672514619883041
+            },
+            "empirical_task": {
+              "gemma": 0.5833333333333334,
+              "qwen": 0.8333333333333334
+            },
+            "independent_task": {
+              "gemma": 0.08364085581957681,
+              "qwen": 0.08334471492445789
+            }
+          },
+          "predicted_task_FP_rate": {
+            "gemma": 0.0001025510789348898,
+            "qwen": 3.7940449806459e-06
+          },
+          "predicted_task_FF_rate": {
+            "gemma": 0.08333320258277215,
+            "qwen": 0.08333333278951595
+          },
+          "different_verdict_units_vs_criterion": {
+            "criterion": 0,
+            "empirical_task": 0,
+            "independent_task": 3
+          }
+        },
+        "1:3": {
+          "choices": {
+            "criterion": "gemma",
+            "empirical_task": "gemma",
+            "independent_task": "qwen"
+          },
+          "ties": {
+            "criterion": [
+              "gemma"
+            ],
+            "empirical_task": [
+              "gemma"
+            ],
+            "independent_task": [
+              "qwen"
+            ]
+          },
+          "objectives": {
+            "criterion": {
+              "gemma": 0.6140350877192983,
+              "qwen": 0.672514619883041
+            },
+            "empirical_task": {
+              "gemma": 0.4166666666666667,
+              "qwen": 0.5
+            },
+            "independent_task": {
+              "gemma": 0.2501021588272513,
+              "qwen": 0.2500037924135285
+            }
+          },
+          "predicted_task_FP_rate": {
+            "gemma": 0.0001025510789348898,
+            "qwen": 3.7940449806459e-06
+          },
+          "predicted_task_FF_rate": {
+            "gemma": 0.08333320258277215,
+            "qwen": 0.08333333278951595
+          },
+          "different_verdict_units_vs_criterion": {
+            "criterion": 0,
+            "empirical_task": 0,
+            "independent_task": 3
+          }
+        }
+      },
+      "per_pair_task_discordance": 0.25,
+      "development_switch": true,
+      "gate_passed": true,
+      "reserve_groups": 5,
+      "planning_model": "one independent verdict per source group, illustrative for multi-output groups",
+      "planning": [
+        {
+          "advantage_per100": 1.0,
+          "planning_discordance": 0.25,
+          "available_groups": 5,
+          "required_for_80pct": 19621,
+          "approximate_power_against_zero": 0.05022500260743934
+        },
+        {
+          "advantage_per100": 5.0,
+          "planning_discordance": 0.25,
+          "available_groups": 5,
+          "required_for_80pct": 778,
+          "approximate_power_against_zero": 0.0558009914454205
+        },
+        {
+          "advantage_per100": 10.0,
+          "planning_discordance": 0.25,
+          "available_groups": 5,
+          "required_for_80pct": 189,
+          "approximate_power_against_zero": 0.07418341638227505
+        }
+      ]
+    },
+    {
+      "frame": "ProfBench Critical",
+      "groups": 4,
+      "units": 12,
+      "criteria": 81,
+      "reference_pass_units": 1,
+      "reference_pass_criteria": 35,
+      "reference_fail_criteria": 46,
+      "judges": {
+        "gemma": {
+          "criterion_correct": 40,
+          "criterion_FP": 17,
+          "criterion_FF": 24,
+          "task_FP": 1,
+          "task_FF": 1
+        },
+        "qwen": {
+          "criterion_correct": 49,
+          "criterion_FP": 0,
+          "criterion_FF": 32,
+          "task_FP": 0,
+          "task_FF": 1
+        }
+      },
+      "costs": {
+        "1:1": {
+          "choices": {
+            "criterion": "qwen",
+            "empirical_task": "qwen",
+            "independent_task": "qwen"
+          },
+          "ties": {
+            "criterion": [
+              "qwen"
+            ],
+            "empirical_task": [
+              "qwen"
+            ],
+            "independent_task": [
+              "qwen"
+            ]
+          },
+          "objectives": {
+            "criterion": {
+              "gemma": 0.5061728395061729,
+              "qwen": 0.3950617283950617
+            },
+            "empirical_task": {
+              "gemma": 0.16666666666666666,
+              "qwen": 0.08333333333333333
+            },
+            "independent_task": {
+              "gemma": 0.09486137785113805,
+              "qwen": 0.08271803387030989
+            }
+          },
+          "predicted_task_FP_rate": {
+            "gemma": 0.020031773941673024,
+            "qwen": 0.00017238057812882552
+          },
+          "predicted_task_FF_rate": {
+            "gemma": 0.07482960390946503,
+            "qwen": 0.08254565329218107
+          },
+          "different_verdict_units_vs_criterion": {
+            "criterion": 0,
+            "empirical_task": 0,
+            "independent_task": 0
+          }
+        },
+        "3:1": {
+          "choices": {
+            "criterion": "qwen",
+            "empirical_task": "qwen",
+            "independent_task": "qwen"
+          },
+          "ties": {
+            "criterion": [
+              "qwen"
+            ],
+            "empirical_task": [
+              "qwen"
+            ],
+            "independent_task": [
+              "qwen"
+            ]
+          },
+          "objectives": {
+            "criterion": {
+              "gemma": 0.5061728395061729,
+              "qwen": 0.3950617283950617
+            },
+            "empirical_task": {
+              "gemma": 0.3333333333333333,
+              "qwen": 0.08333333333333333
+            },
+            "independent_task": {
+              "gemma": 0.1349249257344841,
+              "qwen": 0.08306279502656755
+            }
+          },
+          "predicted_task_FP_rate": {
+            "gemma": 0.020031773941673024,
+            "qwen": 0.00017238057812882552
+          },
+          "predicted_task_FF_rate": {
+            "gemma": 0.07482960390946503,
+            "qwen": 0.08254565329218107
+          },
+          "different_verdict_units_vs_criterion": {
+            "criterion": 0,
+            "empirical_task": 0,
+            "independent_task": 0
+          }
+        },
+        "1:3": {
+          "choices": {
+            "criterion": "qwen",
+            "empirical_task": "qwen",
+            "independent_task": "gemma"
+          },
+          "ties": {
+            "criterion": [
+              "qwen"
+            ],
+            "empirical_task": [
+              "qwen"
+            ],
+            "independent_task": [
+              "gemma"
+            ]
+          },
+          "objectives": {
+            "criterion": {
+              "gemma": 0.5061728395061729,
+              "qwen": 0.3950617283950617
+            },
+            "empirical_task": {
+              "gemma": 0.3333333333333333,
+              "qwen": 0.25
+            },
+            "independent_task": {
+              "gemma": 0.2445205856700681,
+              "qwen": 0.24780934045467204
+            }
+          },
+          "predicted_task_FP_rate": {
+            "gemma": 0.020031773941673024,
+            "qwen": 0.00017238057812882552
+          },
+          "predicted_task_FF_rate": {
+            "gemma": 0.07482960390946503,
+            "qwen": 0.08254565329218107
+          },
+          "different_verdict_units_vs_criterion": {
+            "criterion": 0,
+            "empirical_task": 0,
+            "independent_task": 1
+          }
+        }
+      },
+      "per_pair_task_discordance": 0.08333333333333333,
+      "development_switch": false,
+      "gate_passed": false,
+      "reserve_groups": 9,
+      "planning_model": "one independent verdict per source group, illustrative for multi-output groups",
+      "planning": [
+        {
+          "advantage_per100": 1.0,
+          "planning_discordance": 0.1,
+          "available_groups": 9,
+          "required_for_80pct": 7844,
+          "approximate_power_against_zero": 0.05102837047839792
+        },
+        {
+          "advantage_per100": 5.0,
+          "planning_discordance": 0.1,
+          "available_groups": 9,
+          "required_for_80pct": 307,
+          "approximate_power_against_zero": 0.07682375780753747
+        },
+        {
+          "advantage_per100": 10.0,
+          "planning_discordance": 0.1,
+          "available_groups": 9,
+          "required_for_80pct": 71,
+          "approximate_power_against_zero": 0.1700658026785759
+        }
+      ]
+    }
+  ]
+}

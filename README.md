@@ -6,6 +6,8 @@
 
 A reference check can estimate a judge's accuracy, certify an individual outcome, or repair an existing verdict. When every rubric criterion must pass, these gains can diverge. This repository studies constructed all-pass targets on **RuVerBench** and **JudgmentBench**, with compact analysis inputs, saved results and reproduction code. The full JudgmentBench target is a FAIL-dominated stress test; coding, research and binary-only targets provide contrasting error structures.
 
+**November decision study.** The numerical companion includes matched judge repeats, cross-rater replay, hard-budget pass-rate estimation, and a held-article judge selection test. It rebuilds five tables and a budget figure from recorded inputs. [Study and reproduction instructions](artifacts/studies/all-pass-decisions/README.md).
+
 **Reproducibility release: [v0.3.0](https://github.com/Itsxuchen/RefEval/releases/tag/v0.3.0).** The tagged snapshot contains the matching manuscript, source archive, data and analyses. arXiv submission remains a separate step.
 
 **External-validation update (2026-10-16):** The original saved-score frame failed the association and coverage gates. A new two-role study has now been adopted: one newly aligned primary judge plus the saved DeepSeek reference. All 134,485 reference-free grading jobs are prepared. API and 160-request fee calibration have returned; full scoring is running after a documented response-evidence compatibility repair. No completed P dataset, pilot or held-out result exists yet. [Execution status and safeguards](docs/WILDIFEVAL_EXECUTION.md) · [Original failure](docs/WILDIFEVAL.md) · [Route comparison](docs/EXTERNAL_VALIDATION_OPTIONS.md).

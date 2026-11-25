@@ -1,0 +1,386 @@
+{
+  "time": "2026-11-25T09:51:51.810342+00:00",
+  "development_bits_sha256": "8983325293497394f8faef6f2922e9f0fb70ff2e8b5079c9a01eb8f3d9c91bdd",
+  "protocol_sha256": "a3e1c5c2d366e57934a3c5db85b523f98922cfe4bcad5d0136e4ea0d2b169ffd",
+  "selectors_code_sha256": {
+    "selector_20261125.py": "cdf523920a932e6e5b8bb019ad2929f35592d3b8b2ca325b960e163e4a00126d",
+    "selector_pilot_results_20261125.py": "bf7316b0bdbb9a622033be5e43d2c7bc22dafe86bc9714ac8bb8f9912c4bfb7a",
+    "selector_summeval_20261125.py": "d16f098a0902ba65f270d8c14f880304a9edcb032dac407c9e6762a410de3110"
+  },
+  "seed": 20261125,
+  "draws": 1999,
+  "panels": {
+    "primary": {
+      "frame": "primary",
+      "groups": 30,
+      "units": 480,
+      "criteria": 1920,
+      "reference_pass_units": 201,
+      "reference_pass_criteria": 1416,
+      "reference_fail_criteria": 504,
+      "judges": {
+        "G-Eval GPT-4": {
+          "criterion_correct": 1039,
+          "criterion_FP": 10,
+          "criterion_FF": 871,
+          "task_FP": 1,
+          "task_FF": 199
+        },
+        "UniEval": {
+          "criterion_correct": 1503,
+          "criterion_FP": 311,
+          "criterion_FF": 106,
+          "task_FP": 133,
+          "task_FF": 27
+        }
+      },
+      "costs": {
+        "1:1": {
+          "choices": {
+            "criterion": "UniEval",
+            "empirical_task": "UniEval",
+            "independent_task": "UniEval"
+          },
+          "ties": {
+            "criterion": [
+              "UniEval"
+            ],
+            "empirical_task": [
+              "UniEval"
+            ],
+            "independent_task": [
+              "UniEval"
+            ]
+          },
+          "objectives": {
+            "criterion": {
+              "G-Eval GPT-4": 0.4588541666666667,
+              "UniEval": 0.2171875
+            },
+            "empirical_task": {
+              "G-Eval GPT-4": 0.4166666666666667,
+              "UniEval": 0.3333333333333333
+            },
+            "independent_task": {
+              "G-Eval GPT-4": 0.4098756018447264,
+              "UniEval": 0.32927250175757306
+            }
+          },
+          "predicted_task_FP_rate": {
+            "G-Eval GPT-4": 0.00032277660362824595,
+            "UniEval": 0.21687647706022875
+          },
+          "predicted_task_FF_rate": {
+            "G-Eval GPT-4": 0.40955282524109815,
+            "UniEval": 0.11239602469734428
+          },
+          "different_verdict_units_vs_criterion": {
+            "criterion": 0,
+            "empirical_task": 0,
+            "independent_task": 0
+          }
+        },
+        "3:1": {
+          "choices": {
+            "criterion": "UniEval",
+            "empirical_task": "G-Eval GPT-4",
+            "independent_task": "G-Eval GPT-4"
+          },
+          "ties": {
+            "criterion": [
+              "UniEval"
+            ],
+            "empirical_task": [
+              "G-Eval GPT-4"
+            ],
+            "independent_task": [
+              "G-Eval GPT-4"
+            ]
+          },
+          "objectives": {
+            "criterion": {
+              "G-Eval GPT-4": 0.4588541666666667,
+              "UniEval": 0.2171875
+            },
+            "empirical_task": {
+              "G-Eval GPT-4": 0.42083333333333334,
+              "UniEval": 0.8875
+            },
+            "independent_task": {
+              "G-Eval GPT-4": 0.4105211550519829,
+              "UniEval": 0.7630254558780305
+            }
+          },
+          "predicted_task_FP_rate": {
+            "G-Eval GPT-4": 0.00032277660362824595,
+            "UniEval": 0.21687647706022875
+          },
+          "predicted_task_FF_rate": {
+            "G-Eval GPT-4": 0.40955282524109815,
+            "UniEval": 0.11239602469734428
+          },
+          "different_verdict_units_vs_criterion": {
+            "criterion": 0,
+            "empirical_task": 304,
+            "independent_task": 304
+          }
+        },
+        "1:3": {
+          "choices": {
+            "criterion": "UniEval",
+            "empirical_task": "UniEval",
+            "independent_task": "UniEval"
+          },
+          "ties": {
+            "criterion": [
+              "UniEval"
+            ],
+            "empirical_task": [
+              "UniEval"
+            ],
+            "independent_task": [
+              "UniEval"
+            ]
+          },
+          "objectives": {
+            "criterion": {
+              "G-Eval GPT-4": 0.4588541666666667,
+              "UniEval": 0.2171875
+            },
+            "empirical_task": {
+              "G-Eval GPT-4": 1.2458333333333333,
+              "UniEval": 0.44583333333333336
+            },
+            "independent_task": {
+              "G-Eval GPT-4": 1.2289812523269226,
+              "UniEval": 0.5540645511522616
+            }
+          },
+          "predicted_task_FP_rate": {
+            "G-Eval GPT-4": 0.00032277660362824595,
+            "UniEval": 0.21687647706022875
+          },
+          "predicted_task_FF_rate": {
+            "G-Eval GPT-4": 0.40955282524109815,
+            "UniEval": 0.11239602469734428
+          },
+          "different_verdict_units_vs_criterion": {
+            "criterion": 0,
+            "empirical_task": 0,
+            "independent_task": 0
+          }
+        }
+      },
+      "per_pair_task_discordance": 0.6333333333333333,
+      "development_switch_any_judges": false,
+      "power_planning_from_two_candidate_verdicts": {
+        "assumed_held_articles": 70,
+        "development_cluster_SD": 0.2849178143246579,
+        "effects": [
+          {
+            "advantage_per100": 1.0,
+            "required_for_80pct": 6374,
+            "approximate_power": 0.05993093215652556
+          },
+          {
+            "advantage_per100": 5.0,
+            "required_for_80pct": 255,
+            "approximate_power": 0.3117510843251704
+          },
+          {
+            "advantage_per100": 10.0,
+            "required_for_80pct": 64,
+            "approximate_power": 0.8355911270917357
+          }
+        ],
+        "note": "Normal approximation using development article-level centered paired influence, assumes transport of variance."
+      }
+    },
+    "development_calibrated": {
+      "frame": "development_calibrated",
+      "groups": 30,
+      "units": 480,
+      "criteria": 1920,
+      "reference_pass_units": 201,
+      "reference_pass_criteria": 1416,
+      "reference_fail_criteria": 504,
+      "judges": {
+        "G-Eval GPT-4": {
+          "criterion_correct": 1593,
+          "criterion_FP": 225,
+          "criterion_FF": 102,
+          "task_FP": 107,
+          "task_FF": 29
+        },
+        "UniEval": {
+          "criterion_correct": 1578,
+          "criterion_FP": 243,
+          "criterion_FF": 99,
+          "task_FP": 80,
+          "task_FF": 48
+        }
+      },
+      "costs": {
+        "1:1": {
+          "choices": {
+            "criterion": "G-Eval GPT-4",
+            "empirical_task": "UniEval",
+            "independent_task": "G-Eval GPT-4"
+          },
+          "ties": {
+            "criterion": [
+              "G-Eval GPT-4"
+            ],
+            "empirical_task": [
+              "UniEval"
+            ],
+            "independent_task": [
+              "G-Eval GPT-4"
+            ]
+          },
+          "objectives": {
+            "criterion": {
+              "G-Eval GPT-4": 0.1703125,
+              "UniEval": 0.178125
+            },
+            "empirical_task": {
+              "G-Eval GPT-4": 0.2833333333333333,
+              "UniEval": 0.26666666666666666
+            },
+            "independent_task": {
+              "G-Eval GPT-4": 0.24518527580715882,
+              "UniEval": 0.2587437376033144
+            }
+          },
+          "predicted_task_FP_rate": {
+            "G-Eval GPT-4": 0.1365467109399549,
+            "UniEval": 0.15294586963500037
+          },
+          "predicted_task_FF_rate": {
+            "G-Eval GPT-4": 0.10863856486720393,
+            "UniEval": 0.10579786796831407
+          },
+          "different_verdict_units_vs_criterion": {
+            "criterion": 0,
+            "empirical_task": 118,
+            "independent_task": 0
+          }
+        },
+        "3:1": {
+          "choices": {
+            "criterion": "G-Eval GPT-4",
+            "empirical_task": "UniEval",
+            "independent_task": "G-Eval GPT-4"
+          },
+          "ties": {
+            "criterion": [
+              "G-Eval GPT-4"
+            ],
+            "empirical_task": [
+              "UniEval"
+            ],
+            "independent_task": [
+              "G-Eval GPT-4"
+            ]
+          },
+          "objectives": {
+            "criterion": {
+              "G-Eval GPT-4": 0.1703125,
+              "UniEval": 0.178125
+            },
+            "empirical_task": {
+              "G-Eval GPT-4": 0.7291666666666666,
+              "UniEval": 0.6
+            },
+            "independent_task": {
+              "G-Eval GPT-4": 0.5182786976870687,
+              "UniEval": 0.5646354768733152
+            }
+          },
+          "predicted_task_FP_rate": {
+            "G-Eval GPT-4": 0.1365467109399549,
+            "UniEval": 0.15294586963500037
+          },
+          "predicted_task_FF_rate": {
+            "G-Eval GPT-4": 0.10863856486720393,
+            "UniEval": 0.10579786796831407
+          },
+          "different_verdict_units_vs_criterion": {
+            "criterion": 0,
+            "empirical_task": 118,
+            "independent_task": 0
+          }
+        },
+        "1:3": {
+          "choices": {
+            "criterion": "G-Eval GPT-4",
+            "empirical_task": "G-Eval GPT-4",
+            "independent_task": "G-Eval GPT-4"
+          },
+          "ties": {
+            "criterion": [
+              "G-Eval GPT-4"
+            ],
+            "empirical_task": [
+              "G-Eval GPT-4"
+            ],
+            "independent_task": [
+              "G-Eval GPT-4"
+            ]
+          },
+          "objectives": {
+            "criterion": {
+              "G-Eval GPT-4": 0.1703125,
+              "UniEval": 0.178125
+            },
+            "empirical_task": {
+              "G-Eval GPT-4": 0.4041666666666667,
+              "UniEval": 0.4666666666666667
+            },
+            "independent_task": {
+              "G-Eval GPT-4": 0.4624624055415667,
+              "UniEval": 0.47033947353994254
+            }
+          },
+          "predicted_task_FP_rate": {
+            "G-Eval GPT-4": 0.1365467109399549,
+            "UniEval": 0.15294586963500037
+          },
+          "predicted_task_FF_rate": {
+            "G-Eval GPT-4": 0.10863856486720393,
+            "UniEval": 0.10579786796831407
+          },
+          "different_verdict_units_vs_criterion": {
+            "criterion": 0,
+            "empirical_task": 0,
+            "independent_task": 0
+          }
+        }
+      },
+      "per_pair_task_discordance": 0.24583333333333332,
+      "development_switch_any_judges": true,
+      "power_planning_from_two_candidate_verdicts": {
+        "assumed_held_articles": 70,
+        "development_cluster_SD": 0.17130751404365221,
+        "effects": [
+          {
+            "advantage_per100": 1.0,
+            "required_for_80pct": 2305,
+            "approximate_power": 0.07773868074202805
+          },
+          {
+            "advantage_per100": 5.0,
+            "required_for_80pct": 93,
+            "approximate_power": 0.6850963025533305
+          },
+          {
+            "advantage_per100": 10.0,
+            "required_for_80pct": 24,
+            "approximate_power": 0.9982719859935256
+          }
+        ],
+        "note": "Normal approximation using development article-level centered paired influence, assumes transport of variance."
+      }
+    }
+  }
+}

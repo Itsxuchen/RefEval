@@ -1,0 +1,222 @@
+{
+  "timestamp": "2026-11-25T09:45:07.031133+00:00",
+  "freeze_sha256": "d34e7e21293ffc1004b84ecade18d1c4ea409c2deb3813452fd3b8ea0b9d0f8c",
+  "results_code_sha256": "bf7316b0bdbb9a622033be5e43d2c7bc22dafe86bc9714ac8bb8f9912c4bfb7a",
+  "receipts_sha256": {
+    "open_gemma_dev.jsonl": "b90273fd3f3d366d2cba4bbc2d5be78dfbcf28e46d20a18c4a2a09b5071b3d67",
+    "open_qwen_dev.jsonl": "ae881d113297e32970cac618e7a92d8d2b7a4b80f4d5479d44e429cc83fc74ca"
+  },
+  "provider_fees_usd": 0,
+  "acquisition": {
+    "gemma": {
+      "calls": 12,
+      "status": {
+        "complete": 12
+      },
+      "prompt_tokens": 34515,
+      "completion_tokens": 465,
+      "elapsed_inference_seconds": 90.003
+    },
+    "qwen": {
+      "calls": 12,
+      "status": {
+        "complete": 12
+      },
+      "prompt_tokens": 33757,
+      "completion_tokens": 412,
+      "elapsed_inference_seconds": 67.833
+    }
+  },
+  "frames": [
+    {
+      "frame": "RuVerBench DR",
+      "groups": 12,
+      "units": 12,
+      "criteria": 41,
+      "reference_pass_units": 1,
+      "reference_pass_criteria": 19,
+      "reference_fail_criteria": 22,
+      "judges": {
+        "gemma": {
+          "criterion_correct": 22,
+          "criterion_FP": 19,
+          "criterion_FF": 0,
+          "task_FP": 8,
+          "task_FF": 0
+        },
+        "qwen": {
+          "criterion_correct": 24,
+          "criterion_FP": 2,
+          "criterion_FF": 15,
+          "task_FP": 1,
+          "task_FF": 1
+        }
+      },
+      "costs": {
+        "1:1": {
+          "choices": {
+            "criterion": "qwen",
+            "empirical_task": "qwen",
+            "independent_task": "qwen"
+          },
+          "ties": {
+            "criterion": [
+              "qwen"
+            ],
+            "empirical_task": [
+              "qwen"
+            ],
+            "independent_task": [
+              "qwen"
+            ]
+          },
+          "objectives": {
+            "criterion": {
+              "gemma": 0.4634146341463415,
+              "qwen": 0.4146341463414634
+            },
+            "empirical_task": {
+              "gemma": 0.6666666666666666,
+              "qwen": 0.16666666666666666
+            },
+            "independent_task": {
+              "gemma": 0.6440184851250129,
+              "qwen": 0.08552383527795712
+            }
+          },
+          "predicted_task_FP_rate": {
+            "gemma": 0.6379234330416795,
+            "qwen": 0.003139720694623788
+          },
+          "predicted_task_FF_rate": {
+            "gemma": 0.0060950520833333395,
+            "qwen": 0.08238411458333333
+          },
+          "different_verdict_units_vs_criterion": {
+            "criterion": 0,
+            "empirical_task": 0,
+            "independent_task": 0
+          }
+        },
+        "3:1": {
+          "choices": {
+            "criterion": "qwen",
+            "empirical_task": "qwen",
+            "independent_task": "qwen"
+          },
+          "ties": {
+            "criterion": [
+              "qwen"
+            ],
+            "empirical_task": [
+              "qwen"
+            ],
+            "independent_task": [
+              "qwen"
+            ]
+          },
+          "objectives": {
+            "criterion": {
+              "gemma": 0.4634146341463415,
+              "qwen": 0.4146341463414634
+            },
+            "empirical_task": {
+              "gemma": 2.0,
+              "qwen": 0.3333333333333333
+            },
+            "independent_task": {
+              "gemma": 1.9198653512083719,
+              "qwen": 0.0918032766672047
+            }
+          },
+          "predicted_task_FP_rate": {
+            "gemma": 0.6379234330416795,
+            "qwen": 0.003139720694623788
+          },
+          "predicted_task_FF_rate": {
+            "gemma": 0.0060950520833333395,
+            "qwen": 0.08238411458333333
+          },
+          "different_verdict_units_vs_criterion": {
+            "criterion": 0,
+            "empirical_task": 0,
+            "independent_task": 0
+          }
+        },
+        "1:3": {
+          "choices": {
+            "criterion": "qwen",
+            "empirical_task": "qwen",
+            "independent_task": "qwen"
+          },
+          "ties": {
+            "criterion": [
+              "qwen"
+            ],
+            "empirical_task": [
+              "qwen"
+            ],
+            "independent_task": [
+              "qwen"
+            ]
+          },
+          "objectives": {
+            "criterion": {
+              "gemma": 0.4634146341463415,
+              "qwen": 0.4146341463414634
+            },
+            "empirical_task": {
+              "gemma": 0.6666666666666666,
+              "qwen": 0.3333333333333333
+            },
+            "independent_task": {
+              "gemma": 0.6562085892916796,
+              "qwen": 0.2502920644446238
+            }
+          },
+          "predicted_task_FP_rate": {
+            "gemma": 0.6379234330416795,
+            "qwen": 0.003139720694623788
+          },
+          "predicted_task_FF_rate": {
+            "gemma": 0.0060950520833333395,
+            "qwen": 0.08238411458333333
+          },
+          "different_verdict_units_vs_criterion": {
+            "criterion": 0,
+            "empirical_task": 0,
+            "independent_task": 0
+          }
+        }
+      },
+      "per_pair_task_discordance": 0.8333333333333334,
+      "development_switch": false,
+      "gate_passed": false,
+      "reserve_groups": 30,
+      "planning_model": "one independent verdict per source group, illustrative for multi-output groups",
+      "planning": [
+        {
+          "advantage_per100": 1.0,
+          "planning_discordance": 0.8333333333333334,
+          "available_groups": 30,
+          "required_for_80pct": 65419,
+          "approximate_power_against_zero": 0.05040830309764893
+        },
+        {
+          "advantage_per100": 5.0,
+          "planning_discordance": 0.8333333333333334,
+          "available_groups": 30,
+          "required_for_80pct": 2610,
+          "approximate_power_against_zero": 0.060399245898066556
+        },
+        {
+          "advantage_per100": 10.0,
+          "planning_discordance": 0.8333333333333334,
+          "available_groups": 30,
+          "required_for_80pct": 647,
+          "approximate_power_against_zero": 0.09267032482716964
+        }
+      ]
+    }
+  ]
+}

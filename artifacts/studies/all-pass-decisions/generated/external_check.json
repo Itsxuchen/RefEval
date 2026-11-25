@@ -1,0 +1,128 @@
+[
+  {
+    "panel": "primary",
+    "cost": "1:1",
+    "choices": {
+      "criterion": "UniEval",
+      "empirical_task": "UniEval",
+      "independent_task": "UniEval"
+    },
+    "task_minus_criterion": 0.0,
+    "paired95": [
+      0.0,
+      0.0
+    ],
+    "observed_all_fail_loss": 473.0,
+    "observed_all_pass_loss": 647.0,
+    "task_selection_minus_all_fail_per100": -10.803571428571429,
+    "task_selection_minus_all_fail95": [
+      -16.696428571428573,
+      -5.089285714285714
+    ]
+  },
+  {
+    "panel": "primary",
+    "cost": "3:1",
+    "choices": {
+      "criterion": "UniEval",
+      "empirical_task": "G-Eval GPT-4",
+      "independent_task": "G-Eval GPT-4"
+    },
+    "task_minus_criterion": -42.142857142857146,
+    "paired95": [
+      -54.02232142857143,
+      -30.357142857142858
+    ],
+    "observed_all_fail_loss": 473.0,
+    "observed_all_pass_loss": 1941.0,
+    "task_selection_minus_all_fail_per100": -0.44642857142857145,
+    "task_selection_minus_all_fail95": [
+      -1.3392857142857142,
+      0.5357142857142857
+    ]
+  },
+  {
+    "panel": "primary",
+    "cost": "1:3",
+    "choices": {
+      "criterion": "UniEval",
+      "empirical_task": "UniEval",
+      "independent_task": "UniEval"
+    },
+    "task_minus_criterion": 0.0,
+    "paired95": [
+      0.0,
+      0.0
+    ],
+    "observed_all_fail_loss": 1419.0,
+    "observed_all_pass_loss": 647.0,
+    "task_selection_minus_all_fail_per100": -84.91071428571429,
+    "task_selection_minus_all_fail95": [
+      -97.41517857142858,
+      -72.94642857142857
+    ]
+  },
+  {
+    "panel": "development_calibrated",
+    "cost": "1:1",
+    "choices": {
+      "criterion": "G-Eval GPT-4",
+      "empirical_task": "UniEval",
+      "independent_task": "G-Eval GPT-4"
+    },
+    "task_minus_criterion": -1.6964285714285694,
+    "paired95": [
+      -4.910714285714286,
+      1.25
+    ],
+    "observed_all_fail_loss": 473.0,
+    "observed_all_pass_loss": 647.0,
+    "task_selection_minus_all_fail_per100": -15.892857142857142,
+    "task_selection_minus_all_fail95": [
+      -21.34375,
+      -10.535714285714286
+    ]
+  },
+  {
+    "panel": "development_calibrated",
+    "cost": "3:1",
+    "choices": {
+      "criterion": "G-Eval GPT-4",
+      "empirical_task": "UniEval",
+      "independent_task": "G-Eval GPT-4"
+    },
+    "task_minus_criterion": -12.946428571428577,
+    "paired95": [
+      -21.879464285714285,
+      -4.196428571428571
+    ],
+    "observed_all_fail_loss": 473.0,
+    "observed_all_pass_loss": 1941.0,
+    "task_selection_minus_all_fail_per100": 20.357142857142858,
+    "task_selection_minus_all_fail95": [
+      10.535714285714286,
+      30.0
+    ]
+  },
+  {
+    "panel": "development_calibrated",
+    "cost": "1:3",
+    "choices": {
+      "criterion": "G-Eval GPT-4",
+      "empirical_task": "G-Eval GPT-4",
+      "independent_task": "G-Eval GPT-4"
+    },
+    "task_minus_criterion": 0.0,
+    "paired95": [
+      0.0,
+      0.0
+    ],
+    "observed_all_fail_loss": 1419.0,
+    "observed_all_pass_loss": 647.0,
+    "task_selection_minus_all_fail_per100": -90.08928571428571,
+    "task_selection_minus_all_fail95": [
+      -103.03571428571429,
+      -77.94196428571429
+    ]
+  }
+]

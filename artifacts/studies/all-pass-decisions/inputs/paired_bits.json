@@ -1,0 +1,7661 @@
+[
+  {
+    "group": "37834f2f25762f23e1f7",
+    "block": [
+      "gpt_mini",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "0d21ae129a64e1d19e4a",
+    "block": [
+      "gpt_mini",
+      "long"
+    ],
+    "native": [
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "2ff2a721fab172f1ab7e",
+    "block": [
+      "gpt_mini",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": null,
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": null,
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "truncated",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "truncated",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "337b02741a9561b611d3",
+    "block": [
+      "claude_haiku",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      0
+    ],
+    "literal": [
+      1,
+      1,
+      0
+    ],
+    "keep": [
+      0,
+      1
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          0
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          0
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          0
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          0
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          0
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          0
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "c6d537e112156be1afbb",
+    "block": [
+      "claude_haiku",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "7ec62885a6b7777a7d9c",
+    "block": [
+      "claude_haiku",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          0
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          0
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          0
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "53f4041ba0cc8ed13c5a",
+    "block": [
+      "gpt_mini",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "f79b8977720743f5e7c8",
+    "block": [
+      "gpt_mini",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "a037a7dfaf26abe1265b",
+    "block": [
+      "gpt_mini",
+      "long"
+    ],
+    "native": [
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "8c144858bb5ea1a93106",
+    "block": [
+      "claude_haiku",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "7f9401303ba2dafb41c9",
+    "block": [
+      "gpt_mini",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "68d49968602df15aad40",
+    "block": [
+      "claude_haiku",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "0f47caa1afdc7b7c8f1b",
+    "block": [
+      "claude_haiku",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      0,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "d4ee9f58e5860574ca98",
+    "block": [
+      "claude_haiku",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "aded40e220d2587b0ef1",
+    "block": [
+      "claude_haiku",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "681d12400213531e5fde",
+    "block": [
+      "gpt_mini",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          0,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          0,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "f8646a257c0c4273b72c",
+    "block": [
+      "claude_haiku",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "8b0ae2d638c19a4186bd",
+    "block": [
+      "claude_haiku",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          0
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          0
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          0
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "580811fa95269f3ecd4f",
+    "block": [
+      "gpt_mini",
+      "short"
+    ],
+    "native": [
+      0,
+      1,
+      1
+    ],
+    "literal": [
+      0,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "13b4088f2f9a285e2212",
+    "block": [
+      "gpt_mini",
+      "short"
+    ],
+    "native": [
+      1,
+      0,
+      1
+    ],
+    "literal": [
+      1,
+      0,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": null,
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "truncated",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "aef662afc24b5edde66a",
+    "block": [
+      "claude_haiku",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "051c2e380d07844ffaca",
+    "block": [
+      "gpt_mini",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": null,
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": null,
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "truncated",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "truncated",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "c17edaae86e4016a583e",
+    "block": [
+      "claude_haiku",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "74e70910949899071b1e",
+    "block": [
+      "gpt_mini",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "8c9089be2f18fb286889",
+    "block": [
+      "claude_haiku",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "707f6b27b35675b3ef29",
+    "block": [
+      "gpt_mini",
+      "short"
+    ],
+    "native": [
+      0,
+      1,
+      1
+    ],
+    "literal": [
+      0,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "0def2c97214e2bc36b50",
+    "block": [
+      "gpt_mini",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "f6903a126cfb9fc6c0d1",
+    "block": [
+      "gpt_mini",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": null,
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": null,
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "truncated",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "truncated",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "c6d34483cedd0b1069ec",
+    "block": [
+      "claude_haiku",
+      "short"
+    ],
+    "native": [
+      1,
+      0,
+      1
+    ],
+    "literal": [
+      1,
+      0,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "2bc805107667db072da4",
+    "block": [
+      "gpt_mini",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "659479bf8d744193a307",
+    "block": [
+      "claude_haiku",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "61503690505f84b144e6",
+    "block": [
+      "claude_haiku",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      0,
+      1
+    ],
+    "keep": [
+      0,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "d376881f5bd00764c32b",
+    "block": [
+      "claude_haiku",
+      "long"
+    ],
+    "native": [
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "c13ed907812211331906",
+    "block": [
+      "claude_haiku",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "3921a7d7066d4666f3e7",
+    "block": [
+      "gpt_mini",
+      "long"
+    ],
+    "native": [
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "e001dad6f306c7ddb4c0",
+    "block": [
+      "gpt_mini",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      0,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      0,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "e3258a34514b7d09da9f",
+    "block": [
+      "claude_haiku",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          0
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          0
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "e2a424edff99af60a8d9",
+    "block": [
+      "claude_haiku",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "6abb9da0b9c1fe2f244e",
+    "block": [
+      "claude_haiku",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "cc9cf5d8f89bae4aff9b",
+    "block": [
+      "gpt_mini",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      0,
+      1
+    ],
+    "keep": [
+      0,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "efd96aedf377e20afd95",
+    "block": [
+      "claude_haiku",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "61f5869c42cc56c113f9",
+    "block": [
+      "gpt_mini",
+      "short"
+    ],
+    "native": [
+      0,
+      1,
+      1
+    ],
+    "literal": [
+      0,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          0
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          0
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "8202c37e994f4722947e",
+    "block": [
+      "gpt_mini",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "f6eae85999665a143e89",
+    "block": [
+      "claude_haiku",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "72a2d4365f37780690ee",
+    "block": [
+      "gpt_mini",
+      "short"
+    ],
+    "native": [
+      1,
+      0,
+      1
+    ],
+    "literal": [
+      1,
+      0,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          0,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "27e928d476f169e6f5f8",
+    "block": [
+      "gpt_mini",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "a0f8b2c4cb1ac82abdb3",
+    "block": [
+      "claude_haiku",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1,
+          1,
+          0
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "d642822b369cd5e39817",
+    "block": [
+      "claude_haiku",
+      "long"
+    ],
+    "native": [
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        "gpt_strong": [
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "550438f15e5abf7dc941",
+    "block": [
+      "gpt_mini",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      0
+    ],
+    "literal": [
+      1,
+      0,
+      0
+    ],
+    "keep": [
+      0,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          0
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          0
+        ],
+        "claude_opus": [
+          1,
+          0,
+          0
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          0
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          0
+        ],
+        "claude_opus": [
+          1,
+          0,
+          0
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          0,
+          0
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          0
+        ],
+        "claude_opus": [
+          1,
+          0,
+          0
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "90e855751509be9e5299",
+    "block": [
+      "gpt_mini",
+      "long"
+    ],
+    "native": [
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "1e3a2d08ecda783f1836",
+    "block": [
+      "claude_haiku",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "f0ca4b323465b546b3fe",
+    "block": [
+      "claude_haiku",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      0,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      0,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "2c903ae837b047fdb539",
+    "block": [
+      "claude_haiku",
+      "long"
+    ],
+    "native": [
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "e29c9c180c6279b0b02a",
+    "block": [
+      "gpt_mini",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          0,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          0,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          0,
+          1,
+          0
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "c9dc1fb0c089d73368d1",
+    "block": [
+      "gpt_mini",
+      "long"
+    ],
+    "native": [
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "7dca45c32eb8330aca74",
+    "block": [
+      "claude_haiku",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      0,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      0,
+      0,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "701340c88f7355cf8f3c",
+    "block": [
+      "gpt_mini",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "125c53fdf1e771c91a9d",
+    "block": [
+      "claude_haiku",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "0673c84a150ae556f1a4",
+    "block": [
+      "gpt_mini",
+      "long"
+    ],
+    "native": [
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    "literal": [
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "487e4a2ed2f8e9b2ef24",
+    "block": [
+      "claude_haiku",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      0
+    ],
+    "keep": [
+      0,
+      1
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          0
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          0
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          0
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          0
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          0
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "33b66ae561a759b8589d",
+    "block": [
+      "gpt_mini",
+      "long"
+    ],
+    "native": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  },
+  {
+    "group": "df8e9474900ccac9652f",
+    "block": [
+      "gpt_mini",
+      "short"
+    ],
+    "native": [
+      1,
+      1,
+      1
+    ],
+    "literal": [
+      1,
+      1,
+      1
+    ],
+    "keep": [
+      0,
+      1,
+      2
+    ],
+    "predictions": {
+      "original": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "repeat": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      },
+      "alternate": {
+        "gpt_mini": [
+          1,
+          1,
+          1
+        ],
+        "gpt_strong": [
+          1,
+          1,
+          1
+        ],
+        "claude_haiku": [
+          1,
+          1,
+          1
+        ],
+        "claude_opus": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": {
+      "original": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "repeat": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      },
+      "alternate": {
+        "gpt_mini": "ok",
+        "gpt_strong": "ok",
+        "claude_haiku": "ok",
+        "claude_opus": "ok"
+      }
+    }
+  }
+]

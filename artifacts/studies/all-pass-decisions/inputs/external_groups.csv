@@ -1,0 +1,281 @@
+panel,group,model,test_units,task_FP,task_FF,reference_passes
+primary,article-001,G-Eval GPT-4,16,0,9,9
+primary,article-002,G-Eval GPT-4,16,0,8,8
+primary,article-003,G-Eval GPT-4,16,1,6,6
+primary,article-004,G-Eval GPT-4,16,0,3,4
+primary,article-005,G-Eval GPT-4,16,0,7,7
+primary,article-006,G-Eval GPT-4,16,0,7,7
+primary,article-007,G-Eval GPT-4,16,0,4,4
+primary,article-008,G-Eval GPT-4,16,0,6,6
+primary,article-009,G-Eval GPT-4,16,1,3,3
+primary,article-010,G-Eval GPT-4,16,0,12,12
+primary,article-011,G-Eval GPT-4,16,0,8,8
+primary,article-012,G-Eval GPT-4,16,0,5,5
+primary,article-013,G-Eval GPT-4,16,0,11,11
+primary,article-014,G-Eval GPT-4,16,0,9,9
+primary,article-015,G-Eval GPT-4,16,0,8,8
+primary,article-016,G-Eval GPT-4,16,0,5,5
+primary,article-017,G-Eval GPT-4,16,0,7,7
+primary,article-018,G-Eval GPT-4,16,0,5,5
+primary,article-019,G-Eval GPT-4,16,0,8,8
+primary,article-020,G-Eval GPT-4,16,0,7,7
+primary,article-021,G-Eval GPT-4,16,0,7,7
+primary,article-022,G-Eval GPT-4,16,0,2,2
+primary,article-023,G-Eval GPT-4,16,0,8,8
+primary,article-024,G-Eval GPT-4,16,0,4,4
+primary,article-025,G-Eval GPT-4,16,0,8,8
+primary,article-026,G-Eval GPT-4,16,0,3,3
+primary,article-027,G-Eval GPT-4,16,0,3,3
+primary,article-028,G-Eval GPT-4,16,0,5,5
+primary,article-029,G-Eval GPT-4,16,0,14,14
+primary,article-030,G-Eval GPT-4,16,0,5,5
+primary,article-031,G-Eval GPT-4,16,0,8,8
+primary,article-032,G-Eval GPT-4,16,0,9,9
+primary,article-033,G-Eval GPT-4,16,0,4,4
+primary,article-034,G-Eval GPT-4,16,0,7,8
+primary,article-035,G-Eval GPT-4,16,0,3,3
+primary,article-036,G-Eval GPT-4,16,0,6,6
+primary,article-037,G-Eval GPT-4,16,0,4,4
+primary,article-038,G-Eval GPT-4,16,1,6,10
+primary,article-039,G-Eval GPT-4,16,0,7,7
+primary,article-040,G-Eval GPT-4,16,0,7,8
+primary,article-041,G-Eval GPT-4,16,0,7,7
+primary,article-042,G-Eval GPT-4,16,0,6,6
+primary,article-043,G-Eval GPT-4,16,0,4,4
+primary,article-044,G-Eval GPT-4,16,0,6,6
+primary,article-045,G-Eval GPT-4,16,0,9,9
+primary,article-046,G-Eval GPT-4,16,0,4,5
+primary,article-047,G-Eval GPT-4,16,0,10,10
+primary,article-048,G-Eval GPT-4,16,0,7,7
+primary,article-049,G-Eval GPT-4,16,0,4,4
+primary,article-050,G-Eval GPT-4,16,0,6,6
+primary,article-051,G-Eval GPT-4,16,0,7,8
+primary,article-052,G-Eval GPT-4,16,0,8,8
+primary,article-053,G-Eval GPT-4,16,0,4,4
+primary,article-054,G-Eval GPT-4,16,0,9,11
+primary,article-055,G-Eval GPT-4,16,0,13,13
+primary,article-056,G-Eval GPT-4,16,0,9,10
+primary,article-057,G-Eval GPT-4,16,0,6,6
+primary,article-058,G-Eval GPT-4,16,0,9,10
+primary,article-059,G-Eval GPT-4,16,0,1,2
+primary,article-060,G-Eval GPT-4,16,0,10,10
+primary,article-061,G-Eval GPT-4,16,0,4,4
+primary,article-062,G-Eval GPT-4,16,0,5,5
+primary,article-063,G-Eval GPT-4,16,0,6,6
+primary,article-064,G-Eval GPT-4,16,0,5,5
+primary,article-065,G-Eval GPT-4,16,0,6,6
+primary,article-066,G-Eval GPT-4,16,0,2,2
+primary,article-067,G-Eval GPT-4,16,0,9,9
+primary,article-068,G-Eval GPT-4,16,0,10,10
+primary,article-069,G-Eval GPT-4,16,0,4,4
+primary,article-070,G-Eval GPT-4,16,0,11,11
+primary,article-001,UniEval,16,3,1,9
+primary,article-002,UniEval,16,3,2,8
+primary,article-003,UniEval,16,4,0,6
+primary,article-004,UniEval,16,6,0,4
+primary,article-005,UniEval,16,8,0,7
+primary,article-006,UniEval,16,6,0,7
+primary,article-007,UniEval,16,7,0,4
+primary,article-008,UniEval,16,2,1,6
+primary,article-009,UniEval,16,5,0,3
+primary,article-010,UniEval,16,2,6,12
+primary,article-011,UniEval,16,3,0,8
+primary,article-012,UniEval,16,6,0,5
+primary,article-013,UniEval,16,3,0,11
+primary,article-014,UniEval,16,4,1,9
+primary,article-015,UniEval,16,4,1,8
+primary,article-016,UniEval,16,5,1,5
+primary,article-017,UniEval,16,8,0,7
+primary,article-018,UniEval,16,3,0,5
+primary,article-019,UniEval,16,2,1,8
+primary,article-020,UniEval,16,7,1,7
+primary,article-021,UniEval,16,3,1,7
+primary,article-022,UniEval,16,9,0,2
+primary,article-023,UniEval,16,3,1,8
+primary,article-024,UniEval,16,3,0,4
+primary,article-025,UniEval,16,6,0,8
+primary,article-026,UniEval,16,3,1,3
+primary,article-027,UniEval,16,2,2,3
+primary,article-028,UniEval,16,2,0,5
+primary,article-029,UniEval,16,2,1,14
+primary,article-030,UniEval,16,9,0,5
+primary,article-031,UniEval,16,5,0,8
+primary,article-032,UniEval,16,2,3,9
+primary,article-033,UniEval,16,4,0,4
+primary,article-034,UniEval,16,3,3,8
+primary,article-035,UniEval,16,7,0,3
+primary,article-036,UniEval,16,7,1,6
+primary,article-037,UniEval,16,5,1,4
+primary,article-038,UniEval,16,0,6,10
+primary,article-039,UniEval,16,2,1,7
+primary,article-040,UniEval,16,2,2,8
+primary,article-041,UniEval,16,6,1,7
+primary,article-042,UniEval,16,2,0,6
+primary,article-043,UniEval,16,6,1,4
+primary,article-044,UniEval,16,7,0,6
+primary,article-045,UniEval,16,4,0,9
+primary,article-046,UniEval,16,3,0,5
+primary,article-047,UniEval,16,2,1,10
+primary,article-048,UniEval,16,6,0,7
+primary,article-049,UniEval,16,7,1,4
+primary,article-050,UniEval,16,3,0,6
+primary,article-051,UniEval,16,6,0,8
+primary,article-052,UniEval,16,2,1,8
+primary,article-053,UniEval,16,8,0,4
+primary,article-054,UniEval,16,1,1,11
+primary,article-055,UniEval,16,2,0,13
+primary,article-056,UniEval,16,2,0,10
+primary,article-057,UniEval,16,5,1,6
+primary,article-058,UniEval,16,0,2,10
+primary,article-059,UniEval,16,6,0,2
+primary,article-060,UniEval,16,0,2,10
+primary,article-061,UniEval,16,6,0,4
+primary,article-062,UniEval,16,8,0,5
+primary,article-063,UniEval,16,4,3,6
+primary,article-064,UniEval,16,9,0,5
+primary,article-065,UniEval,16,7,2,6
+primary,article-066,UniEval,16,2,0,2
+primary,article-067,UniEval,16,3,3,9
+primary,article-068,UniEval,16,1,0,10
+primary,article-069,UniEval,16,3,0,4
+primary,article-070,UniEval,16,3,1,11
+development_calibrated,article-001,G-Eval GPT-4,16,1,2,9
+development_calibrated,article-002,G-Eval GPT-4,16,3,1,8
+development_calibrated,article-003,G-Eval GPT-4,16,6,0,6
+development_calibrated,article-004,G-Eval GPT-4,16,1,1,4
+development_calibrated,article-005,G-Eval GPT-4,16,7,1,7
+development_calibrated,article-006,G-Eval GPT-4,16,3,1,7
+development_calibrated,article-007,G-Eval GPT-4,16,5,0,4
+development_calibrated,article-008,G-Eval GPT-4,16,1,0,6
+development_calibrated,article-009,G-Eval GPT-4,16,2,1,3
+development_calibrated,article-010,G-Eval GPT-4,16,0,2,12
+development_calibrated,article-011,G-Eval GPT-4,16,2,1,8
+development_calibrated,article-012,G-Eval GPT-4,16,6,0,5
+development_calibrated,article-013,G-Eval GPT-4,16,4,0,11
+development_calibrated,article-014,G-Eval GPT-4,16,4,1,9
+development_calibrated,article-015,G-Eval GPT-4,16,1,0,8
+development_calibrated,article-016,G-Eval GPT-4,16,3,2,5
+development_calibrated,article-017,G-Eval GPT-4,16,6,1,7
+development_calibrated,article-018,G-Eval GPT-4,16,5,0,5
+development_calibrated,article-019,G-Eval GPT-4,16,2,0,8
+development_calibrated,article-020,G-Eval GPT-4,16,5,0,7
+development_calibrated,article-021,G-Eval GPT-4,16,2,0,7
+development_calibrated,article-022,G-Eval GPT-4,16,4,1,2
+development_calibrated,article-023,G-Eval GPT-4,16,2,0,8
+development_calibrated,article-024,G-Eval GPT-4,16,8,1,4
+development_calibrated,article-025,G-Eval GPT-4,16,4,1,8
+development_calibrated,article-026,G-Eval GPT-4,16,9,0,3
+development_calibrated,article-027,G-Eval GPT-4,16,4,0,3
+development_calibrated,article-028,G-Eval GPT-4,16,4,0,5
+development_calibrated,article-029,G-Eval GPT-4,16,2,1,14
+development_calibrated,article-030,G-Eval GPT-4,16,7,0,5
+development_calibrated,article-031,G-Eval GPT-4,16,0,2,8
+development_calibrated,article-032,G-Eval GPT-4,16,3,1,9
+development_calibrated,article-033,G-Eval GPT-4,16,3,0,4
+development_calibrated,article-034,G-Eval GPT-4,16,5,0,8
+development_calibrated,article-035,G-Eval GPT-4,16,4,0,3
+development_calibrated,article-036,G-Eval GPT-4,16,5,2,6
+development_calibrated,article-037,G-Eval GPT-4,16,5,1,4
+development_calibrated,article-038,G-Eval GPT-4,16,4,0,10
+development_calibrated,article-039,G-Eval GPT-4,16,3,1,7
+development_calibrated,article-040,G-Eval GPT-4,16,3,0,8
+development_calibrated,article-041,G-Eval GPT-4,16,4,1,7
+development_calibrated,article-042,G-Eval GPT-4,16,4,0,6
+development_calibrated,article-043,G-Eval GPT-4,16,6,0,4
+development_calibrated,article-044,G-Eval GPT-4,16,2,0,6
+development_calibrated,article-045,G-Eval GPT-4,16,5,0,9
+development_calibrated,article-046,G-Eval GPT-4,16,4,1,5
+development_calibrated,article-047,G-Eval GPT-4,16,3,1,10
+development_calibrated,article-048,G-Eval GPT-4,16,6,0,7
+development_calibrated,article-049,G-Eval GPT-4,16,6,0,4
+development_calibrated,article-050,G-Eval GPT-4,16,3,0,6
+development_calibrated,article-051,G-Eval GPT-4,16,4,0,8
+development_calibrated,article-052,G-Eval GPT-4,16,1,3,8
+development_calibrated,article-053,G-Eval GPT-4,16,5,0,4
+development_calibrated,article-054,G-Eval GPT-4,16,5,2,11
+development_calibrated,article-055,G-Eval GPT-4,16,1,0,13
+development_calibrated,article-056,G-Eval GPT-4,16,3,0,10
+development_calibrated,article-057,G-Eval GPT-4,16,8,0,6
+development_calibrated,article-058,G-Eval GPT-4,16,3,0,10
+development_calibrated,article-059,G-Eval GPT-4,16,3,0,2
+development_calibrated,article-060,G-Eval GPT-4,16,0,4,10
+development_calibrated,article-061,G-Eval GPT-4,16,0,3,4
+development_calibrated,article-062,G-Eval GPT-4,16,7,1,5
+development_calibrated,article-063,G-Eval GPT-4,16,7,0,6
+development_calibrated,article-064,G-Eval GPT-4,16,8,1,5
+development_calibrated,article-065,G-Eval GPT-4,16,6,1,6
+development_calibrated,article-066,G-Eval GPT-4,16,4,0,2
+development_calibrated,article-067,G-Eval GPT-4,16,4,1,9
+development_calibrated,article-068,G-Eval GPT-4,16,3,0,10
+development_calibrated,article-069,G-Eval GPT-4,16,0,1,4
+development_calibrated,article-070,G-Eval GPT-4,16,3,3,11
+development_calibrated,article-001,UniEval,16,2,3,9
+development_calibrated,article-002,UniEval,16,3,3,8
+development_calibrated,article-003,UniEval,16,2,1,6
+development_calibrated,article-004,UniEval,16,4,0,4
+development_calibrated,article-005,UniEval,16,6,0,7
+development_calibrated,article-006,UniEval,16,3,4,7
+development_calibrated,article-007,UniEval,16,6,1,4
+development_calibrated,article-008,UniEval,16,1,4,6
+development_calibrated,article-009,UniEval,16,3,1,3
+development_calibrated,article-010,UniEval,16,0,1,12
+development_calibrated,article-011,UniEval,16,3,0,8
+development_calibrated,article-012,UniEval,16,2,0,5
+development_calibrated,article-013,UniEval,16,2,1,11
+development_calibrated,article-014,UniEval,16,2,1,9
+development_calibrated,article-015,UniEval,16,1,2,8
+development_calibrated,article-016,UniEval,16,2,3,5
+development_calibrated,article-017,UniEval,16,6,1,7
+development_calibrated,article-018,UniEval,16,1,0,5
+development_calibrated,article-019,UniEval,16,2,2,8
+development_calibrated,article-020,UniEval,16,4,1,7
+development_calibrated,article-021,UniEval,16,3,1,7
+development_calibrated,article-022,UniEval,16,7,0,2
+development_calibrated,article-023,UniEval,16,2,0,8
+development_calibrated,article-024,UniEval,16,2,1,4
+development_calibrated,article-025,UniEval,16,2,2,8
+development_calibrated,article-026,UniEval,16,7,0,3
+development_calibrated,article-027,UniEval,16,4,1,3
+development_calibrated,article-028,UniEval,16,1,0,5
+development_calibrated,article-029,UniEval,16,2,2,14
+development_calibrated,article-030,UniEval,16,4,0,5
+development_calibrated,article-031,UniEval,16,2,3,8
+development_calibrated,article-032,UniEval,16,4,2,9
+development_calibrated,article-033,UniEval,16,2,1,4
+development_calibrated,article-034,UniEval,16,1,2,8
+development_calibrated,article-035,UniEval,16,5,1,3
+development_calibrated,article-036,UniEval,16,3,3,6
+development_calibrated,article-037,UniEval,16,2,2,4
+development_calibrated,article-038,UniEval,16,3,1,10
+development_calibrated,article-039,UniEval,16,0,2,7
+development_calibrated,article-040,UniEval,16,0,3,8
+development_calibrated,article-041,UniEval,16,3,3,7
+development_calibrated,article-042,UniEval,16,2,1,6
+development_calibrated,article-043,UniEval,16,4,2,4
+development_calibrated,article-044,UniEval,16,6,0,6
+development_calibrated,article-045,UniEval,16,2,1,9
+development_calibrated,article-046,UniEval,16,3,0,5
+development_calibrated,article-047,UniEval,16,0,1,10
+development_calibrated,article-048,UniEval,16,3,1,7
+development_calibrated,article-049,UniEval,16,4,3,4
+development_calibrated,article-050,UniEval,16,3,0,6
+development_calibrated,article-051,UniEval,16,2,1,8
+development_calibrated,article-052,UniEval,16,1,5,8
+development_calibrated,article-053,UniEval,16,4,0,4
+development_calibrated,article-054,UniEval,16,3,0,11
+development_calibrated,article-055,UniEval,16,2,0,13
+development_calibrated,article-056,UniEval,16,0,0,10
+development_calibrated,article-057,UniEval,16,2,2,6
+development_calibrated,article-058,UniEval,16,1,4,10
+development_calibrated,article-059,UniEval,16,2,1,2
+development_calibrated,article-060,UniEval,16,2,0,10
+development_calibrated,article-061,UniEval,16,6,0,4
+development_calibrated,article-062,UniEval,16,6,0,5
+development_calibrated,article-063,UniEval,16,5,2,6
+development_calibrated,article-064,UniEval,16,8,1,5
+development_calibrated,article-065,UniEval,16,7,1,6
+development_calibrated,article-066,UniEval,16,3,0,2
+development_calibrated,article-067,UniEval,16,1,4,9
+development_calibrated,article-068,UniEval,16,2,0,10
+development_calibrated,article-069,UniEval,16,3,0,4
+development_calibrated,article-070,UniEval,16,2,3,11

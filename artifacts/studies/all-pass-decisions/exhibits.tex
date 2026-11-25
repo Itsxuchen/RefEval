@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.88in]{geometry}
+\usepackage{amsmath,booktabs,graphicx,microtype,hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=black}
+\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
+\title{Numerical Exhibits for All-Pass Judge Evaluation}
+\author{RefEval research companion}
+\date{November 2026}
+\input{generated/checker.tex}
+\input{generated/repeat.tex}
+\input{generated/cost.tex}
+\input{generated/selectors.tex}
+\input{generated/external.tex}
+\begin{document}
+\maketitle
+\begin{table}[!htbp]
+\centering\small
+\caption{Upgrading the GPT judge on the original 59 common outputs. Counts separated by a slash give mini then GPT-5.5. Signed changes give GPT-5.5 minus mini. The last column is a paired 95\% percentile interval for extra false failures per 100 outputs, resampling source groups within generator and rubric-length strata.}
+\begin{tabular}{lrrrrrr}\toprule
+Scoring rule & Ref. passes & Correct items & Judge passes & $\Delta$FP & $\Delta$FF & 95\% per 100\\\midrule
+\checkerrows\bottomrule\end{tabular}\end{table}
+\begin{table}[!htbp]
+\centering\small
+\caption{Same answers submitted three times under the official checker. FP and FF are strong minus light counts. The third column of each family counts outputs on which the two judges disagree. Of the 59 originally eligible four-model outputs, 58 have complete GPT results across all three arms and 59 have complete Claude results.}
+\begin{tabular}{lrrcrrc}\toprule &\multicolumn{3}{c}{GPT} & \multicolumn{3}{c}{Claude}\\
+ & $\Delta$FP & $\Delta$FF & Disagreements & $\Delta$FP & $\Delta$FF & Disagreements\\\midrule
+\repeatrows\bottomrule\end{tabular}\end{table}
+\begin{figure}[!htbp]
+\centering\includegraphics[width=.84\linewidth]{generated/rater_curve.pdf}
+\caption{Gated minus eager disagreement under disagreement-first checking, full JudgmentBench target and GPT-5.4. Positive values favor immediate updating. Each point averages the same 31 priority orders. The dashed and solid curves of each color use identical audit answers.}\end{figure}
+\begin{table}[!htbp]
+\centering\small
+\caption{Eager disagreements per 100 units at an opening cost of 15 criterion checks. The range shows the middle 95\% of paired order differences. The three rows use GPT-5.4, DeepSeek v4-pro and Gemini 3.1 Pro, respectively.}
+\begin{tabular}{lrrrr}\toprule & SC & DF & SC minus DF & Order range\\\midrule
+\costrows\bottomrule\end{tabular}\end{table}
+\begin{table}[!htbp]
+\centering\small
+\caption{Selections evaluated out of fold at equal verdict costs. Crit., task and prod. select by criterion error, observed verdict error and product forecast. Signed pass-rate bias equals false passes minus false failures per 100 outputs.}
+\begin{tabular}{lrrrrrrr}\toprule & &\multicolumn{3}{c}{Errors / 100}&\multicolumn{3}{c}{Pass-rate bias (pp)}\\
+Frame & $N$ & Crit. & Task & Prod. & Crit. & Task & Prod.\\\midrule
+\selectorsrows\bottomrule\end{tabular}\end{table}
+\begin{table}[!htbp]
+\centering\small
+\caption{Judge chosen in development and weighted loss per 100 held summaries. U denotes UniEval and G denotes G-Eval. Costs are false pass to false fail. The primary test is the fixed mapping at equal costs.}
+\begin{tabular}{llrrr}\toprule Mapping & Cost & Criterion & Observed task & Product\\\midrule
+\externalrows\bottomrule\end{tabular}\end{table}
+\end{document}
