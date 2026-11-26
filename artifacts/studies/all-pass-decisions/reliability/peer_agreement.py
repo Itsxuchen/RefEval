@@ -44,8 +44,7 @@ def checked_file(path, url, digest):
 def legal_frame(root):
     refs = json.loads((PACKAGE / "source_replay/controls/expected.json").read_text())
     for source in refs["judgmentbench_sources"].values():
-        if Path(source["path"]).parent == Path("data/raw/judgmentbench"):
-            checked_file(root / source["path"], source["url"], source["sha256"])
+        checked_file(root / source["path"], source["url"], source["sha256"])
     _, labels, annotations, _ = read_judgmentbench(root)
     grouped = defaultdict(list)
     for aid, annotation in annotations.items():
