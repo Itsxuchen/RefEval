@@ -3,10 +3,11 @@
 \usepackage{amsmath,booktabs,graphicx,microtype,hyperref}
 \hypersetup{colorlinks=true,urlcolor=blue,linkcolor=black}
 \setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
-\title{Numerical Exhibits for All-Pass Judge Evaluation}
+\title{When an Expert Revises a Judge's Verdict\\[3pt]\large Numerical exhibits}
 \author{RefEval research companion}
 \date{November 2026}
 \input{generated/crossover.tex}
+\input{generated/full_audit.tex}
 \input{generated/checker.tex}
 \input{generated/repeat.tex}
 \input{generated/cost.tex}
@@ -14,6 +15,28 @@
 \input{generated/external.tex}
 \begin{document}
 \maketitle
+\begin{table}[!htbp]\centering\footnotesize
+\caption{Does a second expert endorse a completed audit? Each output has the same weight. The expert PASS rate averages individual verdicts. The error columns count disagreements per 100 outputs with a peer who did not supply the audit answers. Endorsement is the share of all changed verdicts, in either direction, on which the peer agrees with the auditor. The final column gives the paired difference with a 95\% cluster-resampling interval.}
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lrrrrrr}\toprule
+ & \multicolumn{2}{c}{PASS (\%)} & \multicolumn{2}{c}{Peer errors / 100} &
+ \shortstack{Changes} & \\
+Frame / initial judge & Judge & Expert & Retain & Adopt & endorsed (\%) & Adopt $-$ retain [95\%]\\\midrule
+\fullauditrows\bottomrule\end{tabular}\end{table}
+\begin{table}[!htbp]\centering\footnotesize
+\caption{Does a peer endorse a PASS issued early? The first two columns compare peer support among half-budget early approvals and among all initially rejected outputs the auditor ultimately approves. The next column contrasts those conditional rates (percentage points). The last column follows exactly the early cases to completion and counts the difference in peer errors, early minus final, per 100 outputs in the entire frame. Both intervals use the same paired cluster draws.}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrr}\toprule
+ & \multicolumn{2}{c}{Endorsed (\%)} & \multicolumn{1}{c}{Conditional difference} & \multicolumn{1}{c}{Same-case error difference}\\
+Frame / initial judge & Early & Complete & pp [95\%] & per 100 outputs [95\%]\\\midrule
+\earlyauditrows\bottomrule\end{tabular}\end{table}
+\begin{table}[!htbp]\centering\footnotesize
+\caption{Peer errors per 100 outputs at three budgets. At half budget the rules use the same queried labels. Immediate updating recomputes the verdict after each answer. Gating adopts a verdict when the auditor's observed answers determine it. At full budget both adopt the same auditor's complete verdict.}
+\begin{tabular}{lrrrr}\toprule
+& Before checking & \multicolumn{2}{c}{Half of all checks} & After all checks\\
+Frame / initial judge & Retain & Immediate & Gated & Adopt\\\midrule
+\stageauditrows\bottomrule\end{tabular}\end{table}
+\clearpage
 \begin{table}[!htbp]\centering\footnotesize
 \caption{Cross-scoring at half the criterion-check budget. An early approval passes under immediate updating and fails under gating. Endorsement is the percentage of those early approvals judged to pass by the auditing expert or by a different expert. $D$ is gated minus eager errors per 100 outputs. The final column is the paired change $D_{\rm other}-D_{\rm own}$, with a pointwise 95\% cluster-resampling interval.}
 \setlength{\tabcolsep}{4pt}

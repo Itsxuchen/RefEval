@@ -71,6 +71,8 @@ def summarize(groups, draws):
                   early_per100=100 * total_early / n,
                   own_endorse_pct=100 * own_yes.sum() / total_early if total_early else "",
                   other_endorse_pct=100 * other_yes.sum() / total_early if total_early else "")
+    record["peer_eager_error_per100"] = 100 * ex.sum() / n
+    record["peer_gated_error_per100"] = 100 * gx.sum() / n
     for idx, name in enumerate(("own_delta", "other_delta", "shift")):
         record[name] = values[idx]
         record[name + "_lo"], record[name + "_hi"] = intervals[:, idx]

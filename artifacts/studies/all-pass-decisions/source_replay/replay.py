@@ -114,12 +114,42 @@ def compare_exhibit_inputs(result):
     return n, m
 
 
+def compare_full_audit_table(actual, published, keys, expected_rows):
+    """Compare keyed statistics, including undefined estimates and valid draw counts."""
+    def read(path):
+        with path.open(newline="", encoding="utf-8") as stream:
+            reader = csv.DictReader(stream)
+            value_columns = set(reader.fieldnames) - set(keys)
+            records = {}
+            for row in reader:
+                key = tuple(row[k] for k in keys)
+                if key in records:
+                    raise ValueError(f"Duplicate key in {path.name}: {key}")
+                records[key] = row
+        return value_columns, records
+
+    columns, records = read(actual)
+    expected_columns, expected = read(published)
+    if columns != expected_columns or records.keys() != expected.keys() or len(records) != expected_rows:
+        raise ValueError(f"Incompatible rows or columns in {actual.name}")
+    for key, row in records.items():
+        for col in columns:
+            value, other = row[col], expected[key][col]
+            if value == "" or other == "":
+                if value != other:
+                    raise ValueError(f"Undefined statistic differs at {key}, {col}")
+            elif not np.isclose(float(value), float(other), atol=1e-10, rtol=0):
+                raise ValueError(f"Statistic differs at {key}, {col}: {value} versus {other}")
+    return len(records)
+
+
 def reproduce(work, out, sum_cache, jb_cache):
     install_sources(work)
     from src import external_summeval_frame as previous
     from src import summeval_cross_scorer as summaries
     from src import judgmentbench_cross_scorer_comparison as legal
     from src import verify_summeval_cross_scorer as independent
+    from src import full_audit_endorsement
 
     expected = json.loads((CONTROLS / "expected.json").read_text())
     se_source = work / "summeval-downloads"
@@ -154,6 +184,14 @@ def reproduce(work, out, sum_cache, jb_cache):
     }))
     legal.run(result)
     articles, groups = compare_exhibit_inputs(result)
+    full_result = work / "full-audit"
+    full_audit_endorsement.run(se_source, full_result)
+    full_groups = compare_full_audit_table(
+        full_result / "cluster_counts.csv", PACKAGE / "inputs/full_audit_cluster_counts.csv",
+        ("frame", "cluster"), 170)
+    full_estimates = compare_full_audit_table(
+        full_result / "estimates.csv", PACKAGE / "generated/full_audit_estimates.csv",
+        ("frame", "metric"), 69)
     copy_files = ["summary.csv", "role_counts.csv", "jb_summary.csv", "verification.json",
                   "run_manifest.json", "jb_verification.json"]
     # Platform BLAS/NumPy and gzip/zlib versions can affect serialized floating
@@ -165,10 +203,13 @@ def reproduce(work, out, sum_cache, jb_cache):
         stage = Path(staging) / "verified"
         for name in copy_files:
             copy(result / name, stage / name)
+        for name in ("cluster_counts.csv", "estimates.csv"):
+            copy(full_result / name, stage / "full_audit" / name)
         (stage / "source_checks.json").write_text(json.dumps({
             "summaries": 1600, "summaries_in_primary": 1120, "legal_outputs": 206,
             "source_files_verified": len(previous.SOURCES) + len(expected["judgmentbench_sources"]),
             "article_role_rows_compared": articles, "base_task_budget_rows_compared": groups,
+            "full_audit_cluster_rows_compared": full_groups, "full_audit_estimates_compared": full_estimates,
             "historical_float_and_compression_byte_agreement": matched,
         }, indent=2) + "\n")
         stage.rename(out)
