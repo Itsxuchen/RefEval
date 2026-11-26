@@ -1,0 +1,33 @@
+{
+  "protocol_sha256": "a3e1c5c2d366e57934a3c5db85b523f98922cfe4bcad5d0136e4ea0d2b169ffd",
+  "loader_sha256": "36a98e1586714d3ebd304561b214b8be2decf966b4e1d32788a83e27a9845ee3",
+  "supersedes_sha256": "662465e95785a6ef20b05ab31d47be8c0217acfa43c7738c71f4f2960b31d2b6",
+  "metadata_amendment_sha256": "5560d5ab4819ce8d8a1cd4e666def397c57c5f1fee2ce0b98c8a262c718af3f5",
+  "sources": {
+    "experts.jsonl": [
+      "https://storage.googleapis.com/sfr-summarization-repo-research/model_annotations.aligned.jsonl",
+      "f0d4166e0cdeb439b387c4449634b067b7e9f721b9ef4c2b722f6b7550d3d6ab"
+    ],
+    "summeval_result.json": [
+      "https://raw.githubusercontent.com/maszhongming/UniEval/d33e7b6cfebe97b2bafe435adbd818230d5a416a/reproduce/unieval_predict/summarization/summeval_result.json",
+      "71f437a9253191fc1b6fa558fbeca432896e2c8c16d46b460593e0546945075b"
+    ],
+    "gpt4_coh_detailed.json": [
+      "https://raw.githubusercontent.com/nlpyang/geval/6f84404ce4503d2ba0cde0293c5d402ecf2976a8/results/gpt4_coh_detailed.json",
+      "bec62a6a8408b7f0c7a55a665d8c9a44b97eecf671bf0b4319284b192d218508"
+    ],
+    "gpt4_con_detailed.json": [
+      "https://raw.githubusercontent.com/nlpyang/geval/6f84404ce4503d2ba0cde0293c5d402ecf2976a8/results/gpt4_con_detailed.json",
+      "e09609ab249fc6aa2e4f11b7c16d7531b7036b163c8251e54a04ce4c3efa76ed"
+    ],
+    "gpt4_flu_detailed.json": [
+      "https://raw.githubusercontent.com/nlpyang/geval/6f84404ce4503d2ba0cde0293c5d402ecf2976a8/results/gpt4_flu_detailed.json",
+      "4f08454a9ac1c3c58f6e4d067a00ed37d83d4de2206b010d8a1ba6ef18ceae7d"
+    ],
+    "gpt4_rel_detailed.json": [
+      "https://raw.githubusercontent.com/nlpyang/geval/6f84404ce4503d2ba0cde0293c5d402ecf2976a8/results/gpt4_rel_detailed.json",
+      "c222933ff5ba552bb9ec3d2b495022a89b8019cf246710988a4e49804d47585a"
+    ]
+  },
+  "definition": "Before decoding development or held expert/judge values"
+}

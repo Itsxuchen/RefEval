@@ -1,0 +1,70 @@
+{
+  "judgmentbench_sources": {
+    "human_annotations_rubric.csv": {
+      "url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/human/annotations_rubric.csv",
+      "sha256": "b87224e83df69e75ea3e00952a4ed2d740dfec68cd61f02d26bcb60a30225e3c",
+      "path": "data/raw/judgmentbench/human_annotations_rubric.csv"
+    },
+    "gpt_5_4_rubric_item_scores.csv": {
+      "url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/autograders/gpt_5_4/rubric_item_scores.csv",
+      "sha256": "bfc193a59cf50292be9988dc75535c9fbbe2719b4598cb7326a73e234d82a36a",
+      "path": "data/raw/judgmentbench/gpt_5_4_rubric_item_scores.csv"
+    },
+    "rubric_items.csv": {
+      "url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/base/rubric_items.csv",
+      "sha256": "9afb9e3e82e536e30a9021aacd1ae0167ad2c6c5fd71693df11cf4da0a03ba18",
+      "path": "data/raw/judgmentbench/rubric_items.csv"
+    },
+    "gpt_5_4_mini_rubric_item_scores.csv": {
+      "url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/autograders/gpt_5_4_mini/rubric_item_scores.csv",
+      "sha256": "e0ec56a1eb6530062fc523023c3144c8db25ca06f9d9493beda7d4f6ce5550d6",
+      "path": "data/raw/judgmentbench/gpt_5_4_mini_rubric_item_scores.csv"
+    },
+    "gpt_5_4_mini_annotations_rubric.csv": {
+      "url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/autograders/gpt_5_4_mini/annotations_rubric.csv",
+      "sha256": "7125c39104e6a24397d00be3bc0bff9dd1b2138ef9a8a457d6fb616e8a910954",
+      "path": "data/raw/judgmentbench/gpt_5_4_mini_annotations_rubric.csv"
+    },
+    "gpt_5_4_annotations_rubric.csv": {
+      "url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/autograders/gpt_5_4/annotations_rubric.csv",
+      "sha256": "cfa0408c141ce0dae579967e238da2f1deb1dc8c7879e82e35dbbca86c7487cf",
+      "path": "data/raw/judgmentbench/gpt_5_4_annotations_rubric.csv"
+    },
+    "human_rubric_item_scores.csv": {
+      "url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/human/rubric_item_scores.csv",
+      "sha256": "d6e68feecf13f10517d33adf08e176f3df5f083e8c0a507dfac007fa20cd1871",
+      "path": "data/raw/judgmentbench/human_rubric_item_scores.csv"
+    },
+    "outputs/outputs.csv": {
+      "url": "https://huggingface.co/datasets/judgmentbench/JudgmentBench/resolve/945ff52f4c63c17006dc30ec35fefbddf3ccf58d/outputs/outputs.csv",
+      "sha256": "05c6b5219e12790c453b77d95fa86ed01c713323721bab2ff147febc943d49e5",
+      "path": "data/interim/differentiation_screen/sources/judgmentbench/outputs/outputs.csv"
+    }
+  },
+  "jb_inputs": {
+    "data/raw/judgmentbench/rubric_items.csv": "9afb9e3e82e536e30a9021aacd1ae0167ad2c6c5fd71693df11cf4da0a03ba18",
+    "data/raw/judgmentbench/human_annotations_rubric.csv": "b87224e83df69e75ea3e00952a4ed2d740dfec68cd61f02d26bcb60a30225e3c",
+    "data/raw/judgmentbench/human_rubric_item_scores.csv": "d6e68feecf13f10517d33adf08e176f3df5f083e8c0a507dfac007fa20cd1871",
+    "data/raw/judgmentbench/gpt_5_4_annotations_rubric.csv": "cfa0408c141ce0dae579967e238da2f1deb1dc8c7879e82e35dbbca86c7487cf",
+    "data/raw/judgmentbench/gpt_5_4_rubric_item_scores.csv": "bfc193a59cf50292be9988dc75535c9fbbe2719b4598cb7326a73e234d82a36a",
+    "data/raw/judgmentbench/gpt_5_4_mini_annotations_rubric.csv": "7125c39104e6a24397d00be3bc0bff9dd1b2138ef9a8a457d6fb616e8a910954",
+    "data/raw/judgmentbench/gpt_5_4_mini_rubric_item_scores.csv": "e0ec56a1eb6530062fc523023c3144c8db25ca06f9d9493beda7d4f6ce5550d6",
+    "data/interim/differentiation_screen/sources/judgmentbench/outputs/outputs.csv": "05c6b5219e12790c453b77d95fa86ed01c713323721bab2ff147febc943d49e5",
+    "artifacts/reports/conjunction_robustness/reference/pairing.csv": "e4de5130f7360234bbec8fa4f863fa144ff6f950cca35cf1c0d104f59b1b0484",
+    "artifacts/reports/cross_rater_20261125/cluster_inputs_full_gpt54_half.csv": "686128940bbb923795247f4b158684e08fc07233a92795d5fb5242f5bce95aeb"
+  },
+  "jb_code": {
+    "judgmentbench_cross_scorer_comparison.py": "40836205066cbcf30570c9a28cb8931d3c0d99bb425f5faa8607a52f933eb961",
+    "conjunction_policy_study.py": "615d49ba39377d17be02d8718d0bd01a6e441cd3b7854a2da35f99e1336d5891",
+    "conjunction_policy_data.py": "73dcf8dc243c011f44ca53b19753a37d5b8cf68f324bf23841e3833f2711618f",
+    "cross_rater_replay.py": "32f4f97d6406d843953a777411c5cccf4bb07b33040de94df870799f6d867082"
+  },
+  "crossover_outputs": {
+    "jb_summary.csv": "3b1b6ba2e76baf9e02c6b0c5f8dfe51b2779a14643a5c47fb87d64a3cc52cd59",
+    "jb_cluster_contributions.csv": "4e89b1f8e4cc3c71a0d164efa7ea51dbfafbe1b4be10fb31d4aeab84c3a94d84",
+    "jb_half_pairs.csv": "7bd065222f3c6caf32be02726b59fc77fbb97c825f3b192ee7e9b05632fbe2dc",
+    "summary.csv": "0dded5d039810a17e1996d1fb743910d9f8fb748407ac0acddc014735db6ca57",
+    "role_counts.csv": "c5354b31613a81b94415a19c02b2e011434311d62cd21912eb96bf5bbaad82c6",
+    "article_counts.csv.gz": "23a22bd751472ef6bb4a4d3b039c188757afbbece707f004dc2cbc41971cc3fe"
+  }
+}

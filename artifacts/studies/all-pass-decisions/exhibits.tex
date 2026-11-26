@@ -6,6 +6,7 @@
 \title{Numerical Exhibits for All-Pass Judge Evaluation}
 \author{RefEval research companion}
 \date{November 2026}
+\input{generated/crossover.tex}
 \input{generated/checker.tex}
 \input{generated/repeat.tex}
 \input{generated/cost.tex}
@@ -13,6 +14,16 @@
 \input{generated/external.tex}
 \begin{document}
 \maketitle
+\begin{table}[!htbp]\centering\footnotesize
+\caption{Cross-scoring at half the criterion-check budget. An early approval passes under immediate updating and fails under gating. Endorsement is the percentage of those early approvals judged to pass by the auditing expert or by a different expert. $D$ is gated minus eager errors per 100 outputs. The final column is the paired change $D_{\rm other}-D_{\rm own}$, with a pointwise 95\% cluster-resampling interval.}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrr}\toprule
+ & Early & \multicolumn{2}{c}{Endorsed (\%)} & \multicolumn{2}{c}{$D$} & Paired change\\
+Frame / initial judge & per 100 & Own & Other & Own & Other & [95\% interval]\\\midrule
+\crossrows\bottomrule\end{tabular}\end{table}
+\begin{figure}[!htbp]\centering\includegraphics[width=\linewidth]{generated/crossover.pdf}
+\caption{Cross-scored budget curves on 1,120 summaries from 70 articles and 206 legal outputs from 30 tasks. Panels use separate vertical scales. The dotted line marks the 50\% budget. Bands reweight entire articles or base tasks on the same realized query paths, holding the judge and available experts fixed.}\end{figure}
+\clearpage
 \begin{table}[!htbp]
 \centering\small
 \caption{Upgrading the GPT judge on the original 59 common outputs. Counts separated by a slash give mini then GPT-5.5. Signed changes give GPT-5.5 minus mini. The last column is a paired 95\% percentile interval for extra false failures per 100 outputs, resampling source groups within generator and rubric-length strata.}

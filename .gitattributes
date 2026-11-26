@@ -7,3 +7,6 @@ licenses/** -text
 *.pdf binary
 *.gz binary
 
+
+# The archived legal audit receipt hashes the original CSV bytes.
+artifacts/studies/all-pass-decisions/source_replay/controls/anchored_legal_counts.csv -text whitespace=trailing-space,space-before-tab,cr-at-eol

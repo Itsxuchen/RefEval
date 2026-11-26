@@ -6,7 +6,7 @@
 
 A reference check can estimate a judge's accuracy, certify an individual outcome, or repair an existing verdict. When every rubric criterion must pass, these gains can diverge. This repository studies constructed all-pass targets on **RuVerBench** and **JudgmentBench**, with compact analysis inputs, saved results and reproduction code. The full JudgmentBench target is a FAIL-dominated stress test; coding, research and binary-only targets provide contrasting error structures.
 
-**November decision study.** The numerical companion includes matched judge repeats, cross-rater replay, hard-budget pass-rate estimation, and a held-article judge selection test. It rebuilds five tables and a budget figure from recorded inputs. [Study and reproduction instructions](artifacts/studies/all-pass-decisions/README.md).
+**Who endorses an early approval?** At half the check budget, 73.5% of early legal approvals were endorsed by the auditing attorney and 39.8% by another attorney. On the primary SummEval comparison these shares were 100% and 69.2%. The legal point estimates changed order; the peer-scored interval included zero in both primary settings. Rebuild the tables and curves from grouped counts, or replay the expert rotations from the public source records. [Study and reproduction instructions](artifacts/studies/all-pass-decisions/README.md) · [Numerical exhibits (PDF)](artifacts/studies/all-pass-decisions/exhibits.pdf)
 
 **Reproducibility release: [v0.3.0](https://github.com/Itsxuchen/RefEval/releases/tag/v0.3.0).** The tagged snapshot contains the matching manuscript, source archive, data and analyses. arXiv submission remains a separate step.
 
