@@ -1,0 +1,168 @@
+{
+  "scope": "exploratory; conditional on withdrawals under corrected sealed masks",
+  "docs": 18,
+  "outputs": 739,
+  "orders_per_auditor": 31,
+  "auditors_per_output": 3,
+  "early_auditor_orders": 10187,
+  "withdrawn_auditor_orders": 1520,
+  "withdrawn_output_equivalents": 16.344086021505376,
+  "findings": {
+    "exact_span": {
+      "orders": 361,
+      "auditor_outputs": 35,
+      "distinct_outputs": 31,
+      "percent_orders": 23.75,
+      "pct_interval": [
+        13.983030377466635,
+        36.19889884276531
+      ],
+      "defined_draws": 1999
+    },
+    "iou50": {
+      "orders": 516,
+      "auditor_outputs": 52,
+      "distinct_outputs": 46,
+      "percent_orders": 33.94736842105263,
+      "pct_interval": [
+        23.67190500235945,
+        46.21073177064016
+      ],
+      "defined_draws": 1999
+    },
+    "iou25": {
+      "orders": 658,
+      "auditor_outputs": 67,
+      "distinct_outputs": 59,
+      "percent_orders": 43.28947368421053,
+      "pct_interval": [
+        31.862563789273775,
+        55.78974304226266
+      ],
+      "defined_draws": 1999
+    },
+    "any_nonspace_char": {
+      "orders": 810,
+      "auditor_outputs": 85,
+      "distinct_outputs": 71,
+      "percent_orders": 53.28947368421053,
+      "pct_interval": [
+        41.186618185774904,
+        66.187915336574
+      ],
+      "defined_draws": 1999
+    },
+    "any_word_touched": {
+      "orders": 810,
+      "auditor_outputs": 85,
+      "distinct_outputs": 71,
+      "percent_orders": 53.28947368421053,
+      "pct_interval": [
+        41.186618185774904,
+        66.187915336574
+      ],
+      "defined_draws": 1999
+    },
+    "completely_located": {
+      "orders": 1447,
+      "auditor_outputs": 144,
+      "distinct_outputs": 114,
+      "percent_orders": 95.19736842105263,
+      "pct_interval": [
+        90.19788885851155,
+        98.92600113053956
+      ],
+      "defined_draws": 1999
+    },
+    "has_located_same_side_pair": {
+      "orders": 1443,
+      "auditor_outputs": 143,
+      "distinct_outputs": 113,
+      "percent_orders": 94.9342105263158,
+      "pct_interval": [
+        91.05613621809533,
+        98.71217289332785
+      ],
+      "defined_draws": 1999
+    },
+    "only_different_sides": {
+      "orders": 76,
+      "auditor_outputs": 8,
+      "distinct_outputs": 6,
+      "percent_orders": 5.0,
+      "pct_interval": [
+        1.2057432890344026,
+        8.871312498408088
+      ],
+      "defined_draws": 1999
+    },
+    "no_overlap_all_located_comparable": {
+      "orders": 575,
+      "auditor_outputs": 53,
+      "distinct_outputs": 48,
+      "percent_orders": 37.828947368421055,
+      "pct_interval": [
+        27.628625830497487,
+        47.9367900401955
+      ],
+      "defined_draws": 1999
+    },
+    "unresolved_no_observed_overlap": {
+      "orders": 59,
+      "auditor_outputs": 6,
+      "distinct_outputs": 4,
+      "percent_orders": 3.8815789473684212,
+      "pct_interval": [
+        0.15256944571942652,
+        9.084184683614474
+      ],
+      "defined_draws": 1999
+    },
+    "different_nonempty_axis_sets": {
+      "orders": 1520,
+      "auditor_outputs": 152,
+      "distinct_outputs": 120,
+      "percent_orders": 100.0,
+      "pct_interval": [
+        100.0,
+        100.0
+      ],
+      "defined_draws": 1999
+    },
+    "total": {
+      "orders": 1520,
+      "auditor_outputs": 152,
+      "distinct_outputs": 120,
+      "percent_orders": 100.0,
+      "pct_interval": [
+        100.0,
+        100.0
+      ],
+      "defined_draws": 1999
+    }
+  },
+  "axis_set_pair_orders": {
+    "accuracy -> fluency": 201,
+    "accuracy -> fluency,other_target": 29,
+    "accuracy -> other_target": 348,
+    "accuracy -> terminology": 71,
+    "accuracy,fluency -> other_target": 127,
+    "accuracy,fluency,terminology -> other_target": 5,
+    "accuracy,other_target -> terminology": 5,
+    "accuracy,terminology -> fluency": 17,
+    "accuracy,terminology -> other_target": 47,
+    "fluency -> accuracy": 248,
+    "fluency -> accuracy,other_target": 42,
+    "fluency -> other_target": 170,
+    "fluency,other_target -> accuracy": 6,
+    "fluency,terminology -> accuracy": 18,
+    "fluency,terminology -> accuracy,other_target": 13,
+    "fluency,terminology -> other_target": 15,
+    "other_target -> accuracy": 45,
+    "other_target -> fluency": 18,
+    "terminology -> accuracy": 74,
+    "terminology -> accuracy,other_target": 10,
+    "terminology -> other_target": 11
+  },
+  "method": "Cross-side marks are not aligned. IoU compares non-whitespace character positions on the same original text. A positive classification requires at least one qualifying cross-axis pair; it is not a semantic adjudication."
+}

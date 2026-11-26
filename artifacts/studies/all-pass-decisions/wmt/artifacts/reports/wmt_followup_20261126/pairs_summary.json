@@ -1,0 +1,143 @@
+{
+  "original": {
+    "label": "all",
+    "documents": 18,
+    "outputs": 739,
+    "role_records": 4434,
+    "up_records": 1006,
+    "down_records": 392,
+    "judge_pass": 34.23545331529098,
+    "auditor_pass": 48.08299503834019,
+    "peer_pass": 48.08299503834019,
+    "up": 50.29821073558651,
+    "down": 52.04081632653061,
+    "any_change": 50.78683834048643,
+    "early": 49.59752625895748,
+    "early_per100": 14.82241331645499,
+    "keep": 31.52909336941817,
+    "full": 31.032927379341494,
+    "diff": -0.49616599007667583,
+    "up_valid": 1999,
+    "up_lo": 39.767305061559526,
+    "up_hi": 59.375564079422396,
+    "down_valid": 1999,
+    "down_lo": 36.088186442437454,
+    "down_hi": 61.064405113077704,
+    "any_change_valid": 1999,
+    "any_change_lo": 43.558203149705925,
+    "any_change_hi": 57.69970487378269,
+    "early_valid": 1999,
+    "early_lo": 38.8923103510353,
+    "early_hi": 58.515662686286355,
+    "diff_valid": 1999,
+    "diff_lo": -5.170915692266062,
+    "diff_hi": 3.763731603773317
+  },
+  "people": [
+    "rater1",
+    "rater2",
+    "rater3",
+    "rater4",
+    "rater5",
+    "rater6",
+    "rater7",
+    "rater8",
+    "rater9",
+    "rater10"
+  ],
+  "actual_directed_pairs": 40,
+  "slot_order": "lexicographically sorted published rater ID within output",
+  "documents": {
+    "news_bbc.124285": [
+      "rater3",
+      "rater5",
+      "rater6"
+    ],
+    "news_cbsnews.120102": [
+      "rater1",
+      "rater2",
+      "rater6"
+    ],
+    "news_cnn.151681": [
+      "rater2",
+      "rater4",
+      "rater9"
+    ],
+    "news_cnn.151755": [
+      "rater4",
+      "rater8",
+      "rater9"
+    ],
+    "news_guardian.114833": [
+      "rater10",
+      "rater7",
+      "rater8"
+    ],
+    "news_huffingtonpost.com.50412": [
+      "rater10",
+      "rater3",
+      "rater5"
+    ],
+    "news_kazinform-en.24592": [
+      "rater1",
+      "rater5",
+      "rater6"
+    ],
+    "news_kazinform-en.24595": [
+      "rater1",
+      "rater2",
+      "rater6"
+    ],
+    "news_latimes.160885": [
+      "rater2",
+      "rater4",
+      "rater9"
+    ],
+    "news_metro.co.uk.66063": [
+      "rater7",
+      "rater8",
+      "rater9"
+    ],
+    "news_msnbc.11229": [
+      "rater10",
+      "rater7",
+      "rater8"
+    ],
+    "news_newrepublic.com.3759": [
+      "rater10",
+      "rater3",
+      "rater7"
+    ],
+    "news_newyorker.com.9528": [
+      "rater10",
+      "rater3",
+      "rater5"
+    ],
+    "news_pa.35769": [
+      "rater1",
+      "rater5",
+      "rater6"
+    ],
+    "news_rte.en.ie.64530": [
+      "rater1",
+      "rater2",
+      "rater4"
+    ],
+    "news_sky.com.32794": [
+      "rater4",
+      "rater8",
+      "rater9"
+    ],
+    "news_stv.tv.18714": [
+      "rater7",
+      "rater8",
+      "rater9"
+    ],
+    "news_voa-zimbabwe.2515": [
+      "rater10",
+      "rater3",
+      "rater7"
+    ]
+  },
+  "leave_one_out_weighting": "exclude person in either role; renormalize remaining ordered pairs within each of the same outputs"
+}

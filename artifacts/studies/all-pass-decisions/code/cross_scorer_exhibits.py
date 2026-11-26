@@ -135,7 +135,7 @@ def run():
             results[key] = r
     OUTPUT.mkdir(exist_ok=True)
     with (OUTPUT / "crossover_curves.csv").open("w", newline="") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator="\n")
         writer.writerow(["frame", "judge", "budget_pct", *next(iter(results.values()))])
         writer.writerows([*k, *v.values()] for k, v in results.items())
     table(results)

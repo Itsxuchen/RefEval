@@ -1,0 +1,8 @@
+{
+  "candidate_output_roles": 2217,
+  "llm_strict": 211,
+  "human_strict": 222,
+  "ties": 1784,
+  "llm_at_least": 0.8998646820027063,
+  "human_at_least": 0.9048263419034731
+}

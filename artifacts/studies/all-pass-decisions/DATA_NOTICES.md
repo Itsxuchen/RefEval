@@ -11,3 +11,7 @@ The companion contains numerical analyses and no upstream prompts, source articl
 The original software in the public RefEval repository is MIT licensed. Data remain subject to the upstream terms described above.
 
 The complete-audit controls in [full_audit_cluster_counts.csv](inputs/full_audit_cluster_counts.csv) derive from the same JudgmentBench and SummEval releases. They contain weighted event and error counts for 30 legal task clusters and 70 news article clusters per judge. Ordinal cluster labels support paired resampling without redistributing source text or expert identifiers.
+
+## WMT23 and the matched expert comparison
+
+The new WMT analyses use the WMT MQM first-pass human annotations, human-seeded re-annotation records and the published span-mt-metaeval machine predictions. The WMT directory carries the original source identifiers, attribution, terms and retrieval procedure. The matched expert comparison uses the same WMT, JudgmentBench and SummEval sources and the same output panels as the main study. The package distributes aggregate estimates and code; its source route obtains text and individual evaluations from their original hosts. [WMT source notices](wmt/README.md) · [JudgmentBench and SummEval sources](source_replay/README.md)

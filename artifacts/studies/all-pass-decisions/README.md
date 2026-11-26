@@ -1,8 +1,17 @@
 # When an expert revises a judge's verdict
 
-Does another expert agree when an auditor changes a judge's verdict? On 206 legal outputs, retaining the judge produced 14.16 disagreements per 100 outputs with a peer. Adopting the complete audit produced 15.37. On 1,120 news summaries, adopting the full audit reduced peer disagreements from 37.08 to 30.83 for UniEval and from 37.44 to 30.83 for G-Eval. All comparisons give equal weight to each output. The paired 95% intervals for the changes were [−3.39, +4.90], [−9.32, −3.04] and [−9.37, −4.05], respectively. [Numerical exhibits](exhibits.pdf)
+On 739 English-to-German news translations, a peer endorsed **50.3%** of completed changes from rejection to approval and **52.0%** from approval to rejection. Each translation was scored independently by three professional translators. Waiting for the same reviewer to finish the actual early releases reduced disagreement by **0.81 per 100 translations** [0.21, 1.52], or **5.47 per 100 early releases** [1.20, 11.96]. The holdout comprised 18 entire news documents. The legal and two summary configurations appear alongside WMT in the [numerical exhibits](exhibits.pdf) and the [machine-readable table](generated/three_frames.csv).
 
-The half-budget replay follows PASS decisions issued before all conditions have been checked. In law, peers endorsed 39.8% of early approvals and 43.3% of complete approvals of initially rejected outputs. The difference was −3.54 percentage points [−9.73, +6.31]. Following the **same early cases** until the audit finished gave a different comparison: early approval added 0.79 peer disagreements per 100 **all** legal outputs [+0.02, +1.62]. The tables report both comparisons for each judge. SummEval uses final expert ratings recorded after the raters could see one another's scores.
+Keeping the judge versus adopting one expert's complete verdict uses the replacement design of Calderon et al. With three raters, binary verdicts, accuracy against the two scoring peers, and matched weights, the signed difference between their two tie-inclusive win probabilities equals the complete-minus-retain disagreement difference. This package reports directional endorsement and follows provisional approvals through the same auditor's final verdict. [Original alt-test](https://aclanthology.org/2025.acl-long.782/) · [WMT sources, protocol, initial run and correction](wmt/README.md)
+
+| Panel and judge | Peer supports rejection → approval | Peer supports approval → rejection | Complete − retain per 100 outputs [95%] | Early − eventual per 100 outputs [95%] |
+|---|---:|---:|---:|---:|
+| WMT23 · Sonnet 4.5 | 50.3% | 52.0% | −0.50 [−5.17, +3.76] | +0.81 [+0.21, +1.52] |
+| JudgmentBench · GPT-5.4 | 43.3% | 66.7% | +1.21 [−3.39, +4.90] | +0.79 [+0.02, +1.62] |
+| SummEval · UniEval | 42.5% | 61.5% | −6.25 [−9.32, −3.04] | 0.00 [0.00, 0.00] |
+| SummEval · G-Eval | 59.1% | 35.7% | −6.61 [−9.37, −4.05] | −0.15 [−0.45, +0.15] |
+
+Changes to rejection occurred rarely with the legal judge and G-Eval (3.0 and 4.7 output-equivalents). Positive early-minus-eventual means fewer disagreements after waiting. Both summary rows reuse the same three experts and the same 1,120 summaries. Every early UniEval approval was ultimately upheld in this observed panel.
 
 ## Reproduce
 
@@ -28,15 +37,27 @@ The build writes TeX tables, vector figures and numerical controls to `generated
 | cost_orders.csv.gz and pass_design.csv | 40,176 order/cost records and finite-population stratum counts for computing precision and coverage. |
 | fold_forecasts.csv and forecast_validation.csv | Fold-specific development scores, held-out error counts and directional-rate forecasts on four historical frames. Ties use the recorded candidate order. |
 
-## Cross-scoring the same decisions
+## Earlier legal and summary panels
 
 The [locally frozen protocol](inputs/cross_scorer_protocol.md) fixes the 50% budget, initial judges, scoring rules, priority orders and statistics. The primary summary analysis uses 1,120 summaries of 70 articles and UniEval. The G-Eval judge swap and overlapping 1,600-summary frame were specified as sensitivities. Each of the three experts supplies the checked labels in turn. Each updated verdict is compared with that expert and separately with each of the other two. On the legal frame the same calculation rotates all distinct attorney pairs. Each output receives equal weight.
 
-The complete-audit and timing comparisons were added after inspection of the original half-budget results. For a complete audit, peer endorsement counts a peer PASS on an upward change and a peer FAIL on a downward change. At half budget, early approvals are the cases on which immediate updating gives PASS while gating retains FAIL. A peer endorsement of an early approval always means a peer PASS. The direction of each reported error difference appears in its table heading.
+On these two earlier panels, the complete-audit and timing comparisons were added after inspection of the original half-budget results. WMT specified both ahead of its local holdout opening. For a complete audit, peer endorsement counts a peer PASS on an upward change and a peer FAIL on a downward change. At half budget, early approvals are the cases on which immediate updating gives PASS while gating retains FAIL. A peer endorsement of an early approval always means a peer PASS. The direction of each reported error difference appears in its table heading.
 
-The first three [exhibit tables](exhibits.pdf) compare completed revisions, early approvals and the absolute error counts under each policy. The [full-audit analysis](code/full_audit_exhibits.py) rebuilds 69 estimates and their pointwise intervals from the cluster counts. Its [complete estimates file](generated/full_audit_estimates.csv) records the number of defined bootstrap draws for each ratio. A blank estimate means there were no qualifying cases. The [cross-scoring analysis](code/cross_scorer_exhibits.py) reconstructs peer disagreements under immediate and gated updating from the original outcomes and checks the verdict-loss identity. Intervals use 1,999 paired whole-cluster resamples with fixed paths (70 articles or 30 legal tasks). Each resample preserves an output's expert rotations. The 31 query orders describe the audit design. The [machine-readable curves](generated/crossover_curves.csv) give errors for both rules, their differences and the paired change upon switching scorer at all 11 budget points.
+The main [exhibit table](exhibits.pdf) puts all four configurations side by side. The following tables give additional detail for the earlier legal and summary analyses. The [full-audit analysis](code/full_audit_exhibits.py) rebuilds 69 estimates and their pointwise intervals from the cluster counts. Its [complete estimates file](generated/full_audit_estimates.csv) records the number of defined bootstrap draws for each ratio. A blank estimate means there were no qualifying cases. The [cross-scoring analysis](code/cross_scorer_exhibits.py) reconstructs peer disagreements under immediate and gated updating from the original outcomes and checks the verdict-loss identity. Intervals use 1,999 paired whole-cluster resamples with fixed paths (70 articles or 30 legal tasks). Each resample preserves an output's expert rotations. The 31 query orders describe the audit design. The [machine-readable curves](generated/crossover_curves.csv) give errors for both rules, their differences and the paired change upon switching scorer at all 11 budget points.
 
 For optional reproduction starting from the authors' expert and judge releases, see [source replay instructions](source_replay/README.md). The numerical route above is offline after installing the Python dependencies.
+
+## Replaying WMT and matched human agreement
+
+The offline build verifies the 43 WMT estimates and pointwise uncertainty intervals from the released document counts. To reconstruct them from the authors' archived machine and expert records, use the source command below. An additional matched comparison measures expert agreement on a random criterion and on the complete verdict for the same output. That command downloads the pinned sources into temporary storage and verifies the published CSV. Both commands use existing evaluations and require no model credentials.
+
+~~~sh
+python wmt/replay.py --source --cache /tmp/refeval-wmt23-inputs
+python -m pip install -r source_replay/requirements.txt
+python reliability/peer_agreement.py
+~~~
+
+The first WMT analysis used a locally sealed plan. After opening the holdout we corrected the parser for a released source-issue label; the complete-minus-retain difference moved from −0.54 to −0.50. Subsequent reviewer rotations, span comparisons, second-round scoring and matched agreement are exploratory. Intervals resample documents with the participating reviewers held fixed. [WMT data and audit trail](wmt/README.md) · [Matched rates and pooled kappa](reliability/peer_agreement.csv)
 
 ## Reference populations
 

@@ -1,0 +1,18 @@
+{
+  "commit": "ca494e2626fd85f440ba3934404d347b281bdfcc",
+  "template_sha256": "ae9efd7d334c2507b757d6d093ba09e8f090822fe7db80593b29f50e2998f461",
+  "records": {
+    "sonnet": {
+      "cache_rows": 710,
+      "exact_system_user_zero_shot": 710,
+      "distinct_input_pairs": 710,
+      "held_output_keys": 739
+    },
+    "haiku": {
+      "cache_rows": 710,
+      "exact_system_user_zero_shot": 710,
+      "distinct_input_pairs": 710,
+      "held_output_keys": 739
+    }
+  }
+}

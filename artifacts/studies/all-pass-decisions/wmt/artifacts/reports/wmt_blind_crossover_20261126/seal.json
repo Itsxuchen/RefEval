@@ -1,0 +1,92 @@
+{
+  "time_utc": "2026-11-26T19:44:46.218588+00:00",
+  "code": {
+    "context/wmt_blind_crossover_20261126.md": "5c88a2150aa758e2f72d63fe446ecea85b304cdfcc15d7f3aafff3435a0f8bde",
+    "src/wmt_blind_crossover.py": "784913c5041edf7deb4611f30a33de08f7d423778f99b84fb67a3cd5e0217d28",
+    "src/wmt_blind_inputs.py": "65d308ab04ac9f2c8345a5f98b7b9889092019a6084d756b040cde2ef1921dab",
+    "src/conjunction_policy_study.py": "615d49ba39377d17be02d8718d0bd01a6e441cd3b7854a2da35f99e1336d5891"
+  },
+  "development_sha256": "a93e189f64a1042353bcd6f0c5be48685ebc16b2f58ea66f7e3910eb1a623e5d",
+  "source_sha256": {
+    "ende_hum.tgz": "8c8b08614114fee70d228b664a614b2392f507f74c415fac6d83d215da57aa34",
+    "ende_human_frame.tsv": "379478ac19583d598c8013855fa2d69c49eed54f371ba864d2db7b5746e390d4",
+    "sonnet.gz": "b4af8862189ec952c4285318e768f434d7194f5cf5447b81197f72bb386459b9",
+    "haiku.gz": "aae06c93875d75cbf4b9b7aaf7257b067adc2ba6c7d1ce795ea7536f77701d2e"
+  },
+  "primary_cost": [
+    1,
+    1
+  ],
+  "sensitivity_costs": [
+    [
+      3,
+      1
+    ],
+    [
+      1,
+      3
+    ]
+  ],
+  "data_inventory": {
+    "news_bbc.124285": 47,
+    "news_cbsnews.120054": 35,
+    "news_cbsnews.120102": 60,
+    "news_cnn.151681": 36,
+    "news_cnn.151755": 36,
+    "news_egyptindependent.com.11799": 48,
+    "news_guardian.114833": 60,
+    "news_huffingtonpost.com.50412": 48,
+    "news_independent.263962": 60,
+    "news_kazinform-en.24592": 24,
+    "news_kazinform-en.24595": 36,
+    "news_latimes.160867": 46,
+    "news_latimes.160885": 47,
+    "news_leadership-en.43063": 36,
+    "news_metro.co.uk.66063": 48,
+    "news_msnbc.11229": 36,
+    "news_newrepublic.com.3759": 36,
+    "news_newyorker.com.9528": 36,
+    "news_pa.35733": 24,
+    "news_pa.35769": 36,
+    "news_rt.com.39936": 47,
+    "news_rte.en.ie.64530": 47,
+    "news_seattle_times.570827": 47,
+    "news_sky.com.32794": 47,
+    "news_stv.tv.18714": 24,
+    "news_thelocal.17459": 36,
+    "news_voa-zimbabwe.2515": 35
+  },
+  "split": {
+    "development": [
+      "news_cbsnews.120054",
+      "news_egyptindependent.com.11799",
+      "news_independent.263962",
+      "news_latimes.160867",
+      "news_leadership-en.43063",
+      "news_pa.35733",
+      "news_rt.com.39936",
+      "news_seattle_times.570827",
+      "news_thelocal.17459"
+    ],
+    "held": [
+      "news_bbc.124285",
+      "news_cbsnews.120102",
+      "news_cnn.151681",
+      "news_cnn.151755",
+      "news_guardian.114833",
+      "news_huffingtonpost.com.50412",
+      "news_kazinform-en.24592",
+      "news_kazinform-en.24595",
+      "news_latimes.160885",
+      "news_metro.co.uk.66063",
+      "news_msnbc.11229",
+      "news_newrepublic.com.3759",
+      "news_newyorker.com.9528",
+      "news_pa.35769",
+      "news_rte.en.ie.64530",
+      "news_sky.com.32794",
+      "news_stv.tv.18714",
+      "news_voa-zimbabwe.2515"
+    ]
+  }
+}
